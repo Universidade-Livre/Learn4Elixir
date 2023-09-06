@@ -1,8 +1,5 @@
 # learn4haskell
 
-![Learn4Haskell](/images/HacktoberFest2021-Learn4Haskell-Banner.png)
-
-🚨 __Important notice: This course continues BAU even after Hacktoberfest__ 🚨
 
 You can find the results of Hacktoberfest 2020 for [Learn4Haskell](https://github.com/kowainik/learn4haskell) in the following blog post:
 
