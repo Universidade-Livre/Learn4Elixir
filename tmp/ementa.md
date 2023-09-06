@@ -1,5 +1,8 @@
 ### Course Plan
 
+- LIVROS DE ELIXIR
+- Elixir School
+
 Here is a more concrete plan of the mystical 4 Chapters we prepared for
 you. These are the highlights of each part.
 
