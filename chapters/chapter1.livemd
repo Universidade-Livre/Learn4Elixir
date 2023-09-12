@@ -2,10 +2,29 @@
 
 ## O que é um valor?
 
+Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade de uma pessoa. Maria o nome desta pessoa e professora sua profissão. O salário mensal de Maria é R$ 5.050,55.
+
 ```elixir
 10
 ```
 
+```elixir
+"Maria"
+```
+
+```elixir
+"professora"
+```
+
+```elixir
+5050.55
+```
+
+Você deve ter percebido que, ao escrever o nome e a profissão, usamos aspas. E, ao escrever o salário, usamos "." (ponto) no lugar da "," (vírgula) e não colocamos a moeda ("R$"). Explicaremos isto depois.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Mas antes de mais nada temos que observar que os dados acima têm tipos diferentes.
 
 ## Quais são os tipos de valores?
 
@@ -16,7 +35,3 @@
 ## Como atribuir um valor a uma variável?
 
 ## Quais são os tipos de valores que são composições de outros tipos?
-
-
-
-
