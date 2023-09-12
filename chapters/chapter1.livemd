@@ -1,11 +1,24 @@
-# O que é um valor?
+# Aula 1
 
-# Quais são os tipos de valores?
+## O que é um valor?
 
-# O que é o casamento de padrões?
+```elixir
+10
+```
 
-# O que é uma variável?
 
-# Como atribuir um valor a uma variável?
+## Quais são os tipos de valores?
 
-# Quais são os tipos de valores que são composições de outros tipos?
+## O que é o casamento de padrões?
+
+## O que é uma variável?
+
+## Como atribuir um valor a uma variável?
+
+## Quais são os tipos de valores que são composições de outros tipos?
+
+
+
+## Section
+
+
