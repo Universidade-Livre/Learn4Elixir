@@ -1,1 +1,11 @@
+# O que é um valor?
 
+# Quais são os tipos de valores?
+
+# O que é o casamento de padrões?
+
+# O que é uma variável?
+
+# Como atribuir um valor a uma variável?
+
+# Quais são os tipos de valores que são composições de outros tipos?
