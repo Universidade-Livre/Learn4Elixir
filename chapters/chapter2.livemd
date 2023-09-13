@@ -1,0 +1,4 @@
+- Funções anônimas
+- Funções de ordem mais alta
+- O módulo Enum 
+- Pipe

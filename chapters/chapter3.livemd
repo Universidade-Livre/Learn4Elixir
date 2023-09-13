@@ -1,0 +1,19 @@
+- Estruturas de controle 
+
+https://elixirschool.com/pt/lessons/basics/control_structures
+
+- Sigils
+
+https://elixirschool.com/pt/lessons/basics/sigils
+
+- Mais sobre módulos 
+
+  - Structs
+  - Atributos de módulo
+  - Composição (alias, use, import, require)
+
+https://elixirschool.com/pt/lessons/basics/modules
+
+- Compreensões
+
+https://elixirschool.com/pt/lessons/basics/comprehensions

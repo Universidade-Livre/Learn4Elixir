@@ -1,0 +1,16 @@
+- Strings
+
+https://elixirschool.com/pt/lessons/basics/strings
+
+- Data e Tempo 
+
+https://elixirschool.com/pt/lessons/basics/date_time
+
+- Processos em Elixir
+
+https://dev.to/elixir_utfpr/o-que-e-um-processo-em-elixir-4j00
+
+- Agentes
+
+https://elixir-lang.org/getting-started/mix-otp/agent.html
+

@@ -6,11 +6,16 @@ Tem que ser fora.
 
 Vídeo.
 
-- Windows
+- Windows https://dev.to/elixir_utfpr/agora-voce-pode-ter-o-livebook-como-um-aplicativo-no-seu-computador-12ac
 - Mac???
 - Linux
 - Fly.io
 - HuggingFace https://huggingface.co/spaces/adolfont/learn4elixir
+
+
+## Elixir e Erlang
+
+https://dev.to/elixir_utfpr/o-que-e-o-ecossistema-de-erlang-3km
 
 ## O que é um valor?
 
@@ -95,3 +100,5 @@ String.duplicate/2
 ## Como definir módulos e funções
 
 ## Resolver um problema
+
+Qual? Quais?

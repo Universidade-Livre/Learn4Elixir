@@ -1,0 +1,83 @@
+# Testes Learn 4 Elixir
+
+## Section
+
+```elixir
+{x, y} = {3, 4}
+```
+
+```elixir
+[x | y] = [3, 4, 5]
+```
+
+```elixir
+x
+```
+
+```elixir
+y
+```
+
+```elixir
+Enum.shuffle([1, 2, 3])
+```
+
+```elixir
+String.capitalize("adolfo")
+```
+
+```elixir
+String.capitalize("wesLeY")
+```
+
+```elixir
+String.upcase("wesLeY")
+```
+
+```elixir
+String.duplicate("SIM ", 30)
+```
+
+```elixir
+defmodule Nome do
+  def funcao do
+    3
+  end
+end
+```
+
+```elixir
+{:ok, agent} = Agent.start_link(fn -> [] end)
+```
+
+```elixir
+Process.alive?(agent)
+```
+
+```elixir
+Agent.update(agent, fn list -> ["eggs" | list] end)
+```
+
+```elixir
+Process.alive?(agent)
+```
+
+```elixir
+Agent.get(agent, fn list -> list end)
+```
+
+```elixir
+Agent.update(agent, fn list -> ["pão" | list] end)
+```
+
+```elixir
+Agent.get(agent, fn list -> list end)
+```
+
+```elixir
+Agent.stop(agent)
+```
+
+```elixir
+Process.alive?(agent)
+```
