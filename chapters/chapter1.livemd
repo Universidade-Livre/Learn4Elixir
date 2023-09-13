@@ -9,6 +9,8 @@ Vídeo.
 - Windows
 - Mac???
 - Linux
+- Fly.io
+- HuggingFace
 
 ## O que é um valor?
 
