@@ -69,3 +69,7 @@ https://elixirschool.com/pt/lessons/basics/collections
 ### Casamento de padrões com coleções
 
 https://elixirschool.com/pt/lessons/basics/pattern_matching
+
+## Como usar funções
+
+https://elixirschool.com/pt/lessons/basics/functions
