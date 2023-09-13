@@ -77,3 +77,21 @@ https://elixirschool.com/pt/lessons/basics/functions
 Dar exemplos de algumas funções. 
 
 String.
+
+Aridade.
+
+String.capitalize("wesLeY")
+
+String.upcase("wesLeY")
+
+
+String.duplicate("SIM ", 30)
+
+String.upcase/1 String.upcase/2
+
+String.duplicate/2
+
+
+## Como definir módulos e funções
+
+## Reoslver um problema
