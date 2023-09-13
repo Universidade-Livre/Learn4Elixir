@@ -10,7 +10,7 @@ Vídeo.
 - Mac???
 - Linux
 - Fly.io
-- HuggingFace
+- HuggingFace https://huggingface.co/spaces/adolfont/learn4elixir
 
 ## O que é um valor?
 
@@ -39,6 +39,18 @@ Você deve ter percebido que, ao escrever o nome e a profissão, usamos aspas. E
 Mas antes de mais nada temos que observar que os dados acima têm tipos diferentes.
 
 ## Quais são os tipos de valores?
+
+### Tipos Básicos
+
+Inteiros
+
+Pontos Flutuantes
+
+Booleanos
+
+Átomos
+
+Strings
 
 ## O que é o casamento de padrões?
 
