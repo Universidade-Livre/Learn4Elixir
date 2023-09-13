@@ -1,5 +1,9 @@
 # Aula 1
 
+## Instalando o Livebook
+
+Tem que ser fora.
+
 ## O que é um valor?
 
 Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade de uma pessoa. Maria o nome desta pessoa e professora sua profissão. O salário mensal de Maria é R$ 5.050,55.
