@@ -42,6 +42,8 @@ Mas antes de mais nada temos que observar que os dados acima têm tipos diferent
 
 ### Tipos Básicos
 
+https://elixirschool.com/pt/lessons/basics/basics#tipos-b%C3%A1sicos-3
+
 Inteiros
 
 Pontos Flutuantes
@@ -54,8 +56,16 @@ Strings
 
 ## O que é o casamento de padrões?
 
+https://elixirschool.com/pt/lessons/basics/pattern_matching
+
 ## O que é uma variável?
 
 ## Como atribuir um valor a uma variável?
 
 ## Quais são os tipos de valores que são composições de outros tipos?
+
+https://elixirschool.com/pt/lessons/basics/collections
+
+### Casamento de padrões com coleções
+
+https://elixirschool.com/pt/lessons/basics/pattern_matching
