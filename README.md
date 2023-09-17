@@ -1,4 +1,4 @@
-![Learn4Elixir](https://uploaddeimagens.com.br/images/004/582/944/full/header_003.png)
+![Learn4Elixir](./resources/img/header_learn_elixir.png)
 
 <p align="justify">
   <i>
