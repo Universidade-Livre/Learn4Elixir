@@ -145,7 +145,9 @@ aprendizado produtiva. Isso tudo junto foi executado por essa equipe maravilhosa
 </table>
 
 <p align="justify">
+  
 Além disso todo material gráfico foi produzido pelo [Lucas Soren](https://github.com/lucassoren) que foi contratado para essa tarefa com os recursos de patrocínio.
+
 </p>
 
 ## Como nos ajudar?
