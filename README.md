@@ -120,7 +120,7 @@ Começar a aprender com o Learn4Elixir é muito mamão com açúcar, é só:
 
 Você já pode começar os desafios agora mesmo fazendo o seu fork. Logo mais você encontra um pequeno passo a passo de todos os items necessários para rodar esse projeto localmente.
 
-## Instalando Elixir
+## Instalando Elixir e o Livebook
 
 ...
 
