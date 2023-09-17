@@ -147,6 +147,7 @@ aprendizado produtiva. Isso tudo junto foi executado por essa equipe maravilhosa
 <p align="justify">
   
 Além disso todo material gráfico foi produzido pelo [Lucas Soren](https://github.com/lucassoren) que foi contratado para essa tarefa com os recursos de patrocínio.
+Além de ser extramamente habilidoso com arte, também está estudando para ser DEV e caso tenham interesse em também contratá-lo, entre em contado.
 
 </p>
 
