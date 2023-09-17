@@ -152,3 +152,9 @@ Além de ser extramamente habilidoso com arte, também está estudando para ser 
 </p>
 
 ## Como nos ajudar?
+Você pode nos ajudar de diversas formas:
+- **Nos dê feedback**: Se você está fazendo o Learn4Elixir para nós saber como está sendo sua experiência é muito importante. Você pode fazer isso através desse formulário.
+- **Divulgação**: Para nós é muito dificil ter alcance e chegar em mais pessoas. Compartilhar sobre o projeto com mais pessoas nos ajuda a atingir pessoas que podem ser impactadas por essa iniciativa. Compartilhe sobre esse projeto nas suas redes sociais, converse sobre com seus amigos, indique para pessoas que queiram aprender Elixir e nos ajude compartilhando nosssas postagens sobre.
+- **Ajude outros estudantes**: Entre no nosso Discord, esteja atento nas issues, quando outras pessoas tiverem dificuldade ou dúvidas, ajude! O aprendizado é sempre catalizado por pessoas com o mesmo objetivo, quando todos se ajudam chegam mais longe e isso torna a joranada melhor para quem ajuda e para quem é ajudado.
+- **Faça um PR**: Encontrou um erro? Algo que pode ser melhorado? Faça um Pull Request que vamos avaliar, discutir e atualizar o material. Todos cometem erros e tudo pode ser melhorado, é com a ajuda da Comunidade que construímos coisas cada vez melhor.
+- **Revisão de PR**: Tem um PR que outra pessoa fez em aberto? Clone-o, teste, opine. Ajude a avaliar e revisar PRs. Toda discussão útil é bem-vinda e nos ajuda a melhorar.
