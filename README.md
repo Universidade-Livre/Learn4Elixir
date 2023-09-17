@@ -125,6 +125,10 @@ Você já pode começar os desafios agora mesmo fazendo o seu fork. Logo mais vo
 
 ## Quem somos nós?
 
+<p align="justify">
+O Learn4Elixir é mantido por uma equipe de entusiastas da programação funcional e da linguagem Elixir. Eles trabalham em conjunto para tornar esses conceitos acessíveis a todos os interessados. Para isso ser alcançado foi necessário diversas atividades, desde da ideia, execução do evento, criação de conteúdo educacional, que inclui tutoriais e exercícios até comunicação institucional e outras atividades. Além disso, uma equipe de suporte está disponível para oferecer orientação e assistência aos alunos, garantindo uma jornada de aprendizado produtiva. Isso tudo junto foi executado por essa equipe maravilhosa que trabalhou unida e assumiu responsabilidades como um time para fazer o evento acontecer.
+</p>
+
 <table align="center">
   <tr>
     <td align="center"><a href="https://github.com/Camilotk"><img src="https://avatars.githubusercontent.com/u/30880723?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Camilo de Azevedo</b></sub></a><br /> <a href="#maintenance-Camilotk" title="Maintenance">🚧</a> </td>
