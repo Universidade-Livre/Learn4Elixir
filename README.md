@@ -125,6 +125,17 @@ Você já pode começar os desafios agora mesmo fazendo o seu fork. Logo mais vo
 
 ## Quem somos nós?
 
-...
+<table align="center">
+  <tr>
+    <td align="center"><a href="https://github.com/Camilotk"><img src="https://avatars.githubusercontent.com/u/30880723?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Camilo de Azevedo</b></sub></a><br /> <a href="#maintenance-Camilotk" title="Maintenance">🚧</a> </td>
+    <td align="center"><a href="https://github.com/mateusrovedaa"><img src="https://avatars.githubusercontent.com/u/22747307?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mateus Roveda</b></sub></a><br /><a href="#maintenance-mateusroveda" title="Maintenance">🚧</a> </td>
+    <td align="center"><a href="https://github.com/adolfont"><img src="https://avatars.githubusercontent.com/u/79562?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adolfo Neto</b></sub></a><br /><a href="#content-adolfo" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/wesleyscheifer77"><img src="https://avatars.githubusercontent.com/u/61853141?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Wesley Scheifer</b></sub></a><br /><a href="#content-wesley" title="Content">🖋</a></td>
+    <td align="center"><a href="https://github.com/douglastofoli"><img src="https://avatars.githubusercontent.com/u/3953162?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Douglas Tofoli</b></sub></a><br /><a href="#mentoring-douglas" title="Mentoring">🧑‍🏫</a></td>
+    <td align="center"><a href="https://github.com/Cyytrus"><img src="https://avatars.githubusercontent.com/u/83558749?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Paulo Castro</b></sub></a><br /><a href="#mentoring-paulo" title="Mentoring">🧑‍🏫</a></td>
+    <td align="center"><a href="https://github.com/OtavioSC"><img src="https://avatars.githubusercontent.com/u/54047040?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Otávio Carmo</b></sub></a><br /><a href="#mentoring-otavio" title="Mentoring">🧑‍🏫</a></td>
+  </tr>
+</table>
+
 
 ## Como nos ajudar?
