@@ -122,7 +122,29 @@ Você já pode começar os desafios agora mesmo fazendo o seu fork. Logo mais vo
 
 ## Instalando Elixir e o Livebook
 
-...
+> TODO:
+
+<strong>🐧 Linux Ubuntu:</strong>
+<details>
+	
+> TODO:
+
+</details>
+
+<strong>🍎 MacOS:</strong>
+<details>
+
+> TODO:
+
+</details>
+
+
+<strong>🪟 Windows:</strong>
+<details>
+
+> TODO:
+
+</details>
 
 ## Quem somos nós?
 
