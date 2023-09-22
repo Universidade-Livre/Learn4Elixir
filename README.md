@@ -114,7 +114,7 @@ Começar a aprender com o Learn4Elixir é muito mamão com açúcar, é só:
 2. Adicione `hacktoberfest` nos "topics" (tópicos) do seu fork. Caso contrário os PRs não vão contar.
 3. [Instale a linguagem Elixir](#)
 4. Abra o `src/Chapter1.exs` e começe a resolver os desafios.
-5. Após terminar as soluções do capítulo (ou até mesmo se tiver dificuldade e precisar de ajuda) você pode abrir um PR **para o seu fork** com a solução e mencionar @[douglastofoli](https://github.com/douglastofoli), @[cyytrus](https://github.com/cyytrus), @[digzom](https://github.com/digzom), @... ou @[OtavioSC](https://github.com/otaviosc) que vamos ajudá-lo com a revisão de suas soluções.
+5. Após terminar as soluções do capítulo (ou até mesmo se tiver dificuldade e precisar de ajuda) você pode abrir um PR **para o seu fork** com a solução e mencionar @[douglastofoli](https://github.com/douglastofoli), @[cyytrus](https://github.com/cyytrus), @[digzom](https://github.com/digzom) ou @[OtavioSC](https://github.com/otaviosc) que vamos ajudá-lo com a revisão de suas soluções.
 
 > **Importante!** Você deve abrir o PR para o seu próprio fork desse repositório. Desta forma cada um pode receber os pontos para o evento e manter seus arquivos individualmente.
 
@@ -139,9 +139,12 @@ aprendizado produtiva. Isso tudo junto foi executado por essa equipe maravilhosa
     <td align="center"><a href="https://github.com/mateusrovedaa"><img src="https://avatars.githubusercontent.com/u/22747307?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mateus Roveda</b></sub></a><br /><a href="#maintenance-mateusroveda" title="Maintenance">🚧</a> </td>
     <td align="center"><a href="https://github.com/adolfont"><img src="https://avatars.githubusercontent.com/u/79562?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adolfo Neto</b></sub></a><br /><a href="#content-adolfo" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/wesleyscheifer77"><img src="https://avatars.githubusercontent.com/u/61853141?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Wesley Scheifer</b></sub></a><br /><a href="#content-wesley" title="Content">🖋</a></td>
+  </tr>
+  <tr>
     <td align="center"><a href="https://github.com/douglastofoli"><img src="https://avatars.githubusercontent.com/u/3953162?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Douglas Tofoli</b></sub></a><br /><a href="#mentoring-douglas" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://github.com/Cyytrus"><img src="https://avatars.githubusercontent.com/u/83558749?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Paulo Castro</b></sub></a><br /><a href="#mentoring-paulo" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://github.com/OtavioSC"><img src="https://avatars.githubusercontent.com/u/54047040?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Otávio Carmo</b></sub></a><br /><a href="#mentoring-otavio" title="Mentoring">🧑‍🏫</a></td>
+     <td align="center"><a href="https://github.com/digzom"><img src="https://avatars.githubusercontent.com/u/62157839?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dickson Melo</b></sub></a><br /><a href="#mentoring-dickson" title="Mentoring">🧑‍🏫</a></td>
   </tr>
 </table>
 
