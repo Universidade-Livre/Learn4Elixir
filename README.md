@@ -231,15 +231,19 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a33d4397-8cfe-453b-8322-a537cbc67aac)
 
 6. Preencha seus dados no formulário da Stripe e confirme.
-7. 
+7.  Volte na página onde criamos o login
 
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/dcd94b30-0624-43bf-97ba-b9b4c5febf06)
+<!-- ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/dcd94b30-0624-43bf-97ba-b9b4c5febf06) -->
 
 
 3. Onde diz "App Name" você deve preencher qual será o nome de sua instância, preencha como achar melhor, nesse caso colocamos "learn4elixir", e onde diz "Password" é onde vai colocar a senha para que somente você possa acessar essa instância. 
 
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/47b21eb2-a34f-4b52-9da0-58ed96fb5b51)
+
+![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/27d12601-db87-48d1-9180-c5763aee0643)
+
+![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/3eed6ee7-e7be-476d-a424-48d41435e42d)
 
 
 </details>
