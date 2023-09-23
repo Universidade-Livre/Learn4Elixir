@@ -253,7 +253,7 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 9. Clique em "launch" e deverá ver essa tela onde será iniciado o processo de subir um livebook na infraestrutura cloud do fly.io.
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/27d12601-db87-48d1-9180-c5763aee0643">
+ <img src="./resources/img/deploy_flyio.png">
 </p>
 
 10. Quando estiver pronto ele vai te mostrar a URL e senha do seu livebook, lembre-se de guardar essas informações em um lugar seguro e de nunca compartilhar sua senha. 
