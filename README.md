@@ -225,7 +225,7 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 3. Antes de continuar temos que configurar nossa opção de pagamento, adicionando um cartão de crédito. Para isso visite [fly.io](https://fly.io/) e acesse o botão "Dashboard".
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/6b22d9d7-157c-4773-92bd-142bf7d98a59">
+ <img src="./resources/img/dashboard_flyio.png">
 </p>
 
 4. Clique em "Billing".
