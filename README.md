@@ -208,7 +208,7 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 <strong>🪂 Fly.io:</strong>
 <details>
 
-> Esse método necessita de um catão de crédito com validade internacional.
+> Esse método necessita de um catão de crédito com validade internacional. O livebook se enquadra no [free tier](https://fly.io/docs/about/pricing/#free-tier) do fly.io, porém é importante que você leia sobre e entenda as limitações desse plano.
 
 1. Acesse o site do Livebook [livebook.dev](https://livebook.dev/#install) e desça até a instalação e clique no botão para acessar o Fly.io.
 
@@ -243,10 +243,6 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 6. Preencha seus dados no formulário da Stripe e confirme.
    
 7.  Volte na página onde criamos o login [fly.io/launch/livebook](https://fly.io/launch/livebook)
-
-
-<!-- ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/dcd94b30-0624-43bf-97ba-b9b4c5febf06) -->
-
 
 8. Preencha o formulário, onde diz "App Name" você deve preencher qual será o nome de sua instância - esse nome deve ser único -, preencha como achar melhor, nesse caso colocamos "learn4elixir", e onde diz "Password" é onde vai colocar a senha para que somente você possa acessar essa instância. 
 
