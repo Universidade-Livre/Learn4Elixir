@@ -187,7 +187,13 @@ $ livebook serve
 <strong>🐋 Docker:</strong>
 <details>
 
-> TODO:
+Caso você possua o Docker instalado na sua máquina e deseja rodar o livebook a partir de uma imagem basta rodar:
+
+```sh
+$ docker run -p 8080:8080 -p 8081:8081 --pull always -u $(id -u):$(id -g) -v $(pwd):/data ghcr.io/livebook-dev/livebook
+```
+
+Para isso *não* é necessário nenhum outro pré-requisito, não é necessário ter Elixir instalado em sua máquina.
 
 </details>
 
