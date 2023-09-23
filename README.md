@@ -270,7 +270,11 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 <strong>🤗 Hugging Face:</strong>
 <details>
 
-> TODO:
+1. Acesse o site do Livebook [livebook.dev](https://livebook.dev/#install) e desça até a instalação e clique no botão para acessar o Hugging Face.
+
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a791ed67-863a-4e07-a743-29bab0b02993">
+</p>
 
 </details>
 
