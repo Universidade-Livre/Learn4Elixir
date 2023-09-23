@@ -247,7 +247,7 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 8. Preencha o formulário, onde diz "App Name" você deve preencher qual será o nome de sua instância - esse nome deve ser único -, preencha como achar melhor, nesse caso colocamos "learn4elixir", e onde diz "Password" é onde vai colocar a senha para que somente você possa acessar essa instância. 
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/47b21eb2-a34f-4b52-9da0-58ed96fb5b51">
+ <img src="./resources/img/form_flyio.png">
 </p>
 
 9. Clique em "launch" e deverá ver essa tela onde será iniciado o processo de subir um livebook na infraestrutura cloud do fly.io.
