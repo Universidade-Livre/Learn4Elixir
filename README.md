@@ -285,20 +285,29 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 
 2.Preencha os dados do perfil, aceite os termos de uso e continue.
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/72f187d4-2261-4431-9e4c-8c0da312bc74)
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/72f187d4-2261-4431-9e4c-8c0da312bc74">
+</p>
 
 > Será enviado um e-mail de confirmação para seu e-mail cadastrado é importante que confirme-o.
 
 3. Na próxima página preencha o nome da instância...
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/d6aa5306-5800-4cf0-ae57-0bf4100bc031)
+
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/d6aa5306-5800-4cf0-ae57-0bf4100bc031">
+</p>
 
 3. Escolha "Livebook", uma máquina da categoria gratuita ("FREE") e adicione a senha de sua instância.
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/40ffbd2d-9cad-4116-8c36-b1da61f65970)
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/40ffbd2d-9cad-4116-8c36-b1da61f65970">
+</p>
 
 3. Por fim escolha se a instância deve ser pública ou privada e clique em "create".
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/10e6aecb-1c43-440b-90c0-f48fdd247530)
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/10e6aecb-1c43-440b-90c0-f48fdd247530">
+</p>
 
 4. Após concluir o build da imagem, clique na aba "container".
 
@@ -306,7 +315,9 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 
 5. Copie o seu token e feche a aba.
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/325cc1b0-507a-4064-a373-a81cecb3895a)
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/325cc1b0-507a-4064-a373-a81cecb3895a">
+</p>
 
 > Caso tenha fechado sem querer esse prompt com as abas, pode abrir ele novamente clicando no botão "Logs" ao lado de "Running".
 > 
