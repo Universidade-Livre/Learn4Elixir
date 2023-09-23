@@ -286,7 +286,7 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 2.Preencha os dados do perfil, aceite os termos de uso e continue.
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/72f187d4-2261-4431-9e4c-8c0da312bc74">
+ <img src="./resources/img/profile_huggin.png">
 </p>
 
 > Será enviado um e-mail de confirmação para seu e-mail cadastrado é importante que confirme-o.
