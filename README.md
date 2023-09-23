@@ -300,6 +300,12 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/10e6aecb-1c43-440b-90c0-f48fdd247530)
 
+4. Após concluir o build da imagem, feche a caixa log.
+
+![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/b322eadf-9d4f-4e71-910c-5ed0f78372d1)
+
+5. Acesse a instância com sua senha e terá acesso a um livebook rodando na infraestrutura da Hugging Face.
+
 
 </details>
 
