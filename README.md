@@ -259,7 +259,7 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 10. Quando estiver pronto ele vai te mostrar a URL e senha do seu livebook, lembre-se de guardar essas informações em um lugar seguro e de nunca compartilhar sua senha. 
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/3eed6ee7-e7be-476d-a424-48d41435e42d">
+ <img src="./resources/img/link_flyio.png">
 </p>
 
 11. Acesse a URL, agora você pode acessar esse livebook de qualquer lugar a partir dela, e coloque a sua senha. Se tudo der certo, você já terá acesso ao livebook.
