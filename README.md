@@ -140,7 +140,56 @@ Você já pode começar os desafios agora mesmo fazendo o seu fork. Logo mais vo
 <strong>🍎 MacOS:</strong>
 <details>
 
-> TODO:
+Existem diversas formas para instalar o Elixir em seu macOS, porém, vamos começar com a instalação utilizando o `Homebrew`.
+
+1. Instale o [Homebrew](https://brew.sh/), ele será nosso gerenciador de pacotes.
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+2. Verifique se o Homebrew foi instalado corretamente.
+```sh
+brew --version
+```
+
+3. O `PATH` do Homebrew deve ter sido referenciado em seu arquivo de configuração de shell (`.zshrc` ou `.bashrc`)s. Para conferir, execute `cat .zshrc | grep brew` ou `cat .bashrc | grep brew`. Caso não esteja, por favor, execute o comando abaixo para adicionar ao seu arquivo de configuração.
+```sh
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+```
+> O comando acima vai "*avaliar*" o Homebrew e adicionar o `PATH` dele ao seu arquivo de configuração de shell. 
+ 
+4. Atualize a lista de pacotes.
+```sh
+brew update
+```
+
+5. Instale o Elixir.
+```sh
+brew install elixir
+```
+> Automaticamente tanto o Erlang quanto o Elixir serão instalados utilizando a versão estável mais [recente](https://formulae.brew.sh/formula/elixir#default).
+
+6. Verifique se o Elixir foi instalado corretamente.
+```sh
+elixir --version
+```
+
+7. Vamos atualizar o Rebar e o Hex, ferramentas importantes para o Elixir utilizando `mix`, o gerenciador de dependências instalado junto ao Elixir.
+```sh
+mix do local.rebar --force, local.hex --force
+```
+
+8. Agora vamos instalar o Livebook utilizando o `mix`.
+```sh
+mix escript.install hex livebook
+```
+
+9. Maravilha! Agora o livebook já está instalado. Para testar execute o comando abaixo.
+```sh
+livebook serve
+```
+
+Perfeito! Agora você já tem o Elixir, Erlang e Livebook instalados corretamente. Caso queira instalar o Livebook de outra forma no macOS, recomendo instalar utilizando o [instalador oficial na página do Livebook](https://livebook.dev/#install), basta baixar e instalar normalmente.
 
 </details>
 
