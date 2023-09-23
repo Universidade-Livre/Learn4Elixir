@@ -212,25 +212,36 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 
 1. Acesse o site do Livebook [livebook.dev](https://livebook.dev/#install) e desça até a instalação e clique no botão para acessar o Fly.io.
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a791ed67-863a-4e07-a743-29bab0b02993)
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a791ed67-863a-4e07-a743-29bab0b02993">
+</p>
 
 2. Escolha o login com a conta do Google ou GitHub como for mais conveniente, caso não possua uma conta em nenhum desses serviços será necessário criá-la primeiro.
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/fb1be45e-6983-4d0b-b007-46178c7fbc3b)
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/fb1be45e-6983-4d0b-b007-46178c7fbc3b">
+</p>
 
 3. Antes de continuar temos que configurar nossa opção de pagamento, adicionando um cartão de crédito. Para isso visite [fly.io](https://fly.io/) e acesse o botão "Dashboard".
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/6b22d9d7-157c-4773-92bd-142bf7d98a59)
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/6b22d9d7-157c-4773-92bd-142bf7d98a59">
+</p>
 
 4. Clique em "Billing".
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/fdd433ff-86c0-406e-ae5a-cc3b4ff5330b)
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/fdd433ff-86c0-406e-ae5a-cc3b4ff5330b">
+</p>
 
 5. Vá em "add credit card".
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a33d4397-8cfe-453b-8322-a537cbc67aac)
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a33d4397-8cfe-453b-8322-a537cbc67aac">
+</p>
 
 6. Preencha seus dados no formulário da Stripe e confirme.
+   
 7.  Volte na página onde criamos o login [fly.io/launch/livebook](https://fly.io/launch/livebook)
 
 
@@ -239,15 +250,21 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 
 8. Preencha o formulário, onde diz "App Name" você deve preencher qual será o nome de sua instância - esse nome deve ser único -, preencha como achar melhor, nesse caso colocamos "learn4elixir", e onde diz "Password" é onde vai colocar a senha para que somente você possa acessar essa instância. 
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/47b21eb2-a34f-4b52-9da0-58ed96fb5b51)
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/47b21eb2-a34f-4b52-9da0-58ed96fb5b51">
+</p>
 
 9. Clique em "launch" e deverá ver essa tela onde será iniciado o processo de subir um livebook na infraestrutura cloud do fly.io.
-   
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/27d12601-db87-48d1-9180-c5763aee0643)
+
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/27d12601-db87-48d1-9180-c5763aee0643">
+</p>
 
 10. Quando estiver pronto ele vai te mostrar a URL e senha do seu livebook, lembre-se de guardar essas informações em um lugar seguro e de nunca compartilhar sua senha. 
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/3eed6ee7-e7be-476d-a424-48d41435e42d)
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/3eed6ee7-e7be-476d-a424-48d41435e42d">
+</p>
 
 11. Acesse a URL, agora você pode acessar esse livebook de qualquer lugar a partir dela, e coloque a sua senha. Se tudo der certo, você já terá acesso ao livebook.
 
