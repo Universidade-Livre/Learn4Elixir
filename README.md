@@ -141,15 +141,15 @@ Você já pode começar os desafios agora mesmo fazendo o seu fork. Logo mais vo
 
 1. Faça uma atualização dos seus repositórios e uma atualização dos seus pacotes.
 ```sh
-$ sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 ```
 2. Instale os programas de linha de comando `curl` e `git`caso ainda não os tenha instalados.
 ```sh
-$ sudo apt install git curl -y
+sudo apt install git curl -y
 ```
 3. Adicione os repositórios do RabbitMQ, isso é necessário para termos uma versão mais recente de Elixir. Será necessário dar `Enter` em determinada parte do comando para confirmar que você quer realmente adicionar esse repositório.
 ```sh
-$ sudo add-apt-repository ppa:rabbitmq/rabbitmq-erlang
+sudo add-apt-repository ppa:rabbitmq/rabbitmq-erlang
 ```
 > **Importante!** Esse é um passo necessário, pois a versão de Elixir nos repositórios do Ubuntu atualmente é a `v1.12.2` e o livebook precisa de Elixir na versão `v1.14.2` ou superior para rodar corretamente.
 4. Atualize novamente os repositórios para receber as atualizações com as versões de Elixir e Erlang nos repositórios do RabbitMQ.
