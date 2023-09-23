@@ -306,22 +306,24 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 3. Por fim escolha se a instância deve ser pública ou privada e clique em "create".
 
 <p align="center">
- <img src="./resources/img/form_1_huggin.png">
+ <img src="./resources/img/form_3_huggin.png">
 </p>
 
 4. Após concluir o build da imagem, clique na aba "container".
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/95739850-2496-4980-99a1-ee4918ac8120)
+<p align="center">
+ <img src="./resources/img/term_1_huggin.png">
+</p>
 
 5. Copie o seu token e feche a aba.
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/325cc1b0-507a-4064-a373-a81cecb3895a">
+ <img src="./resources/img/term_2_huggin.png">
 </p>
 
 > Caso tenha fechado sem querer esse prompt com as abas, pode abrir ele novamente clicando no botão "Logs" ao lado de "Running".
 > 
-> ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/03ff38bd-d74e-4622-bbd5-7551dddaaca5)
+> ![image](./resources/img/term_3_huggin.png)
 
 
 5. Cole o seu token e autentique, terá acesso a um livebook rodando na infraestrutura da Hugging Face.
