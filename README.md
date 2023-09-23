@@ -294,19 +294,19 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 3. Na próxima página preencha o nome da instância...
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/d6aa5306-5800-4cf0-ae57-0bf4100bc031">
+ <img src="./resources/img/form_1_huggin.png">
 </p>
 
 3. Escolha "Livebook", uma máquina da categoria gratuita ("FREE") e adicione a senha de sua instância.
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/40ffbd2d-9cad-4116-8c36-b1da61f65970">
+ <img src="./resources/img/form_2_huggin.png">
 </p>
 
 3. Por fim escolha se a instância deve ser pública ou privada e clique em "create".
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/10e6aecb-1c43-440b-90c0-f48fdd247530">
+ <img src="./resources/img/form_1_huggin.png">
 </p>
 
 4. Após concluir o build da imagem, clique na aba "container".
