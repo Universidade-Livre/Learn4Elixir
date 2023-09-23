@@ -231,7 +231,7 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 4. Clique em "Billing".
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/fdd433ff-86c0-406e-ae5a-cc3b4ff5330b">
+ <img src="./resources/img/billing_flyio.png">
 </p>
 
 5. Vá em "add credit card".
