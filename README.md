@@ -231,19 +231,25 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a33d4397-8cfe-453b-8322-a537cbc67aac)
 
 6. Preencha seus dados no formulário da Stripe e confirme.
-7.  Volte na página onde criamos o login
+7.  Volte na página onde criamos o login [fly.io/launch/livebook](https://fly.io/launch/livebook)
 
 
 <!-- ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/dcd94b30-0624-43bf-97ba-b9b4c5febf06) -->
 
 
-3. Onde diz "App Name" você deve preencher qual será o nome de sua instância, preencha como achar melhor, nesse caso colocamos "learn4elixir", e onde diz "Password" é onde vai colocar a senha para que somente você possa acessar essa instância. 
+8. Preencha o formulário, onde diz "App Name" você deve preencher qual será o nome de sua instância - esse nome deve ser único -, preencha como achar melhor, nesse caso colocamos "learn4elixir", e onde diz "Password" é onde vai colocar a senha para que somente você possa acessar essa instância. 
 
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/47b21eb2-a34f-4b52-9da0-58ed96fb5b51)
 
+9. Clique em "launch" e deverá ver essa tela onde será iniciado o processo de subir um livebook na infraestrutura cloud do fly.io.
+   
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/27d12601-db87-48d1-9180-c5763aee0643)
 
+10. Quando estiver pronto ele vai te mostrar a URL e senha do seu livebook, lembre-se de guardar essas informações em um lugar seguro e de nunca compartilhar sua senha. 
+
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/3eed6ee7-e7be-476d-a424-48d41435e42d)
+
+11. Acesse a URL, agora você pode acessar esse livebook de qualquer lugar a partir dela, e coloque a sua senha. Se tudo der certo, você já terá acesso ao livebook.
 
 
 </details>
