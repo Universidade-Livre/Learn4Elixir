@@ -273,8 +273,33 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 1. Acesse o site do Livebook [livebook.dev](https://livebook.dev/#install) e desça até a instalação e clique no botão para acessar o Hugging Face.
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a791ed67-863a-4e07-a743-29bab0b02993">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/4ded65e2-1e98-4ba5-b2f5-5e5bfa690d35">
 </p>
+
+
+2. Clique em "sign in" caso ainda não tenha uma conta (faça login caso tenha).
+
+<p align="center">
+ <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/44333946-3a92-46c7-8e1a-f3492390f32f">
+</p>
+
+2.Preencha os dados do perfil, aceite os termos de uso e continue.
+
+![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/72f187d4-2261-4431-9e4c-8c0da312bc74)
+
+> Será enviado um e-mail de confirmação para seu e-mail cadastrado é importante que confirme-o.
+
+3. Na próxima página preencha o nome da instância...
+![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/d6aa5306-5800-4cf0-ae57-0bf4100bc031)
+
+3. Escolha "Livebook", uma máquina da categoria gratuita ("FREE") e adicione a senha de sua instância.
+
+![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/40ffbd2d-9cad-4116-8c36-b1da61f65970)
+
+3. Por fim escolha se a instância deve ser pública ou privada e clique em "create".
+
+![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/10e6aecb-1c43-440b-90c0-f48fdd247530)
+
 
 </details>
 
