@@ -174,12 +174,12 @@ brew install elixir
 elixir --version
 ```
 
-7. Vamos atualizar o Rebar e o Hex, ferramentas importantes para o Elixir utilizando `mix`, o gerenciador de dependências instalado junto ao Elixir.
+7. Vamos rodar um comando (dois, separados por `,`) para atualizar o Rebar e Hex que são ferramentas importantes para Elixir usando o `mix` que é o gerenciador de dependências que foi instalado junto com Elixir.
 ```sh
 mix do local.rebar --force, local.hex --force
 ```
 
-8. Agora vamos instalar o Livebook utilizando o `mix`.
+8. E agora vamos instalar o livebook usando o `mix`, no final da instalação ele vai perguntar `[y/N]` ou `[s/N]` (dependendo de como seu sistema está configurado) e você precisa confirmar com `y` ou `s` de acordo para confirmar que você deseja instalar o pacote.
 ```sh
 mix escript.install hex livebook
 ```
@@ -189,7 +189,7 @@ mix escript.install hex livebook
 livebook serve
 ```
 
-Perfeito! Agora você já tem o Elixir, Erlang e Livebook instalados corretamente. Caso queira instalar o Livebook de outra forma no macOS, recomendo instalar utilizando o [instalador oficial na página do Livebook](https://livebook.dev/#install), basta baixar e instalar normalmente.
+Perfeito! Agora você já tem o Elixir, Erlang e Livebook instalados corretamente. Caso queira instalar o Livebook de outra forma no macOS, recomendo instalar utilizando o [instalador oficial na página do Livebook](https://livebook.dev/#install), basta baixar e instalar normalmente. Caso deseje utilizar múltiplas versões do Elixir, recomendo acessar o guia de instalação com o asdf.
 
 </details>
 
@@ -375,6 +375,86 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 
 5. Cole o seu token e autentique, terá acesso a um livebook rodando na infraestrutura da Hugging Face.
 
+
+</details>
+
+<strong>🚣‍♀️ ASDF:</strong>
+<details>
+
+O [asdf](https://asdf-vm.com/) é um gerenciador de versões para múltiplas linguagens de programação, incluindo Elixir e Erlang. Caso você queira gerenciar múltiplas versões de sua instalação, recomendamos fortemente que utilize-o.
+
+1. Instale as dependências necessárias.
+
+| Sistema Operacional | Gerenciador de Pacotes | Comando                          |
+|---------------------|------------------------|----------------------------------|
+| Linux               | Aptitude               | apt install curl git             |
+| Linux               | DNF                    | dnf install curl git             |
+| Linux               | Pacman                 | pacman -S curl git               |
+| Linux               | Zypper                 | zypper install curl git          |
+| macOS               | Homebrew               | brew install coreutils curl git  |
+| macOS               | Spack                  | spack install coreutils curl git |
+
+2. Instale o asdf seguindo as instruções do [site oficial](https://asdf-vm.com/guide/getting-started.html). Recomendo utilizar a versão `Bash & Git` ou `Zsh & Git`.
+```sh
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
+
+# Bash & Git
+echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc
+echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc # Apenas para as completions
+
+# Zsh & Git
+echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.zshrc
+```
+
+3. Instale o [plugin do Erlang](https://github.com/asdf-vm/asdf-erlang).
+```sh
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+
+# .bashrc
+echo -e '\n export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"' >> ~/.bashrc
+
+# .zshrc
+echo -e '\n export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"' >> ~/.zshrc
+
+# Instalando a versão mais recente do Erlang
+asdf install erlang latest
+
+# Definindo-a como a versão a ser utilizada
+asdf global erlang latest
+```
+
+4. Instale o [plugin do Elixir](https://github.com/asdf-vm/asdf-elixir).
+```sh
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+
+# Instalando a versão mais recente do Elixir
+asdf install elixir latest
+
+# Definindo-a como a versão a ser utilizada
+asdf global elixir latest
+```
+
+5. Para verificar a versão de seu Elixir, execute o comando abaixo.
+```sh
+elixir --version
+```
+
+6. Vamos rodar um comando (dois, separados por `,`) para atualizar o Rebar e Hex que são ferramentas importantes para Elixir usando o `mix` que é o gerenciador de dependências que foi instalado junto com Elixir.
+```sh
+mix do local.rebar --force, local.hex --force
+```
+
+7. E agora vamos instalar o livebook usando o `mix`, no final da instalação ele vai perguntar `[y/N]` ou `[s/N]` (dependendo de como seu sistema está configurado) e você precisa confirmar com `y` ou `s` de acordo para confirmar que você deseja instalar o pacote.
+```sh
+mix escript.install hex livebook
+```
+
+8. Maravilha! Agora o livebook já está instalado. Para testar execute o comando abaixo.
+```sh
+livebook serve
+```
+
+Teve algum problema com a instalação? Não se esqueça de checar o [guia oficial do asdf](https://asdf-vm.com/guide/getting-started.html)! Teve algum outro problema específico? Abra uma [issue](https://github.com/Universidade-Livre/Learn4Elixir/issues/new) e teremos o prazer em auxiliar!
 
 </details>
 
