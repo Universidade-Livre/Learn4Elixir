@@ -126,7 +126,7 @@ Você já pode começar os desafios agora mesmo fazendo o seu fork. Logo mais vo
 <details>
 
 1. Acesse o site do Livebook [livebook.dev](https://livebook.dev/#install) e desça até a instalação e clique no botão para baixar a versão para Windows.
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/f0877f12-924c-483f-b8a6-e88bd7c9594a)
+![image](./resources/img/instalador_windows.png)
 2. Após concluir, acesse a pasta onde foi baixado o arquivo. Clique com o botão direito sobre o arquivo e "Abrir".
 > Dependendo de qual a configuração de antivírus do seu computador o Windows Defender pode tentar barrar a instalação nesse caso clique em "Mais informações" (ou "More info" se seu Windows está configurado em Inglês) e então "Executar mesmo assim" ("Run anyway" caso inglês).
 3. Ele vai mostrar o caminho onde serão instalados os arquivos de instalação do Livebook. Caso queira mude, quando estiver de acordo, clique "Próximo" (ou "Next" caso Inglês).
