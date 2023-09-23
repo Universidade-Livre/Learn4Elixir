@@ -184,6 +184,27 @@ $ livebook serve
  
 </details>
 
+<strong>🐋 Docker:</strong>
+<details>
+
+> TODO:
+
+</details>
+
+<strong>🪂 Fly.io:</strong>
+<details>
+
+> TODO:
+
+</details>
+
+<strong>🤗 Hugging Face:</strong>
+<details>
+
+> TODO:
+
+</details>
+
 ## Quem somos nós?
 
 <p align="justify">
