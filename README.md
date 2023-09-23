@@ -237,7 +237,7 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 5. Vá em "add credit card".
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a33d4397-8cfe-453b-8322-a537cbc67aac">
+ <img src="./resources/img/add_card_flyio.png">
 </p>
 
 6. Preencha seus dados no formulário da Stripe e confirme.
