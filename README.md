@@ -219,7 +219,7 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 2. Escolha o login com a conta do Google ou GitHub como for mais conveniente, caso não possua uma conta em nenhum desses serviços será necessário criá-la primeiro.
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/fb1be45e-6983-4d0b-b007-46178c7fbc3b">
+ <img src="./resources/img/cadastro_flyio.png">
 </p>
 
 3. Antes de continuar temos que configurar nossa opção de pagamento, adicionando um cartão de crédito. Para isso visite [fly.io](https://fly.io/) e acesse o botão "Dashboard".
