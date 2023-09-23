@@ -213,7 +213,7 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 1. Acesse o site do Livebook [livebook.dev](https://livebook.dev/#install) e desça até a instalação e clique no botão para acessar o Fly.io.
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a791ed67-863a-4e07-a743-29bab0b02993">
+ <img src="./resources/img/acessar_flyio.png">
 </p>
 
 2. Escolha o login com a conta do Google ou GitHub como for mais conveniente, caso não possua uma conta em nenhum desses serviços será necessário criá-la primeiro.
