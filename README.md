@@ -154,32 +154,32 @@ $ sudo add-apt-repository ppa:rabbitmq/rabbitmq-erlang
 > **Importante!** Esse é um passo necessário, pois a versão de Elixir nos repositórios do Ubuntu atualmente é a `v1.12.2` e o livebook precisa de Elixir na versão `v1.14.2` ou superior para rodar corretamente.
 4. Atualize novamente os repositórios para receber as atualizações com as versões de Elixir e Erlang nos repositórios do RabbitMQ.
 ```sh
-$ sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 ```
 5. Instale Elixir (Isso irá instalar o erlang como dependência!)
 ```sh
-$ sudo apt install elixir -y
+sudo apt install elixir -y
 ```
 6. Precisamos também instalar algumas bibliotecas erlang para que possamos instalar o livebook com sucesso.
 ```sh
-$ sudo apt install erlang-inets erlang-os-mon erlang-runtime-tools erlang-ssl erlang-xmerl erlang-dev erlang-parsetools -y
+sudo apt install erlang-inets erlang-os-mon erlang-runtime-tools erlang-ssl erlang-xmerl erlang-dev erlang-parsetools -y
 ```
 7. Vamos rodar um comando (dois, separados por `,`) para atualizar o Rebar e Hex que são ferramentas importantes para Elixir usando o `mix` que é o gerenciador de dependências que foi instalado junto com Elixir.
 ```sh
-$ mix do local.rebar --force, local.hex --force
+mix do local.rebar --force, local.hex --force
 ```
 8. E agora vamos instalar o livebook usando o `mix`, no final da instalação ele vai perguntar `[y/N]` ou `[s/N]` (dependendo de como seu sistema está configurado) e você precisa confirmar com `y` ou `s` de acordo para confirmar que você deseja instalar o pacote.
 ```sh
-$ mix escript.install hex livebook
+mix escript.install hex livebook
 ```
 9. Precisamos adicionar caminho para os pacotes instalados pelo escript na Variável PATH do Ubuntu para que possamos rodá-los como programas.
 ```sh
-$ echo 'export PATH=$PATH:/root/.mix/escripts' >> ~/.bashrc
-$ source ~/.bashrc # ou feche e abra um novo terminal
+echo 'export PATH=$PATH:/root/.mix/escripts' >> ~/.bashrc
+source ~/.bashrc # ou feche e abra um novo terminal
 ```
 10. Rodar o livebook em sua máquina e acessar o link que ele vai lhe dar no navegador.
 ```
-$ livebook serve
+livebook serve
 ```
  
 </details>
@@ -190,7 +190,7 @@ $ livebook serve
 Caso você possua o Docker instalado na sua máquina e deseja rodar o livebook a partir de uma imagem basta rodar:
 
 ```sh
-$ docker run -p 8080:8080 -p 8081:8081 --pull always -u $(id -u):$(id -g) -v $(pwd):/data ghcr.io/livebook-dev/livebook
+docker run -p 8080:8080 -p 8081:8081 --pull always -u $(id -u):$(id -g) -v $(pwd):/data ghcr.io/livebook-dev/livebook
 ```
 
 Para isso *não* é necessário nenhum outro pré-requisito, não é necessário ter Elixir instalado em sua máquina.
