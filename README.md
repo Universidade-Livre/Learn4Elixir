@@ -144,7 +144,7 @@ Você já pode começar os desafios agora mesmo fazendo o seu fork. Logo mais vo
 
 </details>
 
-<strong>🐧 Linux Ubuntu:</strong>
+<strong>🐧 GNU/Linux Ubuntu:</strong>
 <details>
 
 1. Faça uma atualização dos seus repositórios e uma atualização dos seus pacotes.
