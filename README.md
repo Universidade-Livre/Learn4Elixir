@@ -124,96 +124,10 @@ Você já pode começar os desafios agora mesmo fazendo o seu fork. Logo mais vo
 
 <strong>🐧 Linux Ubuntu:</strong>
 <details>
-
-### Elixir
-
-A melhor forma de instalar Elixir e Erlang é utilizando o asdf.
-
-1. Instale o `asdf` (consulte a [documentação oficinal](https://asdf-vm.com/guide/getting-started.html))
-2. Instale o plugin do `asdf` para o Erlang:
-
-```bash
-asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
-```  
-3. Instale o plugin do `asdf` para Elixir:
-   
-```bash
-asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
-```
-
-4. Instale o Erlang com o `asdf` rodando o comando à seguir:
-   
-```bash
-asdf install erlang 25.0
-```
-
-Essa instalação pode demorar.
-
-5. Finalmente, instale o Elixir com o `asdf`:
-
-```bash
-asdf install elixir 15.6
-```
-
-Acima, definimos as versões Erlang 25.0 e Elixir 15.6, mas com o comando `asdf list all <language>` você consegue todas as versões disponíveis para serem baixadas. Cheque a compatibilidade entre as versões de Elixir e Erlang [aqui](https://hexdocs.pm/elixir/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp).
-
-Para definir a versão que será utilizada, rode o comando:
-
-```bash
-asdf local elixir <version>
-```
-
-### Livebook
-
-Para utilizar o Livebook no Linux, nós temos algumas alternativas. Escolha a que mais se adequa ao seu contexto:
-
-<details>
-<summary>Fly.io</summary>
 	
-O processo muito é simples e pode ser feito utilizando o plano gratuito. Entre no site oficial da [Fly.io](https://fly.io/launch/livebook) e siga os passos.
-
-
-Após executados os 3 passos e finalizado o processo de deploy, você terá uma instância do Livebook. 
-
+> TODO:
+> 
 </details>
-
-<details>
-<summary>Docker</summary>
-
-Com essa opção, você sequer precisa de Elixir instalado.
-
-Para executar uma instância com a possibilidade de salvar seus notebooks, utilize o comando a seguir:
-
-```bash
-docker run -p 8080:8080 -p 8081:8081 --pull always -u $(id -u):$(id -g) -v $(pwd):/data ghcr.io/livebook-dev/livebook
-```
-
-Para mais detalhes/variações desse método, consulte a [documentação do repositório do livebook](https://github.com/livebook-dev/livebook#docker).
-
-<details>
-<summary>Escript</summary>
-
-Essa também é uma forma simples de fazer a instalação e rodar o livebook com uma CLI.
-
-1. Com Elixir devidamente instalado, execute os comandos abaixo:
-
-```bash
-mix do local.rebar --force, local.hex --force
-mix escript.install hex livebook
-```
-
-2. Se a instalação do Elixir foi feita com `asdf`, execute `asdf reshim elixir`. Agora o `livebook` está no seu [$PATH](https://en.wikipedia.org/wiki/PATH_(variable))
-3. Execute o `livebook` com o seguinte comando:
-
-```bash
-LIVEBOOK_PASSWORD=<sua-senha> livebook server
-```
-
-Por padrão, a instância pode ser acessada em `http://localhost:8080`. Utilize a senha definida na variável de ambiente `LIVEBOOK_PASSWORD` e divirta-se. :slightly_smiling_face:
-
-</details>
-
-<hr>
 
 <strong>🍎 MacOS:</strong>
 <details>
@@ -221,8 +135,6 @@ Por padrão, a instância pode ser acessada em `http://localhost:8080`. Utilize 
 > TODO:
 
 </details>
-
-<hr>
 
 <strong>🪟 Windows:</strong>
 <details>
