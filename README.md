@@ -125,7 +125,15 @@ Você já pode começar os desafios agora mesmo fazendo o seu fork. Logo mais vo
 <strong>🪟 Windows:</strong>
 <details>
 
-> TODO:
+1. Acesse o site do Livebook [livebook.dev](https://livebook.dev/#install) e desça até a instalação e clique no botão para baixar a versão para Windows.
+![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/f0877f12-924c-483f-b8a6-e88bd7c9594a)
+2. Após concluir, acesse a pasta onde foi baixado o arquivo. Clique com o botão direito sobre o arquivo e "Abrir".
+> Dependendo de qual a configuração de antivírus do seu computador o Windows Defender pode tentar barrar a instalação nesse caso clique em "Mais informações" (ou "More info" se seu Windows está configurado em Inglês) e então "Executar mesmo assim" ("Run anyway" caso inglês).
+3. Ele vai mostrar o caminho onde serão instalados os arquivos de instalação do Livebook. Caso queira mude, quando estiver de acordo, clique "Próximo" (ou "Next" caso Inglês).
+4. A instalação vai começar, isso pode levar alguns minutos.
+>  Ao final da instalação o Windows Firewall caso ativo vai perguntar em quais redes deve permitir a comunicação do `erlang` e `epmd.exe` marque ambos checkboxes (caixas de marcação) em ambos e dê "Permitir acesso" (Allow Access) para ambos.
+5. Dê "fechar" (close) na instalação.
+6. Abra o menu de aplicações, pesquise "Livebook" e clique duas vezes sobre o ícone, isso vai abrir o livebook no navegador que está configurado como padrão no seu Windows.
 
 </details>
 
