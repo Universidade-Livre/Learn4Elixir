@@ -300,11 +300,20 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/10e6aecb-1c43-440b-90c0-f48fdd247530)
 
-4. Após concluir o build da imagem, feche a caixa log.
+4. Após concluir o build da imagem, clique na aba "container".
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/b322eadf-9d4f-4e71-910c-5ed0f78372d1)
+![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/95739850-2496-4980-99a1-ee4918ac8120)
 
-5. Acesse a instância com sua senha e terá acesso a um livebook rodando na infraestrutura da Hugging Face.
+5. Copie o seu token e feche a aba.
+
+![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/325cc1b0-507a-4064-a373-a81cecb3895a)
+
+> Caso tenha fechado sem querer esse prompt com as abas, pode abrir ele novamente clicando no botão "Logs" ao lado de "Running".
+> 
+> ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/03ff38bd-d74e-4622-bbd5-7551dddaaca5)
+
+
+5. Cole o seu token e autentique, terá acesso a um livebook rodando na infraestrutura da Hugging Face.
 
 
 </details>
