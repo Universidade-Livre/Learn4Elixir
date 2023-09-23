@@ -208,19 +208,30 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 <strong>🪂 Fly.io:</strong>
 <details>
 
+> Esse método necessita de um catão de crédito com validade internacional.
+
 1. Acesse o site do Livebook [livebook.dev](https://livebook.dev/#install) e desça até a instalação e clique no botão para acessar o Fly.io.
 
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a791ed67-863a-4e07-a743-29bab0b02993)
 
 2. Escolha o login com a conta do Google ou GitHub como for mais conveniente, caso não possua uma conta em nenhum desses serviços será necessário criá-la primeiro.
 
+![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/fb1be45e-6983-4d0b-b007-46178c7fbc3b)
+
+3. Antes de continuar temos que configurar nossa opção de pagamento, adicionando um cartão de crédito. Para isso visite [fly.io](https://fly.io/) e acesse o botão "Dashboard".
+
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/6b22d9d7-157c-4773-92bd-142bf7d98a59)
+
+4. Clique em "Billing".
 
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/fdd433ff-86c0-406e-ae5a-cc3b4ff5330b)
 
-![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/fb1be45e-6983-4d0b-b007-46178c7fbc3b)
+5. Vá em "add credit card".
 
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/a33d4397-8cfe-453b-8322-a537cbc67aac)
+
+6. Preencha seus dados no formulário da Stripe e confirme.
+7. 
 
 
 ![image](https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/dcd94b30-0624-43bf-97ba-b9b4c5febf06)
