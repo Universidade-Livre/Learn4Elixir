@@ -273,14 +273,14 @@ Para isso *não* é necessário nenhum outro pré-requisito, não é necessário
 1. Acesse o site do Livebook [livebook.dev](https://livebook.dev/#install) e desça até a instalação e clique no botão para acessar o Hugging Face.
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/4ded65e2-1e98-4ba5-b2f5-5e5bfa690d35">
+ <img src="./resources/img/acessar_huggin.png">
 </p>
 
 
 2. Clique em "sign in" caso ainda não tenha uma conta (faça login caso tenha).
 
 <p align="center">
- <img src="https://github.com/Universidade-Livre/Learn4Elixir/assets/30880723/44333946-3a92-46c7-8e1a-f3492390f32f">
+ <img src="./resources/img/cadastro_huggin.png">
 </p>
 
 2.Preencha os dados do perfil, aceite os termos de uso e continue.
