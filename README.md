@@ -189,7 +189,7 @@ mix escript.install hex livebook
 livebook serve
 ```
 
-Perfeito! Agora você já tem o Elixir, Erlang e Livebook instalados corretamente. Caso queira instalar o Livebook de outra forma no macOS, recomendo instalar utilizando o [instalador oficial na página do Livebook](https://livebook.dev/#install), basta baixar e instalar normalmente. Caso deseje utilizar múltiplas versões do Elixir, recomendo acessar o guia de instalação com o asdf.
+Perfeito! Agora você já tem o Elixir, Erlang e Livebook instalados corretamente. Caso queira instalar o Livebook de outra forma no macOS, recomendamos instalar utilizando o [instalador oficial na página do Livebook](https://livebook.dev/#install), basta baixar e instalar normalmente. Caso deseje utilizar múltiplas versões do Elixir, recomendo acessar o guia de instalação com o asdf.
 
 </details>
 
