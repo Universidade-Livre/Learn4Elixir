@@ -485,7 +485,7 @@ aprendizado produtiva. Isso tudo junto foi executado por essa equipe maravilhosa
 
   <tr>
     <td align="center"><a href="https://github.com/lanjoni"><img src="https://avatars.githubusercontent.com/u/91899995?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guto Lanjoni</b></sub></a><br /><a href="#mentoring-guto" title="Mentoring">🧑‍🏫</a></td>
-     <td align="center"><a href="https://github.com/anabastos"><img src="https://avatars.githubusercontent.com/u/10088900?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ana Bastos</b></sub></a><br /><a href="#mentoring-guto" title="Mentoring">🧑‍🏫</a></td>
+     <td align="center"><a href="https://github.com/anabastos"><img src="https://avatars.githubusercontent.com/u/10088900?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ana Bastos</b></sub></a><br /><a href="#mentoring-ana" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://github.com/cherryramatisdev"><img src="https://avatars.githubusercontent.com/u/86631177?v=4&s=100" width="100px;" alt=""/><br /><sub><b>Cherry Ramatis</b></sub></a><br /><a href="#content-cherry" title="Content">🖋</a></td>
   </tr>
 </table>
