@@ -1,4 +1,15 @@
-- Funções anônimas
-- Funções de ordem mais alta
-- O módulo Enum 
-- Pipe
+# Capítulo 2
+
+## Funções sem nome (anônimas)
+
+Agora que você já sabe o que são funções, vamos falar pra você de um tipo de função que pode ser muito útil em alguns casos: as funções sem nome (também chamadas de "funções anônimas").
+
+```elixir
+
+```
+
+## Funções de ordem mais alta
+
+## Section
+
+## O operador Pipe
