@@ -37,7 +37,7 @@ com o apoio da Comunidade pelo Discord.
 </p>
 
 Vão ser:
-- 4 Pull Requests para você receber o prêmio da camiseta dessa edição ou plantar uma árvore.
+- 4 Pull Requests para você receber um kit cortesia do evento ou plantar uma árvore.
 - 4 Pull Requests para você aprender a programar em Elixir.
 - 4 Pull Requests para fazer parte de comunidades de desenvolvedores.
 - 4 Pull Requests para explodir a sua mente com conhecimento de algo novo.
