@@ -13,7 +13,7 @@ uma linguagem de programação que leva seu nome: Elixir. Este repositório busc
 <hr>
 
 <p align="justify">
-Durante o mês de Outubro, ocorre anualmente a Hacktoberfest, um evento no qual os participantes 
+Durante o mês de Outubro, ocorre anualmente a <a href="https://hacktoberfest.com" target="_blank">Hacktoberfest</a>, um evento no qual os participantes 
 são incentivados a contribuir com projetos e comunidades aos quais já pertencem. No entanto, é 
 notório que poucos se aventuram em experiências inéditas durante o evento, deixando de explorar 
 novas possibilidades que poderiam ser fascinantes.
