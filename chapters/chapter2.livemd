@@ -64,11 +64,15 @@ O uso realmente interessante de funções anônimas é em funções de ordem mai
 O [módulo Enum](https://elixirschool.com/pt/lessons/basics/enum) inclui várias funções de ordem mais alta. 
 
 <!-- livebook:{"break_markdown":true} -->
-Por exemplo, a função 'Enum.map/2' recebe, no exemplo abaixo, como entrada uma lista '[10, 20, 3, 45]' e uma função anônima 
+Por exemplo, a função 'Enum.map/2' recebe, no exemplo abaixo, como entrada uma lista '[10, 20, 3, 45]' e uma função anônima de aridade 1 que soma 12 ao valor que receber:
 
 ```elixir
-Enum.map([0, 1, 2, 3], fn(x) -> x + 12 end)
+Enum.map([10, 20, 3, 45], fn(x) -> x + 12 end)
 ```
 
+A função 'Enum.reduce/2' recebe como argumento uma lista, um valor inicial e uma função de aridade 2. No exemplo abaixo, a lista é '[1, 2,3]', o valor inicial é 0 e a função soma um elemento da lista ao acumulador, que passa a ter o valor desta soma. Deste modo, o resultado será '0+1+2+3'. 
 
+```elixir
+Enum.reduce([1, 2, 3], 0, fn(elemento, acumulador) -> elemento + acumulador end)
+```
 ## O operador Pipe
