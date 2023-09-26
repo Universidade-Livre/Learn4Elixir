@@ -75,4 +75,27 @@ A função 'Enum.reduce/2' recebe como argumento uma lista, um valor inicial e u
 ```elixir
 Enum.reduce([1, 2, 3], 0, fn(elemento, acumulador) -> elemento + acumulador end)
 ```
+
+E como seria um exemplo de uma função que retorna outra função?
+```elixir
+defmodule HOF do
+  def incrementador(numero) do
+     fn valor -> valor + numero end
+  end
+end
+```
+
+```elixir
+HOF.incrementador(3)
+```
+
+```elixir
+HOF.incrementador(3)
+```
+
+```elixir
+(HOF.incrementador(3)).(5)
+```
+
+É útil? Não lembro de nenhuma utilidade deste tipo de função.
 ## O operador Pipe
