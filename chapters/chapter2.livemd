@@ -61,4 +61,6 @@ O uso realmente interessante de funções anônimas é em funções de ordem mai
 
 ## O módulo Enum
 
+
+
 ## O operador Pipe
