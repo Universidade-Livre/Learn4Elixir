@@ -6,7 +6,46 @@ Agora que você já sabe o que são funções, vamos falar pra você de um tipo 
 
 <!-- livebook:{"break_markdown":true} -->
 
-Funções anônimas são funções que, como o próprio nome diz, não têm um nome. Elas são definidas apenas dizendo qual
+Funções anônimas são funções que, como o próprio nome diz, não têm um nome. Elas são definidas apenas definindo qual sua entrada (se alguma) e os comandos que vão produzir sua saída.
+
+<!-- livebook:{"break_markdown":true} -->
+
+No exemplo abaixo, definimos uma função que recebe um valor 'num' (que representa um número) e retorna este número adicionado de 1.
+
+```elixir
+fn num -> num + 1 end
+```
+<!-- livebook:{"break_markdown":true} -->
+
+Quando você avalia o código acima, você percebe que Elixir te dá algo como:
+
+```
+#Function<42.125776118/1 in :erl_eval.expr/6>
+```
+
+Este valor, por si só, não tem muita utilidade para nós.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Como então podemos aplicar a função anônima que acabamos de definir a um valor, como 2? Normalmente não fazemos isso em Elixir, mas uma solução é atribuir a função a uma variável. 
+
+```elixir
+f = fn num -> num + 1 end
+```
+
+E só depois chamar a função:
+```elixir
+f.(2)
+```
+
+Perceberam que, para chamar a função 'f', precisamos colocar um ponto antes dos parênteses? É uma característica de Ellxir (que na prática não é um problema).
+
+<!-- livebook:{"break_markdown":true} -->
+Outra forma é fazer a chamada diretamente (também usando o ponto):
+
+```elixir
+(fn num -> num + 1 end).(2)
+```
 
 ## Exercício
 
@@ -17,6 +56,8 @@ Escreva uma função anônima que retorna o argumento que for passado a ela (fun
 ```
 
 ## Funções de ordem mais alta
+
+O uso realmente interessante de 
 
 ## Section
 
