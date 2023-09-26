@@ -52,15 +52,23 @@ Outra forma é fazer a chamada diretamente (também usando o ponto):
 Escreva uma função anônima que retorna o argumento que for passado a ela (função identidade):
 
 ```elixir
-
+fn 
 ```
 
 ## Funções de ordem mais alta
 
-O uso realmente interessante de funções anônimas é em funções de ordem mais alta (_higher-order functions_). Funções de ordem mais alta recebem uma ou mais funções como argumento, ou retorna uma função.
+O uso realmente interessante de funções anônimas é em funções de ordem mais alta (_higher-order functions_). Funções de ordem mais alta recebem uma ou mais funções como argumento, ou retornam uma função.
 
 ## O módulo Enum
 
+O [módulo Enum](https://elixirschool.com/pt/lessons/basics/enum) inclui várias funções de ordem mais alta. 
+
+<!-- livebook:{"break_markdown":true} -->
+Por exemplo, a função 'Enum.map/2' recebe, no exemplo abaixo, como entrada uma lista '[10, 20, 3, 45]' e uma função anônima 
+
+```elixir
+Enum.map([0, 1, 2, 3], fn(x) -> x + 12 end)
+```
 
 
 ## O operador Pipe
