@@ -4,6 +4,14 @@
 
 Agora que você já sabe o que são funções, vamos falar pra você de um tipo de função que pode ser muito útil em alguns casos: as funções sem nome (também chamadas de "funções anônimas").
 
+<!-- livebook:{"break_markdown":true} -->
+
+Funções anônimas são funções que, como o próprio nome diz, não têm um nome. Elas são definidas apenas dizendo qual
+
+## Exercício
+
+Escreva uma função anônima que retorna o argumento que for passado a ela (função identidade):
+
 ```elixir
 
 ```
