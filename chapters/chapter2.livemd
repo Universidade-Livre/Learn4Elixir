@@ -57,8 +57,8 @@ Escreva uma função anônima que retorna o argumento que for passado a ela (fun
 
 ## Funções de ordem mais alta
 
-O uso realmente interessante de 
+O uso realmente interessante de funções anônimas é em funções de ordem mais alta (_higher-order functions_). Funções de ordem mais alta recebem uma ou mais funções como argumento, ou retorna uma função.
 
-## Section
+## O módulo Enum
 
 ## O operador Pipe
