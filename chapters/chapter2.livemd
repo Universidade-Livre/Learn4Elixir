@@ -137,4 +137,23 @@ defmodule Matematica do
 end
 ```
 
+Vamos supor que eu queira ter uma função auxiliar, uma função que é usada apenas pelas outras funções do módulo. Este é o caso em que definimos uma função previada e para isso, em vez de 'def', usamos 'defp'.
 
+```elixir
+defmodule Matematica do
+  def media(num1, num2) do
+      (num1+num2)/2
+  end
+
+  def fatorial(num) when num>0 do
+     fatorial(num,1)
+  end
+  def fatorial(_num)  do
+     :error
+  end
+  defp fatorial(num, num) do
+    num
+  end
+  defp fatorial(num, ) do
+    
+end
