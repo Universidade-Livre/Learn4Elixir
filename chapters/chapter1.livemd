@@ -660,39 +660,42 @@ Em Elixir, você pode descobrir a aridade de uma função usando o operador /, q
 ### Função sem Argumentos
 
 ```elixir
-defmodule MyModule do
-  def hello do
-    "Hello, World!"
-  end
-end
+iex> defmodule MyModule do
+...>  def hello do
+...>    "Hello, World!"
+...>  end
+...> end
 
-MyModule.hello() # Chama a função sem argumentos
+iex> MyModule.hello() 
+# Chama a função sem argumentos
 ```
 Neste exemplo, a função hello/0 não tem argumentos, então sua aridade é 0.
 
 ### Função com um Argumento
 
 ```elixir
-defmodule MyModule do
-  def double(x) do
-    x * 2
-  end
-end
+iex> defmodule MyModule do
+...>  def double(x) do
+...>    x * 2
+...>  end
+...> end
 
-MyModule.double(5) # Chama a função com um argumento
+iex> MyModule.double(5) 
+# Chama a função com um argumento
 ```
 Neste exemplo, a função double/1 recebe um argumento, então sua aridade é 1.
 
 ### Função com Dois Argumentos
 
 ```elixir
-defmodule MyModule do
-  def add(x, y) do
-    x + y
-  end
-end
+iex> defmodule MyModule do
+...>  def add(x, y) do
+...>    x + y
+...>  end
+...> end
 
-MyModule.add(3, 4) # Chama a função com dois argumentos
+iex> MyModule.add(3, 4) 
+# Chama a função com dois argumentos
 ```
 
 Neste exemplo, a função add/2 recebe dois argumentos, então sua aridade é 2.
@@ -702,15 +705,15 @@ A aridade de uma função é importante para garantir que você chame a função
 Por exemplo:
 
 ```elixir
-defmodule Math do
-  def add(a, b) when is_number(a) and is_number(b) do
-    a + b
-  end
+iex> defmodule Math do
+...>  def add(a, b) when is_number(a) and is_number(b) do
+...>    a + b
+...>  end
 
-  def add(a, b, c) when is_number(a) and is_number(b) and is_number(c) do
-    a + b + c
-  end
-end
+...>  def add(a, b, c) when is_number(a) and is_number(b) and is_number(c) do
+...>    a + b + c
+...>  end
+...> end
 ```
 
 Neste exemplo, temos duas cláusulas de função add/2 e add/3 com aridades diferentes. A função add/2 aceita dois argumentos e a função add/3 aceita três. O Elixir escolherá automaticamente qual cláusula executar com base no número de argumentos passados quando a função é chamada.
