@@ -108,81 +108,18 @@ Como você pode ver, a hora mudou de 12:00 em Paris para às 6:00 em Nova York, 
 
 ## Processos em Elixir
 
-Para aprender o que é um processo em Elixir, antes você tem que saber o que é uma função.
 
-Por exemplo, IO.puts/1 é uma função que escreve algo na tela. A função se chama puts, ela está no módulo IO (de entrada I e saída O) e ela recebe um argumento:
-iex(1)> IO.puts("Adolfo")
-Adolfo
-:ok
-Se tudo dá certo ela retorna o átomo :ok.
-Uma função que te permite gerar (tradução talvez imprecisa de spawn, em inglês) é Kernel.spawn/1.
+## Agentes
 
-Novamente, o nome dela é spawn, ela faz parte do módulo Kernel e recebe um argumento.
-Eu consigo fazer
-Kernel.spawn(IO.puts("Adolfo"))
-?
-Não!
-
-Vamos começar simplificando: toda função que faz parte do módulo Kernel não precisa do nome do módulo antes.
-Basta chamar
-spawn(IO.puts("Adolfo"))
-Vai continuar errado mas com menos letras.
-O que Kernel.spawn/1 recebe é uma função de aridade 0, ou seja, que não recebe nenhum argumento.
-Como fazemos isso?
-Assim:
-fn -> 1 end
-A função acima não tem nome (anônima) e retorna 1.
-
-Mas veja na imagem que se você dá um spawn nela, nada de interessante acontece:
-
-Image description
-
-Em primeiro lugar, veja que
-fn -> 1 end
-retornou uma espécie de "código" que identifica a função:
-#Function<43.3316493/0 in :erl_eval.expr/6>
-E
-spawn(fn -> 1 end)
-retornou um PID, um Process IDentifier, um identificador de processo:
-#PID<0.120.0>
-Eu posso atribuir este PID a uma variável:
-iex(1)> pid = spawn(fn -> 1 end)
-#PID<0.110.0>
-E depois perguntar se o processo que foi gerado está vivo:
-iex(2)> Process.alive?(pid)
-false
-Não está pois era uma função muito rápida, que só retornava 1.
-Eu posso, por exemplo, fazer o processo "dormir" por 10 segundos antes de retornar o 1.
-iex(3)> pid = spawn(fn -> Process.sleep(10000); 1 end)
-#PID<0.113.0>
-Se rapidamente eu pergunto se o processo, cujo identificador está na variável pid, está vivo, a resposta é sim.
-iex(4)> Process.alive?(pid)
-true
-Mas se pergunto novamente depois de 10 segundos, a resposta será não.
-iex(5)> Process.alive?(pid)
-false
-Se eu fizer isto aqui
-iex(6)> pid = spawn(fn -> Process.sleep(10000); IO.puts("Adolfo") end)
-#PID<0.117.0>
-Adolfo
-vai demorar 10 segundos para "Adolfo" ser escrito na tela.
-
-Já se eu fizer isto, será imediato para "Adolfo" aparecer na tela.
-iex(7)> pid = spawn(fn -> IO.puts("Adolfo") end)
-Adolfo
-#PID<0.119.0>
-Enfim, isto é somente o básico do básico. 
-
-https://dev.to/elixir_utfpr/o-que-e-um-processo-em-elixir-4j00
-
-- Agentes
-
-Agentes
 Os agentes são simples wrappers em torno do estado. Se tudo o que você deseja de um processo é manter o estado, os agentes são uma ótima opção. Vamos iniciar uma iexsessão dentro do projeto com:
 
+```elixir
 $ iex -S mix
+```
+
 E brinque um pouco com os agentes:
 
+```elixir
 iex> {:ok, agent} = Agent.start_link fn -> [] end
 {:ok, #PID<0.57.0>}
 iex> Agent.update(agent, fn list -> ["eggs" | list] end)
@@ -191,10 +128,13 @@ iex> Agent.get(agent, fn list -> list end)
 ["eggs"]
 iex> Agent.stop(agent)
 :ok
+```
+
 Iniciamos um agente com um estado inicial de lista vazia. Atualizamos o estado do agente, adicionando nosso novo item ao topo da lista. O segundo argumento de Agent.update/3é uma função que recebe o estado atual do agente como entrada e retorna o novo estado desejado. Finalmente, recuperamos a lista inteira. O segundo argumento de Agent.get/3é uma função que recebe o estado como entrada e retorna o valor que Agent.get/3ela mesma retornará. Assim que terminarmos com o agente, podemos ligar Agent.stop/3para encerrar o processo do agente.
 
 A Agent.update/3função aceita como segundo argumento qualquer função que receba um argumento e retorne um valor:
 
+```elixir
 iex> {:ok, agent} = Agent.start_link fn -> [] end
 {:ok, #PID<0.338.0>}
 iex> Agent.update(agent, fn _list -> 123 end)
@@ -207,10 +147,13 @@ iex> Agent.update(agent, fn list -> [:nop | list] end)
 :ok
 iex> Agent.get(agent, fn content -> content end)
 [:nop, 12, %{a: 123}]
+```
+
 Como você pode ver, podemos modificar o estado do agente da maneira que quisermos. Portanto, provavelmente não queremos acessar a API do agente em muitos locais diferentes do nosso código. Em vez disso, queremos encapsular todas as funcionalidades relacionadas ao Agente em um único módulo, que chamaremos de KV.Bucket. Antes de implementá-lo, vamos escrever alguns testes que irão delinear a API exposta pelo nosso módulo.
 
 Crie um arquivo em test/kv/bucket_test.exs(lembre-se da .exsextensão) com o seguinte:
 
+```elixir
 defmodule KV.BucketTest do
   use ExUnit.Case, async: true
 
@@ -222,6 +165,8 @@ defmodule KV.BucketTest do
     assert KV.Bucket.get(bucket, "milk") == 3
   end
 end
+```
+
 use ExUnit.Caseé responsável por configurar nosso módulo para testes e importar muitas funcionalidades relacionadas a testes, como a test/2macro.
 
 Nosso primeiro teste começa de novo KV.Bucketchamando the start_link/1e passando uma lista vazia de opções. Em seguida, realizamos algumas get/2operações put/3nele, afirmando o resultado.
@@ -230,9 +175,13 @@ Observe também a async: trueopção passada para ExUnit.Case. Esta opção faz 
 
 Assíncrono ou não, nosso novo teste obviamente deve falhar, já que nenhuma funcionalidade está implementada no módulo que está sendo testado:
 
+```elixir
 ** (UndefinedFunctionError) function KV.Bucket.start_link/1 is undefined (module KV.Bucket is not available)
+```
+
 Para corrigir a falha no teste, vamos criar um arquivo lib/kv/bucket.excom o conteúdo abaixo. Sinta-se à vontade para tentar implementar o KV.Bucketmódulo sozinho usando agentes antes de dar uma olhada na implementação abaixo.
 
+```elixir
 defmodule KV.Bucket do
   use Agent
 
@@ -257,6 +206,8 @@ defmodule KV.Bucket do
     Agent.update(bucket, &Map.put(&1, key, value))
   end
 end
+```
+
 O primeiro passo em nossa implementação é chamar use Agent. A maior parte das funcionalidades que aprenderemos neste guia, como GenServere Supervisor, segue este padrão. Para todos eles, a chamada usegera uma child_specfunção com configuração padrão, que será útil quando começarmos a supervisionar os processos no capítulo 4.
 
 Em seguida, definimos uma start_link/1função que efetivamente iniciará o agente. É uma convenção definir uma start_link/1função que sempre aceita uma lista de opções. Não planejamos usar nenhuma opção agora, mas poderemos usar mais tarde. Passamos então para call Agent.start_link/1, que recebe uma função anônima que retorna o estado inicial do Agente.
@@ -270,6 +221,7 @@ Antes de prosseguir e adicionar mais recursos ao KV.Bucket, vamos falar sobre re
 
 Vamos reescrever o caso de teste para usar retornos de chamada:
 
+```elixir
 defmodule KV.BucketTest do
   use ExUnit.Case, async: true
 
@@ -285,18 +237,24 @@ defmodule KV.BucketTest do
     assert KV.Bucket.get(bucket, "milk") == 3
   end
 end
+```
+
 Primeiro definimos um retorno de chamada de configuração com a ajuda da setup/1macro. A setup/1macro define um retorno de chamada que é executado antes de cada teste, no mesmo processo do próprio teste.
 
 Observe que precisamos de um mecanismo para passar o bucketpid do retorno de chamada para o teste. Fazemos isso usando o contexto de teste . Quando retornarmos %{bucket: bucket}do retorno de chamada, o ExUnit mesclará esse mapa no contexto de teste. Como o contexto de teste é um mapa em si, podemos combinar padrões com o bucket fora dele, fornecendo acesso ao bucket dentro do teste:
 
+```elixir
 test "stores values by key", %{bucket: bucket} do
   # `bucket` is now the bucket from the setup block
 end
+```
+
 Você pode ler mais sobre casos ExUnit na ExUnit.Casedocumentação do módulo e mais sobre retornos de chamada em ExUnit.Callbacksdocs .
 
 Outras ações do agente
 Além de obter um valor e atualizar o estado do agente, os agentes nos permitem obter um valor e atualizar o estado do agente em uma chamada de função via Agent.get_and_update/2. Vamos implementar uma KV.Bucket.delete/2função que exclui uma chave do bucket, retornando seu valor atual:
 
+```elixir
 @doc """
 Deletes `key` from `bucket`.
 
@@ -305,20 +263,26 @@ Returns the current value of `key`, if `key` exists.
 def delete(bucket, key) do
   Agent.get_and_update(bucket, &Map.pop(&1, key))
 end
+```
+
 Agora é sua vez de escrever um teste para a funcionalidade acima! Além disso, certifique-se de explorar a documentação do Agentmódulo para aprender mais sobre eles.
 
 Cliente/Servidor em agentes
 Antes de passarmos para o próximo capítulo, vamos discutir a dicotomia cliente/servidor nos agentes. Vamos expandir a delete/2função que acabamos de implementar:
 
+```elixir
 def delete(bucket, key) do
   Agent.get_and_update(bucket, fn dict ->
     Map.pop(dict, key)
   end)
 end
+```
+
 Tudo o que está dentro da função que passamos para o agente acontece no processo do agente. Neste caso, como o processo agente é aquele que recebe e responde às nossas mensagens, dizemos que o processo agente é o servidor. Tudo fora da função está acontecendo no cliente.
 
 Esta distinção é importante. Se houver ações caras a serem realizadas, você deve considerar se será melhor realizar essas ações no cliente ou no servidor. Por exemplo:
 
+```elixir
 def delete(bucket, key) do
   Process.sleep(1000) # puts client to sleep
   Agent.get_and_update(bucket, fn dict ->
@@ -326,6 +290,8 @@ def delete(bucket, key) do
     Map.pop(dict, key)
   end)
 end
+```
+
 Quando uma ação longa é executada no servidor, todas as outras solicitações para esse servidor específico aguardarão até que a ação seja concluída, o que pode causar o tempo limite de alguns clientes.
 
 https://elixir-lang.org/getting-started/mix-otp/agent.html
