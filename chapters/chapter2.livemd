@@ -1,5 +1,7 @@
 # Capítulo 2
 
+Neste capítulo nos aprofundaremos um pouco em funções em Elixir.
+
 ## Funções sem nome (anônimas)
 
 Agora que você já sabe o que são funções, vamos falar pra você de um tipo de função que pode ser muito útil em alguns casos: as funções sem nome (também chamadas de "funções anônimas").
