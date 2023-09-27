@@ -153,11 +153,13 @@ defmodule Matematica do
   def fatorial(_num)  do
      :error
   end
-  defp fatorial(num, num) do
-    num
+  defp fatorial(0, fatorial_atual) do
+    fatorial_atual
   end
-  defp fatorial(num, ) do
-    
+  defp fatorial(num, fatorial_atual) when num > 0 do
+     fatorial(num - 1, fatorial_atual * num)
+  end
+
 end
 
 
