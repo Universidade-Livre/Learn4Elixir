@@ -389,59 +389,83 @@ Por essas razões as listas de palavras-chave são frequentemente usadas para pa
 
 Em Elixir, mapas normalmente são a escolha para armazenamento chave-valor. A diferença entre os mapas e as listas de palavras-chave está no fato de que os mapas permitem chaves de qualquer tipo e não seguem uma ordem. Você pode definir um mapa com a sintaxe %{}:
 
-map = %{:foo => "bar", "hello" => :world}
+```elixir
+iex> map = %{:foo => "bar", "hello" => :world}
 %{:foo => "bar", "hello" => :world}
-map[:foo]
+iex> map[:foo]
 "bar"
-map["hello"]
+iex> map["hello"]
 :world
+```
+
 A partir do Elixir 1.2, variáveis são permitidas como chaves do mapa:
 
-key = "hello"
+```elixir
+iex> key = "hello"
 "hello"
-%{key => "world"}
+iex> %{key => "world"}
 %{"hello" => "world"}
+```
 Se um elemento duplicado é inserido no mapa, este sobrescreverá o valor anterior;
 
-%{:foo => "bar", :foo => "hello world"}
+```elixir
+iex> %{:foo => "bar", :foo => "hello world"}
 %{foo: "hello world"}
+```
+
 Como podemos ver na saída anterior, há uma sintaxe especial para os mapas que contém apenas átomos como chaves:
 
+```elixir
+iex> %{foo: "bar", hello: "world"}
 %{foo: "bar", hello: "world"}
-%{foo: "bar", hello: "world"}
-%{foo: "bar", hello: "world"} == %{:foo => "bar", :hello => "world"}
+iex> %{foo: "bar", hello: "world"} == %{:foo => "bar", :hello => "world"}
 true
+```
+
 Além disso, existe uma sintaxe especial para acessar átomos como chaves:
 
-map = %{foo: "bar", hello: "world"}
+```elixir
+iex> map = %{foo: "bar", hello: "world"}
 %{foo: "bar", hello: "world"}
-map.hello
+iex> map.hello
 "world"
+```
+
 Outra propriedade interessante de mapas é que eles têm sua própria sintaxe para atualizar e acessar átomos como chaves:
 
-map = %{foo: "bar", hello: "world"}
+```elixir
+iex> map = %{foo: "bar", hello: "world"}
 %{foo: "bar", hello: "world"}
-%{map | foo: "baz"}
+iex> %{map | foo: "baz"}
 %{foo: "baz", hello: "world"}
+```
+
 Nota: esta sintaxe funciona apenas para atualizar uma chave que já existe no mapa! Se a chave não existir, um KeyError será gerado.
 
 Para criar uma nova chave, use Map.put/3
 
-map = %{hello: "world"}
+```elixir
+iex> map = %{hello: "world"}
 %{hello: "world"}
-%{map | foo: "baz"}
+iex> %{map | foo: "baz"}
 ** (KeyError) key :foo not found in: %{hello: "world"}
     (stdlib) :maps.update(:foo, "baz", %{hello: "world"})
     (stdlib) erl_eval.erl:259: anonymous fn/2 in :erl_eval.expr/5
     (stdlib) lists.erl:1263: :lists.foldl/3
-Map.put(map, :foo, "baz")
+iex> Map.put(map, :foo, "baz")
 %{foo: "baz", hello: "world"}
+```
 
+### Conjuntos 
+Um conjunto é uma coleção de elementos únicos, onde cada elemento só pode aparecer uma vez. Os conjuntos são úteis quando você precisa garantir que não haja duplicatas em seus dados. Os conjuntos são definidos usando %{} com chaves vazias.
 
+Exemplo de conjunto em Elixir:
 
+```elixir
+iex> meu_conjunto = %{1, 2, 3, 4, 5}
+```
 
-https://elixirschool.com/pt/lessons/basics/collections
-
+As coleções em Elixir são fundamentais para a manipulação e organização de dados em programas. Cada tipo de coleção tem suas próprias operações e métodos específicos que podem ser usados para realizar tarefas como adicionar, remover, consultar e transformar dados. A escolha da coleção apropriada depende das necessidades específicas do seu programa e da natureza dos dados que você está manipulando.
 
 ## Como usar funções
 
