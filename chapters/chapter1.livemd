@@ -467,27 +467,6 @@ iex> meu_conjunto = %{1, 2, 3, 4, 5}
 
 As coleções em Elixir são fundamentais para a manipulação e organização de dados em programas. Cada tipo de coleção tem suas próprias operações e métodos específicos que podem ser usados para realizar tarefas como adicionar, remover, consultar e transformar dados. A escolha da coleção apropriada depende das necessidades específicas do seu programa e da natureza dos dados que você está manipulando.
 
-## Como usar funções
-
-https://elixirschool.com/pt/lessons/basics/functions
-
-Dar exemplos de algumas funções. 
-
-String.
-
-Aridade.
-
-String.capitalize("wesLeY")
-
-String.upcase("wesLeY")
-
-
-String.duplicate("SIM ", 30)
-
-String.upcase/1 String.upcase/2
-
-String.duplicate/2
-
 ## Como definir módulos e funções
 
 Em Elixir, você pode definir módulos e funções para estruturar e organizar seu código de forma eficiente. Vou explicar como definir módulos e funções separadamente.
@@ -540,6 +519,26 @@ Isso chama a função soma do módulo Matematica com os argumentos 3 e 5 e armaz
 
 Essa é a base para definir módulos e funções em Elixir. Lembre-se de que os módulos e funções são essenciais para a programação em Elixir e ajudam a organizar e reutilizar seu código de maneira eficaz.
 
+## Como usar funções
+
+https://elixirschool.com/pt/lessons/basics/functions
+
+Dar exemplos de algumas funções. 
+
+String.
+
+Aridade.
+
+String.capitalize("wesLeY")
+
+String.upcase("wesLeY")
+
+
+String.duplicate("SIM ", 30)
+
+String.upcase/1 String.upcase/2
+
+String.duplicate/2
 
 ## Resolver um problema
 
