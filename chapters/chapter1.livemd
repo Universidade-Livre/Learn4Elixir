@@ -498,8 +498,8 @@ Um módulo em Elixir é usado para agrupar funções relacionadas e variáveis e
 
 ```elixir
 iex> defmodule MinhaApp.MinhaModulo do
-  # Aqui você pode definir funções e variáveis relacionadas a este módulo
-end
+...>  # Aqui você pode definir funções e variáveis relacionadas a este módulo
+...> end
 ```
 
 Lembre-se de que é uma boa prática nomear módulos com letras maiúsculas e usar um estilo de nomeação de palavras separadas por letras maiúsculas, como MinhaApp.MinhaModulo.
@@ -510,18 +510,18 @@ As funções em Elixir são definidas dentro de módulos e são criadas usando a
 
 ```elixir
 iex> def nome_da_funcao(argumentos) do
-  # Corpo da função
-end
+...>  # Corpo da função
+...> end
 ```
 
 Aqui está um exemplo de como definir uma função simples:
 
 ```elixir
 iex> defmodule Matematica do
-  def soma(a, b) do
-    a + b
-  end
-end
+...>  def soma(a, b) do
+...>    a + b
+...>  end
+...> end
 ```
 
 Neste exemplo, criamos um módulo chamado Matematica e definimos uma função chamada soma que aceita dois argumentos a e b e retorna a soma deles.
@@ -532,7 +532,8 @@ Depois de definir uma função, você pode chamá-la passando os argumentos nece
 
 ```elixir
 iex> resultado = Matematica.soma(3, 5)
-IO.puts("A soma é #{resultado}")
+...> IO.puts("A soma é #{resultado}")
+A soma é 8
 ```
 
 Isso chama a função soma do módulo Matematica com os argumentos 3 e 5 e armazena o resultado na variável resultado, que é então impressa na tela.
