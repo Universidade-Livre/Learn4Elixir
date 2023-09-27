@@ -1,4 +1,4 @@
-## Estruturas de controle 
+## Estruturas de Controle 
 
 ### If e Unless
 Existem chances de que você já tenha encontrado if/2 antes, e caso você tenha utilizado Ruby você é familiarizado com unless/2. Em Elixir eles trabalham praticamente da mesma forma porém são definidos como macros, não construtores da linguagem; Você pode encontrar a implementação deles em Kernel module.
