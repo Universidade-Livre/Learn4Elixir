@@ -77,6 +77,7 @@ Enum.reduce([1, 2, 3], 0, fn(elemento, acumulador) -> elemento + acumulador end)
 ```
 
 E como seria um exemplo de uma função que retorna outra função?
+No módulo abaixo nós definimos uma função 'HOF.incrementador/1', que recebe como entrada um número e retorna uma função de aridade 1 que incrementa um outro valor a este número.
 ```elixir
 defmodule HOF do
   def incrementador(numero) do
@@ -84,18 +85,38 @@ defmodule HOF do
   end
 end
 ```
-
+Ou seja, se eu chamar desta forma:
 ```elixir
 HOF.incrementador(3)
 ```
-
-```elixir
-HOF.incrementador(3)
-```
+Eu obtenho uma função que incrementa 3 ao valor que receber. Portanto, se eu passar 5 a esta função, o resultado será 8.
 
 ```elixir
 (HOF.incrementador(3)).(5)
 ```
 
-É útil? Não lembro de nenhuma utilidade deste tipo de função.
+É útil? Não lembro de nenhuma utilidade deste tipo de função em meu código. Mas pode ser útil em bibliotecas bem específicas. 
+
+
 ## O operador Pipe
+
+O operador pipe (representado pelos dois símbolos '|>') é uma forma de chamar funções que permite que as chamadas sejam encadeadas de uma forma elegante e prática.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Por exemplo, em vez de fazer:
+
+
+```elixir
+require Integer
+Enum.all?(Enum.map([1,2,3,4], fn x->x*2 end), &Integer.is_even/1)
+```
+Podemos escrever:
+
+```elixir
+require Integer
+[1,2,3,4]
+|> Enum.map(fn x->x*2 end)
+|> Enum.all?(&Integer.is_even/1)
+```
+
