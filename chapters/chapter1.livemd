@@ -39,7 +39,7 @@ Segundo a equipe de desenvolvedores, a escolha pelo Elixir veio desde o início,
 
 Para eles, a "promessa Elixir" era simples: "acessar o poder da Erlang VM por meio de uma linguagem muito mais moderna e amigável ao usuário.
 
-## O que é um valor?
+## O que é um Valor?
 
 Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade de uma pessoa. Maria o nome desta pessoa e professora sua profissão. O salário mensal de Maria é R$ 5.050,55.
 
