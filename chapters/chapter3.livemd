@@ -1,5 +1,5 @@
 ## Capitulo 3
-Neste capitulo iremos se aprofundar em Estruturas de Controle
+Neste capitulo iremos se aprofundar em Estruturas de Controle.
 ### Estruturas de Controle 
 
 ### If e Unless
