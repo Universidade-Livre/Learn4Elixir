@@ -1,6 +1,43 @@
 ## Elixir e Erlang
+### Historia de Erlang
+BEAM, a máquina virtual de Erlang. Por que a máquina virtual de Erlang se chama BEAM e não EVM?
 
-https://dev.to/elixir_utfpr/o-que-e-o-ecossistema-de-erlang-3km
+Por motivos históricos explicados em A history of Erlang, de Joe Armstrong. Simplificando: por volta de 1990 havia a JAM, Joe Abstract Machine, onde "Joe" refere-se a Joe Armstrong, um dos criadores da linguagem. Em 1993 a equipe do Erlang decidiu criar uma versão mais eficiente da máquina virtual de Erlang. Bogumil (Bogdan) Hausman foi o principal criador desta linguagem e o nome inicial dela era Turbo Erlang. Mas como Turbo era uma marca da empresa Borland, renomearam a máquina para BEAM: Bogdan's Erlang Abstract Machine.
+
+
+O ecossistema de Erlang refere-se ao conjunto de tecnologias, ferramentas, bibliotecas e comunidades relacionadas à linguagem de programação Erlang. Erlang é uma linguagem de programação funcional, concorrente e tolerante a falhas, desenvolvida pela Ericsson no final dos anos 80.
+
+O ecossistema de Erlang é conhecido por sua força em sistemas distribuídos e de tempo real, especialmente em aplicativos de telecomunicações e comunicações em larga escala. Ele oferece recursos poderosos para lidar com concorrência, escalabilidade e resiliência, tornando-o adequado para sistemas altamente disponíveis e que exigem baixa latência.
+
+### Alguns exemplos dentro de Erlang
+Dentro do ecossistema de Erlang, existem várias ferramentas e bibliotecas notáveis que complementam a linguagem. Alguns exemplos incluem:
+
+OTP (Open Telecom Platform): É um conjunto de bibliotecas e frameworks que fornecem abstrações e componentes reutilizáveis para o desenvolvimento de sistemas distribuídos robustos. O OTP inclui o "Supervisor", que gerencia a tolerância a falhas, e o "GenServer", que permite criar processos concorrentes.
+
+Cowboy: É um servidor web assíncrono em Erlang, projetado para lidar com alto tráfego e requisitos de baixa latência. Ele fornece um ambiente para criar aplicativos web escaláveis e de alto desempenho.
+
+RabbitMQ: É um sistema de mensagens assíncronas baseado em Erlang. Ele fornece uma plataforma de mensagens robusta e escalável para integração de sistemas distribuídos.
+
+Elixir: Embora tecnicamente não seja parte do ecossistema de Erlang, vale a pena mencionar o Elixir. Ele é uma linguagem de programação funcional construída em cima da máquina virtual Erlang (BEAM). Elixir aproveita os recursos do ecossistema de Erlang, mas oferece uma sintaxe mais moderna e uma abordagem mais amigável para a programação.
+
+Além disso, o ecossistema de Erlang é suportado por uma comunidade ativa de desenvolvedores, com conferências, fóruns online e recursos educacionais disponíveis para compartilhar conhecimento e promover a colaboração.
+
+Em resumo, o ecossistema de Erlang é um conjunto de recursos, ferramentas e comunidades relacionadas à linguagem de programação Erlang, que enfatiza a construção de sistemas distribuídos, tolerantes a falhas e de alto desempenho.
+
+### Historia de Elixir
+Elixir, é uma linguagem de berço brasileiro, criada, desenvolvida e mantida por José Valim, em 2011, junto com o núcleo de Desenvolvimento e Pesquisa (R&D) da Plataformatec.
+
+De acordo com sua própria definição, o Elixir é "uma linguagem dinâmica e funcional, desenhada para construir aplicações escaláveis e sustentáveis".
+
+A linguagem foi desenvolvida para ser executada sobre a máquina virtual Erlang VM, com o objetivo de ampliar a produtividade e extensibilidade do ecossistema da linguagem Erlang, criada na década de 80 para múltiplos fins.
+
+### Promessas vitais
+
+Um dos casos de maior sucesso de execução do Elixir, dentro do ecossistema web, é a plataforma de comunicação Discord.
+
+Segundo a equipe de desenvolvedores, a escolha pelo Elixir veio desde o início, quando miravam em criar um sistema altamente concorrente em tempo real — o protótipo do Discord foi programado em Elixir, apostando nas promessas que a linguagem fazia ao rodar na máquina virtual.
+
+Para eles, a "promessa Elixir" era simples: "acessar o poder da Erlang VM por meio de uma linguagem muito mais moderna e amigável ao usuário.
 
 ## O que é um valor?
 
@@ -31,8 +68,6 @@ Mas antes de mais nada temos que observar que os dados acima têm tipos diferent
 ## Quais são os tipos de valores?
 
 ### Tipos Básicos
-
-https://elixirschool.com/pt/lessons/basics/basics#tipos-b%C3%A1sicos-3
 
 ### Inteiros
 ```elixir
@@ -197,19 +232,51 @@ iex> greeting
 ```
 Note que no exemplo "Mornin'", a reassociação de greeting para "Mornin'" só acontece dentro de uma função. Fora da função, greeting continua sendo "Hello".
 
-https://elixirschool.com/pt/lessons/basics/pattern_matching
-
 ## O que é uma variável?
 
+Em Elixir, uma variável é um nome que você associa a um valor ou a uma expressão. As variáveis são usadas para armazenar dados que podem ser usados posteriormente em um programa. Aqui estão algumas características importantes das variáveis em Elixir:
+
+Padrão de Imutabilidade: Em Elixir, as variáveis são imutáveis, o que significa que uma vez que você atribui um valor a uma variável, não pode alterá-lo. Em vez disso, quando você "altera" o valor de uma variável, na verdade está criando uma nova variável com um novo valor. Isso é fundamental para o paradigma funcional de Elixir.
+
+Ámbito de Variável: As variáveis têm um escopo local. Isso significa que uma variável definida em uma função ou em um bloco de código só é acessível dentro desse escopo. Isso ajuda a evitar conflitos de nomes de variáveis em partes diferentes de um programa.
+
+Convenções de Nomenclatura: Em Elixir, as variáveis são geralmente escritas em letras minúsculas e podem conter letras, números e sublinhados. Por exemplo, nome, idade, minha_variavel, etc.
+
+Aqui está um exemplo simples de como criar e usar variáveis em Elixir:
+```elixir
+# Definindo uma variável
+nome = "João"
+
+# Usando a variável
+IO.puts("Olá, #{nome}!")
+
+# Tentativa de reatribuir a variável (isso não funcionará)
+nome = "Maria"  # Isso cria uma nova variável chamada "nome" com o novo valor, não modifica a variável original
+```
+No exemplo acima, criamos uma variável chamada nome e a utilizamos em uma saída de texto. Quando tentamos atribuir um novo valor a nome, na verdade estamos criando uma nova variável nome com o valor "Maria", mas a variável original nome permanece inalterada.
+
+Em resumo, as variáveis em Elixir são usadas para armazenar valores imutáveis ​​e são uma parte fundamental da programação funcional em Elixir.
+
 ## Como atribuir um valor a uma variável?
+
+Em Elixir, você pode atribuir um valor a uma variável usando o operador =. Aqui está um exemplo simples de como fazer isso:
+
+
+```elixir
+# Definindo uma variável chamada "nome" com o valor "João"
+nome = "João"
+
+# Usando a variável
+IO.puts("Olá, #{nome}!")
+```
+Neste exemplo, estamos definindo uma variável chamada nome e atribuindo a ela o valor "João". Em seguida, usamos a variável nome em uma saída de texto. A variável nome agora contém o valor "João" e pode ser usada em qualquer lugar dentro do escopo em que foi definida.
+
+Lembre-se de que, em Elixir, as variáveis são imutáveis, o que significa que, uma vez que você atribui um valor a uma variável, não pode alterá-lo. Se você tentar atribuir um novo valor à mesma variável, na verdade estará criando uma nova variável com o novo valor, como mencionado anteriormente.
 
 ## Quais são os tipos de valores que são composições de outros tipos?
 
 https://elixirschool.com/pt/lessons/basics/collections
 
-### Casamento de padrões com coleções
-
-https://elixirschool.com/pt/lessons/basics/pattern_matching
 
 ## Como usar funções
 
