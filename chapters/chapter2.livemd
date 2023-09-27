@@ -124,3 +124,17 @@ Ou seja, o pipe envia o resultado de uma expressão como o primeiro parâmetro p
 
 ## Funções privadas em Módulos
 
+Uma funcionalidade que pode ser útil é a definição de funções privadas em módulos.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Nós vimos anteriormente como definir uma função em um módulo:
+```elixir
+defmodule Matematica do
+  def media(num1, num2) do
+      (num1+num2)/2
+  end
+end
+```
+
+
