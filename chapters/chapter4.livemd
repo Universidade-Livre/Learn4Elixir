@@ -10,27 +10,27 @@ O Elixir tem alguns módulos que trabalham com tempo. Ainda que precise ser nota
 Vamos começar pegando o tempo atual:
 
 ```elixir
-Time.utc_now
+iex> Time.utc_now
 ~T[19:39:31.056226]
 ```
 
 Note que nós vamos ter um sigil que pode ser usado para criar uma struct Time também:
 
 ```elixir
-~T[19:39:31.056226]
+iex> ~T[19:39:31.056226]
 ~T[19:39:31.056226]
 ```
 
 Você pode aprender mais sobre sigil na lição sobre sigils. É fácil acessar partes desta struct:
 
 ```elixir
-t = ~T[19:39:31.056226]
+iex> t = ~T[19:39:31.056226]
 ~T[19:39:31.056226]
-t.hour
+iex> t.hour
 19
-t.minute
+iex> t.minute
 39
-t.day
+iex> t.day
 ** (KeyError) key :day not found in: ~T[19:39:31.056226]
 ```
 
@@ -40,18 +40,18 @@ Mas há uma pegadinha: como você pode ter notado, essa struct contém apenas te
 Ao contrário do Time, a struct Date tem as informações sobre a data sem nenhuma informação sobre o tempo.
 
 ```elixir
-Date.utc_today
+iex> Date.utc_today
 ~D[2028-10-21]
 ```
 
 Mas ele tem algumas funções úteis para trabalhar com datas:
 
 ```elixir
-{:ok, date} = Date.new(2020, 12, 12)
+iex> {:ok, date} = Date.new(2020, 12, 12)
 {:ok, ~D[2020-12-12]}
-Date.day_of_week date
+iex> Date.day_of_week date
 6
-Date.leap_year? date
+iex> Date.leap_year? date
 true
 ```
 
@@ -61,14 +61,14 @@ day_of_week/1 calcula em que dia da semana será a data provida. Nesse caso é u
 Há dois tipos de structs que contém tanto a data e o tempo em apenas um lugar no Elixir. O primeiro dos dois é o NaiveDateTime. A desvantagem é a falta de suporte para fuso horário:
 
 ```elixir
-NaiveDateTime.utc_now
+iex> NaiveDateTime.utc_now
 ~N[2022-01-21 19:55:10.008965]
 ```
 
 Mas ele tem tanto o tempo como a data, então você pode adicionar tempo, por exemplo:
 
 ```elixir
-NaiveDateTime.add(~N[2018-10-01 00:00:14], 30)
+iex> NaiveDateTime.add(~N[2018-10-01 00:00:14], 30)
 ~N[2018-10-01 00:00:44]
 ```
 
@@ -81,7 +81,7 @@ O segundo, como você pode ter adivinhado a partir do título dessa seção, é 
 Também, note que você pode criar um instância de DateTime a partir de um NaiveDateTime, apenas fornecendo o fuso horário:
 
 ```elixir
-DateTime.from_naive(~N[2016-05-24 13:26:08.003], "Etc/UTC")
+iex> DateTime.from_naive(~N[2016-05-24 13:26:08.003], "Etc/UTC")
 {:ok, #DateTime<2016-05-24 13:26:08.003Z>}
 ```
 
@@ -96,17 +96,15 @@ config :elixir, :time_zone_database, Tzdata.TimeZoneDatabase
 Agora, vamos tentar criar um horário no fuso horário de Paris e convertê-lo para o horário de Nova York:
 
 ```elixir
-paris_datetime = DateTime.from_naive!(~N[2019-01-01 12:00:00], "Europe/Paris")
+iex> paris_datetime = DateTime.from_naive!(~N[2019-01-01 12:00:00], "Europe/Paris")
 #DateTime<2019-01-01 12:00:00+01:00 CET Europe/Paris>
-{:ok, ny_datetime} = DateTime.shift_zone(paris_datetime, "America/New_York")
+iex> {:ok, ny_datetime} = DateTime.shift_zone(paris_datetime, "America/New_York")
 {:ok, #DateTime<2019-01-01 06:00:00-05:00 EST America/New_York>}
-ny_datetime
+iex> ny_datetime
 #DateTime<2019-01-01 06:00:00-05:00 EST America/New_York>
 ```
 
 Como você pode ver, a hora mudou de 12:00 em Paris para às 6:00 em Nova York, o que é correto - a diferença no fuso horário entre as duas cidades é de 6 horas.
-
-https://elixirschool.com/pt/lessons/basics/date_time
 
 - Processos em Elixir
 
