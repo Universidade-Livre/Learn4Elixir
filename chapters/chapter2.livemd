@@ -120,6 +120,7 @@ require Integer
 |> Enum.all?(&Integer.is_even/1)
 ```
 
+Ou seja, o pipe envia o resultado de uma expressão como o primeiro parâmetro para a próxima chamada a função. 
 
 ## Funções privadas em Módulos
 
