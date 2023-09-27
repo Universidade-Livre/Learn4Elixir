@@ -31,7 +31,7 @@ De acordo com sua própria definição, o Elixir é "uma linguagem dinâmica e f
 
 A linguagem foi desenvolvida para ser executada sobre a máquina virtual Erlang VM, com o objetivo de ampliar a produtividade e extensibilidade do ecossistema da linguagem Erlang, criada na década de 80 para múltiplos fins.
 
-### Promessas vitais
+### Promessas Vitais
 
 Um dos casos de maior sucesso de execução do Elixir, dentro do ecossistema web, é a plataforma de comunicação Discord.
 
