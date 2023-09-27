@@ -132,7 +132,7 @@ Uma funcionalidade que pode ser útil é a definição de funções privadas em 
 
 Nós vimos anteriormente como definir uma função em um módulo:
 ```elixir
-defmodule Matematica do
+defmodule Mat do
   def media(num1, num2) do
       (num1+num2)/2
   end
@@ -161,7 +161,7 @@ defmodule Matematica do
   end
 
 end
-
+```
 
 ## Links
 
