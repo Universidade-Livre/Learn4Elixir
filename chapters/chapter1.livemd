@@ -1,3 +1,5 @@
+## Capitulo 1 
+Neste Capitulo iremos te introduzir a Elixir.
 ## Elixir e Erlang
 ### Historia de Erlang
 BEAM, a máquina virtual de Erlang. Por que a máquina virtual de Erlang se chama BEAM e não EVM?
