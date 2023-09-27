@@ -245,10 +245,10 @@ Convenções de Nomenclatura: Em Elixir, as variáveis são geralmente escritas 
 Aqui está um exemplo simples de como criar e usar variáveis em Elixir:
 ```elixir
 # Definindo uma variável
-nome = "João"
+iex> nome = "João"
 
 # Usando a variável
-IO.puts("Olá, #{nome}!")
+iex> IO.puts("Olá, #{nome}!")
 
 # Tentativa de reatribuir a variável (isso não funcionará)
 nome = "Maria"  # Isso cria uma nova variável chamada "nome" com o novo valor, não modifica a variável original
@@ -259,21 +259,186 @@ Em resumo, as variáveis em Elixir são usadas para armazenar valores imutáveis
 
 ## Como atribuir um valor a uma variável?
 
-Em Elixir, você pode atribuir um valor a uma variável usando o operador =. Aqui está um exemplo simples de como fazer isso:
-
+Em Elixir, você pode atribuir um valor a uma variável usando o operador "=". Aqui está um exemplo simples de como fazer isso:
 
 ```elixir
 # Definindo uma variável chamada "nome" com o valor "João"
-nome = "João"
+iex> nome = "João"
 
 # Usando a variável
-IO.puts("Olá, #{nome}!")
+iex> IO.puts("Olá, #{nome}!")
 ```
 Neste exemplo, estamos definindo uma variável chamada nome e atribuindo a ela o valor "João". Em seguida, usamos a variável nome em uma saída de texto. A variável nome agora contém o valor "João" e pode ser usada em qualquer lugar dentro do escopo em que foi definida.
 
 Lembre-se de que, em Elixir, as variáveis são imutáveis, o que significa que, uma vez que você atribui um valor a uma variável, não pode alterá-lo. Se você tentar atribuir um novo valor à mesma variável, na verdade estará criando uma nova variável com o novo valor, como mencionado anteriormente.
 
-## Quais são os tipos de valores que são composições de outros tipos?
+## O que é Coleção?
+
+Em Elixir, uma coleção refere-se a uma estrutura de dados que pode armazenar um conjunto de valores. As coleções mais comuns em Elixir incluem listas, tuplas, mapas e conjuntos. Cada uma dessas coleções tem suas próprias características e é adequada para diferentes tipos de operações. Aqui estão algumas informações sobre cada uma delas:
+
+### Listas
+Uma lista é uma coleção ordenada de elementos em que cada elemento é separado por uma vírgula e cercado por colchetes [ ]. As listas em Elixir são imutáveis, o que significa que você não pode alterar uma lista existente, mas pode criar uma nova lista com elementos adicionados ou removidos.
+
+Exemplo de lista em Elixir:
+
+```elixir
+iex> [3.14, :pie, "Apple"]
+[3.14, :pie, "Apple"]
+```
+Elixir implementa listas como listas encadeadas. Isso significa que acessar o tamanho da lista é uma operação que rodará em tempo linear (O(n)). Por essa razão, é normalmente mais rápido inserir um elemento no início (prepending) do que no final (appending):
+
+```elixir
+iex> list = [3.14, :pie, "Apple"]
+[3.14, :pie, "Apple"]
+# Prepending (rápido)
+iex> ["π" | list]
+["π", 3.14, :pie, "Apple"]
+# Appending (lento)
+iex> list ++ ["Cherry"]
+[3.14, :pie, "Apple", "Cherry"]
+```
+
+### Concatenação de listas
+A concatenação de listas usa o operador ++/2.
+
+```elixir
+iex> [1, 2] ++ [3, 4, 1]
+[1, 2, 3, 4, 1]
+```
+
+Uma pequena nota sobre o formato de nome (++/2) usado acima. Em Elixir (e Erlang, sobre o qual Elixir é construído), o nome de uma função ou operador tem dois componentes: o nome em si (neste caso ++) e sua aridade. Aridade é uma parte central quando se fala sobre código Elixir (e Erlang). Indica o número de argumentos que uma dada função aceita (dois, nesse nosso exemplo). Aridade e o nome são combinados com uma barra. Falaremos mais sobre isto mais tarde; este conhecimento irá ajudá-lo a entender a notação por enquanto.
+
+### Subtração de listas
+O suporte para subtração é provido pelo operador --/2; é seguro subtrair um valor que não existe:
+```elixir
+iex> ["foo", :bar, 42] -- [42, "bar"]
+["foo", :bar]
+```
+
+Esteja atento para valores duplicados. Para cada elemento na direita, a primeira ocorrência deste é removida da esquerda:
+
+```elixir
+iex> [1,2,2,3,2,3] -- [1,2,3,2]
+[2, 3]
+```
+Nota: subtração de listas usa comparação estrita para match de valores. Por exemplo:
+
+```elixir
+iex> [2] -- [2.0]
+[2]
+iex> [2.0] -- [2.0]
+[]
+```
+
+### Topo / Cauda
+Quando usamos listas é comum trabalhar com o topo e o fim da lista. O topo é o primeiro elemento da lista e a cauda são os elementos restantes. Elixir provê duas funções bem úteis, hd e tl, para trabalhar com essas partes:
+
+```elixir
+iex> hd [3.14, :pie, "Apple"]
+3.14
+iex> tl [3.14, :pie, "Apple"]
+[:pie, "Apple"]
+```
+
+Além das funções citadas, pode-se usar pattern matching e o operador cons (|) para dividir a lista em topo e cauda; veremos este padrão em futuras lições:
+
+```elixir
+iex> [head | tail] = [3.14, :pie, "Apple"]
+[3.14, :pie, "Apple"]
+iex> head
+3.14
+iex> tail
+[:pie, "Apple"]
+```
+
+### Tuplas
+Uma tupla é uma coleção ordenada de elementos, semelhante a uma lista, mas é imutável e geralmente contém um número fixo de elementos. As tuplas são definidas usando chaves { }.
+
+Exemplo de tupla em Elixir:
+```elixir
+iex> {3.14, :pie, "Apple"}
+{3.14, :pie, "Apple"}
+```
+É comum usar tuplas como um mecanismo que retorna informação adicional de funções; a utilidade disso ficará mais aparente quando vermos pattern matching:
+
+```elixir
+iex> File.read("path/to/existing/file")
+{:ok, "... contents ..."}
+iex> File.read("path/to/unknown/file")
+{:error, :enoent}
+```
+
+### Listas de palavras-chave
+As listas de palavras-chave e os mapas são coleções associativas no Elixir. No Elixir, uma lista de palavras-chave é uma lista especial de tuplas de dois elementos cujo o primeiro elemento é um átomo; eles compartilham o desempenho das listas:
+
+```elixir
+iex> [foo: "bar", hello: "world"]
+[foo: "bar", hello: "world"]
+iex> [{:foo, "bar"}, {:hello, "world"}]
+[foo: "bar", hello: "world"]
+```
+
+As três características relevantes das listas de palavras-chave são:
+
+As chaves são átomos.
+As chaves estão ordenadas.
+As chaves não são únicas.
+Por essas razões as listas de palavras-chave são frequentemente usadas para passar opções a funções.
+
+### Mapas
+
+Em Elixir, mapas normalmente são a escolha para armazenamento chave-valor. A diferença entre os mapas e as listas de palavras-chave está no fato de que os mapas permitem chaves de qualquer tipo e não seguem uma ordem. Você pode definir um mapa com a sintaxe %{}:
+
+map = %{:foo => "bar", "hello" => :world}
+%{:foo => "bar", "hello" => :world}
+map[:foo]
+"bar"
+map["hello"]
+:world
+A partir do Elixir 1.2, variáveis são permitidas como chaves do mapa:
+
+key = "hello"
+"hello"
+%{key => "world"}
+%{"hello" => "world"}
+Se um elemento duplicado é inserido no mapa, este sobrescreverá o valor anterior;
+
+%{:foo => "bar", :foo => "hello world"}
+%{foo: "hello world"}
+Como podemos ver na saída anterior, há uma sintaxe especial para os mapas que contém apenas átomos como chaves:
+
+%{foo: "bar", hello: "world"}
+%{foo: "bar", hello: "world"}
+%{foo: "bar", hello: "world"} == %{:foo => "bar", :hello => "world"}
+true
+Além disso, existe uma sintaxe especial para acessar átomos como chaves:
+
+map = %{foo: "bar", hello: "world"}
+%{foo: "bar", hello: "world"}
+map.hello
+"world"
+Outra propriedade interessante de mapas é que eles têm sua própria sintaxe para atualizar e acessar átomos como chaves:
+
+map = %{foo: "bar", hello: "world"}
+%{foo: "bar", hello: "world"}
+%{map | foo: "baz"}
+%{foo: "baz", hello: "world"}
+Nota: esta sintaxe funciona apenas para atualizar uma chave que já existe no mapa! Se a chave não existir, um KeyError será gerado.
+
+Para criar uma nova chave, use Map.put/3
+
+map = %{hello: "world"}
+%{hello: "world"}
+%{map | foo: "baz"}
+** (KeyError) key :foo not found in: %{hello: "world"}
+    (stdlib) :maps.update(:foo, "baz", %{hello: "world"})
+    (stdlib) erl_eval.erl:259: anonymous fn/2 in :erl_eval.expr/5
+    (stdlib) lists.erl:1263: :lists.foldl/3
+Map.put(map, :foo, "baz")
+%{foo: "baz", hello: "world"}
+
+
+
 
 https://elixirschool.com/pt/lessons/basics/collections
 
