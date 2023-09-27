@@ -120,3 +120,6 @@ require Integer
 |> Enum.all?(&Integer.is_even/1)
 ```
 
+
+## Funções privadas em Módulos
+
