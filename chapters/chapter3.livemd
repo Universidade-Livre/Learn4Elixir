@@ -1,4 +1,6 @@
-## Estruturas de Controle 
+## Capitulo 3
+Neste capitulo iremos se aprofundar em Estruturas de Controle
+### Estruturas de Controle 
 
 ### If e Unless
 Existem chances de que você já tenha encontrado if/2 antes, e caso você tenha utilizado Ruby você é familiarizado com unless/2. Em Elixir eles trabalham praticamente da mesma forma porém são definidos como macros, não construtores da linguagem; Você pode encontrar a implementação deles em Kernel module.
@@ -717,4 +719,4 @@ iex> for c <- [72, 101, 108, 108, 111], into: "", do: <<c>>
 "Hello"
 ```
 
-## Exercícios
+## Exercício
