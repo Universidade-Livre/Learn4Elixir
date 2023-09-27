@@ -157,3 +157,13 @@ defmodule Matematica do
   defp fatorial(num, ) do
     
 end
+
+
+## Links
+
+Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
+- [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
+- Livros
+- Vídeos (eu e ElixirLab)
+- Cursos (Groxio, ElxPro, Rafa Camarda)
+- Comunidade Telegram
