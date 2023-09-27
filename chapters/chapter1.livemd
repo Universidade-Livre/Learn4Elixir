@@ -251,7 +251,8 @@ iex> nome = "João"
 iex> IO.puts("Olá, #{nome}!")
 
 # Tentativa de reatribuir a variável (isso não funcionará)
-nome = "Maria"  # Isso cria uma nova variável chamada "nome" com o novo valor, não modifica a variável original
+nome = "Maria"  
+# Isso cria uma nova variável chamada "nome" com o novo valor, não modifica a variável original
 ```
 No exemplo acima, criamos uma variável chamada nome e a utilizamos em uma saída de texto. Quando tentamos atribuir um novo valor a nome, na verdade estamos criando uma nova variável nome com o valor "Maria", mas a variável original nome permanece inalterada.
 
@@ -562,7 +563,7 @@ ELIXIR
 elixir
 ```
 
-###Dividir Strings
+### Dividir Strings
 
 Você pode usar a função String.split/2 para dividir uma string em uma lista de substrings com base em um delimitador:
 
@@ -617,7 +618,7 @@ iex> str = "  Elixir   "
 Elixir
 ```
 
-### Garantir a 1 letra maiúscula
+### Garantir a 1 letra Maiúscula
 
 A função String.capitalize/1 em Elixir é usada para capitalizar a primeira letra de uma string. Aqui está como você pode usá-la:
 
@@ -630,7 +631,7 @@ iex> str = "elixir"
 
 Neste exemplo, a string "elixir" é convertida em "Elixir", com a primeira letra em maiúscula. A função String.capitalize/1 é útil quando você deseja garantir que a primeira letra de uma palavra seja maiúscula, como ao exibir nomes ou títulos.
 
-### Duplicar uma String quantas vezes desejar
+### Duplicar uma String
 
 A função String.duplicate/2 não é uma função nativa em Elixir. No entanto, você pode criar uma função personalizada para duplicar uma string quantas vezes desejar. Aqui está um exemplo de como fazer isso:
 
@@ -650,7 +651,69 @@ Neste exemplo, criamos um módulo StringUtil com uma função duplicate/2 que ac
 
 Lembre-se de que, como a função String.duplicate/2 não é nativa, criamos uma função personalizada chamada duplicate/2 para alcançar o resultado desejado.
 
-Aridade.
+### Aridade
+
+A "aridade" de uma função se refere ao número de argumentos que a função recebe. Em muitas linguagens de programação, incluindo Elixir, a aridade de uma função é uma característica importante, pois ajuda a determinar como você chama e usa a função corretamente.
+
+Em Elixir, você pode descobrir a aridade de uma função usando o operador /, que é usado para especificar a aridade ao chamar uma função. Aqui estão alguns exemplos:
+
+### Função sem Argumentos
+
+```elixir
+defmodule MyModule do
+  def hello do
+    "Hello, World!"
+  end
+end
+
+MyModule.hello() # Chama a função sem argumentos
+```
+Neste exemplo, a função hello/0 não tem argumentos, então sua aridade é 0.
+
+### Função com um Argumento
+
+```elixir
+defmodule MyModule do
+  def double(x) do
+    x * 2
+  end
+end
+
+MyModule.double(5) # Chama a função com um argumento
+```
+Neste exemplo, a função double/1 recebe um argumento, então sua aridade é 1.
+
+### Função com Dois Argumentos
+
+```elixir
+defmodule MyModule do
+  def add(x, y) do
+    x + y
+  end
+end
+
+MyModule.add(3, 4) # Chama a função com dois argumentos
+```
+
+Neste exemplo, a função add/2 recebe dois argumentos, então sua aridade é 2.
+
+A aridade de uma função é importante para garantir que você chame a função com o número correto de argumentos. Em Elixir, é possível definir várias cláusulas de função com a mesma nomeação, mas com aridades diferentes. Isso é conhecido como "polimorfismo por aridade" e é uma característica poderosa da linguagem. Cada cláusula da função pode ser correspondida com base no número de argumentos passados.
+
+Por exemplo:
+
+```elixir
+defmodule Math do
+  def add(a, b) when is_number(a) and is_number(b) do
+    a + b
+  end
+
+  def add(a, b, c) when is_number(a) and is_number(b) and is_number(c) do
+    a + b + c
+  end
+end
+```
+
+Neste exemplo, temos duas cláusulas de função add/2 e add/3 com aridades diferentes. A função add/2 aceita dois argumentos e a função add/3 aceita três. O Elixir escolherá automaticamente qual cláusula executar com base no número de argumentos passados quando a função é chamada.
 
 ### Lembre-se 
 
