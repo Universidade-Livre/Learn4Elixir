@@ -525,7 +525,9 @@ Essa é a base para definir módulos e funções em Elixir. Lembre-se de que os 
 
 Em Elixir, você pode usar várias funções para manipular strings. Elixir fornece uma rica API de strings com muitas funções úteis. Abaixo, vou mostrar como usar algumas das funções de string mais comuns:
 
-Concatenar Strings: Você pode usar o operador <> ou a função String.concat/2 para concatenar strings:
+### Concatenar Strings
+
+Você pode usar o operador <> ou a função String.concat/2 para concatenar strings:
 
 ```elixir
 iex> str1 = "Hello"
@@ -535,7 +537,9 @@ iex> str1 = "Hello"
 Hello World
 ```
 
-Tamanho de uma String: Você pode usar a função String.length/1 para obter o tamanho de uma string:
+### Tamanho de uma String
+
+Você pode usar a função String.length/1 para obter o tamanho de uma string:
 
 ```elixir
 iex> str = "Elixir"
@@ -544,7 +548,9 @@ iex> str = "Elixir"
 Tamanho da string: 6
 ```
 
-Converter para Maiúsculas e Minúsculas: Use String.upcase/1 e String.downcase/1 para converter uma string para maiúsculas e minúsculas, respectivamente:
+### Converter para Maiúsculas e Minúsculas
+
+Use String.upcase/1 e String.downcase/1 para converter uma string para maiúsculas e minúsculas, respectivamente:
 
 ```elixir
 iex> str = "elixir"
@@ -556,7 +562,9 @@ ELIXIR
 elixir
 ```
 
-Dividir Strings: Você pode usar a função String.split/2 para dividir uma string em uma lista de substrings com base em um delimitador:
+###Dividir Strings
+
+Você pode usar a função String.split/2 para dividir uma string em uma lista de substrings com base em um delimitador:
 
 ```elixir
 iex> str = "Elixir é incrível"
@@ -565,7 +573,9 @@ iex> str = "Elixir é incrível"
 Elixir, é, incrível
 ```
 
-Substituir Substrings: Use String.replace/4 para substituir substrings em uma string:
+### Substituir Substrings
+
+Use String.replace/4 para substituir substrings em uma string:
 
 ```elixir
 iex> str = "Hello, World!"
@@ -574,7 +584,9 @@ iex> str = "Hello, World!"
 Hello, Elixir!
 ```
 
-Verificar se uma String Contém uma Substring: Você pode usar String.contains?/2 para verificar se uma string contém uma substring:
+### Verificar se uma String Contém uma Substring
+
+Você pode usar String.contains?/2 para verificar se uma string contém uma substring:
 
 ```elixir
 iex> str = "Elixir é incrível"
@@ -583,7 +595,9 @@ iex> str = "Elixir é incrível"
 true
 ```
 
-Formatar Strings: Você pode usar a função String.format/2 para formatar strings com base em um formato:
+### Formatar Strings
+
+Você pode usar a função String.format/2 para formatar strings com base em um formato:
 
 ```elixir
 iex> name = "Alice"
@@ -592,7 +606,9 @@ iex> name = "Alice"
 Olá, Alice!
 ```
 
-Remover Espaços em Branco: Use String.trim/1 para remover espaços em branco no início e no final de uma string:
+### Remover Espaços em Branco
+
+Use String.trim/1 para remover espaços em branco no início e no final de uma string:
 
 ```elixir
 iex> str = "  Elixir   "
@@ -600,6 +616,8 @@ iex> str = "  Elixir   "
 ...> IO.puts(trimmed_str) 
 Elixir
 ```
+
+### Garantir a 1 letra maiúscula
 
 A função String.capitalize/1 em Elixir é usada para capitalizar a primeira letra de uma string. Aqui está como você pode usá-la:
 
@@ -611,6 +629,8 @@ iex> str = "elixir"
 ```
 
 Neste exemplo, a string "elixir" é convertida em "Elixir", com a primeira letra em maiúscula. A função String.capitalize/1 é útil quando você deseja garantir que a primeira letra de uma palavra seja maiúscula, como ao exibir nomes ou títulos.
+
+### Duplicar uma String quantas vezes desejar
 
 A função String.duplicate/2 não é uma função nativa em Elixir. No entanto, você pode criar uma função personalizada para duplicar uma string quantas vezes desejar. Aqui está um exemplo de como fazer isso:
 
@@ -632,7 +652,9 @@ Lembre-se de que, como a função String.duplicate/2 não é nativa, criamos uma
 
 Aridade.
 
-Lembre-se de que essas são apenas algumas das funções de string disponíveis em Elixir. A linguagem oferece muitas outras funções úteis para trabalhar com strings, e você pode consultar a documentação oficial para obter mais informações: https://hexdocs.pm/elixir/String.html
+### Lembre-se 
+
+Essas são apenas algumas das funções de string disponíveis em Elixir. A linguagem oferece muitas outras funções úteis para trabalhar com strings, e você pode consultar a documentação oficial para obter mais informações: https://hexdocs.pm/elixir/String.html
 
 ## Resolver um problema
 
