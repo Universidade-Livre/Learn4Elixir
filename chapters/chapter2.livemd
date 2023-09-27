@@ -6,7 +6,7 @@ Agora que você já sabe o que são funções, vamos falar pra você de um tipo 
 
 <!-- livebook:{"break_markdown":true} -->
 
-Funções anônimas são funções que, como o próprio nome diz, não têm um nome. Elas são definidas apenas definindo qual sua entrada (se alguma) e os comandos que vão produzir sua saída.
+Funções anônimas são funções que, como o próprio nome diz, não têm um nome. Elas são descritas apenas definindo qual sua entrada (se alguma) e os comandos que vão produzir sua saída.
 
 <!-- livebook:{"break_markdown":true} -->
 
