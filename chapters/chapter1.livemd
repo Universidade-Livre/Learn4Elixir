@@ -722,6 +722,6 @@ Neste exemplo, temos duas cláusulas de função add/2 e add/3 com aridades dife
 
 Essas são apenas algumas das funções de string disponíveis em Elixir. A linguagem oferece muitas outras funções úteis para trabalhar com strings, e você pode consultar a documentação oficial para obter mais informações: https://hexdocs.pm/elixir/String.html
 
-## Resolver um problema
+## Exercícios
 
 Qual? Quais?
