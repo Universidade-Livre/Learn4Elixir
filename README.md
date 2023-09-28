@@ -505,3 +505,16 @@ Você pode nos ajudar de diversas formas:
 - **Ajude outros estudantes**: Entre no nosso Discord, esteja atento nas issues, quando outras pessoas tiverem dificuldade ou dúvidas, ajude! O aprendizado é sempre catalizado por pessoas com o mesmo objetivo, quando todos se ajudam chegam mais longe e isso torna a joranada melhor para quem ajuda e para quem é ajudado.
 - **Faça um PR**: Encontrou um erro? Algo que pode ser melhorado? Faça um Pull Request que vamos avaliar, discutir e atualizar o material. Todos cometem erros e tudo pode ser melhorado, é com a ajuda da Comunidade que construímos coisas cada vez melhor.
 - **Revisão de PR**: Tem um PR que outra pessoa fez em aberto? Clone-o, teste, opine. Ajude a avaliar e revisar PRs. Toda discussão útil é bem-vinda e nos ajuda a melhorar.
+
+## Patrocínio
+
+<img src="./resources/img/cumbuca.png"
+     alt="Cumbuca a conta compartilhada digital"
+     width="400px"
+     align="left" />
+
+<img src="./resources/img/nomadz.png"
+     alt="Nomadz sonhe. viaje. seja livre"
+     width="400px"
+     align="right" />
+
