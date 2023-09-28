@@ -8,7 +8,7 @@ Elixir é uma linguagem criada pelo brasileiro [José Valim](https://github.com/
 
 De acordo com sua própria definição, o Elixir é "uma linguagem dinâmica e funcional, projetada para construir aplicações escaláveis e sustentáveis". A linguagem foi desenvolvida para ser executada sobre a máquina virtual de Erlang (chamada de BEAM), com o objetivo de ampliar a produtividade e extensibilidade do ecossistema da linguagem [Erlang](https://www.erlang.org/), criada na década de 80. O ecossistema de Erlang refere-se ao conjunto de tecnologias, ferramentas, bibliotecas e comunidades relacionadas a Erlang. Erlang é uma linguagem de programação funcional, concorrente e tolerante a falhas.
 
-O ecossistema de Erlang é conhecido por sua força em sistemas distribuídos e de tempo real flexível, especialmente em aplicações de telecomunicações e comunicações em larga escala. [WhatsApp, por exemplo, usa Erlang](https://www.erlang-solutions.com/blog/20-years-of-open-source-erlang-openerlang-interview-with-anton-lavrik-from-whatsapp/). Erlang oferece recursos para lidar com concorrência, escalabilidade e resiliência, tornando-a adequada para sistemas altamente disponíveis e que exigem baixa latência.
+O ecossistema de Erlang é conhecido por sua força em sistemas distribuídos e de tempo real flexível, especialmente em aplicações de telecomunicações e comunicações em larga escala. [WhatsApp é um exemplo de empresa que usa Erlang em produção](https://www.erlang-solutions.com/blog/20-years-of-open-source-erlang-openerlang-interview-with-anton-lavrik-from-whatsapp/). Erlang oferece recursos para lidar com concorrência, escalabilidade e resiliência, tornando-a adequada para sistemas altamente disponíveis e que exigem baixa latência.
 
 ## Caso de Uso de Elixir
 
