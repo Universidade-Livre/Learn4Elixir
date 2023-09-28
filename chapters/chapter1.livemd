@@ -1,8 +1,8 @@
-# Capítulo 1 
+## Capítulo 1 
 
 Neste capítulo iremos apresentar a você, brevemente, a linguagem de programação Elixir.
 
-### Elixir
+## Elixir
 
 Elixir é uma linguagem criada pelo brasileiro [José Valim](https://github.com/josevalim). O projeto começou em 2011, enquanto Valim fazia parte da empresa [Plataformatec](https://plataformatec.com/), da qual ele era um dos sócios. Em 24 de maio de 2012 foi lançada a versão 0.5 de Elixir, a primeira versão, segundo Valim, com as características de Elixir atual. Por esta razão o [aniversário de 10 anos de Elixir foi comemorado em 24 de maio de 2022](http://adolfont.github.io/service/events/10YearsOfElixir/).
 
@@ -10,7 +10,7 @@ De acordo com sua própria definição, o Elixir é "uma linguagem dinâmica e f
 
 O ecossistema de Erlang é conhecido por sua força em sistemas distribuídos e de tempo real flexível, especialmente em aplicações de telecomunicações e comunicações em larga escala. [WhatsApp é um exemplo de empresa que usa Erlang em produção](https://www.erlang-solutions.com/blog/20-years-of-open-source-erlang-openerlang-interview-with-anton-lavrik-from-whatsapp/). Erlang oferece recursos para lidar com concorrência, escalabilidade e resiliência, tornando-a adequada para sistemas altamente disponíveis e que exigem baixa latência.
 
-## Caso de Uso de Elixir
+### Caso de Uso de Elixir
 
 Um dos casos mais conhecidos de empresa que usa Elixir em produção como uma de suas principais linguagens é Discord. Em 2019, a empresa escreveu em seu blog o post ["USANDO RUST PARA ESCALAR ELIXIR PARA 11 MILLONES DE USUARIOS CONCURRENTES"](https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users). Segundo a equipe de desenvolvedores, a escolha pelo Elixir veio desde o início, quando buscavam criar um sistema altamente concorrente em tempo real — o protótipo do Discord foi programado em Elixir.
 
@@ -18,7 +18,7 @@ Outros exemplos de empresas que usam Elixir em produção podem ser encontrados 
 
 *Agora vamos começar a aprender Elixir!*
 
-# O que é um Valor?
+## O que é um Valor?
 
 Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade de uma pessoa. Maria o nome desta pessoa e professora sua profissão. O salário mensal de Maria é R$ 5.050,55.
 
@@ -44,7 +44,7 @@ Você deve ter percebido que, ao escrever o nome e a profissão, usamos aspas. E
 
 Mas antes de mais nada temos que observar que os dados acima têm tipos diferentes.
 
-# Quais são os tipos de Valores?
+## Quais são os tipos de Valores?
 
 ## Tipos Básicos
 
@@ -133,7 +133,7 @@ iex> "foo\nbar"
 "foo\nbar"
 ```
 
-# O que é o casamento de Padrões?
+## O que é o casamento de Padrões?
 
 Pattern matching é uma poderosa parte de Elixir que nos permite procurar padrões simples em valores, estruturas de dados, e até funções. Nesta lição iremos começar a ver como pattern matching é usado.
 
@@ -220,7 +220,7 @@ iex> greeting
 ```
 Note que no exemplo "Mornin'", a reassociação de greeting para "Mornin'" só acontece dentro de uma função. Fora da função, greeting continua sendo "Hello".
 
-# O que é uma Variável?
+## O que é uma Variável?
 
 Em Elixir, uma variável é um nome que você associa a um valor ou a uma expressão. As variáveis são usadas para armazenar dados que podem ser usados posteriormente em um programa. Aqui estão algumas características importantes das variáveis em Elixir:
 
