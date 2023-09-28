@@ -1,4 +1,4 @@
-## Capitulo 1 
+# Capitulo 1 
 Neste Capitulo iremos te introduzir a Elixir.
 ## Elixir e Erlang
 ### Historia de Erlang
@@ -11,7 +11,8 @@ O ecossistema de Erlang refere-se ao conjunto de tecnologias, ferramentas, bibli
 
 O ecossistema de Erlang é conhecido por sua força em sistemas distribuídos e de tempo real, especialmente em aplicativos de telecomunicações e comunicações em larga escala. Ele oferece recursos poderosos para lidar com concorrência, escalabilidade e resiliência, tornando-o adequado para sistemas altamente disponíveis e que exigem baixa latência.
 
-### Alguns exemplos dentro de Erlang
+## Alguns exemplos dentro de Erlang
+
 Dentro do ecossistema de Erlang, existem várias ferramentas e bibliotecas notáveis que complementam a linguagem. Alguns exemplos incluem:
 
 OTP (Open Telecom Platform): É um conjunto de bibliotecas e frameworks que fornecem abstrações e componentes reutilizáveis para o desenvolvimento de sistemas distribuídos robustos. O OTP inclui o "Supervisor", que gerencia a tolerância a falhas, e o "GenServer", que permite criar processos concorrentes.
@@ -26,14 +27,15 @@ Além disso, o ecossistema de Erlang é suportado por uma comunidade ativa de de
 
 Em resumo, o ecossistema de Erlang é um conjunto de recursos, ferramentas e comunidades relacionadas à linguagem de programação Erlang, que enfatiza a construção de sistemas distribuídos, tolerantes a falhas e de alto desempenho.
 
-### Historia de Elixir
+## Historia de Elixir
+
 Elixir, é uma linguagem de berço brasileiro, criada, desenvolvida e mantida por José Valim, em 2011, junto com o núcleo de Desenvolvimento e Pesquisa (R&D) da Plataformatec.
 
 De acordo com sua própria definição, o Elixir é "uma linguagem dinâmica e funcional, desenhada para construir aplicações escaláveis e sustentáveis".
 
 A linguagem foi desenvolvida para ser executada sobre a máquina virtual Erlang VM, com o objetivo de ampliar a produtividade e extensibilidade do ecossistema da linguagem Erlang, criada na década de 80 para múltiplos fins.
 
-### Promessas Vitais
+## Promessas Vitais
 
 Um dos casos de maior sucesso de execução do Elixir, dentro do ecossistema web, é a plataforma de comunicação Discord.
 
@@ -41,7 +43,7 @@ Segundo a equipe de desenvolvedores, a escolha pelo Elixir veio desde o início,
 
 Para eles, a "promessa Elixir" era simples: "acessar o poder da Erlang VM por meio de uma linguagem muito mais moderna e amigável ao usuário.
 
-## O que é um Valor?
+# O que é um Valor?
 
 Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade de uma pessoa. Maria o nome desta pessoa e professora sua profissão. O salário mensal de Maria é R$ 5.050,55.
 
@@ -67,16 +69,19 @@ Você deve ter percebido que, ao escrever o nome e a profissão, usamos aspas. E
 
 Mas antes de mais nada temos que observar que os dados acima têm tipos diferentes.
 
-## Quais são os tipos de Valores?
+# Quais são os tipos de Valores?
 
-### Tipos Básicos
+## Tipos Básicos
 
-### Inteiros
+## Inteiros
+
 ```elixir
 iex> 255
 255
 ```
+
 O suporte para números binários, octais e hexadecimais também estão inclusos:
+
 ```elixir
 iex> 0b0110
 6
@@ -86,7 +91,8 @@ iex> 0x1F
 31
 ```
 
-### Pontos Flutuantes
+## Pontos Flutuantes
+
 Em Elixir, os números de ponto flutuante requerem um decimal depois de pelo menos um dígito; estes possuem uma precisão de 64 bits e suportam e para números exponenciais:
 ```elixir
 iex> 3.14
@@ -97,7 +103,8 @@ iex> 1.0e-10
 1.0e-10
 ```
 
-### Booleanos
+## Booleanos
+
 Elixir suporta true e false como booleanos; todo valor é verdadeiro com exceção de false e nil:
 ```elixir
 iex> true
@@ -106,7 +113,8 @@ iex> false
 false
 ```
 
-### Átomos
+## Átomos
+
 Um átomo é uma constante cujo o nome é seu valor. Se está familiarizado com Ruby, estes são equivalentes aos símbolos:
 ```elixir
 iex> :foo
@@ -150,10 +158,12 @@ iex> "foo\nbar"
 "foo\nbar"
 ```
 
-## O que é o casamento de Padrões?
+# O que é o casamento de Padrões?
 
 Pattern matching é uma poderosa parte de Elixir que nos permite procurar padrões simples em valores, estruturas de dados, e até funções. Nesta lição iremos começar a ver como pattern matching é usado.
-### Operador Match
+
+## Operador Match
+
 Você está preparado para ficar um pouco confuso? Em Elixir, o operador = é na verdade o nosso operador match, comparável ao sinal de igualdade da matemática. Quando usado, a expressão inteira se torna uma equação e faz com que Elixir combine os valores do lado esquerdo com os valores do lado direito da expressão. Se a comparação for bem sucedida, o valor da equação é retornado. Se não, um erro é lançado. Vejamos a seguir:
 ```elixir
 iex> x = 1
@@ -191,7 +201,8 @@ iex> value
 iex> {:ok, value} = {:error}
 ** (MatchError) no match of right hand side value: {:error}
 ```
-### Operador Pin
+## Operador Pin
+
 Acabamos de aprender que o operador match manuseia atribuições quando o lado esquerdo da associação é uma variável. Em alguns casos este comportamento de reassociação de variável é algo não desejável. Para estas situações, nós temos o operador pin:^.
 Quando fixamos a variável em associação ao valor existente ao invés de reassociar a um novo valor. Vamos ver como isso funciona:
 ```elixir
@@ -234,7 +245,7 @@ iex> greeting
 ```
 Note que no exemplo "Mornin'", a reassociação de greeting para "Mornin'" só acontece dentro de uma função. Fora da função, greeting continua sendo "Hello".
 
-## O que é uma Variável?
+# O que é uma Variável?
 
 Em Elixir, uma variável é um nome que você associa a um valor ou a uma expressão. As variáveis são usadas para armazenar dados que podem ser usados posteriormente em um programa. Aqui estão algumas características importantes das variáveis em Elixir:
 
@@ -260,7 +271,7 @@ No exemplo acima, criamos uma variável chamada nome e a utilizamos em uma saíd
 
 Em resumo, as variáveis em Elixir são usadas para armazenar valores imutáveis ​​e são uma parte fundamental da programação funcional em Elixir.
 
-## Como atribuir um Valor a uma Variável?
+# Como atribuir um Valor a uma Variável?
 
 Em Elixir, você pode atribuir um valor a uma variável usando o operador "=". Aqui está um exemplo simples de como fazer isso:
 
@@ -275,11 +286,11 @@ Neste exemplo, estamos definindo uma variável chamada nome e atribuindo a ela o
 
 Lembre-se de que, em Elixir, as variáveis são imutáveis, o que significa que, uma vez que você atribui um valor a uma variável, não pode alterá-lo. Se você tentar atribuir um novo valor à mesma variável, na verdade estará criando uma nova variável com o novo valor, como mencionado anteriormente.
 
-## O que é Coleção?
+# O que é Coleção?
 
 Em Elixir, uma coleção refere-se a uma estrutura de dados que pode armazenar um conjunto de valores. As coleções mais comuns em Elixir incluem listas, tuplas, mapas e conjuntos. Cada uma dessas coleções tem suas próprias características e é adequada para diferentes tipos de operações. Aqui estão algumas informações sobre cada uma delas:
 
-### Listas
+## Listas
 Uma lista é uma coleção ordenada de elementos em que cada elemento é separado por uma vírgula e cercado por colchetes [ ]. As listas em Elixir são imutáveis, o que significa que você não pode alterar uma lista existente, mas pode criar uma nova lista com elementos adicionados ou removidos.
 
 Exemplo de lista em Elixir:
@@ -301,7 +312,8 @@ iex> list ++ ["Cherry"]
 [3.14, :pie, "Apple", "Cherry"]
 ```
 
-### Concatenação de Listas
+## Concatenação de Listas
+
 A concatenação de listas usa o operador ++/2.
 
 ```elixir
@@ -311,7 +323,8 @@ iex> [1, 2] ++ [3, 4, 1]
 
 Uma pequena nota sobre o formato de nome (++/2) usado acima. Em Elixir (e Erlang, sobre o qual Elixir é construído), o nome de uma função ou operador tem dois componentes: o nome em si (neste caso ++) e sua aridade. Aridade é uma parte central quando se fala sobre código Elixir (e Erlang). Indica o número de argumentos que uma dada função aceita (dois, nesse nosso exemplo). Aridade e o nome são combinados com uma barra. Falaremos mais sobre isto mais tarde; este conhecimento irá ajudá-lo a entender a notação por enquanto.
 
-### Subtração de Listas
+## Subtração de Listas
+
 O suporte para subtração é provido pelo operador --/2; é seguro subtrair um valor que não existe:
 ```elixir
 iex> ["foo", :bar, 42] -- [42, "bar"]
@@ -333,7 +346,8 @@ iex> [2.0] -- [2.0]
 []
 ```
 
-### Topo / Cauda
+## Topo / Cauda
+
 Quando usamos listas é comum trabalhar com o topo e o fim da lista. O topo é o primeiro elemento da lista e a cauda são os elementos restantes. Elixir provê duas funções bem úteis, hd e tl, para trabalhar com essas partes:
 
 ```elixir
@@ -354,7 +368,8 @@ iex> tail
 [:pie, "Apple"]
 ```
 
-### Tuplas
+## Tuplas
+
 Uma tupla é uma coleção ordenada de elementos, semelhante a uma lista, mas é imutável e geralmente contém um número fixo de elementos. As tuplas são definidas usando chaves { }.
 
 Exemplo de tupla em Elixir:
@@ -371,7 +386,8 @@ iex> File.read("path/to/unknown/file")
 {:error, :enoent}
 ```
 
-### Listas de Palavras-Chave
+## Listas de Palavras-Chave
+
 As listas de palavras-chave e os mapas são coleções associativas no Elixir. No Elixir, uma lista de palavras-chave é uma lista especial de tuplas de dois elementos cujo o primeiro elemento é um átomo; eles compartilham o desempenho das listas:
 
 ```elixir
@@ -388,7 +404,7 @@ As chaves estão ordenadas.
 As chaves não são únicas.
 Por essas razões as listas de palavras-chave são frequentemente usadas para passar opções a funções.
 
-### Mapas
+## Mapas
 
 Em Elixir, mapas normalmente são a escolha para armazenamento chave-valor. A diferença entre os mapas e as listas de palavras-chave está no fato de que os mapas permitem chaves de qualquer tipo e não seguem uma ordem. Você pode definir um mapa com a sintaxe %{}:
 
@@ -459,7 +475,8 @@ iex> Map.put(map, :foo, "baz")
 %{foo: "baz", hello: "world"}
 ```
 
-### Conjuntos 
+## Conjuntos 
+
 Um conjunto é uma coleção de elementos únicos, onde cada elemento só pode aparecer uma vez. Os conjuntos são úteis quando você precisa garantir que não haja duplicatas em seus dados. Os conjuntos são definidos usando %{} com chaves vazias.
 
 Exemplo de conjunto em Elixir:
@@ -470,11 +487,11 @@ iex> meu_conjunto = %{1, 2, 3, 4, 5}
 
 As coleções em Elixir são fundamentais para a manipulação e organização de dados em programas. Cada tipo de coleção tem suas próprias operações e métodos específicos que podem ser usados para realizar tarefas como adicionar, remover, consultar e transformar dados. A escolha da coleção apropriada depende das necessidades específicas do seu programa e da natureza dos dados que você está manipulando.
 
-## Como definir Módulos e Funções
+# Como definir Módulos e Funções
 
 Em Elixir, você pode definir módulos e funções para estruturar e organizar seu código de forma eficiente. Vou explicar como definir módulos e funções separadamente.
 
-### Definindo Módulos
+## Definindo Módulos
 
 Um módulo em Elixir é usado para agrupar funções relacionadas e variáveis em um espaço de nomes específico. Para definir um módulo, você pode usar a palavra-chave defmodule seguida pelo nome do módulo e um bloco de código que contém as definições das funções e variáveis relacionadas a esse módulo. Veja um exemplo:
 
@@ -486,7 +503,7 @@ iex> defmodule MinhaApp.MinhaModulo do
 
 Lembre-se de que é uma boa prática nomear módulos com letras maiúsculas e usar um estilo de nomeação de palavras separadas por letras maiúsculas, como MinhaApp.MinhaModulo.
 
-### Definindo Funções
+## Definindo Funções
 
 As funções em Elixir são definidas dentro de módulos e são criadas usando a palavra-chave def. A sintaxe básica para definir uma função é a seguinte:
 
@@ -508,7 +525,7 @@ iex> defmodule Matematica do
 
 Neste exemplo, criamos um módulo chamado Matematica e definimos uma função chamada soma que aceita dois argumentos a e b e retorna a soma deles.
 
-### Chamando Funções
+## Chamando Funções
 
 Depois de definir uma função, você pode chamá-la passando os argumentos necessários. Por exemplo:
 
@@ -522,13 +539,13 @@ Isso chama a função soma do módulo Matematica com os argumentos 3 e 5 e armaz
 
 Essa é a base para definir módulos e funções em Elixir. Lembre-se de que os módulos e funções são essenciais para a programação em Elixir e ajudam a organizar e reutilizar seu código de maneira eficaz.
 
-## Como usar Funções
+# Como usar Funções
 
-### String
+## String
 
 Em Elixir, você pode usar várias funções para manipular strings. Elixir fornece uma rica API de strings com muitas funções úteis. Abaixo, vou mostrar como usar algumas das funções de string mais comuns:
 
-### Concatenar Strings
+## Concatenar Strings
 
 Você pode usar o operador <> ou a função String.concat/2 para concatenar strings:
 
@@ -540,7 +557,7 @@ iex> str1 = "Hello"
 Hello World
 ```
 
-### Tamanho de uma String
+## Tamanho de uma String
 
 Você pode usar a função String.length/1 para obter o tamanho de uma string:
 
@@ -551,7 +568,7 @@ iex> str = "Elixir"
 Tamanho da string: 6
 ```
 
-### Converter para Maiúsculas e Minúsculas
+## Converter para Maiúsculas e Minúsculas
 
 Use String.upcase/1 e String.downcase/1 para converter uma string para maiúsculas e minúsculas, respectivamente:
 
@@ -565,7 +582,7 @@ ELIXIR
 elixir
 ```
 
-### Dividir Strings
+## Dividir Strings
 
 Você pode usar a função String.split/2 para dividir uma string em uma lista de substrings com base em um delimitador:
 
@@ -576,7 +593,7 @@ iex> str = "Elixir é incrível"
 Elixir, é, incrível
 ```
 
-### Substituir Substrings
+## Substituir Substrings
 
 Use String.replace/4 para substituir substrings em uma string:
 
@@ -587,7 +604,7 @@ iex> str = "Hello, World!"
 Hello, Elixir!
 ```
 
-### Verificar se uma String Contém uma Substring
+## Verificar se uma String Contém uma Substring
 
 Você pode usar String.contains?/2 para verificar se uma string contém uma substring:
 
@@ -598,7 +615,7 @@ iex> str = "Elixir é incrível"
 true
 ```
 
-### Formatar Strings
+## Formatar Strings
 
 Você pode usar a função String.format/2 para formatar strings com base em um formato:
 
@@ -609,7 +626,7 @@ iex> name = "Alice"
 Olá, Alice!
 ```
 
-### Remover Espaços em Branco
+## Remover Espaços em Branco
 
 Use String.trim/1 para remover espaços em branco no início e no final de uma string:
 
@@ -620,7 +637,7 @@ iex> str = "  Elixir   "
 Elixir
 ```
 
-### Garantir a 1 letra Maiúscula
+## Garantir a 1 letra Maiúscula
 
 A função String.capitalize/1 em Elixir é usada para capitalizar a primeira letra de uma string. Aqui está como você pode usá-la:
 
@@ -633,7 +650,7 @@ iex> str = "elixir"
 
 Neste exemplo, a string "elixir" é convertida em "Elixir", com a primeira letra em maiúscula. A função String.capitalize/1 é útil quando você deseja garantir que a primeira letra de uma palavra seja maiúscula, como ao exibir nomes ou títulos.
 
-### Duplicar uma String
+## Duplicar uma String
 
 A função String.duplicate/2 não é uma função nativa em Elixir. No entanto, você pode criar uma função personalizada para duplicar uma string quantas vezes desejar. Aqui está um exemplo de como fazer isso:
 
@@ -653,13 +670,13 @@ Neste exemplo, criamos um módulo StringUtil com uma função duplicate/2 que ac
 
 Lembre-se de que, como a função String.duplicate/2 não é nativa, criamos uma função personalizada chamada duplicate/2 para alcançar o resultado desejado.
 
-### Aridade
+## Aridade
 
 A "aridade" de uma função se refere ao número de argumentos que a função recebe. Em muitas linguagens de programação, incluindo Elixir, a aridade de uma função é uma característica importante, pois ajuda a determinar como você chama e usa a função corretamente.
 
 Em Elixir, você pode descobrir a aridade de uma função usando o operador /, que é usado para especificar a aridade ao chamar uma função. Aqui estão alguns exemplos:
 
-### Função sem Argumentos
+## Função sem Argumentos
 
 ```elixir
 iex> defmodule MyModule do
@@ -673,7 +690,7 @@ iex> MyModule.hello()
 ```
 Neste exemplo, a função hello/0 não tem argumentos, então sua aridade é 0.
 
-### Função com um Argumento
+## Função com um Argumento
 
 ```elixir
 iex> defmodule MyModule do
@@ -687,7 +704,7 @@ iex> MyModule.double(5)
 ```
 Neste exemplo, a função double/1 recebe um argumento, então sua aridade é 1.
 
-### Função com Dois Argumentos
+## Função com Dois Argumentos
 
 ```elixir
 iex> defmodule MyModule do
@@ -720,10 +737,20 @@ iex> defmodule Math do
 
 Neste exemplo, temos duas cláusulas de função add/2 e add/3 com aridades diferentes. A função add/2 aceita dois argumentos e a função add/3 aceita três. O Elixir escolherá automaticamente qual cláusula executar com base no número de argumentos passados quando a função é chamada.
 
-### Lembre-se 
+## Lembre-se 
 
 Essas são apenas algumas das funções de string disponíveis em Elixir. A linguagem oferece muitas outras funções úteis para trabalhar com strings, e você pode consultar a documentação oficial para obter mais informações: https://hexdocs.pm/elixir/String.html
+
 
 ## Exercícios
 
 Qual? Quais?
+
+## Links
+
+Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
+- [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
+- Livros
+- Vídeos (eu e ElixirLab)
+- Cursos (Groxio, ElxPro, Rafa Camarda)
+- Comunidade Telegram
