@@ -510,11 +510,11 @@ Você pode nos ajudar de diversas formas:
 
 <img src="./resources/img/cumbuca.png"
      alt="Cumbuca a conta compartilhada digital"
-     width="400px"
+     width="350px"
      align="left" />
 
 <img src="./resources/img/nomadz.png"
      alt="Nomadz sonhe. viaje. seja livre"
-     width="400px"
+     width="350px"
      align="right" />
 
