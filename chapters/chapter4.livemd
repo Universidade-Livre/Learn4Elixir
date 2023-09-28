@@ -108,6 +108,44 @@ Como você pode ver, a hora mudou de 12:00 em Paris para às 6:00 em Nova York, 
 
 ## Processos em Elixir
 
+Em Elixir, um processo é uma unidade de execução leve e concorrente. É uma das características mais fundamentais da linguagem e é usado para criar sistemas concorrentes e paralelos de maneira eficiente.
+
+Aqui estão algumas características importantes dos processos em Elixir:
+
+### Leveza
+Os processos em Elixir são leves em comparação com as threads tradicionais do sistema operacional. Isso significa que você pode criar milhares ou até milhões de processos em uma única máquina sem esgotar recursos significativos.
+
+### Isolamento
+Cada processo em Elixir é isolado dos outros. Eles têm sua própria pilha de execução e não compartilham memória diretamente. Isso torna mais seguro lidar com a concorrência, pois os processos não podem corromper uns aos outros.
+
+### Comunicação
+Os processos em Elixir podem se comunicar entre si usando mensagens. Essas mensagens são enviadas e recebidas por meio de canais de comunicação chamados "mailboxes". Isso permite a comunicação assíncrona entre os processos.
+
+### Supervisão
+Elixir possui um mecanismo de supervisão embutido, que permite monitorar e gerenciar processos. Se um processo falhar, ele pode ser reiniciado automaticamente, garantindo maior resiliência e disponibilidade no sistema.
+
+### Escalabilidade
+Devido à sua natureza leve, os processos em Elixir são altamente escaláveis. Você pode criar vários processos para lidar com tarefas paralelas e, se necessário, espalhar esses processos em várias máquinas para criar sistemas distribuídos.
+
+### Concorrência Explícita
+Elixir facilita a programação concorrente explícita. Você pode iniciar processos facilmente usando a função spawn/1 e coordenar a execução de tarefas paralelas.
+
+Aqui está um exemplo simples de como criar e comunicar com processos em Elixir:
+
+```elixir
+# Criar um processo que imprime uma mensagem
+iex> pid = spawn(fn ->
+...>  IO.puts("Processo filho executando")
+...> end)
+
+# Enviar uma mensagem para o processo
+iex> send(pid, "Olá, processo filho!")
+
+# Receber a mensagem no processo filho
+iex> receive do
+...>  message -> IO.puts("Processo filho recebeu a mensagem: #{message}")
+...> end
+```
 
 ## Agentes
 
@@ -154,17 +192,17 @@ Como você pode ver, podemos modificar o estado do agente da maneira que quiserm
 Crie um arquivo em test/kv/bucket_test.exs(lembre-se da .exsextensão) com o seguinte:
 
 ```elixir
-defmodule KV.BucketTest do
-  use ExUnit.Case, async: true
+iex> defmodule KV.BucketTest do
+...>  use ExUnit.Case, async: true
 
-  test "stores values by key" do
-    {:ok, bucket} = KV.Bucket.start_link([])
-    assert KV.Bucket.get(bucket, "milk") == nil
+...>  test "stores values by key" do
+...>    {:ok, bucket} = KV.Bucket.start_link([])
+...>    assert KV.Bucket.get(bucket, "milk") == nil
 
-    KV.Bucket.put(bucket, "milk", 3)
-    assert KV.Bucket.get(bucket, "milk") == 3
-  end
-end
+...>    KV.Bucket.put(bucket, "milk", 3)
+...>    assert KV.Bucket.get(bucket, "milk") == 3
+...>  end
+...> end
 ```
 
 use ExUnit.Caseé responsável por configurar nosso módulo para testes e importar muitas funcionalidades relacionadas a testes, como a test/2macro.
@@ -182,30 +220,30 @@ Assíncrono ou não, nosso novo teste obviamente deve falhar, já que nenhuma fu
 Para corrigir a falha no teste, vamos criar um arquivo lib/kv/bucket.excom o conteúdo abaixo. Sinta-se à vontade para tentar implementar o KV.Bucketmódulo sozinho usando agentes antes de dar uma olhada na implementação abaixo.
 
 ```elixir
-defmodule KV.Bucket do
-  use Agent
+iex> defmodule KV.Bucket do
+...>  use Agent
 
   @doc """
   Starts a new bucket.
   """
-  def start_link(_opts) do
-    Agent.start_link(fn -> %{} end)
-  end
+iex>  def start_link(_opts) do
+...>    Agent.start_link(fn -> %{} end)
+...>  end
 
   @doc """
   Gets a value from the `bucket` by `key`.
   """
-  def get(bucket, key) do
-    Agent.get(bucket, &Map.get(&1, key))
-  end
+iex>  def get(bucket, key) do
+...>    Agent.get(bucket, &Map.get(&1, key))
+...>  end
 
   @doc """
   Puts the `value` for the given `key` in the `bucket`.
   """
-  def put(bucket, key, value) do
-    Agent.update(bucket, &Map.put(&1, key, value))
-  end
-end
+iex>  def put(bucket, key, value) do
+...>    Agent.update(bucket, &Map.put(&1, key, value))
+...>  end
+...> end
 ```
 
 O primeiro passo em nossa implementação é chamar use Agent. A maior parte das funcionalidades que aprenderemos neste guia, como GenServere Supervisor, segue este padrão. Para todos eles, a chamada usegera uma child_specfunção com configuração padrão, que será útil quando começarmos a supervisionar os processos no capítulo 4.
@@ -222,21 +260,21 @@ Antes de prosseguir e adicionar mais recursos ao KV.Bucket, vamos falar sobre re
 Vamos reescrever o caso de teste para usar retornos de chamada:
 
 ```elixir
-defmodule KV.BucketTest do
-  use ExUnit.Case, async: true
+iex> defmodule KV.BucketTest do
+...>  use ExUnit.Case, async: true
 
-  setup do
-    {:ok, bucket} = KV.Bucket.start_link([])
-    %{bucket: bucket}
-  end
+...>  setup do
+...>    {:ok, bucket} = KV.Bucket.start_link([])
+...>    %{bucket: bucket}
+...>  end
 
-  test "stores values by key", %{bucket: bucket} do
-    assert KV.Bucket.get(bucket, "milk") == nil
+iex>  test "stores values by key", %{bucket: bucket} do
+...>    assert KV.Bucket.get(bucket, "milk") == nil
 
-    KV.Bucket.put(bucket, "milk", 3)
-    assert KV.Bucket.get(bucket, "milk") == 3
-  end
-end
+...>    KV.Bucket.put(bucket, "milk", 3)
+...>    assert KV.Bucket.get(bucket, "milk") == 3
+...>  end
+...> end
 ```
 
 Primeiro definimos um retorno de chamada de configuração com a ajuda da setup/1macro. A setup/1macro define um retorno de chamada que é executado antes de cada teste, no mesmo processo do próprio teste.
@@ -244,38 +282,36 @@ Primeiro definimos um retorno de chamada de configuração com a ajuda da setup/
 Observe que precisamos de um mecanismo para passar o bucketpid do retorno de chamada para o teste. Fazemos isso usando o contexto de teste . Quando retornarmos %{bucket: bucket}do retorno de chamada, o ExUnit mesclará esse mapa no contexto de teste. Como o contexto de teste é um mapa em si, podemos combinar padrões com o bucket fora dele, fornecendo acesso ao bucket dentro do teste:
 
 ```elixir
-test "stores values by key", %{bucket: bucket} do
+iex> test "stores values by key", %{bucket: bucket} do
   # `bucket` is now the bucket from the setup block
-end
+...> end
 ```
 
 Você pode ler mais sobre casos ExUnit na ExUnit.Casedocumentação do módulo e mais sobre retornos de chamada em ExUnit.Callbacksdocs .
 
-Outras ações do agente
+### Outras Ações do Agente
 Além de obter um valor e atualizar o estado do agente, os agentes nos permitem obter um valor e atualizar o estado do agente em uma chamada de função via Agent.get_and_update/2. Vamos implementar uma KV.Bucket.delete/2função que exclui uma chave do bucket, retornando seu valor atual:
 
 ```elixir
 @doc """
-Deletes `key` from `bucket`.
+iex> Deletes `key` from `bucket`.
 
 Returns the current value of `key`, if `key` exists.
 """
-def delete(bucket, key) do
-  Agent.get_and_update(bucket, &Map.pop(&1, key))
-end
+iex> def delete(bucket, key) do
+...>   Agent.get_and_update(bucket, &Map.pop(&1, key))
+...> end
 ```
 
-Agora é sua vez de escrever um teste para a funcionalidade acima! Além disso, certifique-se de explorar a documentação do Agentmódulo para aprender mais sobre eles.
-
-Cliente/Servidor em agentes
-Antes de passarmos para o próximo capítulo, vamos discutir a dicotomia cliente/servidor nos agentes. Vamos expandir a delete/2função que acabamos de implementar:
+### Cliente/Servidor em Agentes
+Vamos expandir a delete/2função que acabamos de implementar:
 
 ```elixir
-def delete(bucket, key) do
-  Agent.get_and_update(bucket, fn dict ->
-    Map.pop(dict, key)
-  end)
-end
+iex> def delete(bucket, key) do
+...>  Agent.get_and_update(bucket, fn dict ->
+...>    Map.pop(dict, key)
+...>  end)
+...> end
 ```
 
 Tudo o que está dentro da função que passamos para o agente acontece no processo do agente. Neste caso, como o processo agente é aquele que recebe e responde às nossas mensagens, dizemos que o processo agente é o servidor. Tudo fora da função está acontecendo no cliente.
@@ -283,16 +319,17 @@ Tudo o que está dentro da função que passamos para o agente acontece no proce
 Esta distinção é importante. Se houver ações caras a serem realizadas, você deve considerar se será melhor realizar essas ações no cliente ou no servidor. Por exemplo:
 
 ```elixir
-def delete(bucket, key) do
-  Process.sleep(1000) # puts client to sleep
-  Agent.get_and_update(bucket, fn dict ->
-    Process.sleep(1000) # puts server to sleep
-    Map.pop(dict, key)
-  end)
-end
+iex> def delete(bucket, key) do
+...>  Process.sleep(1000) # puts client to sleep
+...>  Agent.get_and_update(bucket, fn dict ->
+...>    Process.sleep(1000) # puts server to sleep
+...>    Map.pop(dict, key)
+...>  end)
+...> end
 ```
 
 Quando uma ação longa é executada no servidor, todas as outras solicitações para esse servidor específico aguardarão até que a ação seja concluída, o que pode causar o tempo limite de alguns clientes.
 
+## Exercício
 https://elixir-lang.org/getting-started/mix-otp/agent.html
 
