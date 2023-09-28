@@ -1,8 +1,10 @@
-## Capitulo 3
+# Capitulo 3
 Neste capitulo iremos se aprofundar em Estruturas de Controle.
-### Estruturas de Controle 
 
-### If e Unless
+## Estruturas de Controle 
+
+## If e Unless
+
 Existem chances de que você já tenha encontrado if/2 antes, e caso você tenha utilizado Ruby você é familiarizado com unless/2. Em Elixir eles trabalham praticamente da mesma forma porém são definidos como macros, não construtores da linguagem; Você pode encontrar a implementação deles em Kernel module.
 
 Pode-se notar que em Elixir, os únicos valores falsos são nil e o booleano false.
@@ -29,7 +31,8 @@ iex> unless is_integer("hello") do
 ...> end
 "Not an Int"
 ```
-### Case
+## Case
+
 Caso seja necessário combinar múltiplos padrões nós poderemos utilizar case/2:
 
 ```elixir
@@ -84,7 +87,8 @@ iex> case {1, 2, 3} do
 
 Verifique a documentação oficial sobre Expressões permitidas em cláusulas guard.
 
-### Cond
+## Cond
+
 Quando necessitamos associar condições, e não valores, nós podemos recorrer ao cond/1; Isso é semelhante ao else if ou elsif de outras linguagens:
 
 Este exemplo vem diretamente do Guia Introdutório oficial do Elixir.
@@ -109,7 +113,8 @@ iex> cond do
 ...> end
 "Catch all"
 ```
-### With
+## With
+
 A forma especial with/1 é útil quando tentamos usar case/2 de maneira aninhada ou em situações que não é possível encadear funções. A expressão with/1 é composta de palavras-chaves, generators e finalmente uma expressão.
 
 Iremos discutir generators na lição sobre list comprehensions para comparar o lado direito do operador <- com o lado esquerdo.
@@ -188,7 +193,7 @@ iex> import Integer
 
 Isso ajuda a lidar com erros provendo padrões parecido com o case. O valor passado para o else é o primeiro que não foi correspondido com o padrão em uma expressão.
 
-## Sigils
+# Sigils
 
 Elixir fornece uma sintaxe alternativa para representar e trabalhar com literais. Um sigil (símbolo especial) vai começar com um til ~ seguido por um caractere. O núcleo do Elixir fornece-nos alguns sigils, no entanto, é possível criar o nosso próprio quando precisamos estender a linguagem.
 
@@ -215,7 +220,7 @@ Uma lista de delimitadores inclui:
 - "..." Um par de aspas duplas
 - '...' Um par de aspas simples
 
-### Lista de Caracteres
+## Lista de Caracteres
 
 O ~c e ~C sigils geram listas de caracteres respectivamente. Por exemplo:
 
@@ -229,7 +234,7 @@ iex> ~C/2 + 7 = #{2 + 7}/
 
 Podemos ver em letra minúscula ~c interpolando o cálculo, enquanto um sigil de letra maiúscula ~C não. Veremos que esta sequência maiúscula / minúscula é um tema comum em toda a construção de sigils.
 
-### Expressões Regulares
+## Expressões Regulares
 
 O ~r e ~R sigils são usados para representar Expressões Regulares. Nós criamos ambos dentro de funções Regex. Por exemplo:
 
@@ -269,7 +274,8 @@ iex> Regex.split(~r/_/, string)
 
 Como podemos ver, a string "100_000_000" é dividida nas barras sublinhadas graças ao nosso ~r/_/ sigil. A função Regex.split retorna uma lista.
 
-### String
+## String
+
 O ~s e ~S sigils são usados para gerar dados de String. Por exemplo:
 
 ```elixir
@@ -290,7 +296,7 @@ iex> ~S/welcome to elixir #{String.downcase "SCHOOL"}/
 "welcome to elixir \#{String.downcase \"SCHOOL\"}"
 ```
 
-### Lista de Palavras
+## Lista de Palavras
 
 A lista de palavras do tipo sigil pode ser muito útil. Pode lhe economizar tempo, digitação e possivelmente, reduzir a complexidade dentro da base de código. Veja este exemplo simples:
 
@@ -312,7 +318,7 @@ iex> ~W/i love #{'e'}lixir school/
 ["i", "love", "\#{'e'}lixir", "school"]
 ```
 
-### NaiveDateTime
+## NaiveDateTime
 
 Uma NaiveDateTime pode ser bem útil para criar rapidamente uma struct que representa um DateTime sem um timezone.
 
@@ -321,7 +327,8 @@ Geralmente, nós devemos evitar criar uma NaiveDateTime struct diretamente. No e
 ```elixir
 iex> NaiveDateTime.from_iso8601("2015-01-23 23:50:07") == {:ok, ~N[2015-01-23 23:50:07]}
 ```
-### Criando Sigils
+
+## Criando Sigils
 
 Um dos objetivos do Elixir é ser uma linguagem de programação extensível. Não é surpresa então que você possa facilmente criar o seu próprio sigil customizado. Neste exemplo, vamos criar um sigil para converter uma cadeia para letras maiúsculas. Como já existe uma função para isso no núcleo do Elixir (String.upcase/1), vamos embrulhar o nosso sigil em torno desta função.
 
@@ -339,7 +346,7 @@ ELIXIR SCHOOL
 
 Primeiro definimos um módulo chamado MySigils e dentro deste módulo, criamos uma função chamada sigil_u. Como não existe nenhum sigil ~u no espaço de sigil existente, vamos usá-lo. O _u indica que desejamos usar u como caractere depois do til. A definição da função deve receber dois argumentos, uma entrada e uma lista.
 
-## Mais sobre módulos 
+# Mais sobre módulos 
 
 Os módulos permitem a organização de funções em um namespace. Além de agrupar funções, eles permitem definir funções nomeadas e privadas que cobrimos na lição sobre funções.
 
@@ -374,7 +381,8 @@ iex> Example.Greetings.morning "Sean"
 "Good morning Sean."
 ```
 
-### Atributos de Módulo
+## Atributos de Módulo
+
 Atributos de módulo são mais comumente usados como constantes no Elixir. Vamos dar uma olhada em um exemplo simples:
 
 ```elixir
@@ -465,7 +473,8 @@ Os roles não são mais exibidos na saída!
 ### Composição
 Agora que sabemos como criar módulos e structs, vamos aprender a incluir uma funcionalidade existente neles através da composição. Elixir nos fornece uma variedade de maneiras diferentes para interagir com outros módulos, vamos ver o que temos à nossa disposição.
 
-### Alias
+## Alias
+
 Permite-nos criar pseudônimos, usado frequentemente em código Elixir:
 
 ```elixir
@@ -504,7 +513,8 @@ iex> defmodule Example do
 ..> end
 ```
 
-### Import
+## Import
+
 Se queremos importar funções em vez de criar pseudônimos de um módulo, podemos usar import:
 
 ```elixir
@@ -516,7 +526,8 @@ iex> last([1, 2, 3])
 3
 ```
 
-### Filtrando
+## Filtrando
+
 Por padrão todas as funções e macros são importadas, porém nós podemos filtrá-los usando as opções :only e :except.
 
 Para importar funções e macros específicos nós temos que fornecer os pares de nome para :only e :except. Vamos começar por importar apenas a função last/1:
@@ -560,7 +571,8 @@ iex> defmodule Example do
 
 Se tentar chamar um macro que ainda não está carregado, Elixir vai gerar um erro.
 
-### Use
+## Use
+
 Com a macro use podemos dar habilidade a outro módulo para modificar a sua definição atual. Quando invocamos use em nosso código estamos invocando o callback __using__/1 definido pelo módulo declarado. O resultado da macro __using__/1 passa a fazer parte da definição do módulo. Para melhor entendimento de como isso funciona vamos olhar um exemplo simples:
 
 ```elxiir
@@ -619,7 +631,7 @@ iex> Example.hello("Sean")
 
 Esses exemplos simples demonstram como use funciona, mas essa é uma ferramenta poderosa na caixa de ferramentas do Elixir. À medida que você passa a aprender mais sobre Elixir, você observa bem como o use é utilizado. Um exemplo que você verá com certeza é use ExUnit.Case, async: true.
 
-## Compreensões
+# Compreensões
 
 Em alguns casos comprehensions podem ser usadas para produzir código mais conciso para fazer iterações com Enum e Stream. Vamos começar olhando para uma comprehension simples e então observar suas várias partes:
 
@@ -682,7 +694,8 @@ iex> for n <- list, times <- 1..n, do: IO.puts "#{n} - #{times}"
 
 Comprehensions são syntactic sugar e devem ser utilizadas apenas quando for apropriado.
 
-### Filtros
+## Filtros
+
 Você pode pensar em filtros como um tipo de guard para comprehensions. Quando um valor filtrado retorna false ou nil ele é excluído da lista final. Vamos iterar por um intervalo e olhar apenas os números pares. Nós vamos usar a função is_even/1 do módulo Integer para checar se um valor é par ou não.
 
 ```elixir
@@ -701,7 +714,7 @@ iex> for x <- 1..100,
 [6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96]
 ```
 
-### Usando :Into
+## Usando :Into
 
 E se nós quisermos produzir algo que não seja uma lista? Passando a opção :into nós podemos fazer exatamente isso! Como uma regra geral, :into aceita qualquer estrutura que implemente o protocolo Collectable.
 
@@ -720,3 +733,12 @@ iex> for c <- [72, 101, 108, 108, 111], into: "", do: <<c>>
 ```
 
 ## Exercício
+
+## Links
+
+Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
+- [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
+- Livros
+- Vídeos (eu e ElixirLab)
+- Cursos (Groxio, ElxPro, Rafa Camarda)
+- Comunidade Telegram
