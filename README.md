@@ -515,6 +515,6 @@ Você pode nos ajudar de diversas formas:
 
 <img src="./resources/img/nomadz.png"
      alt="Nomadz sonhe. viaje. seja livre"
-     width="350px"
+     width="300px"
      align="right" />
 
