@@ -4,7 +4,7 @@ Neste capítulo iremos apresentar a você, brevemente, a linguagem de programaç
 
 ### Elixir
 
-Elixir é uma linguagem  criada pelo brasileiro [José Valim](https://github.com/josevalim). O projeto começou em 2011, enquanto Valim fazia parte do núcleo de Desenvolvimento e Pesquisa (R&D) da PlataformaTec.
+Elixir é uma linguagem criada pelo brasileiro [José Valim](https://github.com/josevalim). O projeto começou em 2011, enquanto Valim fazia parte da empresa [Plataformatec](https://plataformatec.com/), na qual ele era um dos sócios. Em 2012 foi la
 
 De acordo com sua própria definição, o Elixir é "uma linguagem dinâmica e funcional, desenhada para construir aplicações escaláveis e sustentáveis".
 
