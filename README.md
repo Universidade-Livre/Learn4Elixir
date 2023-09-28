@@ -508,13 +508,19 @@ Você pode nos ajudar de diversas formas:
 
 ## Patrocínio
 
-<img src="./resources/img/cumbuca.png"
-     alt="Cumbuca a conta compartilhada digital"
-     width="350px"
-     align="left" />
-
-<img src="./resources/img/nomadz.png"
-     alt="Nomadz sonhe. viaje. seja livre"
-     width="300px"
-     align="right" />
-
+<table align="center">
+  <tr>
+    <td valign="center" width="50%">
+      <img src="./resources/img/cumbuca.png"
+         alt="Cumbuca a conta compartilhada digital"
+         width="350px"
+         align="center" />
+    </td>
+    <td valign="center" width="50%">
+      <img src="./resources/img/nomadz.png"
+         alt="Nomadz sonhe. viaje. seja livre"
+         width="300px"
+         align="center" />
+    </td>
+  </tr>
+</table>
