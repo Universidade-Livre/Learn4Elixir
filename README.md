@@ -5,7 +5,7 @@
   Há muito tempo, o lendário alquimista José Valim supostamente descobriu o segredo para criar 
 o elixir da vida eterna, a fim de transmutar os elementos e alcançar a imortalidade. Embora a
 busca pela imortalidade seja apenas uma fantasia, Valim deixou sua marca na história ao criar 
-uma linguagem de programação que leva seu nome: Elixir. Este repositório busca te apresentar a 
+uma linguagem de programação chamada Elixir. Este repositório busca te apresentar a 
   "fórmula secreta" para aprender essa poderosa linguagem de programação. 
   </i>⚗️
 </p>
