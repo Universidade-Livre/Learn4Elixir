@@ -12,7 +12,7 @@ O ecossistema de Erlang é conhecido por sua força em sistemas distribuídos e 
 
 ## Caso de Uso de Elixir
 
-Um dos casos mais conhecidos de empresa que usa Elixir em produção como uma de suas principais linguagens é Discord. Em 2019, a empresa escreveu em seu blog o post ["USANDO RUST PARA ESCALAR ELIXIR PARA 11 MILLONES DE USUARIOS CONCURRENTES"](https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users). Segundo a equipe de desenvolvedores, a escolha pelo Elixir veio desde o início, quando buscavam criar um sistema altamente concorrente em tempo real — o protótipo do Discord foi programado em Elixir, apostando nas promessas que a linguagem fazia ao rodar na máquina virtual.
+Um dos casos mais conhecidos de empresa que usa Elixir em produção como uma de suas principais linguagens é Discord. Em 2019, a empresa escreveu em seu blog o post ["USANDO RUST PARA ESCALAR ELIXIR PARA 11 MILLONES DE USUARIOS CONCURRENTES"](https://discord.com/blog/using-rust-to-scale-elixir-for-11-million-concurrent-users). Segundo a equipe de desenvolvedores, a escolha pelo Elixir veio desde o início, quando buscavam criar um sistema altamente concorrente em tempo real — o protótipo do Discord foi programado em Elixir.
 
 Outros exemplos de empresas que usam Elixir em produção podem ser encontrados [seção Cases da página da linguagem Elixir](https://elixir-lang.org/cases.html).
 
