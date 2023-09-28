@@ -19,7 +19,7 @@ notório que poucos se aventuram em experiências inéditas durante o evento, de
 novas possibilidades que poderiam ser fascinantes.
 </p>
 
-Esse é o mês da Hacktoberfest! E vamos participar esse ano criando esse evento.
+Este é o mês da Hacktoberfest! E vamos participar esse ano criando esse evento.
 
 <p align="justify">
 Contribuir com a comunidade de programação durante a Hacktoberfest da Digital Ocean 
