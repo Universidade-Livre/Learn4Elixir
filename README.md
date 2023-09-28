@@ -511,16 +511,20 @@ Você pode nos ajudar de diversas formas:
 <table align="center">
   <tr>
     <td valign="center" width="50%">
-      <img src="./resources/img/cumbuca.png"
-         alt="Cumbuca a conta compartilhada digital"
-         width="350px"
-         align="center" />
+      <a href="https://www.cumbuca.com/">
+        <img src="./resources/img/cumbuca.png"
+           alt="Cumbuca a conta compartilhada digital"
+           width="350px"
+           align="center" />
+      </a>
     </td>
     <td valign="center" width="50%">
-      <img src="./resources/img/nomadz.png"
-         alt="Nomadz sonhe. viaje. seja livre"
-         width="300px"
-         align="center" />
+      <a href="https://hotmart.com/pt-br/marketplace/produtos/nomadz">
+        <img src="./resources/img/nomadz.png"
+           alt="Nomadz sonhe. viaje. seja livre"
+           width="300px"
+           align="center" />
+      </a>
     </td>
   </tr>
 </table>
