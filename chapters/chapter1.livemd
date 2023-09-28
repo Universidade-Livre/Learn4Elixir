@@ -1,7 +1,17 @@
-# Capitulo 1 
-Neste Capitulo iremos te introduzir a Elixir.
-## Elixir e Erlang
+# Capítulo 1 
+
+Neste capítulo iremos apresentar a você, brevemente, a linguagem de programação Elixir.
+
+### Elixir
+
+Elixir é uma linguagem  criada pelo brasileiro [José Valim](https://github.com/josevalim). O projeto começou em 2011, enquanto Valim fazia parte do núcleo de Desenvolvimento e Pesquisa (R&D) da PlataformaTec.
+
+De acordo com sua própria definição, o Elixir é "uma linguagem dinâmica e funcional, desenhada para construir aplicações escaláveis e sustentáveis".
+
+A linguagem foi desenvolvida para ser executada sobre a máquina virtual Erlang VM, com o objetivo de ampliar a produtividade e extensibilidade do ecossistema da linguagem Erlang, criada na década de 80 para múltiplos fins.
+
 ### Historia de Erlang
+
 BEAM, a máquina virtual de Erlang. Por que a máquina virtual de Erlang se chama BEAM e não EVM?
 
 Por motivos históricos explicados em A history of Erlang, de Joe Armstrong. Simplificando: por volta de 1990 havia a JAM, Joe Abstract Machine, onde "Joe" refere-se a Joe Armstrong, um dos criadores da linguagem. Em 1993 a equipe do Erlang decidiu criar uma versão mais eficiente da máquina virtual de Erlang. Bogumil (Bogdan) Hausman foi o principal criador desta linguagem e o nome inicial dela era Turbo Erlang. Mas como Turbo era uma marca da empresa Borland, renomearam a máquina para BEAM: Bogdan's Erlang Abstract Machine.
@@ -29,11 +39,7 @@ Em resumo, o ecossistema de Erlang é um conjunto de recursos, ferramentas e com
 
 ## Historia de Elixir
 
-Elixir, é uma linguagem de berço brasileiro, criada, desenvolvida e mantida por José Valim, em 2011, junto com o núcleo de Desenvolvimento e Pesquisa (R&D) da Plataformatec.
 
-De acordo com sua própria definição, o Elixir é "uma linguagem dinâmica e funcional, desenhada para construir aplicações escaláveis e sustentáveis".
-
-A linguagem foi desenvolvida para ser executada sobre a máquina virtual Erlang VM, com o objetivo de ampliar a produtividade e extensibilidade do ecossistema da linguagem Erlang, criada na década de 80 para múltiplos fins.
 
 ## Promessas Vitais
 
