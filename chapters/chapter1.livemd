@@ -4,7 +4,7 @@ Neste capítulo iremos apresentar a você, brevemente, a linguagem de programaç
 
 ### Elixir
 
-Elixir é uma linguagem criada pelo brasileiro [José Valim](https://github.com/josevalim). O projeto começou em 2011, enquanto Valim fazia parte da empresa [Plataformatec](https://plataformatec.com/), da qual ele era um dos sócios. Em 24 de maio de 2012 foi lançada a versão 0.5 de Elixir, a primeira, segundo Valim, com a cara de Elixir atual. Por esta razão o [aniversário de 10 anos de Elixir foi comemorado em 24 de maio de 2022](http://adolfont.github.io/service/events/10YearsOfElixir/).
+Elixir é uma linguagem criada pelo brasileiro [José Valim](https://github.com/josevalim). O projeto começou em 2011, enquanto Valim fazia parte da empresa [Plataformatec](https://plataformatec.com/), da qual ele era um dos sócios. Em 24 de maio de 2012 foi lançada a versão 0.5 de Elixir, a primeira versão, segundo Valim, com as características de Elixir atual. Por esta razão o [aniversário de 10 anos de Elixir foi comemorado em 24 de maio de 2022](http://adolfont.github.io/service/events/10YearsOfElixir/).
 
 De acordo com sua própria definição, o Elixir é "uma linguagem dinâmica e funcional, desenhada para construir aplicações escaláveis e sustentáveis". A linguagem foi desenvolvida para ser executada sobre a máquina virtual de Erlang (chamada de BEAM), com o objetivo de ampliar a produtividade e extensibilidade do ecossistema da linguagem [Erlang](https://www.erlang.org/), criada na década de 80. O ecossistema de Erlang refere-se ao conjunto de tecnologias, ferramentas, bibliotecas e comunidades relacionadas a Erlang. Erlang é uma linguagem de programação funcional, concorrente e tolerante a falhas, desenvolvida pela Ericsson no final dos anos 80.
 
