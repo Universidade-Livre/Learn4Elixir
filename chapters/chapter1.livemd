@@ -1,4 +1,4 @@
-# Learn 4 Elixir - Capítulo 1
+# Learn4Elixir - Capítulo 1
 
 ## Introdução
 
