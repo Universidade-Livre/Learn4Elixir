@@ -69,6 +69,7 @@ Abaixo você pode  ver e avaliar vários números inteiros. Números inteiros s�
 654_677_888_788_899
 ```
 
+Observe, no último exemplo, que você pode usar o "_" como separador.
 
 ## Exercício
 
