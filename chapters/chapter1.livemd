@@ -1,4 +1,6 @@
-## Capítulo 1 
+# Learn 4 Elixir - Capítulo 1
+
+## Introdução
 
 Neste capítulo iremos apresentar a você, brevemente, a linguagem de programação Elixir. Assim como nos demais capítulos, você deve acompanhar este capítulo no [Livebook](https://livebook.dev/).
 
@@ -23,8 +25,6 @@ Outros exemplos de empresas que usam Elixir em produção podem ser encontrados 
 ## O que é um valor?
 
 Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade de uma pessoa. Maria o nome desta pessoa e professora sua profissão. O salário mensal de Maria é R$ 5.050,55. Clique em _Evaluate_ para avaliar cada um dos valores. O botão _Evaluate_ aparece quando você passa o _mouse_ em cima do canto superior esquerdo da caixa onde fica o valor. Depois da primeira avaliação, o botão se torna _Reevaluate_.
-
-
 
 ```elixir
 10
@@ -56,13 +56,12 @@ Vamos começar falando dos tipos básicos: números inteiros, números de ponto 
 
 Abaixo você pode  ver e avaliar vários números inteiros. Números inteiros são usados para representar valores númericos que não precisam de casas decimais.
 
-
 ```elixir
 10
 ```
 
 ```elixir
--5323456546346
+-5_323_456_546_346
 ```
 
 ```elixir
@@ -81,7 +80,6 @@ Avalie os exemplos abaixo para ver o que acontece!
 3.14
 ```
 
-
 ```elixir
 .14
 ```
@@ -96,6 +94,38 @@ Avalie os exemplos abaixo para ver o que acontece!
 
 Em qual dos exemplos acima aconteceu um erro? Por quê?
 
+## Átomos
+
+Um átomo é uma constante cujo nome é seu valor. Átomos em Elixir começam sempre com o símbolo de dois pontos (:). Avalie os átomos abaixo e verá que eles (quase) sermpre são avaliados em si mesmos.
+
+```elixir
+:idade
+```
+
+```elixir
+:peso
+```
+
+## Valores Lógicos (Booleanos)
+
+Os valores lógicos em Elixir são dois átomos especiais que representam os valores verdade lógicos (também conhecidos como valores booleanos) "verdeadeiro" e "falso". Verdadeiro é representado por :true e falso por false. Por serem átomos especiais, você não precisa colocar dois pontos antes deles. Veja nos exemplos abaixo.
+
+```elixir
+true
+```
+
+```elixir
+true
+```
+
+```elixir
+false
+```
+
+```elixir
+false
+```
+
 ## Exercício
 
 Qual? Quais?
@@ -103,7 +133,9 @@ Qual? Quais?
 ## Links
 
 Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
-- [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
-- [Livros e outros recursos de aprendizagem](https://elixir-lang.org/learning.html)
-- [Elixir Brasil - Comunidade no Telegram](https://t.me/elixirbr)
-- [Elixir em Foco - podcast em português](https://www.elixiremfoco.com/)
+
+* [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
+* [Livros e outros recursos de aprendizagem](https://elixir-lang.org/learning.html)
+* [Elixir Brasil - Comunidade no Telegram](https://t.me/elixirbr)
+* [Elixir em Foco - podcast em português](https://www.elixiremfoco.com/)
+
