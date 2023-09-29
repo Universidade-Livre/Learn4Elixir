@@ -54,7 +54,8 @@ Vamos começar falando dos tipos básicos: números inteiros, números de ponto 
 
 ## Números Inteiros
 
-Abaixo você pode
+Abaixo você pode  ver e avaliar vários números inteiros. Números inteiros são usados para representar valores númericos que não precisam de casas decimais.
+
 
 ```elixir
 10
@@ -67,7 +68,7 @@ Abaixo você pode
 ```elixir
 654_677_888_788_899
 ```
-Acima você pode ver e avaliar vários números inteiros.
+
 
 ## Exercício
 
