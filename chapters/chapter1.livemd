@@ -22,7 +22,7 @@ Outros exemplos de empresas que usam Elixir em produção podem ser encontrados 
 
 ## O que é um Valor?
 
-Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade de uma pessoa. Maria o nome desta pessoa e professora sua profissão. O salário mensal de Maria é R$ 5.050,55. Clique em _Evaluate_ para avaliar cada um dos valores.
+Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade de uma pessoa. Maria o nome desta pessoa e professora sua profissão. O salário mensal de Maria é R$ 5.050,55. Clique em _Evaluate_ para avaliar cada um dos valores. O botão _Evaluate_ aparece quando você passa o _mouse_ em cima do canto superior esquerdo da caixa onde fica o valor. Depois da primeira avaliação, o botão se torna _Reevaluate_.
 
 
 
