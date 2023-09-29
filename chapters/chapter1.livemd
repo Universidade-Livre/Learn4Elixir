@@ -42,7 +42,7 @@ Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade d
 5050.55
 ```
 
-Você deve ter percebido que, ao escrever o nome e a profissão, usamos aspas. E, ao escrever o salário, usamos "." (ponto) no lugar da "," (vírgula) e não colocamos a moeda ("R$"). Explicaremos isto depois.
+Quando executamos valores o Elixir nos retorna exatamente esse valor como resultado. Isso acontece porque os valores são constantes e imutáveis. Quando avaliados, retornam a si mesmos uma vez que nenhuma transformação é aplicada.
 
 <!-- livebook:{"break_markdown":true} -->
 
@@ -50,7 +50,7 @@ Mas antes de mais nada temos que observar que os dados acima têm tipos diferent
 
 ## Quais são os tipos de valores?
 
-Vamos começar falando dos tipos básicos: números inteiros, números de ponto flutuante, valores lógicos (booleanos), átomos e cadeias de caracteres (_Strings_).
+Vamos começar nossa exploração pelos tipos de dados fundamentais na programação, que formam a base sobre a qual construímos a lógica e a estrutura de nossos programas. Os tipos básicos que abordaremos incluem: Números Inteiros, Números de Ponto Flutuante, Valores Lógicos (Booleanos), Átomos e Cadeias de Caracteres (_Strings_).
 
 ## Números Inteiros
 
@@ -60,15 +60,31 @@ Abaixo você pode  ver e avaliar vários números inteiros. Números inteiros s�
 10
 ```
 
-```elixir
--5_323_456_546_346
-```
+Observe, no último exemplo, que você pode usar o "_" como separador.
 
 ```elixir
 654_677_888_788_899
 ```
 
-Observe, no último exemplo, que você pode usar o "_" como separador.
+Da mesma forma é possível representar números negativos utilizando sinal.
+
+```elixir
+-5_323_456_546_346
+```
+
+Além disso é possível representar números em outras bases como binário (prefixando com **0b**), octal (prefixando com **0o**) e hexadecimal (prefixando com **0x**).
+
+```elixir
+0b101010
+```
+
+```elixir
+0o52
+```
+
+```elixir
+0x2A
+```
 
 ## Números de Ponto Flutuante
 
@@ -77,7 +93,7 @@ Números de ponto flutuante exigem um ponto decimal depois de pelo menos um díg
 Avalie os exemplos abaixo para ver o que acontece!
 
 ```elixir
-3.14
+1.618
 ```
 
 ```elixir
@@ -92,11 +108,15 @@ Avalie os exemplos abaixo para ver o que acontece!
 1.234e3
 ```
 
-Em qual dos exemplos acima aconteceu um erro? Por quê?
+> Em qual dos exemplos acima aconteceu um erro? Por quê?
 
 ## Átomos
 
-Um átomo é uma constante cujo nome é seu valor. Átomos em Elixir começam sempre com o símbolo de dois pontos (:). Avalie os átomos abaixo e verá que eles (quase) sermpre são avaliados em si mesmos.
+Em Elixir, um átomo é uma espécie de palavra-chave constante que tem um nome que é igual ao seu valor. Imagine um átomo como uma etiqueta com uma palavra que representa algo específico. A coisa interessante sobre os átomos em Elixir é que eles sempre começam com dois pontos (:).
+
+```elixir
+:atomo
+```
 
 ```elixir
 :idade
@@ -108,19 +128,21 @@ Um átomo é uma constante cujo nome é seu valor. Átomos em Elixir começam se
 
 ## Valores Lógicos (Booleanos)
 
-Os valores lógicos em Elixir são dois átomos especiais que representam os valores verdade lógicos (também conhecidos como valores booleanos) "verdeadeiro" e "falso". Verdadeiro é representado por :true e falso por false. Por serem átomos especiais, você não precisa colocar dois pontos antes deles. Veja nos exemplos abaixo.
+Em Elixir, os valores lógicos são como interruptores que podem estar ligados (verdadeiros) ou desligados (falsos). Elixir usa dois átomos especiais para representar esses valores: `:true` para verdadeiro e `:false` para falso.
+
+Porém esses átomos especiais são tão importantes e bem conhecidos que você não precisa colocar dois pontos antes deles como você faria com outros átomos. Em vez disso, você pode simplesmente usar `true` para representar verdadeiro e `false` para representar falso.
+
+```elixir
+is_atom(true)
+```
+
+Se você escrever `true` em Elixir, isso significa "verdadeiro" e representa um valor lógico que está ligado ou verdadeiro.
 
 ```elixir
 true
 ```
 
-```elixir
-true
-```
-
-```elixir
-false
-```
+Se você escrever `false` em Elixir, isso significa "falso" e representa um valor lógico que está desligado ou falso.
 
 ```elixir
 false
@@ -128,17 +150,19 @@ false
 
 ## Cadeias de Caracteres (Strings)
 
-Uma cadeia de caracteres (também conhecida como "string") é uma sequência de caracteres iniciadas e finalizadas por aspas ("). Avalie os exemplos abaixo.
+Uma **cadeia de caracteres**, que é chamada de **"string"**, é basicamente uma sequência de letras, números, símbolos ou até mesmo emojis. Para indicar que algo é uma string em Elixir, você a envolve com aspas duplas (`"`). Isso ajuda o Elixir a entender que tudo dentro das aspas é uma única string.
 
 ```elixir
-"Universidade Brasileira Livre"
+"Olá, Elixir!"
 ```
+
+As strings em Elixir são inteligentes e podem conter caracteres especiais, como acentos em letras ou até mesmo emojis. O Elixir usa a codificação UTF-8, o que significa que é possível representar uma ampla variedade de caracteres de diferentes idiomas e símbolos.
 
 ```elixir
-"ELixir é a melhor programação do planeta!"
+"José Valim é o criador de Elixir!! 🎉🎉🎉 Ele é brasileiro!!! 🇧🇷🇧🇷🇧🇷"
 ```
 
-Você pode também ter _strings_ multi linha. Elas começam e terminam com três aspas.
+Você pode até mesmo criar strings que se estendem por várias linhas. Para fazer isso, você usa três aspas duplas no início e no final da string, assim: `"""`.
 
 ```elixir
 """
@@ -148,15 +172,15 @@ Em Elixir você pode ter uma string com várias linhas!
 """
 ```
 
-As strings em Elixir são codificadas em UTF-8. Ou seja, você pode ter acentuação e emojis nelas!
-
-```elixir
-"José Valim é o criador de Elixir!! 🎉🎉🎉 Ele é brasileiro!!! 🇧🇷🇧🇷🇧🇷"
-```
-
 ## Verificando Tipos
 
-Existem diversas funções que nos permitem verificar o tipo de um valor ou expressão. Avalie os exemplos abaixo para entender como funcionam.
+Existem diversas funções que nos permitem verificar o tipo de um valor ou expressão. O mais comum é quando queremos saber o tipo de um valor usar uma função **is_** (É? em inglês) seguida do tipo que queremos saber, como vimos antes **is_atom** checa se o valor é um átomo.
+
+```elixir
+is_atom(:um_atomo)
+```
+
+Existe uma função similar para cada tipo, como vamos ver.
 
 ```elixir
 is_integer(1233)
@@ -214,6 +238,8 @@ is_boolean(0)
 is_boolean(nil)
 ```
 
+Porém, a função para verificar _strings_ diferente das outras se chama _is_binary_.
+
 ```elixir
 is_binary("UBL")
 ```
@@ -226,15 +252,13 @@ is_binary(true)
 is_binary("🎉🎉🎉")
 ```
 
-Observe que a função para verificar _strings_ se chama _is_binary_.
-
 ## Expressões
 
-Agora que já conhecemos os tipos básicos, podemos compor expressões com eles. Inicialmente vamos mostrar apenas expressões com operadores (que são tipos especiais de funções, o que veremos depois).
+Agora que já estamos familiarizados com os tipos de dados em Elixir, é hora de aprender sobre expressões. Expressões são maneiras de combinar e manipular esses tipos de dados para realizar tarefas em nosso código.
 
 <!-- livebook:{"break_markdown":true} -->
 
-Primeiro veremos expressões com números inteiros, usando os operadores matemáticos. Avalie cada uma das expressões.
+Pense em expressões como pequenos blocos de construção que nos permitem fazer coisas úteis. Por exemplo, podemos usar operadores, que são como ferramentas especiais, para realizar cálculos e comparações. No entanto, vale ressaltar que os operadores em Elixir são, na verdade, funções especiais que realizam operações específicas.
 
 ```elixir
 2 + 3
@@ -252,39 +276,43 @@ Primeiro veremos expressões com números inteiros, usando os operadores matemá
 4 / 3
 ```
 
-Observe que, no exemplo acima, apesar de os operandos serem números inteiros, o resultado foi um número de ponto flutuante.
+> Observe que, no exemplo acima, apesar de os operandos serem números inteiros, o resultado foi um número de ponto flutuante.
 
-```elixir
-1.9 * 3
-```
+<!-- livebook:{"break_markdown":true} -->
 
-```elixir
-1834.45 / 45 * 10
-```
+Além dos operadores matemáticos temos também outros operadores. Por exemplo, temos os operadores lógicos que usamos para fazer operações com valores lógicos (booleanos), são eles `and`, `or` e `not`.
+
+<!-- livebook:{"break_markdown":true} -->
+
+`and`: Este operador retorna `true` se **ambos** os operandos forem verdadeiros. Caso contrário, retorna `false`. Por exemplo, `true and false` retornará `false`.
 
 ```elixir
 true and false
 ```
 
+`or`: Este operador retorna `true` se **qualquer um** dos operandos for verdadeiro. Caso contrário, retorna `false`. Por exemplo, `true or false` retornará `true`.
+
 ```elixir
 false or true
 ```
 
-```elixir
-not true
-```
+`not`: Este é um operador de negação. Ele inverte o valor do operando. Se o operando for `true`, ele retornará `false` e vice-versa. Por exemplo, `not true` retornará `false`.
 
 ```elixir
 not false
 ```
 
+**Concatenação de Strings**: Em Elixir, usamos o operador `<>` para concatenar (ou seja, juntar) duas strings.
+
 ```elixir
-"UBL" <> "é legal!"
+"UBL" <> " " <> "é legal!"
 ```
 
 ```elixir
-"UBL é " <> "legal!!!"
+"https://" <> "ulivre.dev"
 ```
+
+A interpolação de strings permite que você insira valores de variáveis ou expressões dentro de uma string. Em Elixir, usamos `#{}` para interpolação de strings.
 
 ```elixir
 "Onde você estuda? Eu estudo na #{"UBL"}!"
