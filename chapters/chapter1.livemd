@@ -94,6 +94,7 @@ Avalie os exemplos abaixo para ver o que acontece!
 1.234e3
 ```
 
+Em qual dos exemplos acima aconteceu um erro? Por quê?
 
 ## Exercício
 
