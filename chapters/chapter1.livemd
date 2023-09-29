@@ -1,6 +1,8 @@
 ## Capítulo 1 
 
-Neste capítulo iremos apresentar a você, brevemente, a linguagem de programação Elixir.
+Neste capítulo iremos apresentar a você, brevemente, a linguagem de programação Elixir. Assim como nos demais capítulos, você deve acompanhar este capítulo no [Livebook](https://livebook.dev/).
+
+[![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2FUniversidade-Livre%2FLearn4Elixir%2Fblob%2Fmain%2Fchapters%2Fchapter1.livemd)
 
 ## Elixir
 
