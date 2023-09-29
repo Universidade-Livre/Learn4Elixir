@@ -1,8 +1,9 @@
 # Learn4Elixir - Capítulo 4
+
+[![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2FUniversidade-Livre%2FLearn4Elixir%2Fblob%2Fmain%2Fchapters%2Fchapter4.livemd)
 Neste Capitulo você irá aprender sobre: Data e Tempo, Processos em Elixir e Agentes.
 
-# Data e Tempo 
-## Time
+## Data e Tempo 
 
 O Elixir tem alguns módulos que trabalham com tempo. Ainda que precise ser notado que essa funcionalidade é limitada para trabalhar com fuso horário UTC.
 
