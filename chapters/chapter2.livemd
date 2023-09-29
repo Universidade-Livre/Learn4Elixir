@@ -1,4 +1,4 @@
-# Learn 4 Elixir - Capítulo 2
+# Learn4Elixir - Capítulo 2
 
 ## Funções em Elixir
 
