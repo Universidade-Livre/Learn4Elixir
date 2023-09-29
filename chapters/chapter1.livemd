@@ -91,7 +91,7 @@ Avalie os exemplos abaixo para ver o que acontece!
 ```
 
 ```elixir
-1.234e+3
+1.234e3
 ```
 
 
