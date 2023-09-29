@@ -126,6 +126,66 @@ false
 false
 ```
 
+## Verificando Tipos
+
+Existem diversas funções que nos permitem verificar o tipo de um valor ou expressão. Avalie os exemplos abaixo para entender como funcionam.
+
+```elixir
+is_integer(1233)
+```
+
+```elixir
+is_integer(false)
+```
+
+```elixir
+is_float(1)
+```
+
+```elixir
+is_float(1.0)
+```
+
+```elixir
+is_number(1)
+```
+
+```elixir
+is_number(1.9)
+```
+
+```elixir
+is_atom(:peso)
+```
+
+```elixir
+is_atom(10)
+```
+
+```elixir
+is_atom(true)
+```
+
+```elixir
+is_atom(45.4)
+```
+
+```elixir
+is_boolean(true)
+```
+
+```elixir
+is_boolean(false)
+```
+
+```elixir
+is_boolean(0)
+```
+
+```elixir
+is_boolean(nil)
+```
+
 ## Exercício
 
 Qual? Quais?
