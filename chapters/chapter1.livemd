@@ -487,6 +487,77 @@ Uma pequena nota sobre o formato de nome '++/2' usado acima. Em Elixir, o nome d
 
 ## Tuplas
 
+Uma tupla é uma coleção ordenada de elementos. Parece um pouco com uma lista, mas seu casamento de padrões trabalha com um número fixo de elementos, diferente das listas, que permitem o casamento de padrões sem que se saiba o número exato de seus elementos. As tuplas são definidas usando chaves '{', '}' e seus valores são separados por vírgulas..
+
+```elixir
+# tupla vazia
+{}
+```
+
+```elixir
+{1}
+```
+
+```elixir
+{:nome, "João"}
+```
+
+```elixir
+{:nome, "Maria", :idade, 10}
+```
+
+Após ver os exemplos acima, vamos ver como fazer casamento de padrões com tuplas. Suponha que você tem uma vaiável 'pessoa', como abaixo:
+
+```elixir
+pessoa = {:nome, "Maria", :idade, 10}
+```
+
+E suponha que eu, sabendo a estrutura da tupla pessoa, queira apenas saber o nome da pessoa. Basta fazer:
+
+```elixir
+{:nome, nome, _, _} = pessoa
+```
+
+```elixir
+nome
+```
+
+O mesmo poderia ser feito para idade.
+
+```elixir
+{_, _, :idade, idade} = pessoa
+```
+
+```elixir
+idade
+```
+
+Ou para os dois ao mesmo tempo.
+
+```elixir
+{:nome, nome, :idade, idade} = pessoa
+```
+
+```elixir
+{nome, idade}
+```
+
+Veja que acima nós construímos uma tupla a partir dos resultados do casamento de padrões.
+
+## Exemplos de casamento de padrões um pouco mais complexos
+
+```elixir
+[_, num, {:nome, name, :ano, year} | _] = [1, 3, {:nome, "pxto", :ano, 1978}, [45, 67]]
+```
+
+```elixir
+{num, name, year}
+```
+
+## Outras coleções
+
+Existem outros tipos de coleções em Elixir, mas eles estão foram do escopo deste documento.
+
 ## Exercício
 
 Qual? Quais?
