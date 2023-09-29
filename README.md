@@ -114,7 +114,7 @@ Começar a aprender com o Learn4Elixir é muito mamão com açúcar, é só:
 1. [Fazer um fork desse repositório](#)
 2. Adicione `hacktoberfest` nos "topics" (tópicos) do seu fork. Caso contrário os PRs não vão contar.
 3. [Instale a linguagem Elixir e/ou o Livebook](#)
-4. Abra o `src/Chapter1.exs` e começe a resolver os desafios.
+4. Abra o `src/Chapter1.livemd` e começe a resolver os desafios.
 5. Após terminar as soluções do capítulo (ou até mesmo se tiver dificuldade e precisar de ajuda) você pode abrir um PR **para o seu fork** com a solução e mencionar @[anabastos](https://github.com/anabastos), @[cherry](https://github.com/cherryramatisdev), @[cyytrus](https://github.com/cyytrus), @[digzom](https://github.com/digzom), @[douglastofoli](https://github.com/douglastofoli), @[eulixir](https://github.com/eulixir), @[lanjoni](https://github.com/lanjoni) ou @[OtavioSC](https://github.com/otaviosc) que vamos ajudá-lo com a revisão de suas soluções.
 
 > **Importante!** Você deve abrir o PR para o seu próprio fork desse repositório. Desta forma cada um pode receber os pontos para o evento e manter seus arquivos individualmente.
