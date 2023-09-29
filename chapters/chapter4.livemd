@@ -110,6 +110,8 @@ Como você pode ver, a hora mudou de 12:00 em Paris para às 6:00 em Nova York, 
 
 # Processos em Elixir
 
+USAR ALGUNS DOS EXEMPLOS EM https://dev.to/elixir_utfpr/o-que-e-um-processo-em-elixir-4j00
+
 Em Elixir, um processo é uma unidade de execução leve e concorrente. É uma das características mais fundamentais da linguagem e é usado para criar sistemas concorrentes e paralelos de maneira eficiente.
 
 Aqui estão algumas características importantes dos processos em Elixir:
