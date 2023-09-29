@@ -2,9 +2,142 @@
 
 ## Funções em Elixir
 
+Neste capítulo abordaremos funções em Elixir.
+
 [![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2FUniversidade-Livre%2FLearn4Elixir%2Fblob%2Fmain%2Fchapters%2Fchapter2.livemd)
 
-Neste capítulo nos aprofundaremos um pouco em funções em Elixir.
+## Funções nomeadas e módulos
+
+Uma função recebe zero ou mais valores como entrada e retorna um valor como saída. As entradas e saídas podem ser de todos os tipos de Elixir (inclusive dos que não mostraremos aqui).
+
+<!-- livebook:{"break_markdown":true} -->
+
+Elixir já vem com várias funções. Estas funções fazem parte de módulos. Por exemplo, o módulo ['String'](https://hexdocs.pm/elixir/1.15.0/String.html) contém a função 'upcase', com aridade 2 (portanto, nos referimos a ela como 'String.upcase/2'), que converte todos os caracteres em uma cadeia de caracteres para letras maiúsculas.
+
+```elixir
+String.upcase("não grite, por favor!")
+```
+
+Você pode ter achado estranho a aplicação de String.upcase/2 acima recebe apenas um argumento. Isto acontece pois ELixir permite que sejam definidas funções com argumentos _default_. Neste caso, o segundo argumento é o modo. Se vocẽ não passar nada, é o mesmo que chamar da seguinte forma:
+
+```elixir
+String.upcase("não grite, por favor!", :default)
+```
+
+Mas eu posso escolher entre quatro valores: :default, :ascii, :greek,  :turkic.
+
+```elixir
+# observe o "ã"
+String.upcase("não grite, por favor!", :ascii)
+```
+
+```elixir
+# observe o I acentuado
+String.upcase("não grite, por favor!", :turkic)
+```
+
+## Definindo suas próprias funções nomeadas e seus módulos
+
+Você pode definir seu próprio módulo usando 'defmodule'. E suas funções usando 'def'. Veja a sintaxe nos exemplos abaixo:
+
+```elixir
+defmodule Matematica do
+  def soma(num1, num2) do
+    num1 + num2
+  end
+
+  def subtracao(num1, num2) do
+    num1 - num2
+  end
+end
+```
+
+Observe que o formato é:
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+defmodule <NOME_DO_MODULO> do
+  def <NOME_DA_FUNCAO>(<LISTA_DE_ARGUMENTOS>) do
+    <CORPO_DA_FUNCAO>
+  end
+end
+```
+
+<!-- livebook:{"break_markdown":true} -->
+
+Depois que você define o módulo e o avalia, você pode usar suas funções.
+
+```elixir
+Matematica.soma(30, 40)
+```
+
+```elixir
+Matematica.subtracao(30, 56)
+```
+
+Vamos definir outro módulo:
+
+```elixir
+defmodule Turma do
+  def media(lista_notas) do
+    Enum.sum(lista_notas) / Enum.count(lista_notas)
+  end
+
+  def aprovado?(nota) when nota >= 6 do
+    true
+  end
+
+  def aprovado?(_), do: false
+end
+```
+
+No exemplo acima, usamos duas funções do [módulo Enum](https://hexdocs.pm/elixir/1.15.0/Enum.html): uma para somar todos os valores de uma lista de notas (Enum.sum/1) e outra para contar quantas notas tem na lista (Enum.count/1). A partir disto, calculamos a média de todas as notas da turma.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Em 'Turma.aprovado?/1' usamos a convenção de terminar o nome da função que sempre retorna um valor lógico com '?'.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Na linha 6 'def aprovado?(nota) when nota>=6 do', usamos uma guarda, que é introduzida com 'when' logo após a lista de parâmetros. Não temos tempo aqui de entrar em todos os detalhes de [guardas](https://hexdocs.pm/elixir/patterns-and-guards.html#list-of-allowed-functions-and-operators). Neste caso, estamos dizendo que se a nota for maior ou igual 6, 'true' será retornado. Caso contrário (observe o casamento de padrões em ação na linha 9 com o uso do '_'), 'false' será retornado.
+Ainda na linha 9, observe que em vez de:
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+def <NOME_DA_FUNCAO> <GUARDA_OPCIONAL> do
+  <RESULTADO>
+end
+```
+
+podemos escrever
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+def <NOME_DA_FUNCAO> <GUARDA_OPCIONAL>, do: <RESULTADO>
+```
+
+<!-- livebook:{"break_markdown":true} -->
+
+Podemos ter várias cláusulas (ou seja, vários 'def's) para uma mesma função. O primeiro que se aplicar, ou seja, cujo padrão casar será usado.
+
+```elixir
+Turma.media([10, 4, 6, 7, 8])
+```
+
+```elixir
+Turma.aprovado?(6)
+```
+
+```elixir
+Turma.aprovado?(5)
+```
+
+```elixir
+Turma.aprovado?(7)
+```
 
 ## Funções sem nome (anônimas)
 
@@ -21,7 +154,6 @@ No exemplo abaixo, definimos uma função que recebe um valor 'num' (que represe
 ```elixir
 fn num -> num + 1 end
 ```
-<!-- livebook:{"break_markdown":true} -->
 
 Quando você avalia o código acima, você percebe que Elixir te dá algo como:
 
@@ -33,13 +165,14 @@ Este valor, por si só, não tem muita utilidade para nós.
 
 <!-- livebook:{"break_markdown":true} -->
 
-Como então podemos aplicar a função anônima que acabamos de definir a um valor, como 2? Normalmente não fazemos isso em Elixir, mas uma solução é atribuir a função a uma variável. 
+Como então podemos aplicar a função anônima que acabamos de definir a um valor, como 2? Normalmente não fazemos isso em Elixir, mas uma solução é atribuir a função a uma variável.
 
 ```elixir
 f = fn num -> num + 1 end
 ```
 
 E só depois chamar a função:
+
 ```elixir
 f.(2)
 ```
@@ -47,6 +180,7 @@ f.(2)
 Perceberam que, para chamar a função 'f', precisamos colocar um ponto antes dos parênteses? É uma característica de Ellxir (que na prática não é um problema).
 
 <!-- livebook:{"break_markdown":true} -->
+
 Outra forma é fazer a chamada diretamente (também usando o ponto):
 
 ```elixir
@@ -67,42 +201,46 @@ O uso realmente interessante de funções anônimas é em funções de ordem mai
 
 ## O módulo Enum
 
-O [módulo Enum](https://elixirschool.com/pt/lessons/basics/enum) inclui várias funções de ordem mais alta. 
+O [módulo Enum](https://elixirschool.com/pt/lessons/basics/enum) inclui várias funções de ordem mais alta.
 
 <!-- livebook:{"break_markdown":true} -->
+
 Por exemplo, a função 'Enum.map/2' recebe, no exemplo abaixo, como entrada uma lista '[10, 20, 3, 45]' e uma função anônima de aridade 1 que soma 12 ao valor que receber:
 
 ```elixir
-Enum.map([10, 20, 3, 45], fn(x) -> x + 12 end)
+Enum.map([10, 20, 3, 45], fn x -> x + 12 end)
 ```
 
-A função 'Enum.reduce/2' recebe como argumento uma lista, um valor inicial e uma função de aridade 2. No exemplo abaixo, a lista é '[1, 2,3]', o valor inicial é 0 e a função soma um elemento da lista ao acumulador, que passa a ter o valor desta soma. Deste modo, o resultado será '0+1+2+3'. 
+A função 'Enum.reduce/2' recebe como argumento uma lista, um valor inicial e uma função de aridade 2. No exemplo abaixo, a lista é '[1, 2,3]', o valor inicial é 0 e a função soma um elemento da lista ao acumulador, que passa a ter o valor desta soma. Deste modo, o resultado será '0+1+2+3'.
 
 ```elixir
-Enum.reduce([1, 2, 3], 0, fn(elemento, acumulador) -> elemento + acumulador end)
+Enum.reduce([1, 2, 3], 0, fn elemento, acumulador -> elemento + acumulador end)
 ```
 
 E como seria um exemplo de uma função que retorna outra função?
 No módulo abaixo nós definimos uma função 'HOF.incrementador/1', que recebe como entrada um número e retorna uma função de aridade 1 que incrementa um outro valor a este número.
+
 ```elixir
 defmodule HOF do
   def incrementador(numero) do
-     fn valor -> valor + numero end
+    fn valor -> valor + numero end
   end
 end
 ```
+
 Ou seja, se eu chamar desta forma:
+
 ```elixir
 HOF.incrementador(3)
 ```
+
 Eu obtenho uma função que incrementa 3 ao valor que receber. Portanto, se eu passar 5 a esta função, o resultado será 8.
 
 ```elixir
-(HOF.incrementador(3)).(5)
+HOF.incrementador(3).(5)
 ```
 
-É útil? Não lembro de nenhuma utilidade deste tipo de função em meu código. Mas pode ser útil em bibliotecas bem específicas. 
-
+É útil? Não lembro de nenhuma utilidade deste tipo de função em meu código. Mas pode ser útil em bibliotecas bem específicas.
 
 ## O operador Pipe
 
@@ -112,21 +250,22 @@ O operador pipe (representado pelos dois símbolos '|>') é uma forma de chamar 
 
 Por exemplo, em vez de fazer:
 
-
 ```elixir
 require Integer
-Enum.all?(Enum.map([1,2,3,4], fn x->x*2 end), &Integer.is_even/1)
+Enum.all?(Enum.map([1, 2, 3, 4], fn x -> x * 2 end), &Integer.is_even/1)
 ```
+
 Podemos escrever:
 
 ```elixir
 require Integer
-[1,2,3,4]
-|> Enum.map(fn x->x*2 end)
+
+[1, 2, 3, 4]
+|> Enum.map(fn x -> x * 2 end)
 |> Enum.all?(&Integer.is_even/1)
 ```
 
-Ou seja, o pipe envia o resultado de uma expressão como o primeiro parâmetro para a próxima chamada a função. 
+Ou seja, o pipe envia o resultado de uma expressão como o primeiro parâmetro para a próxima chamada a função.
 
 ## Funções privadas em Módulos
 
@@ -135,10 +274,11 @@ Uma funcionalidade que pode ser útil é a definição de funções privadas em 
 <!-- livebook:{"break_markdown":true} -->
 
 Nós vimos anteriormente como definir uma função em um módulo:
+
 ```elixir
 defmodule Mat do
   def media(num1, num2) do
-      (num1+num2)/2
+    (num1 + num2) / 2
   end
 end
 ```
@@ -148,30 +288,25 @@ Vamos supor que eu queira ter uma função auxiliar, uma função que é usada a
 ```elixir
 defmodule Matematica do
   def media(num1, num2) do
-      (num1+num2)/2
+    (num1 + num2) / 2
   end
 
-  def fatorial(num) when num>0 do
-     fatorial(num,1)
+  def fatorial(num) when num > 0 do
+    fatorial(num, 1)
   end
-  def fatorial(_num)  do
-     :error
+
+  def fatorial(_num) do
+    :error
   end
+
   defp fatorial(0, fatorial_atual) do
     fatorial_atual
   end
-  defp fatorial(num, fatorial_atual) when num > 0 do
-     fatorial(num - 1, fatorial_atual * num)
-  end
 
+  defp fatorial(num, fatorial_atual) when num > 0 do
+    fatorial(num - 1, fatorial_atual * num)
+  end
 end
 ```
 
-## Links
-
-Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
-- [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
-- Livros
-- Vídeos (eu e ElixirLab)
-- Cursos (Groxio, ElxPro, Rafa Camarda)
-- Comunidade Telegram
+## Exercícios
