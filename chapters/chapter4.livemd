@@ -342,11 +342,3 @@ Quando uma ação longa é executada no servidor, todas as outras solicitações
 ## Exercício
 
 
-## Links
-
-Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
-- [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
-- Livros
-- Vídeos (eu e ElixirLab)
-- Cursos (Groxio, ElxPro, Rafa Camarda)
-- Comunidade Telegram
