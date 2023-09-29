@@ -94,8 +94,8 @@ Aqui tem um plano mais detalhado do conteúdo que preparamos no tutorial para
 você. Esses são os tópicos de cada parte:
 
 
-- __Parte Um__ – Valores, Tipos de Valores, Casamento de Padrões, Variáveis, Atribuição de Valores, Coleções, Funções.
-- __Parte Dois__ – Funções Anônimas, Funções de Alta Ordem, Enum, Pipe, Funções Privadas.
+- __Parte Um__ – Valores, Tipos de Valores, Casamento de Padrões, Variáveis, Atribuição de Valores, Coleções (listas e tuplas).
+- __Parte Dois__ – Funções, Funções Anônimas, Funções de Alta Ordem, Enum, Pipe, Funções Privadas.
 - __Parte Três__ – Estruturas de Controle, Sigils, Módulos, Compreensões.
 - __Parte Quatro__ – Strings, Data e Tempo, Processos, Agentes.
 
