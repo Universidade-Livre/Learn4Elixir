@@ -20,7 +20,7 @@ Outros exemplos de empresas que usam Elixir em produção podem ser encontrados 
 
 *Agora vamos começar a aprender Elixir!*
 
-## O que é um Valor?
+## O que é um valor?
 
 Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade de uma pessoa. Maria o nome desta pessoa e professora sua profissão. O salário mensal de Maria é R$ 5.050,55. Clique em _Evaluate_ para avaliar cada um dos valores. O botão _Evaluate_ aparece quando você passa o _mouse_ em cima do canto superior esquerdo da caixa onde fica o valor. Depois da primeira avaliação, o botão se torna _Reevaluate_.
 
@@ -48,12 +48,26 @@ Você deve ter percebido que, ao escrever o nome e a profissão, usamos aspas. E
 
 Mas antes de mais nada temos que observar que os dados acima têm tipos diferentes.
 
-## Quais são os tipos de Valores?
+## Quais são os tipos de valores?
 
-## Tipos Básicos
+Vamos começar falando dos tipos básicos: números inteiros, números de ponto flutuante, valores lógicos (booleanos), átomos e cadeias de caracteres (_Strings_).
 
-## Inteiros
+## Números Inteiros
 
+Abaixo você pode
+
+```elixir
+10
+```
+
+```elixir
+-5323456546346
+```
+
+```elixir
+654_677_888_788_899
+```
+Acima você pode ver e avaliar vários números inteiros.
 
 ## Exercício
 
