@@ -1,4 +1,8 @@
-# Capítulo 2
+# Learn 4 Elixir - Capítulo 2
+
+## Funções em Elixir
+
+[![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2FUniversidade-Livre%2FLearn4Elixir%2Fblob%2Fmain%2Fchapters%2Fchapter1.livemd)
 
 Neste capítulo nos aprofundaremos um pouco em funções em Elixir.
 
