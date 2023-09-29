@@ -228,7 +228,75 @@ is_binary("🎉🎉🎉")
 
 Observe que a função para verificar _strings_ se chama _is_binary_.
 
-## Casamento de Padrões (_Pattern Matching_)
+## Expressões
+
+Agora que já conhecemos os tipos básicos, podemos compor expressões com eles. Inicialmente vamos mostrar apenas expressões com operadores (que são tipos especiais de funções, o que veremos depois).
+
+<!-- livebook:{"break_markdown":true} -->
+
+Primeiro veremos expressões com números inteiros, usando os operadores matemáticos. Avalie cada uma das expressões.
+
+```elixir
+2 + 3
+```
+
+```elixir
+4 - 5
+```
+
+```elixir
+4 * 80
+```
+
+```elixir
+4 / 3
+```
+
+Observe que, no exemplo acima, apesar de os operandos serem números inteiros, o resultado foi um número de ponto flutuante.
+
+```elixir
+1.9 * 3
+```
+
+```elixir
+1834.45 / 45 * 10
+```
+
+```elixir
+true and false
+```
+
+```elixir
+false or true
+```
+
+```elixir
+not true
+```
+
+```elixir
+not false
+```
+
+```elixir
+"UBL" <> "é legal!"
+```
+
+```elixir
+"UBL é " <> "legal!!!"
+```
+
+```elixir
+"Onde você estuda? Eu estudo na #{"UBL"}!"
+```
+
+```elixir
+"Eu tenho #{25} anos de idade."
+```
+
+Observe que não apresentamos nenhuma operação com átomos, exceto quando estes são valores lógicos.
+
+## Casamento de Padrões (Pattern Matching)
 
 ## Exercício
 
