@@ -116,7 +116,9 @@ true
 iex> :crypto.strong_rand_bytes 3
 <<23, 104, 108>>
 ```
-### Strings
+
+## Strings
+
 As strings em Elixir são codificadas em UTF-8 e são representadas com aspas duplas:
 ```elixir
 iex> "Hello"
@@ -153,7 +155,10 @@ iex> 2 = x
 ```
 Vamos tentar isso com algumas das coleções que nós conhecemos:
 ```elixir
-# Listas
+
+
+## Listas
+
 iex> list = [1, 2, 3]
 [1, 2, 3]
 [1, 2, 3] = list
@@ -168,7 +173,8 @@ iex> tail
 iex> [2 | _] = list
 ** (MatchError) no match of right hand side value: [1, 2, 3]
 
-# Tuplas
+## Tuplas
+
 iex> {:ok, value} = {:ok, "Successful!"}
 {:ok, "Successful!"}
 iex> value
@@ -176,49 +182,7 @@ iex> value
 iex> {:ok, value} = {:error}
 ** (MatchError) no match of right hand side value: {:error}
 ```
-## Operador Pin
 
-Acabamos de aprender que o operador match manuseia atribuições quando o lado esquerdo da associação é uma variável. Em alguns casos este comportamento de reassociação de variável é algo não desejável. Para estas situações, nós temos o operador pin:^.
-Quando fixamos a variável em associação ao valor existente ao invés de reassociar a um novo valor. Vamos ver como isso funciona:
-```elixir
-iex> x = 1
-1
-iex> ^x = 2
-** (MatchError) no match of right hand side value: 2
-iex> {x, ^x} = {2, 1}
-{2, 1}
-iex> x
-2
-```
-
-Elixir 1.2 introduziu suporte para pins em chaves de mapas e cláusulas de função:
-```elixir
-iex> key = "hello"
-"hello"
-iex> %{^key => value} = %{"hello" => "world"}
-%{"hello" => "world"}
-iex> value
-"world"
-iex> %{^key => value} = %{:hello => "world"}
-** (MatchError) no match of right hand side value: %{hello: "world"}
-```
-Um exemplo do uso do pin em uma cláusula de função:
-```elixir
-iex> greeting = "Hello"
-"Hello"
-iex> greet = fn
-...>  (^greeting, name) -> "Hi #{name}"
-...>  (greeting, name) -> "#{greeting}, #{name}"
-...> end
-#Function<12.54118792/2 in :erl_eval.expr/5>
-iex> greet.("Hello", "Sean")
-"Hi Sean"
-iex> greet.("Mornin'", "Sean")
-"Mornin', Sean"
-iex> greeting
-"Hello"
-```
-Note que no exemplo "Mornin'", a reassociação de greeting para "Mornin'" só acontece dentro de uma função. Fora da função, greeting continua sendo "Hello".
 
 ## O que é uma Variável?
 
@@ -232,38 +196,42 @@ Convenções de Nomenclatura: Em Elixir, as variáveis são geralmente escritas 
 
 Aqui está um exemplo simples de como criar e usar variáveis em Elixir:
 ```elixir
-# Definindo uma variável
+
+## Definindo uma variável
 iex> nome = "João"
 
-# Usando a variável
+## Usando a variável
 iex> IO.puts("Olá, #{nome}!")
 
-# Tentativa de reatribuir a variável (isso não funcionará)
+## Tentativa de reatribuir a variável (isso não funcionará)
 nome = "Maria"  
-# Isso cria uma nova variável chamada "nome" com o novo valor, não modifica a variável original
-```
+
+## Isso cria uma nova variável chamada "nome" com o novo valor, não modifica a variável original
+
 No exemplo acima, criamos uma variável chamada nome e a utilizamos em uma saída de texto. Quando tentamos atribuir um novo valor a nome, na verdade estamos criando uma nova variável nome com o valor "Maria", mas a variável original nome permanece inalterada.
 
 Em resumo, as variáveis em Elixir são usadas para armazenar valores imutáveis ​​e são uma parte fundamental da programação funcional em Elixir.
 
-# Como atribuir um Valor a uma Variável?
+## Como atribuir um Valor a uma Variável?
 
 Em Elixir, você pode atribuir um valor a uma variável usando o operador "=". Aqui está um exemplo simples de como fazer isso:
 
-```elixir
-# Definindo uma variável chamada "nome" com o valor "João"
+## Definindo uma variável chamada "nome" com o valor "João"
+
 iex> nome = "João"
 
-# Usando a variável
+## Usando a variável
+
 iex> IO.puts("Olá, #{nome}!")
 ```
 Neste exemplo, estamos definindo uma variável chamada nome e atribuindo a ela o valor "João". Em seguida, usamos a variável nome em uma saída de texto. A variável nome agora contém o valor "João" e pode ser usada em qualquer lugar dentro do escopo em que foi definida.
 
 Lembre-se de que, em Elixir, as variáveis são imutáveis, o que significa que, uma vez que você atribui um valor a uma variável, não pode alterá-lo. Se você tentar atribuir um novo valor à mesma variável, na verdade estará criando uma nova variável com o novo valor, como mencionado anteriormente.
 
-# O que é Coleção?
+## O que é Coleção?
 
 Em Elixir, uma coleção refere-se a uma estrutura de dados que pode armazenar um conjunto de valores. As coleções mais comuns em Elixir incluem listas, tuplas, mapas e conjuntos. Cada uma dessas coleções tem suas próprias características e é adequada para diferentes tipos de operações. Aqui estão algumas informações sobre cada uma delas:
+
 
 ## Listas
 Uma lista é uma coleção ordenada de elementos em que cada elemento é separado por uma vírgula e cercado por colchetes [ ]. As listas em Elixir são imutáveis, o que significa que você não pode alterar uma lista existente, mas pode criar uma nova lista com elementos adicionados ou removidos.
@@ -271,15 +239,15 @@ Uma lista é uma coleção ordenada de elementos em que cada elemento é separad
 Exemplo de lista em Elixir:
 
 ```elixir
-iex> [3.14, :pie, "Apple"]
 [3.14, :pie, "Apple"]
 ```
 Elixir implementa listas como listas encadeadas. Isso significa que acessar o tamanho da lista é uma operação que rodará em tempo linear (O(n)). Por essa razão, é normalmente mais rápido inserir um elemento no início (prepending) do que no final (appending):
 
 ```elixir
-iex> list = [3.14, :pie, "Apple"]
 [3.14, :pie, "Apple"]
-# Prepending (rápido)
+
+## Prepending (rápido)
+
 iex> ["π" | list]
 ["π", 3.14, :pie, "Apple"]
 # Appending (lento)
