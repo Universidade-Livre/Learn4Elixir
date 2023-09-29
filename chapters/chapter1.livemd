@@ -71,6 +71,30 @@ Abaixo você pode  ver e avaliar vários números inteiros. Números inteiros s�
 
 Observe, no último exemplo, que você pode usar o "_" como separador.
 
+## Números de Ponto Flutuante
+
+Números de ponto flutuante exigem um ponto decimal depois de pelo menos um dígito. Eles possuem precisão de 64 bits e suportam "e" para números exponenciais.
+
+Avalie os exemplos abaixo para ver o que acontece!
+
+```elixir
+3.14
+```
+
+
+```elixir
+.14
+```
+
+```elixir
+1.0e-10
+```
+
+```elixir
+1.234e+3
+```
+
+
 ## Exercício
 
 Qual? Quais?
