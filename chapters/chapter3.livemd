@@ -1,4 +1,4 @@
-# Learn 4 Elixir - Capítulo 3
+# Learn4Elixir - Capítulo 3
 
 [![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2FUniversidade-Livre%2FLearn4Elixir%2Fblob%2Fmain%2Fchapters%2Fchapter3.livemd)
 
