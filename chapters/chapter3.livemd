@@ -1,5 +1,8 @@
-# Capitulo 3
-Neste capitulo iremos se aprofundar em Estruturas de Controle.
+# Learn 4 Elixir - Capítulo 2
+
+
+
+Neste capitulo iremos nos aprofundar em Estruturas de Controle.
 
 ## Estruturas de Controle 
 
