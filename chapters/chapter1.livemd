@@ -126,6 +126,34 @@ false
 false
 ```
 
+## Cadeias de Caracteres (Strings)
+
+Uma cadeia de caracteres (também conhecida como "string") é uma sequência de caracteres iniciadas e finalizadas por aspas ("). Avalie os exemplos abaixo.
+
+```elixir
+"Universidade Brasileira Livre"
+```
+
+```elixir
+"ELixir é a melhor programação do planeta!"
+```
+
+Você pode também ter _strings_ multi linha. Elas começam e terminam com três aspas.
+
+```elixir
+"""
+Olá, pessoas!
+Este é o Learn4Elixir da Universidade Brasileira Live.
+Em Elixir você pode ter uma string com várias linhas!
+"""
+```
+
+As strings em Elixir são codificadas em UTF-8. Ou seja, você pode ter acentuação e emojis nelas!
+
+```elixir
+"José Valim é o criador de Elixir!! 🎉🎉🎉 Ele é brasileiro!!! 🇧🇷🇧🇷🇧🇷"
+```
+
 ## Verificando Tipos
 
 Existem diversas funções que nos permitem verificar o tipo de um valor ou expressão. Avalie os exemplos abaixo para entender como funcionam.
@@ -185,6 +213,22 @@ is_boolean(0)
 ```elixir
 is_boolean(nil)
 ```
+
+```elixir
+is_binary("UBL")
+```
+
+```elixir
+is_binary(true)
+```
+
+```elixir
+is_binary("🎉🎉🎉")
+```
+
+Observe que a função para verificar _strings_ se chama _is_binary_.
+
+## Casamento de Padrões (_Pattern Matching_)
 
 ## Exercício
 
