@@ -1,4 +1,4 @@
-# Learn4Elixir - Capítulo 1
+# Learn4Elixir - Capítulo 4
 Neste Capitulo você irá aprender sobre: Data e Tempo, Processos em Elixir e Agentes.
 
 # Data e Tempo 
