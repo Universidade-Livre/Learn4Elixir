@@ -1,4 +1,4 @@
-# Learn4Elixir - Capítulo 1
+# Learn 4 Elixir - Capítulo 1
 
 ## Introdução
 
@@ -298,6 +298,195 @@ Observe que não apresentamos nenhuma operação com átomos, exceto quando este
 
 ## Casamento de Padrões (Pattern Matching)
 
+Ao falar de casamento de padrões, precisamos falar de variáveis. Uma variável precisa ter um nome, que geralmente começa com uma letra mínúscula (a convenção 'camel_case' é bastante utilizada), e precisa ser atribuída a um valor para poder ser avaliada. Por exemplo, tente avaliar a variável 'nome' abaixo e vai acontecer o erro "variável nçao definida" (em inglês, "undefined variable").
+
+```elixir
+nome
+```
+
+Mas se você usar o operador de casamento de padrões, cujo símbolo é o '=', você pode casar o padrão "UBL", por exemplo, com a variável 'nome' e assim atribuir "UBL" a 'nome'. Avalie o código abaixo:
+
+```elixir
+nome = "UBL"
+```
+
+Observe que o retorno da expressão (toda expressão em Elixir retorna algo, se não ocporrer nenhum erro) é o valor que, após o casamento de padrões, está dos dois lados do operador '='.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Se você agora pedir para avaliar 'nome', o resultado será diferente.
+
+```elixir
+nome
+```
+
+Apesar do símbolo do casamento de padrões ser '=', os lados esquerdo e direito de um casamento de padrões têm "poderes" diferentes. No exemplo acima, vimos como atribuir um valor à variável 'nome'. Só pudemos fazer isso porque 'nome' estava no lado esquerdo. Se estivesse no lado direito (ver o exemplo parecido seguinte), não funcionaria. Ou seja, o lado esquerdo "tem mais poder" do que o lado direito.
+
+```elixir
+10 = idade
+```
+
+Porém, uma vez que uma variável já esteja atribuída, é possível usá-la do lado direito. Veja o exemplo abaixo.
+
+```elixir
+"UBL" = nome
+```
+
+O exemplo acima é importante para deixar claro que o casamento de padrões não é uma simples atribuição de valor a variável.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Os demais exemplos de casamento de padrões só fazem sentido se você conhecer as estrturas de dados compostas (as coleções).
+
+## Listas
+
+Coleções são estruturas de dados que contém zero ou mais valores. O tipo de coleção que provavelmente é o mais usado em Elixir são as listas. Uma lista pode ser vazia ou conter 1 ou mais elementos. Não vamos discutir detalhes de como listas são implementadas em Elixir aqui. Apenas mostraremos como são representadas e como fazer casamento de padrões com elas.
+
+```elixir
+# Lista Vazia
+[]
+```
+
+No exemplo acima você vê uma lista vazia e também como escrever um comentário de linha em Elixir: tudo que vier depois do '#' é um comentário.
+
+```elixir
+# lista contendo um elemento
+[1]
+```
+
+```elixir
+# lista contendo dois elementos
+[3, 45]
+```
+
+```elixir
+# lista contendo 3 elementos
+[45, 78, 21]
+```
+
+A partir dos exemplos acima, você já percebeu que as listas começam com '[', terminam com ']' os valores são separados por vírgulas. Mais alguns exemplos.
+
+```elixir
+# lista com valores de diferentes tipos.
+[1, "Casa", :idade]
+```
+
+```elixir
+# lista contendo outra lista
+[1, [2, 45], 3]
+```
+
+Agora vamos ver exemplos de casamento de padrões com listas.
+
+```elixir
+[cabeca | cauda] = [1, 3, 2]
+```
+
+```elixir
+cabeca
+```
+
+```elixir
+cauda
+```
+
+```elixir
+[primeiro, segundo | resto] = [45, 67, 784, 3453]
+```
+
+```elixir
+primeiro
+```
+
+```elixir
+segundo
+```
+
+```elixir
+resto
+```
+
+O exemplo abaixo não dá erro pois no final de toda lista há uma lista vazia.
+
+```elixir
+[cabeca | cauda] = [78678]
+```
+
+```elixir
+cabeca
+```
+
+```elixir
+cauda
+```
+
+Mas o exemplo abaixo dá erro.
+
+```elixir
+[cabeca | cauda] = []
+```
+
+No casamento de padrões, você pode usar o operador '_', que alguns chamam de "coringa", para ignorar algo.
+
+```elixir
+[cabeca | _] = [646, 345, 345]
+```
+
+```elixir
+cabeca
+```
+
+```elixir
+_
+```
+
+Nada é atribuído a '_'.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Veremos depois como utilizar '_' com tuplas.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Uma observação importante, e que está relacionada com a forma com que listas são implemantadas, é que as listas devem crescer na cabeça. Ou seja, se eu for colocar um novo elemento, devo colocá-lo como primeiro elemento (mais à esquerda). Para isso, eu posso usar o operador '|' como nos exemplos abaixo.
+
+```elixir
+[1 | [3, 4]]
+```
+
+```elixir
+[1 | []]
+```
+
+```elixir
+[2, 3, 4 | [6, 7, 8, 9]]
+```
+
+Apenas tenha cuidado para não gerar listas impóprias! Depois do '|' deve vir uma lista.
+
+```elixir
+[1 | 2]
+```
+
+É possível, mas não recomendável se a segunda lista for grande, concatenar listas. O operador de concatenação é o '++/2'.
+
+```elixir
+[1, 3, 56] ++ [34, 560, 8]
+```
+
+Uma pequena nota sobre o formato de nome '++/2' usado acima. Em Elixir, o nome de uma função ou operador tem dois componentes: o nome em si (neste caso ++) e sua aridade. Aridade é informação essencial quando se fala sobre código Elixir. A aridade indica o número de argumentos que uma dada função ou operador aceita (dois, neste nosso exemplo). Nome e aridade são combinados com uma barra.
+
+```elixir
+# subtração de listas, operador '--/2'
+[1, 2, 3] -- [1, 3]
+```
+
+```elixir
+[1, 2, 2, 3, 2, 3] -- [1, 2, 3, 2]
+```
+
+## Tuplas
+
 ## Exercício
 
 Qual? Quais?
@@ -310,4 +499,3 @@ Se você quiser saber mais, recomendamos abaixo alguns links que podem ser útei
 * [Livros e outros recursos de aprendizagem](https://elixir-lang.org/learning.html)
 * [Elixir Brasil - Comunidade no Telegram](https://t.me/elixirbr)
 * [Elixir em Foco - podcast em português](https://www.elixiremfoco.com/)
-
