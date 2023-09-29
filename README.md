@@ -95,9 +95,9 @@ você. Esses são os tópicos de cada parte:
 
 
 - __Parte Um__ – Valores, Tipos de Valores, Casamento de Padrões, Variáveis, Atribuição de Valores, Coleções (listas e tuplas).
-- __Parte Dois__ – Funções, Funções Anônimas, Funções de Alta Ordem, Enum, Pipe, Funções Privadas.
-- __Parte Três__ – Estruturas de Controle, Sigils, Módulos, Compreensões.
-- __Parte Quatro__ – Strings, Data e Tempo, Processos, Agentes.
+- __Parte Dois__ – Funções e Módulos, Funções Anônimas, Funções de Alta Ordem, Enum, Pipe, Funções Privadas.
+- __Parte Três__ – Estruturas de Controle, Sigils, Compreensões.
+- __Parte Quatro__ – Data e Tempo, Processos, Agentes.
 
 ## Objetivos
 
