@@ -600,6 +600,8 @@ Mapas são coleções de pares chave-valor, onde cada chave é única e associad
 
 <!-- livebook:{"break_markdown":true} -->
 
+
+
 ```elixir
 %{:chave1 => "valor 1", :chave2 => "valor 2", :chave3 => "valor 3"}
 ```
@@ -1004,8 +1006,8 @@ is_tuple("")
 ### Exercicio 2
 
 Imagine que vários desenvolvedores de software que trabalham com front-end 
-publicaram abertamente seus salários no Twitter e você gostaria de fazer um programa 
-que calculasse a média de salários de cada região a partir do input de 3 salários dessa região.
+publicaram abertamente seus salários no Twitter. Você pensou em fazer um programa 
+que calculasse a média aritmética de salários de cada região a partir do input de 3 salários dessa região.
 
 ---
 
@@ -1017,10 +1019,16 @@ que calculasse a média de salários de cada região a partir do input de 3 sal�
 
 ---
 
-Mude o valor de `media` para que tenha o valor da média aritmética desses valores e então rode a célula com if para garantir que a resposta está certa.
+Defina variáveis para cada salário, depois, atributa o cálculo de média aritmética à variável média. Por fim, rode a última célula com `if` para garantir que a resposta está certa.
 
 ```elixir
-media = 
+ocamilodev = 71255.53
+ocam_l = 30236.23
+camilotk_ = 5256.12
+```
+
+```elixir
+media = (ocamilodev + ocam_l + camilotk_) / 3
 ```
 
 ```elixir
