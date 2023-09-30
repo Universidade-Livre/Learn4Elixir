@@ -1235,6 +1235,8 @@ Salve esse mapa criado em uma variável `sistema_solar`.
 sistema_solar =
 ```
 
+---
+
 Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
 
 * [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
