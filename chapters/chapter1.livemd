@@ -324,28 +324,48 @@ A interpolação de strings permite que você insira valores de variáveis ou ex
 
 Observe que não apresentamos nenhuma operação com átomos, exceto quando estes são valores lógicos.
 
-## Casamento de Padrões (Pattern Matching)
+## Variáveis
 
-Ao falar de casamento de padrões, precisamos falar de variáveis. Uma variável precisa ter um nome, que geralmente começa com uma letra mínúscula (a convenção 'camel_case' é bastante utilizada), e precisa ser atribuída a um valor para poder ser avaliada. Por exemplo, tente avaliar a variável 'nome' abaixo e vai acontecer o erro "variável nçao definida" (em inglês, "undefined variable").
-
-```elixir
-nome
-```
-
-Mas se você usar o operador de casamento de padrões, cujo símbolo é o '=', você pode casar o padrão "UBL", por exemplo, com a variável 'nome' e assim atribuir "UBL" a 'nome'. Avalie o código abaixo:
+Uma variável é um nome que representa um valor. Podemos por exemplo atribuir o nome "curso" ao valor string "Matemática".
 
 ```elixir
-nome = "UBL"
+curso = "Matemática"
 ```
 
 Observe que o retorno da expressão (toda expressão em Elixir retorna algo, se não ocporrer nenhum erro) é o valor que, após o casamento de padrões, está dos dois lados do operador '='.
 
 <!-- livebook:{"break_markdown":true} -->
 
-Se você agora pedir para avaliar 'nome', o resultado será diferente.
+Agora quando chamarmos o valor "curso" vamos obter seu valor.
 
 ```elixir
-nome
+curso
+```
+
+Agora podemos usar esse nome para passar esse valor em qualquer operação com strings.
+
+```elixir
+is_binary(curso)
+```
+
+```elixir
+"Estou estudando #{curso}"
+```
+
+Em elixir, todas as variáveis são imutáveis. Isso significa que você não pode alterar o valor que uma variável representa, mas você pode reassociar a variável a um novo valor.
+
+```elixir
+curso = "Ciência da Computação"
+```
+
+Você não está mudando o valor "Matemática" para "Ciência da Computação", mas sim criando um novo valor "Ciência da Computação" e fazendo a variável nome apontar para ele. O valor "Matemática" ainda existe na memória, mas não é mais acessível pela variável curso.
+
+## Casamento de Padrões (Pattern Matching)
+
+Quando declaramos uma variável usamos o operador de casamento de padrões, cujo símbolo é o '=', você pode casar o padrão "UBL", por exemplo, com a variável 'nome' e assim atribuir "UBL" a 'nome'. Avalie o código abaixo:
+
+```elixir
+nome = "UBL"
 ```
 
 Apesar do símbolo do casamento de padrões ser '=', os lados esquerdo e direito de um casamento de padrões têm "poderes" diferentes. No exemplo acima, vimos como atribuir um valor à variável 'nome'. Só pudemos fazer isso porque 'nome' estava no lado esquerdo. Se estivesse no lado direito (ver o exemplo parecido seguinte), não funcionaria. Ou seja, o lado esquerdo "tem mais poder" do que o lado direito.
@@ -571,6 +591,212 @@ Ou para os dois ao mesmo tempo.
 ```
 
 Veja que acima nós construímos uma tupla a partir dos resultados do casamento de padrões.
+
+## Mapas (Maps)
+
+Mapas são coleções de pares chave-valor, onde cada chave é única e associada a um valor específico. Em Elixir, os mapas são delimitados por chaves %{} e podem conter zero ou mais pares chave-valor. Aqui está uma representação básica de um mapa em Elixir:
+
+<!-- livebook:{"break_markdown":true} -->
+
+
+
+```elixir
+%{:chave1 => "valor 1", :chave2 => "valor 2", :chave3 => "valor 3"}
+```
+
+As chaves e os valores em um mapa podem ser de qualquer tipo, incluindo átomos, números, strings e até mesmo outras estruturas de dados.
+
+```elixir
+%{1 => "algo", 2 => :algo, 3 => [1, 2, 3]}
+```
+
+Em Elixir, você pode criar um mapa simplesmente usando a notação de chaves %{} e especificando os pares chave-valor. Aqui estão alguns exemplos:
+
+```elixir
+# Um mapa vazio
+%{}
+```
+
+```elixir
+# Um mapa com pares chave-valor
+%{nome: "Alice", idade: 30, cidade: "São Paulo"}
+```
+
+```elixir
+# Um mapa com tipos diferentes de valores
+%{nome: "Bob", pontos: 42, aprovado: true}
+```
+
+Lembre-se de que as chaves em um mapa são únicas. Se você tentar adicionar uma chave que já existe, o valor anterior será substituído pelo novo valor.
+
+```elixir
+# Isso substituirá "Alice" por "Bob" na chave "nome"
+%{nome: "Alice", nome: "Bob"}
+```
+
+Para acessar valores em um mapa, você usa a sintaxe de colchetes mapa[chave]. Aqui estão alguns exemplos:
+
+```elixir
+# Criando um mapa
+dados = %{nome: "Alice", idade: 30, cidade: "São Paulo"}
+
+# Acessando valores
+nome = dados[:nome]
+idade = dados[:idade]
+cidade = dados[:cidade]
+```
+
+```elixir
+nome
+```
+
+```elixir
+idade
+```
+
+```elixir
+cidade
+```
+
+Se a chave não existir no mapa, uma exceção será lançada. Para evitar isso, você pode usar o operador de acesso seguro **Map.get/2** (`Map` é um espaço de nomes que contêm bastante funções para trabalhar com Mapas, entre elas a função `get` que recebe dois parâmetros - o mapa e a chave), que retorna um valor padrão em vez de lançar uma exceção.
+
+```elixir
+# Acessando com Map.get/2
+Map.get(dados, :nome)
+```
+
+Porém, caso não exista a chave isso não vai nos lançar uma exceção.
+
+```elixir
+Map.get(dados, :algo)
+```
+
+Também possui a versão Map.get/3 que recebe mais um parâmetro, que é o valor que é retornado caso a chave não exista ao invés de `nil`.
+
+```elixir
+Map.get(dados, :algo, "valor quando a chave não existe")
+```
+
+Mapas em Elixir são imutáveis, o que significa que não podem ser modificados após a criação. No entanto, você pode criar novos mapas com valores atualizados. O operador `|` é usado para criar um novo mapa que contém todas as associações do mapa original, juntamente com quaisquer associações adicionais ou atualizadas.
+
+```elixir
+# Atualizando o mapa
+mapa = Map.put(dados, :idade, 31)
+novos_mapa = Map.put(mapa, :profissao, "Engenheira")
+```
+
+Tenha em mente que, como os mapas são imutáveis, o mapa original permanece inalterado após cada atualização. É comum atribuir o novo mapa a uma nova variável, como fizemos acima.
+
+```elixir
+mapa
+```
+
+Para remover uma chave e seu valor associado de um mapa, você pode usar a função `Map.delete/2`.
+
+```elixir
+mapa_atualizados = Map.delete(dados, :idade)
+```
+
+```elixir
+mapa_atualizados
+```
+
+Novamente, observe que a operação de exclusão não modifica o mapa original, mas cria um novo mapa sem a chave removida.
+
+```elixir
+dados
+```
+
+Para verificar se uma chave específica existe em um mapa, você pode usar a função `Map.has_key?/2`.
+
+```elixir
+Map.has_key?(dados, :idade)
+```
+
+Em Elixir, mapas são frequentemente usados como registros leves para representar dados estruturados. Em vez de definir tipos de registro estáticos, você pode criar mapas com chaves específicas para representar entidades de dados.
+
+```elixir
+# Representando um usuário com mapa
+usuario = %{nome: "Alice", idade: 30, cidade: "São Paulo"}
+
+# Representando um produto com mapa
+produto = %{nome: "Celular", preco: 799.99, estoque: 50}
+```
+
+> Isso oferece flexibilidade, pois você pode adicionar ou remover campos conforme necessário, sem precisar modificar a estrutura do registro.
+
+<!-- livebook:{"break_markdown":true} -->
+
+O casamento de padrões com mapas em Elixir permite que você desestruture um mapa e associe suas partes a variáveis. Isso torna mais fácil acessar os valores específicos que você deseja dentro de um mapa. Vamos começar com um exemplo simples:
+
+```elixir
+usuario = %{nome: "Bob", idade: 25, cidade: "Porto Alegre"}
+
+# Casando o mapa
+%{nome: nome, idade: idade} = usuario
+```
+
+Neste exemplo, estamos casando o mapa `usuario` com um padrão que consiste em duas chaves: `:nome` e `:idade`. Os valores associados a essas chaves são extraídos e atribuídos às variáveis `nome` e `idade`. O resultado é a impressão do nome e da idade do usuário.
+
+```elixir
+nome
+```
+
+```elixir
+idade
+```
+
+Às vezes, você pode querer casar um mapa, mas não está interessado em todos os valores. Nesse caso, você pode usar o caractere sublinhado `_` para ignorar valores que não são relevantes para sua operação.
+
+```elixir
+# criando um mapa/registro de um curso
+curso = %{nome: "Ciência da Computação", duracao: 5, inicio: 2023}
+
+# Casando o mapa, mas ignorando nome
+%{nome: _, duracao: duracao, inicio: inicio} = curso
+
+# soma os valores extraídos do mapa/registro
+inicio + duracao
+```
+
+Você também pode casar partes específicas de um mapa sem a necessidade de casar todas as chaves. Isso é útil quando você deseja acessar um valor em um mapa complexo sem se preocupar com as outras chaves.
+
+```elixir
+# Definindo um mapa complexo
+pedido = %{cliente: %{nome: "Alice", idade: 30}, produtos: [%{nome: "Celular", preco: 799.99}]}
+
+# Casando partes do mapa
+%{cliente: %{nome: nome, idade: idade}} = pedido
+
+# Interpola os valores extraídos
+"Nome do Cliente: #{nome}, Idade do Cliente: #{idade}"
+```
+
+Neste exemplo, estamos casando apenas a parte do mapa que corresponde à informação do cliente. Isso nos permite acessar o nome e a idade do cliente, independentemente de outras informações no mapa.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Em Elixir, você pode casar mapas aninhados, o que significa que você pode acessar valores dentro de mapas dentro de mapas. Isso é especialmente útil quando você lida com estruturas de dados complexas.
+
+```elixir
+# Definindo um mapa com aninhamento
+empresa = %{nome: "Minha Empresa", endereco: %{rua: "Rua Principal", cidade: "São Paulo"}}
+
+# Casando mapas aninhados
+%{endereco: %{cidade: cidade}} = empresa
+```
+
+Neste exemplo, estamos casando o mapa `empresa` e acessando a cidade dentro do mapa aninhado `endereco`. Isso nos permite obter a cidade da empresa de forma direta.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Podemos construir um novo mapa com as chaves extraidas.
+
+```elixir
+%{cidade: cidade}
+```
+
+## Estruturas (Structs)
 
 ## Exemplos de casamento de padrões um pouco mais complexos
 
