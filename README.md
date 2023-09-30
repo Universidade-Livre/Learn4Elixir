@@ -237,7 +237,7 @@ source ~/.bashrc # ou feche e abra um novo terminal
 ```
 10. Rodar o livebook em sua máquina e acessar o link que ele vai lhe dar no navegador.
 ```
-livebook serve
+livebook server
 ```
  
 </details>
