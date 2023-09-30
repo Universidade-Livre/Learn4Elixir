@@ -238,7 +238,7 @@ is_boolean(0)
 is_boolean(nil)
 ```
 
-Porém, a função para verificar _strings_ diferente das outras se chama _is_binary_.
+Porém, a função para verificar _strings_, diferente das outras se chama _is_binary_.
 
 ```elixir
 is_binary("UBL")
@@ -284,7 +284,7 @@ Além dos operadores matemáticos temos também outros operadores. Por exemplo, 
 
 <!-- livebook:{"break_markdown":true} -->
 
-`and`: Este operador retorna `true` se **ambos** os operandos forem verdadeiros. Caso contrário, retorna `false`. Por exemplo, `true and false` retornará `false`.
+`and`: Este operador retorna `true` se **ambos** operandos forem verdadeiros. Caso contrário, retorna `false`. Por exemplo, `true and false` retornará `false`.
 
 ```elixir
 true and false
@@ -352,13 +352,13 @@ is_binary(curso)
 "Estou estudando #{curso}"
 ```
 
-Em elixir, todas as variáveis são imutáveis. Isso significa que você não pode alterar o valor que uma variável representa, mas você pode reassociar a variável a um novo valor.
+Em elixir, todas as variáveis são imutáveis. Isso significa que você não pode alterar o valor que uma variável representa, mas é possível reatribuir a variável a um novo valor.
 
 ```elixir
 curso = "Ciência da Computação"
 ```
 
-Você não está mudando o valor "Matemática" para "Ciência da Computação", mas sim criando um novo valor "Ciência da Computação" e fazendo a variável nome apontar para ele. O valor "Matemática" ainda existe na memória, mas não é mais acessível pela variável curso.
+Você não está mudando o valor "Matemática" para "Ciência da Computação", em vez disso criando um novo valor "Ciência da Computação" e fazendo a variável *curso* apontar para ele. O valor "Matemática" ainda existe na memória, mas não é mais acessível pela variável curso.
 
 ## Casamento de Padrões (Pattern Matching)
 
@@ -468,11 +468,13 @@ cabeca
 cauda
 ```
 
-Mas o exemplo abaixo dá erro.
+Porém, o exemplo abaixo resulta em erro.
 
 ```elixir
 [cabeca | cauda] = []
 ```
+
+Isso acontece porque não existe nenhum valor para ser associado à variável `cabeca`, pois `cabeça`, nesse contexto, representa o primeiro elemento da lista.
 
 No casamento de padrões, você pode usar o operador '_', que alguns chamam de "coringa", para ignorar algo.
 
@@ -496,7 +498,7 @@ Veremos depois como utilizar '_' com tuplas.
 
 <!-- livebook:{"break_markdown":true} -->
 
-Uma observação importante, e que está relacionada com a forma com que listas são implemantadas, é que as listas devem crescer na cabeça. Ou seja, se eu for colocar um novo elemento, devo colocá-lo como primeiro elemento (mais à esquerda). Para isso, eu posso usar o operador '|' como nos exemplos abaixo.
+Uma observação importante, e que está relacionada com a forma com que listas são implemantadas, é que as listas devem crescer a partir da cabeça. Ou seja, se eu for colocar um novo elemento, devo colocá-lo como primeiro elemento (mais à esquerda). Para isso, eu posso usar o operador '|' como nos exemplos abaixo.
 
 ```elixir
 [1 | [3, 4]]
@@ -516,13 +518,13 @@ Apenas tenha cuidado para não gerar listas impóprias! Depois do '|' deve vir u
 [1 | 2]
 ```
 
-É possível, mas não recomendável se a segunda lista for grande, concatenar listas. O operador de concatenação é o '++/2'.
+Embora seja uma possível, desaconselha-se a concatenação de listas usando o operador `++/2` quando a segunda lista for grande.
 
 ```elixir
 [1, 3, 56] ++ [34, 560, 8]
 ```
 
-Uma pequena nota sobre o formato de nome '++/2' usado acima. Em Elixir, o nome de uma função ou operador tem dois componentes: o nome em si (neste caso ++) e sua aridade. Aridade é informação essencial quando se fala sobre código Elixir. A aridade indica o número de argumentos que uma dada função ou operador aceita (dois, neste nosso exemplo). Nome e aridade são combinados com uma barra.
+**NOTA**: Em Elixir, o nome de uma função ou operador tem dois componentes: o nome em si (neste caso ++) e sua aridade. Aridade é informação essencial quando se fala sobre código Elixir, pois esta indica o número de argumentos que uma função ou operador aceita (dois, neste nosso exemplo). Ou seja, uma função *soma*, que recebe dois argumentos seria representada como `soma/2`, e esta é uma função completamente distinta de `soma/3`, por exemplo. Nome e aridade são combinados com uma barra (/).
 
 ```elixir
 # subtração de listas, operador '--/2'
@@ -535,7 +537,7 @@ Uma pequena nota sobre o formato de nome '++/2' usado acima. Em Elixir, o nome d
 
 ## Tuplas
 
-Uma tupla é uma coleção ordenada de elementos. Parece um pouco com uma lista, mas seu casamento de padrões trabalha com um número fixo de elementos, diferente das listas, que permitem o casamento de padrões sem que se saiba o número exato de seus elementos. As tuplas são definidas usando chaves '{', '}' e seus valores são separados por vírgulas..
+Uma tupla é uma coleção ordenada de elementos. Parece um pouco com uma lista, mas seu casamento de padrões trabalha com um número fixo de elementos, diferente das listas, que permitem o casamento de padrões sem que se saiba o número exato de seus elementos. As tuplas são definidas usando chaves '{', '}' e seus valores são separados por vírgulas.
 
 ```elixir
 # tupla vazia
@@ -597,8 +599,6 @@ Veja que acima nós construímos uma tupla a partir dos resultados do casamento 
 Mapas são coleções de pares chave-valor, onde cada chave é única e associada a um valor específico. Em Elixir, os mapas são delimitados por chaves %{} e podem conter zero ou mais pares chave-valor. Aqui está uma representação básica de um mapa em Elixir:
 
 <!-- livebook:{"break_markdown":true} -->
-
-
 
 ```elixir
 %{:chave1 => "valor 1", :chave2 => "valor 2", :chave3 => "valor 3"}
@@ -707,7 +707,7 @@ Porém, caso não exista a chave isso não vai nos lançar uma exceção.
 Map.get(dados, :algo)
 ```
 
-Também possui a versão Map.get/3 que recebe mais um parâmetro, que é o valor que é retornado caso a chave não exista ao invés de `nil`.
+Também possui a versão Map.get/3 que recebe, como terceiro argumento, o valor que deve ser retornado caso a chave não exista.
 
 ```elixir
 Map.get(dados, :algo, "valor quando a chave não existe")
@@ -749,6 +749,10 @@ Para verificar se uma chave específica existe em um mapa, você pode usar a fun
 Map.has_key?(dados, :idade)
 ```
 
+```elixir
+Map.has_key?(dados, :non_existent_key)
+```
+
 Em Elixir, mapas são frequentemente usados como registros leves para representar dados estruturados. Em vez de definir tipos de registro estáticos, você pode criar mapas com chaves específicas para representar entidades de dados.
 
 ```elixir
@@ -763,7 +767,7 @@ produto = %{nome: "Celular", preco: 799.99, estoque: 50}
 
 <!-- livebook:{"break_markdown":true} -->
 
-O casamento de padrões com mapas em Elixir permite que você desestruture um mapa e associe suas partes a variáveis. Isso torna mais fácil acessar os valores específicos que você deseja dentro de um mapa. Vamos começar com um exemplo simples:
+O casamento de padrões com mapas em Elixir permite que você desestruture um mapa e associe os valores das chaves à variáveis. Isso torna mais fácil acessar os valores específicos que você deseja dentro de um mapa. Vamos começar com um exemplo simples:
 
 ```elixir
 usuario = %{nome: "Bob", idade: 25, cidade: "Porto Alegre"}
@@ -832,7 +836,7 @@ Podemos construir um novo mapa com as chaves extraidas.
 %{cidade: cidade}
 ```
 
-Podemos usar o operador `|` que vimos anteriormente em Listas para atualizar os valores em mapas
+Podemos usar o operador `|` que vimos anteriormente em Listas para atualizar os valores em mapas.
 
 ```elixir
 evento = %{nome: "Learn4Elixir", mes_inicio: 10, mes_fim: 11, nota: 10}
@@ -879,7 +883,7 @@ Uma estrutura não irá aceitar qualquer chave que não tenha sido declarada em 
 %Usuario{nome: "Camilo", idade: 28, qualquer: "coisa"}
 ```
 
-É possível definir estruturas que possuem atributos com valores padrão, caso algum desses valores não sejam fornecidos ao criar uma instância da struct o valor padrão é usado ao invés de `nil`.
+É possível definir estruturas que possuem atributos com valores padrão. Caso algum desses valores não sejam fornecidos ao criar uma instância da `struct`, o valor padrão é usado ao invés de `nil`.
 
 ```elixir
 defmodule Pessoa do
@@ -909,7 +913,7 @@ pessoa = %Pessoa{nome: "Ana Bastos", cidade: "São Paulo"}
 pessoa.cidade
 ```
 
-Ambas chaves com valor padrão e sem podem ser misturadas na declaração de uma estrutura desde que as chaves sem valor padrão venham primeiro, caso contrário isso irá causar um erro.
+Ambas chaves, com e sem valor padrão, podem ser misturadas na declaração de uma estrutura desde que as chaves sem valor padrão venham primeiro, caso contrário isso irá causar um erro.
 
 ```elixir
 defmodule Animal do 
@@ -963,7 +967,7 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 
 ### Exercicio 1
 
-Escreva um exemplo de dado em elixir para cada tipo apresentado colocando-o como parâmetro no lugar de `""` na respectiva função, o resultado deve ser `true`.
+Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
 ```elixir
 is_number("")
