@@ -1115,41 +1115,35 @@ resposta_completa = [
 
 <!-- livebook:{"break_markdown":true} -->
 
-Com esses dados use casamento de padrões para:
-
-1. Extrair o primeiro comentário.
-2. Salvar o nome do terceiro comentário em uma variável `titulo`.
-3. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
-4. Extrair o **body** do quinto comentário.
-5. Criar uma nova lista removendo o segundo item.
+Com esses dados use **casamento de padrões** (pattern matching) para:
 
 <!-- livebook:{"break_markdown":true} -->
 
-1.
+1. Extrair o primeiro comentário.
 
 ```elixir
 
 ```
 
-2.
+1. Salvar o nome do segundo comentário em uma variável `titulo`.
+
+```elixir
+titulo = 
+```
+
+1. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
 
 ```elixir
 
 ```
 
-1.
+1. Extrair o **body** do terceiro comentário.
 
 ```elixir
 
 ```
 
-4.
-
-```elixir
-
-```
-
-5.
+1. Criar uma nova lista removendo o segundo item.
 
 ```elixir
 
