@@ -111,261 +111,116 @@ Como você pode ver, a hora mudou de 12:00 em Paris para às 6:00 em Nova York, 
 
 # Processos em Elixir
 
-USAR ALGUNS DOS EXEMPLOS EM https://dev.to/elixir_utfpr/o-que-e-um-processo-em-elixir-4j00
+No Livebook, você pode usar processos em Elixir da mesma forma que faria em um ambiente Elixir tradicional. Os processos são a principal unidade de concorrência em Elixir e permitem que você execute tarefas em paralelo, compartilhe dados e crie sistemas concorrentes. Aqui estão alguns exemplos de como usar processos no Livebook:
 
-Em Elixir, um processo é uma unidade de execução leve e concorrente. É uma das características mais fundamentais da linguagem e é usado para criar sistemas concorrentes e paralelos de maneira eficiente.
+## Criar um Processo:
 
-Aqui estão algumas características importantes dos processos em Elixir:
-
-## Leveza
-
-Os processos em Elixir são leves em comparação com as threads tradicionais do sistema operacional. Isso significa que você pode criar milhares ou até milhões de processos em uma única máquina sem esgotar recursos significativos.
-
-## Isolamento
-
-Cada processo em Elixir é isolado dos outros. Eles têm sua própria pilha de execução e não compartilham memória diretamente. Isso torna mais seguro lidar com a concorrência, pois os processos não podem corromper uns aos outros.
-
-## Comunicação
-
-Os processos em Elixir podem se comunicar entre si usando mensagens. Essas mensagens são enviadas e recebidas por meio de canais de comunicação chamados "mailboxes". Isso permite a comunicação assíncrona entre os processos.
-
-## Supervisão
-
-Elixir possui um mecanismo de supervisão embutido, que permite monitorar e gerenciar processos. Se um processo falhar, ele pode ser reiniciado automaticamente, garantindo maior resiliência e disponibilidade no sistema.
-
-## Escalabilidade
-
-Devido à sua natureza leve, os processos em Elixir são altamente escaláveis. Você pode criar vários processos para lidar com tarefas paralelas e, se necessário, espalhar esses processos em várias máquinas para criar sistemas distribuídos.
-
-## Concorrência Explícita
-
-Elixir facilita a programação concorrente explícita. Você pode iniciar processos facilmente usando a função spawn/1 e coordenar a execução de tarefas paralelas.
-
-Aqui está um exemplo simples de como criar e comunicar com processos em Elixir:
+Para criar um processo em Elixir, você pode usar a função spawn/1 ou Task.start/1. Aqui está um exemplo usando Task.start/1 para criar um processo que imprime "Hello, World!" após um atraso de 2 segundos:
 
 ```elixir
-# Criar um processo que imprime uma mensagem
-iex> pid = spawn(fn ->
-...>  IO.puts("Processo filho executando")
-...> end)
-
-# Enviar uma mensagem para o processo
-iex> send(pid, "Olá, processo filho!")
-
-# Receber a mensagem no processo filho
-iex> receive do
-...>  message -> IO.puts("Processo filho recebeu a mensagem: #{message}")
-...> end
+task = Task.start(fn ->
+  :timer.sleep(2000)
+  IO.puts("Hello, World!")
+end)
 ```
+
+## Aguardar o Término do Processo:
+
+Você pode usar Task.await/2 para aguardar o término de um processo criado com Task.start/1:
+
+```elixir
+Task.await(task)
+```
+
+Isso fará com que o processo principal espere até que o processo da tarefa seja concluído.
+
+## Enviar e Receber Mensagens entre Processos:
+
+Os processos em Elixir podem se comunicar entre si por meio do envio e recebimento de mensagens. Você pode usar a função send/2 para enviar mensagens e receive/1 para receber mensagens. Aqui está um exemplo de envio e recebimento de mensagens entre dois processos:
+
+```elixir
+pid = spawn(fn ->
+  send(self(), {:message, "Hello from another process!"})
+end)
+
+receive do
+  {:message, message} ->
+    IO.puts("Mensagem Recebida: #{message}")
+end
+```
+
+## Encerrar um Processo:
+
+Você pode encerrar um processo usando a função Process.exit/2 ou deixando que ele termine naturalmente. Por exemplo, para encerrar um processo com uma mensagem de saída:
+
+```elixir
+Process.exit(pid, :shutdown)
+```
+
+## Supervisionar Processos (opcional):
+
+Em sistemas mais complexos, você pode usar o mecanismo de supervisão do Elixir para monitorar e gerenciar processos automaticamente. Isso ajuda a criar sistemas resilientes que podem se recuperar de falhas.
+
+Para criar um supervisor e gerenciar processos, você pode usar o módulo Supervisor. No entanto, a criação de supervisores requer um ambiente mais complexo e pode não ser adequada para exemplos simples no Livebook.
+
+Lembre-se de que o Livebook permite que você execute células em qualquer ordem e que as células podem representar unidades independentes de código. Portanto, você pode experimentar a criação, envio de mensagens e interação com processos em células diferentes para entender melhor como os processos funcionam em Elixir. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da interação com processos no Livebook.
 
 # Agentes
 
-Os agentes são simples wrappers em torno do estado. Se tudo o que você deseja de um processo é manter o estado, os agentes são uma ótima opção. Vamos iniciar uma iexsessão dentro do projeto com:
+Para usar agentes no Livebook, você pode seguir os mesmos princípios que aplicaria em um ambiente Elixir tradicional. Agentes são uma maneira de compartilhar e gerenciar estado em ambientes concorrentes de forma segura. Aqui está um exemplo de como usar agentes no Livebook:
+
+### Inicialize um Agente (Servidor):
+
+Comece inicializando um agente que conterá o estado que você deseja compartilhar. Você pode fazer isso em uma célula do Livebook:
 
 ```elixir
-$ iex -S mix
-```
-
-E brinque um pouco com os agentes:
-
-```elixir
-iex> {:ok, agent} = Agent.start_link fn -> [] end
-{:ok, #PID<0.57.0>}
-iex> Agent.update(agent, fn list -> ["eggs" | list] end)
-:ok
-iex> Agent.get(agent, fn list -> list end)
-["eggs"]
-iex> Agent.stop(agent)
-:ok
-```
-
-Iniciamos um agente com um estado inicial de lista vazia. Atualizamos o estado do agente, adicionando nosso novo item ao topo da lista. O segundo argumento de Agent.update/3é uma função que recebe o estado atual do agente como entrada e retorna o novo estado desejado. Finalmente, recuperamos a lista inteira. O segundo argumento de Agent.get/3é uma função que recebe o estado como entrada e retorna o valor que Agent.get/3ela mesma retornará. Assim que terminarmos com o agente, podemos ligar Agent.stop/3para encerrar o processo do agente.
-
-A Agent.update/3função aceita como segundo argumento qualquer função que receba um argumento e retorne um valor:
-
-```elixir
-iex> {:ok, agent} = Agent.start_link fn -> [] end
-{:ok, #PID<0.338.0>}
-iex> Agent.update(agent, fn _list -> 123 end)
-:ok
-iex> Agent.update(agent, fn content -> %{a: content} end)
-:ok
-iex> Agent.update(agent, fn content -> [12 | [content]] end)
-:ok
-iex> Agent.update(agent, fn list -> [:nop | list] end)
-:ok
-iex> Agent.get(agent, fn content -> content end)
-[:nop, 12, %{a: 123}]
-```
-
-Como você pode ver, podemos modificar o estado do agente da maneira que quisermos. Portanto, provavelmente não queremos acessar a API do agente em muitos locais diferentes do nosso código. Em vez disso, queremos encapsular todas as funcionalidades relacionadas ao Agente em um único módulo, que chamaremos de KV.Bucket. Antes de implementá-lo, vamos escrever alguns testes que irão delinear a API exposta pelo nosso módulo.
-
-Crie um arquivo em test/kv/bucket_test.exs(lembre-se da .exsextensão) com o seguinte:
-
-```elixir
-iex> defmodule KV.BucketTest do
-...>  use ExUnit.Case, async: true
-
-...>  test "stores values by key" do
-...>    {:ok, bucket} = KV.Bucket.start_link([])
-...>    assert KV.Bucket.get(bucket, "milk") == nil
-
-...>    KV.Bucket.put(bucket, "milk", 3)
-...>    assert KV.Bucket.get(bucket, "milk") == 3
-...>  end
-...> end
-```
-
-use ExUnit.Caseé responsável por configurar nosso módulo para testes e importar muitas funcionalidades relacionadas a testes, como a test/2macro.
-
-Nosso primeiro teste começa de novo KV.Bucketchamando the start_link/1e passando uma lista vazia de opções. Em seguida, realizamos algumas get/2operações put/3nele, afirmando o resultado.
-
-Observe também a async: trueopção passada para ExUnit.Case. Esta opção faz com que o caso de teste seja executado em paralelo com outros :asynccasos de teste usando vários núcleos em nossa máquina. Isso é extremamente útil para acelerar nosso conjunto de testes. No entanto, só:async deverá ser definido se o caso de teste não depender ou alterar nenhum valor global. Por exemplo, se o teste exigir gravação no sistema de arquivos ou acesso a um banco de dados, mantenha-o síncrono (omita a opção) para evitar condições de corrida entre testes.:async
-
-Assíncrono ou não, nosso novo teste obviamente deve falhar, já que nenhuma funcionalidade está implementada no módulo que está sendo testado:
-
-```elixir
-** (UndefinedFunctionError) function KV.Bucket.start_link/1 is undefined (module KV.Bucket is not available)
-```
-
-Para corrigir a falha no teste, vamos criar um arquivo lib/kv/bucket.excom o conteúdo abaixo. Sinta-se à vontade para tentar implementar o KV.Bucketmódulo sozinho usando agentes antes de dar uma olhada na implementação abaixo.
-
-```elixir
-iex> defmodule KV.Bucket do
-...>  use Agent
-
-  @doc """
-  Starts a new bucket.
-  """
-iex>  def start_link(_opts) do
-...>    Agent.start_link(fn -> %{} end)
-...>  end
-
-  @doc """
-  Gets a value from the `bucket` by `key`.
-  """
-iex>  def get(bucket, key) do
-...>    Agent.get(bucket, &Map.get(&1, key))
-...>  end
-
-  @doc """
-  Puts the `value` for the given `key` in the `bucket`.
-  """
-iex>  def put(bucket, key, value) do
-...>    Agent.update(bucket, &Map.put(&1, key, value))
-...>  end
-...> end
-```
-
-O primeiro passo em nossa implementação é chamar use Agent. A maior parte das funcionalidades que aprenderemos neste guia, como GenServere Supervisor, segue este padrão. Para todos eles, a chamada usegera uma child_specfunção com configuração padrão, que será útil quando começarmos a supervisionar os processos no capítulo 4.
-
-Em seguida, definimos uma start_link/1função que efetivamente iniciará o agente. É uma convenção definir uma start_link/1função que sempre aceita uma lista de opções. Não planejamos usar nenhuma opção agora, mas poderemos usar mais tarde. Passamos então para call Agent.start_link/1, que recebe uma função anônima que retorna o estado inicial do Agente.
-
-Mantemos um mapa dentro do agente para armazenar nossas chaves e valores. Obter e colocar valores no mapa é feito com a API do Agente e o operador de captura &, apresentados no Guia de primeiros passos . O agente passa seu estado para a função anônima por meio do &1argumento quando Agent.get/2e Agent.update/2são chamados.
-
-Agora que o KV.Bucketmódulo foi definido, nosso teste deve passar! Você pode tentar você mesmo executando: mix test.
-
-Configuração de teste com retornos de chamada ExUnit
-Antes de prosseguir e adicionar mais recursos ao KV.Bucket, vamos falar sobre retornos de chamada ExUnit. Como você pode esperar, todos KV.Bucketos testes exigirão que um agente de bucket esteja instalado e funcionando. Felizmente, o ExUnit oferece suporte a retornos de chamada que nos permitem pular essas tarefas repetitivas.
-
-Vamos reescrever o caso de teste para usar retornos de chamada:
-
-```elixir
-iex> defmodule KV.BucketTest do
-...>  use ExUnit.Case, async: true
-
-...>  setup do
-...>    {:ok, bucket} = KV.Bucket.start_link([])
-...>    %{bucket: bucket}
-...>  end
-
-iex>  test "stores values by key", %{bucket: bucket} do
-...>    assert KV.Bucket.get(bucket, "milk") == nil
-
-...>    KV.Bucket.put(bucket, "milk", 3)
-...>    assert KV.Bucket.get(bucket, "milk") == 3
-...>  end
-...> end
-```
-
-Primeiro definimos um retorno de chamada de configuração com a ajuda da setup/1macro. A setup/1macro define um retorno de chamada que é executado antes de cada teste, no mesmo processo do próprio teste.
-
-Observe que precisamos de um mecanismo para passar o bucketpid do retorno de chamada para o teste. Fazemos isso usando o contexto de teste . Quando retornarmos %{bucket: bucket}do retorno de chamada, o ExUnit mesclará esse mapa no contexto de teste. Como o contexto de teste é um mapa em si, podemos combinar padrões com o bucket fora dele, fornecendo acesso ao bucket dentro do teste:
-
-```elixir
-iex> test "stores values by key", %{bucket: bucket} do
-  # `bucket` is now the bucket from the setup block
-...> end
-```
-
-Você pode ler mais sobre casos ExUnit na ExUnit.Casedocumentação do módulo e mais sobre retornos de chamada em ExUnit.Callbacksdocs .
-
-## Outras Ações do Agente
-
-Além de obter um valor e atualizar o estado do agente, os agentes nos permitem obter um valor e atualizar o estado do agente em uma chamada de função via Agent.get_and_update/2. Vamos implementar uma KV.Bucket.delete/2função que exclui uma chave do bucket, retornando seu valor atual:
-
-```elixir
-@doc """
-iex> Deletes `key` from `bucket`.
-
-Returns the current value of `key`, if `key` exists.
-"""
-iex> def delete(bucket, key) do
-...>   Agent.get_and_update(bucket, &Map.pop(&1, key))
-...> end
-```
-
-## Cliente/Servidor em Agentes
-
-No Livebook, você pode criar um servidor e um cliente para interagir com agentes da mesma maneira que faria em um ambiente Elixir tradicional. Agentes permitem que você compartilhe estado entre diferentes partes do código de forma segura em um ambiente concorrente. Aqui está um exemplo de como usar um cliente e um servidor em agentes no Livebook:
-
-### Servidor (Agente):
-
-Vamos começar definindo o servidor (agente) que mantém um contador como estado interno. Você pode definir isso em uma célula:
-
-```elixir
-# Inicie o agente com um contador inicial de 0
+# Inicialize um agente com um estado inicial
 {:ok, agent} = Agent.start(fn -> 0 end)
 ```
 
-### Cliente:
+Neste exemplo, o agente é inicializado com um estado inicial de 0.
 
-Em seguida, você pode criar um cliente que interage com o servidor (agente) para ler e atualizar o contador. Você pode fazer isso em uma célula separada:
+### Crie Funções de Cliente:
+
+Em seguida, você pode criar funções de cliente que interagem com o agente para ler ou atualizar seu estado. Você pode definir essas funções em células separadas:
 
 ```elixir
-# Função para ler o contador do agente
-defp get_count(agent) do
-  Agent.get(agent, fn count -> count end)
+# Função para ler o estado do agente
+defp get_state(agent) do
+  Agent.get(agent, fn state -> state end)
 end
 
-# Função para atualizar o contador do agente
-defp increment_count(agent) do
-  Agent.update(agent, fn count -> count + 1 end)
+# Função para atualizar o estado do agente
+
+defp update_state(agent, new_state) do
+  Agent.update(agent, fn _state -> new_state end)
 end
 ```
 
-### Uso do Cliente e Servidor:
+### Interaja com o Agente:
 
-Agora que você tem um cliente e um servidor, pode usá-los para interagir com o agente em células subsequentes:
+Agora você pode usar as funções do cliente para interagir com o agente em células subsequentes do Livebook:
 
 ```elixir
-# Use o cliente para ler e atualizar o contador
-IO.puts("Contador Inicial: #{get_count(agent)}")
-increment_count(agent)
-IO.puts("Contador Atualizado: #{get_count(agent)}")
+# Use o cliente para ler o estado atual do agente
+current_state = get_state(agent)
+IO.puts("Estado Atual: #{current_state}")
+
+# Atualize o estado do agente usando o cliente
+new_state = current_state + 1
+update_state(agent, new_state)
+IO.puts("Estado Atualizado: #{new_state}")
 ```
 
-### Encerrando o Agente:
+### Encerre o Agente (Opcional):
 
-Depois de concluir a interação com o agente, é importante encerrá-lo para liberar os recursos. Você pode fazer isso em outra célula:
+Após concluir a interação com o agente, você pode encerrá-lo para liberar os recursos associados. Você pode fazer isso em uma célula separada:
 
 ```elixir
 # Encerre o agente
 :ok = Agent.stop(agent)
 ```
 
-Lembre-se de que você pode executar essas células em ordem no Livebook para ver como o cliente e o servidor interagem com o agente. O servidor (agente) mantém o estado interno (nesse caso, um contador), e o cliente lê e atualiza esse estado. Isso permite a comunicação segura entre diferentes partes do código em um ambiente concorrente. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da interação.
+Lembre-se de que o Livebook permite que você execute células em qualquer ordem, o que facilita a experimentação e a interação com agentes e estados compartilhados. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da interação com agentes no Livebook.
 
 ## Exercício
-
-
