@@ -1,10 +1,10 @@
 # Learn4Elixir - Capítulo 4
 
+# Data e Tempo 
+
 Neste Capitulo você irá aprender sobre: Data e Tempo, Processos em Elixir e Agentes.
 
 [![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2FUniversidade-Livre%2FLearn4Elixir%2Fblob%2Fmain%2Fchapters%2Fchapter4.livemd)
-
-# Data e Tempo 
 
 O Elixir tem alguns módulos que trabalham com tempo. Ainda que precise ser notado que essa funcionalidade é limitada para trabalhar com fuso horário UTC.
 
@@ -223,4 +223,13 @@ Após concluir a interação com o agente, você pode encerrá-lo para liberar o
 
 Lembre-se de que o Livebook permite que você execute células em qualquer ordem, o que facilita a experimentação e a interação com agentes e estados compartilhados. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da interação com agentes no Livebook.
 
-## Exercício
+# Exercício
+
+# Links
+
+Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
+- [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
+- Livros
+- Vídeos (eu e ElixirLab)
+- Cursos (Groxio, ElxPro, Rafa Camarda)
+- Comunidade Telegram
