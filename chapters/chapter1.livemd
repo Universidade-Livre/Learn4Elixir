@@ -302,6 +302,32 @@ false or true
 not false
 ```
 
+Note que os operadores acima sempre esperam valores booleanos `true` e `false` como seus primeiros parâmetros. Passar um valor não booleano como primeiro parâmetro para esses operadores resulta em uma exceção `BadBoolean`, como pode ser testado abaixo:
+
+```elixir
+1 and false
+```
+
+Caso queria utilizar operadores lógicos com valores não booleanos, como um átomo ou números, o Elixir fornece os operadores `&&`, `||` e `!`. Esses operadores aceitam valores de qualquer tipo, e apenas os átomos `false` e `nil` serão executados como valores falseáveis:
+
+```elixir
+1 && true
+```
+
+```elixir
+1 || true
+```
+
+```elixir
+!1
+```
+
+```elixir
+!false
+```
+
+Em suma, utilize os operadores `and`, `or` e `not` quando suas expressões esperam valores exclusivamente booleanos, e os operadores `&&`, `||` e `!` quando valores de tipos diferentes podem ser esperados.
+
 **Concatenação de Strings**: Em Elixir, usamos o operador `<>` para concatenar (ou seja, juntar) duas strings.
 
 ```elixir
