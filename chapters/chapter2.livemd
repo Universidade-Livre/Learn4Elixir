@@ -18,13 +18,13 @@ Elixir já vem com várias funções. Estas funções fazem parte de módulos. P
 String.upcase("não grite, por favor!")
 ```
 
-Você pode ter achado estranho a aplicação de String.upcase/2 acima recebe apenas um argumento. Isto acontece pois ELixir permite que sejam definidas funções com argumentos _default_. Neste caso, o segundo argumento é o modo. Se vocẽ não passar nada, é o mesmo que chamar da seguinte forma:
+Você pode ter achado estranho a aplicação de String.upcase/2 acima recebe apenas um argumento. Isto acontece pois Elixir permite que sejam definidas funções com argumentos _default_. Neste caso, o segundo argumento é o modo. Se você não passar nada, é o mesmo que chamar da seguinte forma:
 
 ```elixir
 String.upcase("não grite, por favor!", :default)
 ```
 
-Mas eu posso escolher entre quatro valores: :default, :ascii, :greek,  :turkic.
+Mas eu posso escolher entre quatro valores: :default, :ascii, :greek,  :turkic. Vamos testar dois deles e observar a diferença.
 
 ```elixir
 # observe o "ã"
@@ -121,7 +121,7 @@ def <NOME_DA_FUNCAO> <GUARDA_OPCIONAL>, do: <RESULTADO>
 
 <!-- livebook:{"break_markdown":true} -->
 
-Podemos ter várias cláusulas (ou seja, vários 'def's) para uma mesma função. O primeiro que se aplicar, ou seja, cujo padrão casar será usado.
+Podemos ter várias cláusulas (ou seja, vários 'def's) para uma mesma função. A primeira que se aplicar, ou seja, cujo padrão casar será usada.
 
 ```elixir
 Turma.media([10, 4, 6, 7, 8])
