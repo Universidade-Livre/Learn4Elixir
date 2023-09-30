@@ -1023,12 +1023,12 @@ Defina variáveis para cada salário, depois, atributa o cálculo de média arit
 
 ```elixir
 ocamilodev = 71255.53
-ocam_l = 30236.23
-camilotk_ = 5256.12
+ocam_l = 
+camilotk_ 
 ```
 
 ```elixir
-media = (ocamilodev + ocam_l + camilotk_) / 3
+media = 
 ```
 
 ```elixir
