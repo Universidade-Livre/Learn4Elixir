@@ -6,108 +6,227 @@ Neste Capitulo você irá aprender sobre: Data e Tempo, Processos em Elixir e Ag
 
 [![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2FUniversidade-Livre%2FLearn4Elixir%2Fblob%2Fmain%2Fchapters%2Fchapter4.livemd)
 
-O Elixir tem alguns módulos que trabalham com tempo. Ainda que precise ser notado que essa funcionalidade é limitada para trabalhar com fuso horário UTC.
+No Livebook, você pode usar o módulo DateTime para trabalhar com datas e tempos. O Elixir possui uma biblioteca robusta para manipulação de datas e tempos, que permite realizar diversas operações, como formatação, cálculos e comparações. Aqui estão alguns exemplos de como usar datas e tempos no Livebook:
 
-Vamos começar pegando o tempo atual:
+## Obter a Data e a Hora Atuais:
 
-```elixir
-iex> Time.utc_now
-~T[19:39:31.056226]
-```
-
-Note que nós vamos ter um sigil que pode ser usado para criar uma struct Time também:
+Você pode obter a data e hora atuais usando a função DateTime.now/0. Por exemplo:
 
 ```elixir
-iex> ~T[19:39:31.056226]
-~T[19:39:31.056226]
+current_datetime = DateTime.now()
+IO.puts("Data e Hora Atuais: #{current_datetime}")
 ```
 
-Você pode aprender mais sobre sigil na lição sobre sigils. É fácil acessar partes desta struct:
+## Obter Partes de uma Data e Hora:
+
+Você pode acessar partes específicas de uma data e hora, como o ano, mês, dia, hora, minuto e segundo, usando funções como DateTime.year/1, DateTime.month/1, etc. Por exemplo:
 
 ```elixir
-iex> t = ~T[19:39:31.056226]
-~T[19:39:31.056226]
-iex> t.hour
-19
-iex> t.minute
-39
-iex> t.day
-** (KeyError) key :day not found in: ~T[19:39:31.056226]
+current_datetime = DateTime.now()
+year = DateTime.year(current_datetime)
+month = DateTime.month(current_datetime)
+day = DateTime.day(current_datetime)
+IO.puts("Ano: #{year}, Mês: #{month}, Dia: #{day}")
 ```
 
-Mas há uma pegadinha: como você pode ter notado, essa struct contém apenas tempo de um dia, dados de dia/mês/ano não estão presentes.
+## Manipular Datas e Tempos:
+
+Você pode realizar operações de manipulação de datas e tempos, como adicionar ou subtrair dias, horas, minutos, etc., usando as funções disponíveis no módulo DateTime. Por exemplo, para adicionar 3 dias a partir da data atual:
+
+```elixir
+current_datetime = DateTime.now()
+future_datetime = DateTime.add(current_datetime, 3, :days)
+IO.puts("Data daqui a 3 dias: #{future_datetime}")
+```
+
+## Formatar Datas e Tempos:
+
+Você pode formatar datas e tempos em uma representação legível usando a função DateTime.format/2. Por exemplo:
+
+```elixir
+current_datetime = DateTime.now()
+formatted_datetime = DateTime.format(current_datetime, "{D}/{M}/{Y} {h}:{m}:{s}")
+IO.puts("Data e Hora Formatadas: #{formatted_datetime}")
+```
+
+## Comparar Datas e Tempos:
+
+Você pode comparar datas e tempos usando operadores de comparação padrão, como <, <=, >, >=, ==, e /=. Por exemplo:
+
+```elixir
+current_datetime = DateTime.now()
+future_datetime = DateTime.add(current_datetime, 3, :days)
+if future_datetime > current_datetime do
+  IO.puts("A data futura é posterior à data atual.")
+end
+```
+
+Lembre-se de que o Livebook é interativo, o que facilita a experimentação com datas e tempos. Você pode criar células diferentes para testar diferentes operações e ver os resultados imediatamente. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da manipulação de datas e tempos no Livebook.
 
 ## Date
 
-Ao contrário do Time, a struct Date tem as informações sobre a data sem nenhuma informação sobre o tempo.
+No Elixir, não existe um tipo nativo chamado "Date" como em algumas outras linguagens de programação. No entanto, você pode usar o módulo Date do pacote Calendar para trabalhar com datas em Elixir. O pacote Calendar é uma biblioteca externa que oferece funcionalidades avançadas para manipulação de datas. Para usá-lo no Livebook, você precisa primeiro adicionar o pacote às dependências do projeto. Abaixo estão as etapas para fazer isso e começar a usar o Date:
+
+### Adicionar o Pacote Calendar às Dependências:
+
+Você pode adicionar o pacote calendar ao seu projeto Elixir editando o arquivo mix.exs do seu Livebook e adicionando :calendar à lista de dependências:
 
 ```elixir
-iex> Date.utc_today
-~D[2028-10-21]
+defp deps do
+  [
+    {:livebook, "~> 0.5.0"},
+    {:calendar, "~> 0.19.6"}  # Adicione esta linha
+  ]
+end
 ```
 
-Mas ele tem algumas funções úteis para trabalhar com datas:
+Após adicionar a dependência, você precisa executar o comando mix deps.get para buscar e instalar o pacote calendar.
+
+### Usar o Módulo Date do Pacote Calendar:
+
+Agora que você adicionou o pacote calendar, pode usar o módulo Date para trabalhar com datas. Aqui estão alguns exemplos de como usar o Date no Livebook:
 
 ```elixir
-iex> {:ok, date} = Date.new(2020, 12, 12)
-{:ok, ~D[2020-12-12]}
-iex> Date.day_of_week date
-6
-iex> Date.leap_year? date
-true
+# Importe o módulo Date para usar as funções
+import Calendar.Date
+
+# Criar uma data
+date = Date.new(2023, 9, 30)
+IO.puts("Data: #{inspect(date)}")
+
+# Obter o dia, mês e ano
+day = Date.day(date)
+month = Date.month(date)
+year = Date.year(date)
+IO.puts("Dia: #{day}, Mês: #{month}, Ano: #{year}")
+
+# Formatando a data
+formatted_date = Date.format(date, "{YYYY}-{0M}-{0D}")
+IO.puts("Data Formatada: #{formatted_date}")
+
+# Adicionando e subtraindo dias
+future_date = Date.add(date, 3)
+past_date = Date.subtract(date, 5)
+IO.puts("Data Futura: #{inspect(future_date)}")
+IO.puts("Data Passada: #{inspect(past_date)}")
 ```
 
-day_of_week/1 calcula em que dia da semana será a data provida. Nesse caso é um sábado. leap_year?/1 verifica se é um ano bissexto. Outras funções podem ser encontradas na documentação.
+Lembre-se de que você deve importar o módulo Date do pacote Calendar para acessar suas funções e utilizar essas funções para criar, manipular e formatar datas. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da manipulação de datas no Livebook.
 
 ## NaiveDateTime
 
-Há dois tipos de structs que contém tanto a data e o tempo em apenas um lugar no Elixir. O primeiro dos dois é o NaiveDateTime. A desvantagem é a falta de suporte para fuso horário:
+NaiveDateTime é um tipo de data e hora no Elixir que não está associado a um fuso horário específico. Ao contrário do DateTime (com informações de fuso horário), o NaiveDateTime não lida com compensações de fuso horário e outras informações relacionadas a fusos horários.
+
+Para usar NaiveDateTime no Livebook, você pode seguir estas etapas:
+
+### Importe o Módulo NaiveDateTime:
+
+Primeiro, importe o módulo NaiveDateTime do pacote Calendar no seu Livebook. Adicione o :calendar como dependência em seu arquivo mix.exs e execute mix deps.get para garantir que o pacote esteja instalado.
 
 ```elixir
-iex> NaiveDateTime.utc_now
-~N[2022-01-21 19:55:10.008965]
+# Importe o módulo NaiveDateTime
+import Calendar.NaiveDateTime
 ```
 
-Mas ele tem tanto o tempo como a data, então você pode adicionar tempo, por exemplo:
+### Crie e Manipule NaiveDateTimes:
+
+Agora você pode criar e manipular objetos NaiveDateTime no seu Livebook. Aqui estão alguns exemplos:
 
 ```elixir
-iex> NaiveDateTime.add(~N[2018-10-01 00:00:14], 30)
-~N[2018-10-01 00:00:44]
+# Criar um NaiveDateTime
+naive_datetime = NaiveDateTime.new({2023, 9, 30, 12, 0, 0})
+IO.puts("NaiveDateTime: #{inspect(naive_datetime)}")
+
+# Obter partes da data e hora
+year = NaiveDateTime.year(naive_datetime)
+month = NaiveDateTime.month(naive_datetime)
+day = NaiveDateTime.day(naive_datetime)
+hour = NaiveDateTime.hour(naive_datetime)
+minute = NaiveDateTime.minute(naive_datetime)
+second = NaiveDateTime.second(naive_datetime)
+
+IO.puts("Ano: #{year}, Mês: #{month}, Dia: #{day}")
+IO.puts("Hora: #{hour}, Minuto: #{minute}, Segundo: #{second}")
+
+# Formatando o NaiveDateTime
+formatted_datetime = NaiveDateTime.format(naive_datetime, "{YYYY}-{0M}-{0D} {0h}:{0m}:{0s}")
+IO.puts("NaiveDateTime Formatado: #{formatted_datetime}")
+
+# Adicionar e subtrair horas, minutos e segundos
+future_datetime = NaiveDateTime.add(naive_datetime, hours: 3, minutes: 30)
+past_datetime = NaiveDateTime.subtract(naive_datetime, seconds: 60)
+IO.puts("NaiveDateTime Futuro: #{inspect(future_datetime)}")
+IO.puts("NaiveDateTime Passado: #{inspect(past_datetime)}")
 ```
-
-## DateTime
-
-O segundo, como você pode ter adivinhado a partir do título dessa seção, é DateTime. Não possui as limitações mencionadas no NaiveDateTime: possui data e hora e suporta fusos horários. Mas esteja ciente dos fusos horários. A documentação oficial fala:
-
- Muitas funções neste módulo requerem um fuso horário do banco de dados. Por padrão, é utilizado o fuso horário do banco de dados que é retornado pela função Calendar.get_time_zone_database/0, cujo padrão é Calendar.UTCOnlyTimeZoneDatabase, que lida apenas com as datas “Etc/UTC” e retorna {:error, :utc_only_time_zone_database} para qualquer outro fuso horário. 
-
-Também, note que você pode criar um instância de DateTime a partir de um NaiveDateTime, apenas fornecendo o fuso horário:
-
-```elixir
-iex> DateTime.from_naive(~N[2016-05-24 13:26:08.003], "Etc/UTC")
-{:ok, #DateTime<2016-05-24 13:26:08.003Z>}
-```
+Lembre-se de importar o módulo NaiveDateTime e use suas funções para criar, manipular e formatar objetos NaiveDateTime. Ao contrário do DateTime, o NaiveDateTime não lida com fusos horários, o que o torna adequado para casos em que você não precisa considerar informações de fuso horário. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da manipulação do NaiveDateTime no Livebook.
 
 ## Trabalhando com Timezones
 
-Como observamos na seção anterior, por padrão, o Elixir não possui dados de fuso horário. Para resolver esse problema, precisamos instalar e configurar o pacote tzdata. Após a instalação, você deve configurar globalmente o Elixir para usar o Tzdata com o fuso horário do banco de dados:
+Para trabalhar com fusos horários no Livebook, você pode usar a biblioteca tzdata para obter informações sobre fusos horários e timex para realizar cálculos e formatações de datas e horas levando em consideração fusos horários. O tzdata fornece informações sobre fusos horários, enquanto o timex oferece recursos avançados de manipulação de datas e horas, incluindo a capacidade de considerar fusos horários.
+
+Aqui estão os passos para usar fusos horários no Livebook:
+
+### Adicione as Dependências:
+
+Certifique-se de que as dependências tzdata e timex estão listadas em seu arquivo mix.exs:
 
 ```elixir
-config :elixir, :time_zone_database, Tzdata.TimeZoneDatabase
+defp deps do
+  [
+    {:livebook, "~> 0.5.0"},
+    {:tzdata, "~> 1.1"},
+    {:timex, "~> 3.7"}
+  ]
+end
 ```
 
-Agora, vamos tentar criar um horário no fuso horário de Paris e convertê-lo para o horário de Nova York:
+Execute mix deps.get para buscar e instalar essas dependências.
+
+### Importe os Módulos Necessários:
+
+No Livebook, importe os módulos Tzdata e Timex para usar suas funções:
 
 ```elixir
-iex> paris_datetime = DateTime.from_naive!(~N[2019-01-01 12:00:00], "Europe/Paris")
-#DateTime<2019-01-01 12:00:00+01:00 CET Europe/Paris>
-iex> {:ok, ny_datetime} = DateTime.shift_zone(paris_datetime, "America/New_York")
-{:ok, #DateTime<2019-01-01 06:00:00-05:00 EST America/New_York>}
-iex> ny_datetime
-#DateTime<2019-01-01 06:00:00-05:00 EST America/New_York>
+import Tzdata
+import Timex
 ```
 
-Como você pode ver, a hora mudou de 12:00 em Paris para às 6:00 em Nova York, o que é correto - a diferença no fuso horário entre as duas cidades é de 6 horas.
+### Trabalhando com Fusos Horários:
+
+Você pode usar o tzdata para obter informações sobre fusos horários. Por exemplo, para obter a lista de fusos horários disponíveis:
+
+```elixir
+timezones = Tzdata.all_timezones()
+IO.puts("Fusos Horários Disponíveis: #{inspect(timezones)}")
+```
+
+Para obter o fuso horário atual de um local específico:
+
+```
+elixir
+timezone = Tzdata.get_timezone("America/New_York")
+IO.puts("Fuso Horário de Nova York: #{inspect(timezone)}")
+```
+
+### Manipulando Datas e Horas com Fusos Horários:
+
+Você pode usar o timex para criar objetos de data e hora com fusos horários e realizar cálculos com eles. Por exemplo:
+
+```elixir
+# Criar uma data e hora com fuso horário específico
+datetime = Timex.now() |> Timex.shift_zone("America/New_York")
+IO.puts("Data e Hora em Nova York: #{inspect(datetime)}")
+
+# Converter uma data e hora para outro fuso horário
+new_datetime = Timex.shift_zone(datetime, "Europe/London")
+IO.puts("Data e Hora em Londres: #{inspect(new_datetime)}")
+```
+
+Além disso, o timex oferece funções para formatação, análise, adição e subtração de datas e horas com fusos horários.
+
+Lembre-se de que o uso de fusos horários em sistemas complexos pode ser desafiador devido às complexidades envolvidas nos cálculos de horário de verão e fusos horários históricos. Portanto, é importante entender bem os requisitos específicos do seu aplicativo ao lidar com fusos horários.
+
+Certifique-se de configurar suas células no Livebook para serem executáveis para ver os resultados da manipulação de fusos horários.
 
 # Processos em Elixir
 
