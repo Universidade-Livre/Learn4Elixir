@@ -302,6 +302,32 @@ false or true
 not false
 ```
 
+Note que os operadores acima sempre esperam valores booleanos `true` e `false` como seus primeiros parâmetros. Passar um valor não booleano como primeiro parâmetro para esses operadores resulta em uma exceção `BadBoolean`, como pode ser testado abaixo:
+
+```elixir
+1 and false
+```
+
+Caso queria utilizar operadores lógicos com valores não booleanos, como um átomo ou números, o Elixir fornece os operadores `&&`, `||` e `!`. Esses operadores aceitam valores de qualquer tipo, e apenas os átomos `false` e `nil` serão executados como valores falseáveis:
+
+```elixir
+1 && true
+```
+
+```elixir
+1 || true
+```
+
+```elixir
+!1
+```
+
+```elixir
+!false
+```
+
+Em suma, utilize os operadores `and`, `or` e `not` quando suas expressões esperam valores exclusivamente booleanos, e os operadores `&&`, `||` e `!` quando valores de tipos diferentes podem ser esperados.
+
 **Concatenação de Strings**: Em Elixir, usamos o operador `<>` para concatenar (ou seja, juntar) duas strings.
 
 ```elixir
@@ -918,7 +944,7 @@ pessoa.cidade
 Ambas chaves, com e sem valor padrão, podem ser misturadas na declaração de uma estrutura desde que as chaves sem valor padrão venham primeiro, caso contrário isso irá causar um erro.
 
 ```elixir
-defmodule Animal do 
+defmodule Animal do
   defstruct [:nome, especie: "", localizacao: "", :idade]
 end
 ```
@@ -1005,8 +1031,8 @@ is_tuple("")
 
 ### Exercicio 2
 
-Imagine que vários desenvolvedores de software que trabalham com front-end 
-publicaram abertamente seus salários no Twitter. Você pensou em fazer um programa 
+Imagine que vários desenvolvedores de software que trabalham com front-end
+publicaram abertamente seus salários no Twitter. Você pensou em fazer um programa
 que calculasse a média aritmética de salários de cada região a partir do input de 3 salários dessa região.
 
 ---
@@ -1023,12 +1049,12 @@ Defina variáveis para cada salário, depois, atributa o cálculo de média arit
 
 ```elixir
 ocamilodev = 71255.53
-ocam_l = 
-camilotk_ 
+ocam_l =
+camilotk_
 ```
 
 ```elixir
-media = 
+media =
 ```
 
 ```elixir
@@ -1051,7 +1077,7 @@ Resolva a equação quadrática **x² - 2x + 1 = 0** calculando seu delta e sua(
 ```
 
 ```elixir
-delta = 
+delta =
 ```
 
 ```elixir
@@ -1140,7 +1166,7 @@ Com esses dados use **casamento de padrões** (pattern matching) para:
 1. Salvar o nome do segundo comentário em uma variável `titulo`.
 
 ```elixir
-titulo = 
+titulo =
 ```
 
 1. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
@@ -1226,13 +1252,13 @@ saturno =
 1. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-urano = 
+urano =
 ```
 
 1. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-netuno = 
+netuno =
 ```
 
 1. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
