@@ -658,7 +658,43 @@ idade
 cidade
 ```
 
-Se a chave não existir no mapa, uma exceção será lançada. Para evitar isso, você pode usar o operador de acesso seguro **Map.get/2** (`Map` é um espaço de nomes que contêm bastante funções para trabalhar com Mapas, entre elas a função `get` que recebe dois parâmetros - o mapa e a chave), que retorna um valor padrão em vez de lançar uma exceção.
+Quando tentamos acessar uma chave que não existe em nosso mapa usando `[]` será retornad `nil` caso o valor dessa chave não exista.
+
+```elixir
+valores = %{"uno" => 1, "dos" => 2, "tres" => 3}
+```
+
+```elixir
+valores["uno"]
+```
+
+```elixir
+valores["quatro"]
+```
+
+Porém, quando criamos um mapa em que **todas as chaves são átomos** podemos acessar nossos valores tanto usando `[]` passando o valor da chave, quanto usando o operador ponto `.` para acessar a chave que queremos, esse operador tem a vantagem de lançar um erro caso a chave não exista no mapa o que nos ajuda a encontrar erros e problemas mais cedo.
+
+```elixir
+chaves_valores = %{:um => 1, :dois => 2, :tres => 3}
+```
+
+```elixir
+chaves_valores[:um]
+```
+
+```elixir
+chaves_valores[:quatro]
+```
+
+```elixir
+chaves_valores.um
+```
+
+```elixir
+chaves_valores.quatro
+```
+
+Caso queira evitar o erro se a chave não existir no mapa, você pode usar o operador de acesso seguro **Map.get/2** (`Map` é um espaço de nomes que contêm bastante funções para trabalhar com Mapas, entre elas a função `get` que recebe dois parâmetros - o mapa e a chave), que retorna um valor padrão em vez de lançar uma exceção.
 
 ```elixir
 # Acessando com Map.get/2
@@ -796,27 +832,408 @@ Podemos construir um novo mapa com as chaves extraidas.
 %{cidade: cidade}
 ```
 
+Podemos usar o operador `|` que vimos anteriormente em Listas para atualizar os valores em mapas
+
+```elixir
+evento = %{nome: "Learn4Elixir", mes_inicio: 10, mes_fim: 11, nota: 10}
+```
+
+```elixir
+novo_evento = %{evento | nota: 1000}
+```
+
+```elixir
+# atualizando vários valores
+novo_evento = %{evento | nome: "GambiConf", mes_inicio: 11}
+```
+
 ## Estruturas (Structs)
 
-## Exemplos de casamento de padrões um pouco mais complexos
+Em Elixir, as estruturas, ou **structs**, são uma maneira de definir e manipular dados com uma estrutura fixa. Enquanto os mapas são flexíveis e podem conter qualquer chave, as structs têm um conjunto predefinido de campos e um nome associado a elas. As structs são úteis para representar entidades de dados com campos específicos e fornecem benefícios como validação de tipos e documentação clara.
 
 ```elixir
-[_, num, {:nome, name, :ano, year} | _] = [1, 3, {:nome, "pxto", :ano, 1978}, [45, 67]]
+defmodule Usuario do
+  defstruct [:nome, :idade, :cidade]
+end
+```
+
+Neste exemplo, criamos uma struct chamada `Usuario` com três campos: `nome`, `idade` e `cidade`.
+
+```elixir
+%Usuario{}
+```
+
+Para criar um valor do tipo estrutura com dados basta passá-los como chave e valor, passsando corretamente o nome e chaves válidas em sua definição. Caso uma seja omitida, ela irá receber o valor padrão.
+
+```elixir
+%Usuario{nome: "Camilo", idade: 28}
+```
+
+Uma estrutura não irá aceitar qualquer chave que não tenha sido declarada em sua declaração.
+
+```elixir
+%Usuario{qualquer: "coisa"}
 ```
 
 ```elixir
-{num, name, year}
+%Usuario{nome: "Camilo", idade: 28, qualquer: "coisa"}
 ```
 
-## Outras coleções
+É possível definir estruturas que possuem atributos com valores padrão, caso algum desses valores não sejam fornecidos ao criar uma instância da struct o valor padrão é usado ao invés de `nil`.
 
-Existem outros tipos de coleções em Elixir, mas eles estão foram do escopo deste documento.
+```elixir
+defmodule Pessoa do
+  defstruct nome: "", idade: 0, cidade: ""
+end
+```
+
+Agora quando criarmos um valor da estrutura com valores padrão vamos ter uma estrutura que já é criada com os valores iniciais.
+
+```elixir
+%Pessoa{}
+```
+
+Você pode acessar os valores de uma estrutura usando o operador "**.**"
+
+```elixir
+%Pessoa{nome: "Ana Bastos", cidade: "São Paulo"}.nome
+```
+
+Da mesma forma quando salvamos uma estrutura em uma variável.
+
+```elixir
+pessoa = %Pessoa{nome: "Ana Bastos", cidade: "São Paulo"}
+```
+
+```elixir
+pessoa.cidade
+```
+
+Ambas chaves com valor padrão e sem podem ser misturadas na declaração de uma estrutura desde que as chaves sem valor padrão venham primeiro, caso contrário isso irá causar um erro.
+
+```elixir
+defmodule Animal do 
+  defstruct [:nome, especie: "", localizacao: "", :idade]
+end
+```
+
+> Mude a ordem para `[:nome, :idade, especie: "", localizacao: ""]` e execute novamente a célula.
+
+```elixir
+%Animal{}
+```
+
+Também é possivel usar `@enforce_keys` para garantir que todas as chaves que são especificadas nessa propriedade sejam fornecidas ao criar um valor da estrutura. Se o campo estiver faltando isso vai causar um erro.
+
+```elixir
+defmodule Jogador do
+  @enforce_keys [:nome, :idade, :cidade]
+  defstruct nome: "", idade: 0, cidade: ""
+end
+```
+
+```elixir
+%Jogador{}
+```
+
+> Resolva esse erro passando os campos que são necessários na célula acima.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Podemos retornar uma nova estrutura copiando os valores da antiga e alterando o que é necessário utilizando o operador `|`
+
+```elixir
+# Cria a variávvel contento os valores de uma instância da nossa estrutura
+mentor = %Pessoa{nome: "Dickson Melo", idade: 20, cidade: "Natal"}
+```
+
+```elixir
+mentor_atualizado = %{mentor | idade: mentor.idade + 1}
+```
+
+```elixir
+# Criando outra variavel com um valor de nossa estrutura
+outro_mentor = %Pessoa{nome: "Douglas Tofoli", cidade: "São Paulo"}
+
+# Atualizando vários campos
+outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
+```
 
 ## Exercício
 
-Qual? Quais?
+### Exercicio 1
 
-## Links
+Imagine que vários desenvolvedores de software que trabalham com front-end 
+publicaram abertamente seus salários no Twitter e você gostaria de fazer um programa 
+que calculasse a média de salários de cada região a partir do input de 3 salários dessa região.
+
+---
+
+| Handle no Twitter | Salário    |
+| ----------------- | ----------- |
+| @ocamilodev       | R$ 71255.53 |
+| @ocam_l           | R$ 30236.23 |
+| @camilotk_        | R$ 5256.12  |
+
+---
+
+Mude o valor de `media` para que tenha o valor da média aritmética desses valores e então rode a célula com if para garantir que a resposta está certa.
+
+```elixir
+media = 
+```
+
+```elixir
+# Checa se a resposta está correta
+if media == 35582.62666666666 do
+  "Parabéns, você acertou!"
+else
+  "Errooooou!"
+end
+```
+
+### Exercicio 2
+
+Trabalhando com Elixir você desenvolveu um sistema de E-commerce. Recentemente você decidiu extrair os comentários e o sistema respondeu te enviando uma lista de mapas com os comentários. Cada mapa possui as propriedades:
+
+* **productId**: Que é o valor de identificação do produto.
+* **id** Que é o identificador do comentário.
+* **name**: Que é o título do comentário.
+* **email**: Que é o email de quem fez o comentário.
+* **body**: Que contêm o comentário.
+
+A resposta completa foi:
+
+```elixir
+resposta_completa = [
+  %{
+    "productId" => 1,
+    "id" => 1,
+    "name" => "id labore ex et quam laborum",
+    "email" => "Eliseo@gardner.biz",
+    "body" =>
+      "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+  },
+  %{
+    "productId" => 1,
+    "id" => 2,
+    "name" => "quo vero reiciendis velit similique earum",
+    "email" => "Jayne_Kuhic@sydney.com",
+    "body" =>
+      "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+  },
+  %{
+    "productId" => 1,
+    "id" => 3,
+    "name" => "odio adipisci rerum aut animi",
+    "email" => "Nikita@garfield.biz",
+    "body" =>
+      "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+  },
+  %{
+    "productId" => 1,
+    "id" => 4,
+    "name" => "alias odio sit",
+    "email" => "Lew@alysha.tv",
+    "body" =>
+      "non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati"
+  },
+  %{
+    "productId" => 1,
+    "id" => 5,
+    "name" => "vero eaque aliquid doloribus et culpa",
+    "email" => "Hayden@althea.biz",
+    "body" =>
+      "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et"
+  },
+  %{
+    "productId" => 2,
+    "id" => 6,
+    "name" => "et fugit eligendi deleniti quidem qui sint nihil autem",
+    "email" => "Presley.Mueller@myrl.com",
+    "body" =>
+      "doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in"
+  },
+  %{
+    "productId" => 2,
+    "id" => 7,
+    "name" => "repellat consequatur praesentium vel minus molestias voluptatum",
+    "email" => "Dallas@ole.me",
+    "body" =>
+      "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor"
+  },
+  %{
+    "productId" => 2,
+    "id" => 8,
+    "name" => "et omnis dolorem",
+    "email" => "Mallory_Kunze@marie.org",
+    "body" =>
+      "ut voluptatem corrupti velit\nad voluptatem maiores\net nisi velit vero accusamus maiores\nvoluptates quia aliquid ullam eaque"
+  },
+  %{
+    "productId" => 2,
+    "id" => 9,
+    "name" => "provident id voluptas",
+    "email" => "Meghan_Littel@rene.us",
+    "body" =>
+      "sapiente assumenda molestiae atque\nadipisci laborum distinctio aperiam et ab ut omnis\net occaecati aspernatur odit sit rem expedita\nquas enim ipsam minus"
+  },
+  %{
+    "productId" => 2,
+    "id" => 10,
+    "name" => "eaque et deleniti atque tenetur ut quo ut",
+    "email" => "Carmen_Keeling@caroline.name",
+    "body" =>
+      "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis"
+  },
+  %{
+    "productId" => 3,
+    "id" => 11,
+    "name" => "fugit labore quia mollitia quas deserunt nostrum sunt",
+    "email" => "Veronica_Goodwin@timmothy.net",
+    "body" =>
+      "ut dolorum nostrum id quia aut est\nfuga est inventore vel eligendi explicabo quis consectetur\naut occaecati repellat id natus quo est\nut blanditiis quia ut vel ut maiores ea"
+  },
+  %{
+    "productId" => 3,
+    "id" => 12,
+    "name" => "modi ut eos dolores illum nam dolor",
+    "email" => "Oswald.Vandervort@leanne.org",
+    "body" =>
+      "expedita maiores dignissimos facilis\nipsum est rem est fugit velit sequi\neum odio dolores dolor totam\noccaecati ratione eius rem velit"
+  }
+]
+```
+
+> Lembre-se de executar a célula com o valor de  `resposta_completa` para poder usá-la.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Com esses dados use casamento de padrões para:
+
+1. Extrair o primeiro comentário.
+2. Salvar o nome do terceiro comentário em uma variável `titulo`.
+3. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
+4. Extrair o **body** do quinto comentário.
+5. Criar uma nova lista removendo o segundo item.
+
+<!-- livebook:{"break_markdown":true} -->
+
+1.
+
+```elixir
+
+```
+
+2.
+
+```elixir
+
+```
+
+1.
+
+```elixir
+
+```
+
+4.
+
+```elixir
+
+```
+
+5.
+
+```elixir
+
+```
+
+### Exercicio 3
+
+O Departamento de Astrofísica da NASA entrou em contato com você. Eles precisam organizar as informações dos planetas do Sistema Solar para que os sistemas em Elixir que estão rodando simulações utilizem para processar essas simulações.
+
+Você recebeu uma ficha com as seguintes informações:
+| Nome | Superfície (km²) | Volume (km³) | Massa (kg) | Temperatura Média (ºC) | Distância do Sol (km) |
+|------|------|--------|-------|-------------------|--------------------------|
+| Mercúrio | 7,48×10^7 | 6,083×10^10   | 3,3011×10^23  | 166,85 | 57910000    |
+| Vênus    | 4,60×10^8 | 92,843×10^10  | 4,8685 ×10^24 | 461    | 108200000   |
+| Terra    | 5,10×10^8 | 1,08321×10^12 | 5,9736×10^24  | 14     | 149600000   |
+| Marte    | 1,44×10^8 | 1,6318×10^11    | 6,4174×10^23  | -63    | 227940000   |
+| Júpiter    | 6,21796×10^10 | 1,43128×10^15 | 1,8986×10^27 | -108 | 778330000  |
+| Saturno    | 4,27×10^10 | 8,2713 × 10^14 | 5,6846 × 10^26 | -139 | 1429400000 |
+| Urano    | 8,1156×10^9 | 6,833×10^13 | 8,6810×10^25 | -220 |  2870990000    |
+| Netuno   | 7,6183×10^9 | 6,254×10^13 | 1,0243×10^26 | -223 | 4504000000     |
+
+E com base nesses dados foi pedido que:
+
+<!-- livebook:{"break_markdown":true} -->
+
+1. Crie um modelo de estrutura (struct) que represente o modelo de um planeta baseado nesses dados fornecidos. Ele deve ter valores default e todos os campos são requeridos.
+
+```elixir
+
+```
+
+1. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
+
+```elixir
+mercurio =
+```
+
+1. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
+
+```elixir
+venus =
+```
+
+1. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
+
+```elixir
+terra =
+```
+
+1. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
+
+```elixir
+marte =
+```
+
+1. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
+
+```elixir
+jupiter =
+```
+
+1. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
+
+```elixir
+saturno =
+```
+
+1. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
+
+```elixir
+urano = 
+```
+
+1. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
+
+```elixir
+netuno = 
+```
+
+1. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
+
+* **:estrela**: String, valor "Sol"
+* **:nome**: String, valor "Sistema Solar"
+* **:planetas**: Lista de %Planeta (struct/estrutura), uma lista contendo todos os planetas criados.
+
+Salve esse mapa criado em uma variável `sistema_solar`.
+
+```elixir
+sistema_solar =
+```
 
 Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
 
