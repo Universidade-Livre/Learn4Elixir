@@ -963,6 +963,42 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 
 ### Exercicio 1
 
+Escreva um exemplo de dado em elixir para cada tipo apresentado colocando-o como parâmetro no lugar de `""` na respectiva função, o resultado deve ser `true`.
+
+```elixir
+is_number("")
+```
+
+```elixir
+is_integer("")
+```
+
+```elixir
+is_float("")
+```
+
+```elixir
+is_binary("")
+```
+
+```elixir
+is_atom("")
+```
+
+```elixir
+is_boolean("")
+```
+
+```elixir
+is_map("")
+```
+
+```elixir
+is_tuple("")
+```
+
+### Exercicio 2
+
 Imagine que vários desenvolvedores de software que trabalham com front-end 
 publicaram abertamente seus salários no Twitter e você gostaria de fazer um programa 
 que calculasse a média de salários de cada região a partir do input de 3 salários dessa região.
@@ -992,7 +1028,25 @@ else
 end
 ```
 
-### Exercicio 2
+### Exercicio 3
+
+Resolva a equação quadrática **x² - 2x + 1 = 0** calculando seu delta e sua(s) raíz(es).
+
+> Dica: A operação de raíz quadrada é feita com `:math.sqrt()`, `:math` é um módulo do Erlang que contêm diversas funções matemáticas que podem ser úteis na sua jornada.
+
+```elixir
+:math.sqrt(4)
+```
+
+```elixir
+delta = 
+```
+
+```elixir
+x =
+```
+
+### Exercicio 4
 
 Trabalhando com Elixir você desenvolveu um sistema de E-commerce. Recentemente você decidiu extrair os comentários e o sistema respondeu te enviando uma lista de mapas com os comentários. Cada mapa possui as propriedades:
 
@@ -1149,7 +1203,7 @@ Com esses dados use casamento de padrões para:
 
 ```
 
-### Exercicio 3
+### Exercicio 5
 
 O Departamento de Astrofísica da NASA entrou em contato com você. Eles precisam organizar as informações dos planetas do Sistema Solar para que os sistemas em Elixir que estão rodando simulações utilizem para processar essas simulações.
 
