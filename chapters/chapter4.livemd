@@ -1,9 +1,10 @@
 # Learn4Elixir - Capítulo 4
 
-[![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2FUniversidade-Livre%2FLearn4Elixir%2Fblob%2Fmain%2Fchapters%2Fchapter4.livemd)
 Neste Capitulo você irá aprender sobre: Data e Tempo, Processos em Elixir e Agentes.
 
-## Data e Tempo 
+[![Run in Livebook](https://livebook.dev/badge/v1/blue.svg)](https://livebook.dev/run?url=https%3A%2F%2Fgithub.com%2FUniversidade-Livre%2FLearn4Elixir%2Fblob%2Fmain%2Fchapters%2Fchapter4.livemd)
+
+# Data e Tempo 
 
 O Elixir tem alguns módulos que trabalham com tempo. Ainda que precise ser notado que essa funcionalidade é limitada para trabalhar com fuso horário UTC.
 
@@ -316,31 +317,54 @@ iex> def delete(bucket, key) do
 
 ## Cliente/Servidor em Agentes
 
-Vamos expandir a delete/2função que acabamos de implementar:
+No Livebook, você pode criar um servidor e um cliente para interagir com agentes da mesma maneira que faria em um ambiente Elixir tradicional. Agentes permitem que você compartilhe estado entre diferentes partes do código de forma segura em um ambiente concorrente. Aqui está um exemplo de como usar um cliente e um servidor em agentes no Livebook:
+
+### Servidor (Agente):
+
+Vamos começar definindo o servidor (agente) que mantém um contador como estado interno. Você pode definir isso em uma célula:
 
 ```elixir
-iex> def delete(bucket, key) do
-...>  Agent.get_and_update(bucket, fn dict ->
-...>    Map.pop(dict, key)
-...>  end)
-...> end
+# Inicie o agente com um contador inicial de 0
+{:ok, agent} = Agent.start(fn -> 0 end)
 ```
 
-Tudo o que está dentro da função que passamos para o agente acontece no processo do agente. Neste caso, como o processo agente é aquele que recebe e responde às nossas mensagens, dizemos que o processo agente é o servidor. Tudo fora da função está acontecendo no cliente.
+### Cliente:
 
-Esta distinção é importante. Se houver ações caras a serem realizadas, você deve considerar se será melhor realizar essas ações no cliente ou no servidor. Por exemplo:
+Em seguida, você pode criar um cliente que interage com o servidor (agente) para ler e atualizar o contador. Você pode fazer isso em uma célula separada:
 
 ```elixir
-iex> def delete(bucket, key) do
-...>  Process.sleep(1000) # puts client to sleep
-...>  Agent.get_and_update(bucket, fn dict ->
-...>    Process.sleep(1000) # puts server to sleep
-...>    Map.pop(dict, key)
-...>  end)
-...> end
+# Função para ler o contador do agente
+defp get_count(agent) do
+  Agent.get(agent, fn count -> count end)
+end
+
+# Função para atualizar o contador do agente
+defp increment_count(agent) do
+  Agent.update(agent, fn count -> count + 1 end)
+end
 ```
 
-Quando uma ação longa é executada no servidor, todas as outras solicitações para esse servidor específico aguardarão até que a ação seja concluída, o que pode causar o tempo limite de alguns clientes.
+### Uso do Cliente e Servidor:
+
+Agora que você tem um cliente e um servidor, pode usá-los para interagir com o agente em células subsequentes:
+
+```elixir
+# Use o cliente para ler e atualizar o contador
+IO.puts("Contador Inicial: #{get_count(agent)}")
+increment_count(agent)
+IO.puts("Contador Atualizado: #{get_count(agent)}")
+```
+
+### Encerrando o Agente:
+
+Depois de concluir a interação com o agente, é importante encerrá-lo para liberar os recursos. Você pode fazer isso em outra célula:
+
+```elixir
+# Encerre o agente
+:ok = Agent.stop(agent)
+```
+
+Lembre-se de que você pode executar essas células em ordem no Livebook para ver como o cliente e o servidor interagem com o agente. O servidor (agente) mantém o estado interno (nesse caso, um contador), e o cliente lê e atualiza esse estado. Isso permite a comunicação segura entre diferentes partes do código em um ambiente concorrente. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da interação.
 
 ## Exercício
 
