@@ -1,6 +1,6 @@
 # Learn4Elixir - Capítulo 4
 
-# Data e Tempo 
+## Data e Tempo 
 
 Neste Capitulo você irá aprender sobre: Data e Tempo, Processos em Elixir e Agentes.
 
@@ -65,7 +65,7 @@ end
 
 No Elixir, não existe um tipo nativo chamado "Date" como em algumas outras linguagens de programação. No entanto, você pode usar o módulo Date do pacote Calendar para trabalhar com datas em Elixir. O pacote Calendar é uma biblioteca externa que oferece funcionalidades avançadas para manipulação de datas. Para usá-lo no Livebook, você precisa primeiro adicionar o pacote às dependências do projeto. Abaixo estão as etapas para fazer isso e começar a usar o Date:
 
-### Adicionar o Pacote Calendar às Dependências:
+## Adicionar o Pacote Calendar às Dependências:
 
 Você pode adicionar o pacote calendar ao seu projeto Elixir editando o arquivo mix.exs do seu Livebook e adicionando :calendar à lista de dependências:
 
@@ -80,7 +80,7 @@ end
 
 Após adicionar a dependência, você precisa executar o comando mix deps.get para buscar e instalar o pacote calendar.
 
-### Usar o Módulo Date do Pacote Calendar:
+## Usar o Módulo Date do Pacote Calendar:
 
 Agora que você adicionou o pacote calendar, pode usar o módulo Date para trabalhar com datas. Aqui estão alguns exemplos de como usar o Date no Livebook:
 
@@ -115,7 +115,7 @@ NaiveDateTime é um tipo de data e hora no Elixir que não está associado a um 
 
 Para usar NaiveDateTime no Livebook, você pode seguir estas etapas:
 
-### Importe o Módulo NaiveDateTime:
+## Importe o Módulo NaiveDateTime:
 
 Primeiro, importe o módulo NaiveDateTime do pacote Calendar no seu Livebook. Adicione o :calendar como dependência em seu arquivo mix.exs e execute mix deps.get para garantir que o pacote esteja instalado.
 
@@ -124,7 +124,7 @@ Primeiro, importe o módulo NaiveDateTime do pacote Calendar no seu Livebook. Ad
 import Calendar.NaiveDateTime
 ```
 
-### Crie e Manipule NaiveDateTimes:
+## Crie e Manipule NaiveDateTimes:
 
 Agora você pode criar e manipular objetos NaiveDateTime no seu Livebook. Aqui estão alguns exemplos:
 
@@ -161,7 +161,7 @@ Para trabalhar com fusos horários no Livebook, você pode usar a biblioteca tzd
 
 Aqui estão os passos para usar fusos horários no Livebook:
 
-### Adicione as Dependências:
+## Adicione as Dependências:
 
 Certifique-se de que as dependências tzdata e timex estão listadas em seu arquivo mix.exs:
 
@@ -177,7 +177,7 @@ end
 
 Execute mix deps.get para buscar e instalar essas dependências.
 
-### Importe os Módulos Necessários:
+## Importe os Módulos Necessários:
 
 No Livebook, importe os módulos Tzdata e Timex para usar suas funções:
 
@@ -186,7 +186,7 @@ import Tzdata
 import Timex
 ```
 
-### Trabalhando com Fusos Horários:
+## Trabalhando com Fusos Horários:
 
 Você pode usar o tzdata para obter informações sobre fusos horários. Por exemplo, para obter a lista de fusos horários disponíveis:
 
@@ -203,7 +203,7 @@ timezone = Tzdata.get_timezone("America/New_York")
 IO.puts("Fuso Horário de Nova York: #{inspect(timezone)}")
 ```
 
-### Manipulando Datas e Horas com Fusos Horários:
+## Manipulando Datas e Horas com Fusos Horários:
 
 Você pode usar o timex para criar objetos de data e hora com fusos horários e realizar cálculos com eles. Por exemplo:
 
@@ -219,7 +219,7 @@ IO.puts("Data e Hora em Londres: #{inspect(new_datetime)}")
 
 Além disso, o timex oferece funções para formatação, análise, adição e subtração de datas e horas com fusos horários.
 
-# Processos em Elixir
+## Processos em Elixir
 
 No Livebook, você pode usar processos em Elixir da mesma forma que faria em um ambiente Elixir tradicional. Os processos são a principal unidade de concorrência em Elixir e permitem que você execute tarefas em paralelo, compartilhe dados e crie sistemas concorrentes. Aqui estão alguns exemplos de como usar processos no Livebook:
 
@@ -273,11 +273,11 @@ Em sistemas mais complexos, você pode usar o mecanismo de supervisão do Elixir
 
 Para criar um supervisor e gerenciar processos, você pode usar o módulo Supervisor. No entanto, a criação de supervisores requer um ambiente mais complexo e pode não ser adequada para exemplos simples no Livebook.
 
-# Agentes
+## Agentes
 
 Para usar agentes no Livebook, você pode seguir os mesmos princípios que aplicaria em um ambiente Elixir tradicional. Agentes são uma maneira de compartilhar e gerenciar estado em ambientes concorrentes de forma segura. Aqui está um exemplo de como usar agentes no Livebook:
 
-### Inicialize um Agente (Servidor):
+## Inicialize um Agente (Servidor):
 
 Comece inicializando um agente que conterá o estado que você deseja compartilhar. Você pode fazer isso em uma célula do Livebook:
 
@@ -288,7 +288,7 @@ Comece inicializando um agente que conterá o estado que você deseja compartilh
 
 Neste exemplo, o agente é inicializado com um estado inicial de 0.
 
-### Crie Funções de Cliente:
+## Crie Funções de Cliente:
 
 Em seguida, você pode criar funções de cliente que interagem com o agente para ler ou atualizar seu estado. Você pode definir essas funções em células separadas:
 
@@ -305,7 +305,7 @@ defp update_state(agent, new_state) do
 end
 ```
 
-### Interaja com o Agente:
+## Interaja com o Agente:
 
 Agora você pode usar as funções do cliente para interagir com o agente em células subsequentes do Livebook:
 
@@ -320,7 +320,7 @@ update_state(agent, new_state)
 IO.puts("Estado Atualizado: #{new_state}")
 ```
 
-### Encerre o Agente (Opcional):
+## Encerre o Agente (Opcional):
 
 Após concluir a interação com o agente, você pode encerrá-lo para liberar os recursos associados. Você pode fazer isso em uma célula separada:
 
@@ -329,9 +329,9 @@ Após concluir a interação com o agente, você pode encerrá-lo para liberar o
 :ok = Agent.stop(agent)
 ```
 
-# Exercício
+## Exercício
 
-# Links
+## Links
 
 Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
 - [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
