@@ -72,8 +72,6 @@ end
 
 A mesma lógica se aplica ao unless com else.
 
-Lembre-se de que no Livebook, você pode escrever e executar código em células individuais, o que facilita a experimentação com essas estruturas condicionais em um ambiente interativo. Certifique-se de que seu código esteja em uma célula executável para ver os resultados da execução.
-
 ## Cond
 
 No Livebook, você pode usar a macro cond para criar uma estrutura de controle condicional que permite avaliar múltiplas condições e executar código com base na primeira condição verdadeira encontrada. A sintaxe básica do cond é a seguinte:
@@ -123,8 +121,6 @@ end
 ```
 
 Neste exemplo, o código verificará a condição x == 0 primeiro, que não é verdadeira, e, em seguida, verificará x > 0, que é verdadeira, portanto, imprimirá "x é maior que 0". Como a última cláusula com true está presente, ela não será executada neste caso.
-
-O cond é útil quando você tem várias condições e deseja executar código com base na primeira condição verdadeira. Certifique-se de que seu código esteja em uma célula executável no Livebook para ver os resultados da execução.
 
 # Sigils
 
@@ -199,8 +195,6 @@ IO.inspect(lista_palavras)
 
 Isso criará uma lista de átomos com os valores [ :apple, :banana, :cherry ].
 
-Lembre-se de que os sigils facilitam a criação de literais para diferentes tipos de dados de maneira mais concisa e legível. Você pode usar esses sigils da mesma forma no Livebook como em qualquer outro código Elixir. Certifique-se de executar suas células para ver os resultados ao trabalhar com sigils no Livebook.
-
 # Compreensões
 
 No Livebook, você pode usar compreensões para criar listas ou outras estruturas de dados de maneira concisa e expressiva. Compreensões são uma característica poderosa em Elixir e podem ajudar a simplificar a criação e transformação de coleções de dados. Aqui estão algumas formas de usar compreensões no Livebook:
@@ -266,8 +260,6 @@ pares_maiores_que_tres = for x <- lista, rem(x, 2) == 0, x > 3, do: x
 pares_maiores_que_tres
 ```
 
-Lembre-se de que as compreensões tornam o código mais legível e conciso, permitindo que você realize operações em coleções de maneira eficaz. No Livebook, você pode experimentar essas compreensões em células separadas e ver os resultados conforme executa cada célula. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados das compreensões.
-
 ## Filtros
 
 No Livebook, você pode usar filtros para selecionar e exibir apenas as saídas ou resultados específicos de uma célula. Isso pode ser útil quando você deseja reduzir o ruído em seu notebook ou concentrar-se apenas em resultados relevantes. Os filtros são uma maneira conveniente de organizar e visualizar as saídas de suas células.
@@ -325,9 +317,6 @@ clear_filter(:filtro_personalizado)
 IO.puts("Esta saída não está filtrada
 ```
 
-Lembre-se de que os filtros no Livebook ajudam a organizar e focar em saídas específicas em seu notebook interativo. Eles são especialmente úteis ao trabalhar com notebooks complexos ou ao compartilhar informações com outros usuários. Certifique-se de executar as células para ver o efeito dos filtros.
-
-
 ## Usando :Into
 
 Em uma célula do Livebook, você pode usar a função into/2 para criar uma associação a uma variável que receberá o resultado da expressão na célula. Isso é útil quando você deseja armazenar o resultado de uma computação em uma variável para uso posterior ou para exibir o valor em uma célula subsequente. A sintaxe básica do into/2 é a seguinte:
@@ -357,8 +346,6 @@ soma
 ```
 
 Neste exemplo, a variável soma armazenará o resultado da soma de a e b. Quando você executar a célula, o valor da variável soma será calculado e exibido na célula subsequente.
-
-Lembre-se de que o Livebook é interativo e permite que você execute células em qualquer ordem. Isso significa que você pode definir variáveis em uma célula e usá-las em células subsequentes, facilitando a experimentação e o desenvolvimento interativos. Certifique-se de que suas células estejam executáveis para ver os resultados da execução.
 
 ## Exercício
 
