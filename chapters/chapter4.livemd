@@ -244,4 +244,15 @@ MeuAgente.le_estado(meuagente)
 MeuAgente.encerra(meuagente)
 ```
 
-## Exercícios
+## Exercício: Criando um Agente de Contagem de Acessos
+
+Vamos criar um sistema simples para rastrear o número de acessos a uma página da web usando Agentes em Elixir e registrar a data e hora de cada acesso.
+
+1. Crie um módulo chamado `Acesso` que inicializa um agente com um estado inicial de uma lista vazia para armazenar os acessos. O estado deve ser uma lista de tuplas contendo a data e hora do acesso.
+
+2. Crie uma função no módulo `Acesso` chamada `registrar_acesso` que recebe o agente e registra a data e hora do acesso atual na lista de acessos.
+
+3. Crie uma função no módulo `Acesso` chamada `obter_acessos` que recebe o agente e retorna a lista de acessos registrados.
+
+4. Agora, crie uma interação no Livebook para demonstrar o uso do módulo `Acesso`. Inicie o agente, registre alguns acessos e, em seguida, obtenha a lista de acessos registrados.
+
