@@ -61,8 +61,6 @@ if future_datetime > current_datetime do
 end
 ```
 
-Lembre-se de que o Livebook é interativo, o que facilita a experimentação com datas e tempos. Você pode criar células diferentes para testar diferentes operações e ver os resultados imediatamente. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da manipulação de datas e tempos no Livebook.
-
 ## Date
 
 No Elixir, não existe um tipo nativo chamado "Date" como em algumas outras linguagens de programação. No entanto, você pode usar o módulo Date do pacote Calendar para trabalhar com datas em Elixir. O pacote Calendar é uma biblioteca externa que oferece funcionalidades avançadas para manipulação de datas. Para usá-lo no Livebook, você precisa primeiro adicionar o pacote às dependências do projeto. Abaixo estão as etapas para fazer isso e começar a usar o Date:
@@ -111,8 +109,6 @@ IO.puts("Data Futura: #{inspect(future_date)}")
 IO.puts("Data Passada: #{inspect(past_date)}")
 ```
 
-Lembre-se de que você deve importar o módulo Date do pacote Calendar para acessar suas funções e utilizar essas funções para criar, manipular e formatar datas. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da manipulação de datas no Livebook.
-
 ## NaiveDateTime
 
 NaiveDateTime é um tipo de data e hora no Elixir que não está associado a um fuso horário específico. Ao contrário do DateTime (com informações de fuso horário), o NaiveDateTime não lida com compensações de fuso horário e outras informações relacionadas a fusos horários.
@@ -158,7 +154,6 @@ past_datetime = NaiveDateTime.subtract(naive_datetime, seconds: 60)
 IO.puts("NaiveDateTime Futuro: #{inspect(future_datetime)}")
 IO.puts("NaiveDateTime Passado: #{inspect(past_datetime)}")
 ```
-Lembre-se de importar o módulo NaiveDateTime e use suas funções para criar, manipular e formatar objetos NaiveDateTime. Ao contrário do DateTime, o NaiveDateTime não lida com fusos horários, o que o torna adequado para casos em que você não precisa considerar informações de fuso horário. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da manipulação do NaiveDateTime no Livebook.
 
 ## Trabalhando com Timezones
 
@@ -224,10 +219,6 @@ IO.puts("Data e Hora em Londres: #{inspect(new_datetime)}")
 
 Além disso, o timex oferece funções para formatação, análise, adição e subtração de datas e horas com fusos horários.
 
-Lembre-se de que o uso de fusos horários em sistemas complexos pode ser desafiador devido às complexidades envolvidas nos cálculos de horário de verão e fusos horários históricos. Portanto, é importante entender bem os requisitos específicos do seu aplicativo ao lidar com fusos horários.
-
-Certifique-se de configurar suas células no Livebook para serem executáveis para ver os resultados da manipulação de fusos horários.
-
 # Processos em Elixir
 
 No Livebook, você pode usar processos em Elixir da mesma forma que faria em um ambiente Elixir tradicional. Os processos são a principal unidade de concorrência em Elixir e permitem que você execute tarefas em paralelo, compartilhe dados e crie sistemas concorrentes. Aqui estão alguns exemplos de como usar processos no Livebook:
@@ -281,8 +272,6 @@ Process.exit(pid, :shutdown)
 Em sistemas mais complexos, você pode usar o mecanismo de supervisão do Elixir para monitorar e gerenciar processos automaticamente. Isso ajuda a criar sistemas resilientes que podem se recuperar de falhas.
 
 Para criar um supervisor e gerenciar processos, você pode usar o módulo Supervisor. No entanto, a criação de supervisores requer um ambiente mais complexo e pode não ser adequada para exemplos simples no Livebook.
-
-Lembre-se de que o Livebook permite que você execute células em qualquer ordem e que as células podem representar unidades independentes de código. Portanto, você pode experimentar a criação, envio de mensagens e interação com processos em células diferentes para entender melhor como os processos funcionam em Elixir. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da interação com processos no Livebook.
 
 # Agentes
 
@@ -339,8 +328,6 @@ Após concluir a interação com o agente, você pode encerrá-lo para liberar o
 # Encerre o agente
 :ok = Agent.stop(agent)
 ```
-
-Lembre-se de que o Livebook permite que você execute células em qualquer ordem, o que facilita a experimentação e a interação com agentes e estados compartilhados. Certifique-se de que suas células estejam configuradas para serem executáveis para ver os resultados da interação com agentes no Livebook.
 
 # Exercício
 
