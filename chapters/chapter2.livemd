@@ -278,7 +278,7 @@ end
 Vamos supor que eu queira ter uma função auxiliar, uma função que é usada apenas pelas outras funções do módulo. Este é o caso em que definimos uma função previada e para isso, em vez de 'def', usamos 'defp'.
 
 ```elixir
-defmodule Matematica do
+defmodule Matem do
   def media(num1, num2) do
     (num1 + num2) / 2
   end
@@ -327,7 +327,7 @@ end
 
 Elixir tem diversos módulos que possuem funções que podem nos auxiliar a simplificar o desenvolvimento de nosso código, como vimos acima no uso de `Enum` e no inicio desse livebook com `String`.
 
-- Leia essas documentações de forma rápida por cima e busque nelas informações quando for resolver esse exercício: [Enum](https://hexdocs.pm/elixir/1.12/Enum.html), [String](https://hexdocs.pm/elixir/1.12/String.html) e [Map](https://hexdocs.pm/elixir/1.12/Map.html).
+* Leia essas documentações de forma rápida por cima e busque nelas informações quando for resolver esse exercício: [Enum](https://hexdocs.pm/elixir/1.12/Enum.html), [String](https://hexdocs.pm/elixir/1.12/String.html) e [Map](https://hexdocs.pm/elixir/1.12/Map.html).
 
 E então resolva esses problemas:
 
@@ -386,11 +386,11 @@ lista_de_numeros = [4, 8, 12, 16, 20, 24, 28, 32, 36]
 
 O departamento de Matemática da Universidade Técnica Federal do Paraná entrou em contato com você. Eles querem usar Elixir para trabalhar com Álgebra Linear e para isso precisam que você implemente um módulo em Elixir para que eles possam usar para fazer operações com Matrizes que eles precisam. Para eles é importante:
 
-- Soma de Matrizes
-- Subtração de Matrizes
-- Multiplicação de Matrizes
-- Multiplicação de Matriz por Escalar (chamado de Produto Escalar)
-- Determinante da Matriz (para Matrizes até 3x3)
+* Soma de Matrizes
+* Subtração de Matrizes
+* Multiplicação de Matrizes
+* Multiplicação de Matriz por Escalar (chamado de Produto Escalar)
+* Determinante da Matriz (para Matrizes até 3x3)
 
 Para a soma, subtração e multiplicação de matrizes, as
 matrizes inseridas poderão ter quaisquer dimensões (verifique se a operação é factível antes de
@@ -438,11 +438,11 @@ Você é um desenvolvedor web que trabalha em uma empresa que oferece serviços 
 
 Uma música é representada por um mapa com as seguintes chaves:
 
-- **:titulo** - uma string com o nome da música
-- **:artista** - uma string com o nome do artista
-- **:genero** - uma string com o gênero musical
-- **:duracao** - um inteiro com a duração da música em segundos
-- **:avaliacao** - um número de 0 a 5 com a avaliação média da música pelos usuários
+* **:titulo** - uma string com o nome da música
+* **:artista** - uma string com o nome do artista
+* **:genero** - uma string com o gênero musical
+* **:duracao** - um inteiro com a duração da música em segundos
+* **:avaliacao** - um número de 0 a 5 com a avaliação média da música pelos usuários
 
 <!-- livebook:{"force_markdown":true} -->
 
@@ -458,10 +458,10 @@ musica = %{
 
 Uma preferência do usuário é representada por um mapa com as seguintes chaves:
 
-- **:genero** - uma string com o gênero musical preferido pelo usuário
-- **:duracao_min** - um inteiro com a duração mínima das músicas que o usuário gosta em segundos
-- **:duracao_max** - um inteiro com a duração máxima das músicas que o usuário gosta em segundos
-- **:avaliacao_min** - um número de 0 a 5 com a avaliação mínima das músicas que o usuário quer ouvir
+* **:genero** - uma string com o gênero musical preferido pelo usuário
+* **:duracao_min** - um inteiro com a duração mínima das músicas que o usuário gosta em segundos
+* **:duracao_max** - um inteiro com a duração máxima das músicas que o usuário gosta em segundos
+* **:avaliacao_min** - um número de 0 a 5 com a avaliação mínima das músicas que o usuário quer ouvir
 
 <!-- livebook:{"force_markdown":true} -->
 
@@ -530,27 +530,25 @@ Recomendacao.recomenda(musicas, preferencia)
 
 ### Exercicio 4
 
-<!-- livebook:{"force_markdown":true} -->
-
 Você está participando de um emocionante concurso de escultura de círculos, onde artistas de todo o mundo exibem suas obras-primas circulares. Cada participante contribui com uma lista de raios de círculos usados em suas esculturas. O júri está ansioso para premiar as melhores esculturas, e você quer dar um toque de tecnologia à sua apresentação.
 
 Você decide criar um programa em Elixir para ajudar a analisar e apresentar os dados dos raios dos círculos de forma a impressionar os juízes. Seu programa será responsável por calcular várias estatísticas importantes dos raios, o que pode destacar a singularidade de sua escultura.
 
-- Encontrar o raio mínimo e máximo para mostrar o quão variados são os tamanhos dos círculos em sua escultura.
+* Encontrar o raio mínimo e máximo para mostrar o quão variados são os tamanhos dos círculos em sua escultura.
 
-- Calcular o diâmetro correspondente aos raios mínimo e máximo para destacar a amplitude das dimensões dos círculos.
+* Calcular o diâmetro correspondente aos raios mínimo e máximo para destacar a amplitude das dimensões dos círculos.
 
-- Calcular a área correspondente aos raios mínimo e máximo para ilustrar a diversidade de áreas cobertas pelos círculos.
+* Calcular a área correspondente aos raios mínimo e máximo para ilustrar a diversidade de áreas cobertas pelos círculos.
 
-- Determinar a média dos raios para mostrar a proporção média dos tamanhos.
+* Determinar a média dos raios para mostrar a proporção média dos tamanhos.
 
-- Saber quantos círculos diferentes você utilizou em sua escultura.
+* Saber quantos círculos diferentes você utilizou em sua escultura.
 
-- Apresentar a lista de raios em ordem crescente e decrescente para enfatizar o equilíbrio artístico.
+* Apresentar a lista de raios em ordem crescente e decrescente para enfatizar o equilíbrio artístico.
 
-- Calcular a variação dos raios para demonstrar a diversidade na escolha de tamanhos.
+* Calcular a variação dos raios para demonstrar a diversidade na escolha de tamanhos.
 
-- Destacar a mediana dos raios para mostrar uma dimensão central dos círculos usados.
+* Destacar a mediana dos raios para mostrar uma dimensão central dos círculos usados.
 
 ```elixir
 circulos = [2, 4, 3, 6, 20, 17, 5, 11, 9, 13, 2, 20]
@@ -610,4 +608,4 @@ defmodule CalculoEsculturas do
 end
 ```
 
-<!-- livebook:{"break_markdown":true} -->
+
