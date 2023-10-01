@@ -14,7 +14,7 @@ If e Unless são estruturas de controle que você pode usar no Livebook, uma fer
 
 A estrutura if é usada para executar um bloco de código se uma condição for avaliada como verdadeira (true). Se a condição for avaliada como falsa (false), o bloco de código não será executado.
 
-```elixir
+```
 if condition do
   # Código a ser executado se a condição for verdadeira
 end
