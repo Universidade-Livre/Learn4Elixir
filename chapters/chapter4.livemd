@@ -61,7 +61,31 @@ Os processos são a principal unidade de concorrência em Elixir e permitem que 
 
 ## Criar um Processo
 
-Para criar um processo em Elixir, você pode usar a função spawn/1 ou Task.start/1. Aqui está um exemplo usando Task.start/1 para criar um processo que imprime "Hello, World!" após um atraso de 2 segundos:
+Para criar um processo em Elixir, você pode usar a função spawn/1 ou Task.start/1.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Inicialmente veja abaixo um exemplo do uso de spawn/1.
+
+```elixir
+meu_pid = spawn(fn -> 0 end)
+```
+
+O que aconteceu? Elixir iniciou um processo que executou uma função que não recebe nenhuma argumento e retorna 0. O que 'spawn' retornou? O identificador do processo (PID).
+
+<!-- livebook:{"break_markdown":true} -->
+
+O que posso fazer com este PID? Várias coisas. Por exemplo, posso perguntar se o processo está vivo.
+
+```elixir
+Process.alive?(meu_pid)
+```
+
+Quando eu chego a avaliar a célula acima, o processo já foi executado e já morreu. Por esta razão, 'Process.alive?(meu_pid)' retorna 'false'.
+
+<!-- livebook:{"break_markdown":true} -->
+
+Agora veja um exemplo usando Task.start/1 para criar um processo que imprime "Hello, World!" após um atraso de 2 segundos.
 
 ```elixir
 task =
@@ -71,15 +95,25 @@ task =
   end)
 ```
 
-## Aguardar o Término do Processo
+Observe que no caso acima incluímos um 'IO.puts' para poder ver o que o processo fez. Observe também que o Task.start retornou uma tupla contendo :ok e o PID.
 
-Você pode usar Task.await/2 para aguardar o término de um processo criado com Task.start/1:
+## Testando a "vida" de um processo
+
+Agora vamos criar um processo que dura um pouco mais de tempo e vamos pedir para que você avalie a segunda célula sem esperar o fim da avaliação da primeira. Avalie a segunda célula várias vezes. Assim, você verá que inicialmente o retorno será 'true' mas depois de 10 segundos o retorno será 'false'.
 
 ```elixir
-Task.await(task)
+{:ok, minha_tarefa} =
+  Task.start(fn ->
+    :timer.sleep(10000)
+    IO.puts("Hello, World!")
+  end)
 ```
 
-Isso fará com que o processo principal espere até que o processo da tarefa seja concluído.
+```elixir
+Process.alive?(minha_tarefa)
+```
+
+Observe também que "Hello, World!" aparecerá na célula que estiver ativa no momento.
 
 ## Enviar e Receber Mensagens entre Processos
 
