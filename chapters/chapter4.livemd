@@ -256,3 +256,10 @@ Vamos criar um sistema simples para rastrear o número de acessos a uma página 
 
 4. Agora, crie uma interação no Livebook para demonstrar o uso do módulo `Acesso`. Inicie o agente, registre alguns acessos e, em seguida, obtenha a lista de acessos registrados.
 
+## Solução
+
+Escreva sua solução na célula abaixo. Se necessário, crie mais células.
+
+```elixir
+"Coloque aqui sua solução"
+```
