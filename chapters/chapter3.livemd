@@ -16,7 +16,7 @@ A estrutura if é usada para executar um bloco de código se uma condição for 
 
 <!-- livebook:{"force_markdown":true} -->
 
-```elixir
+```
 if condition do
   # Código a ser executado se a condição for verdadeira
 end
@@ -38,7 +38,7 @@ A estrutura unless é o oposto do if. Ela é usada para executar um bloco de có
 
 <!-- livebook:{"force_markdown":true} -->
 
-```elixir
+```
 unless condition do
   # Código a ser executado se a condição for falsa
 end
@@ -58,7 +58,7 @@ Você também pode usar else com if e unless para executar um bloco de código a
 
 <!-- livebook:{"force_markdown":true} -->
 
-```elixir
+```
 if condition do
   # Código a ser executado se a condição for verdadeira
 else
