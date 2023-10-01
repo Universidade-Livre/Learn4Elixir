@@ -201,8 +201,9 @@ O sigil ~c permite criar caracteres. Você pode especificar um único caractere 
 ```elixir
 meu_char = ~c'A'
 IO.puts(meu_char)
-Isso imprimirá "A" na saída.
 ```
+
+Isso imprimirá "A" na saída.
 
 Sigil de Listas (~w):
 
