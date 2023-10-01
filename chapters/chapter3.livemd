@@ -351,7 +351,7 @@ lista = [1, 2, 3, 4, 5, 6]
 pares_maiores_que_tres = for x <- lista, rem(x, 2) == 0, x > 3, do: x
 ```
 
-## Exercício
+## Exercícios
 
 ### Exercício 1
 
