@@ -388,11 +388,126 @@ Neste exemplo, a variável soma armazenará o resultado da soma de a e b. Quando
 
 ## Exercício
 
-## Links
+### Exercício 1
 
-Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
+Você é um desenvolvedor Elixir que trabalha para uma empresa de jogos chamada "ElixGames". A empresa está criando um jogo de aventura em que os jogadores exploram um mundo mágico cheio de criaturas misteriosas. Como parte do jogo, você precisa implementar uma função que determina o resultado de um encontro aleatório com uma criatura.
 
-* [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
-* [Livros e outros recursos de aprendizagem](https://elixir-lang.org/learning.html)
-* [Elixir Brasil - Comunidade no Telegram](https://t.me/elixirbr)
-* [Elixir em Foco - podcast em português](https://www.elixiremfoco.com/)
+Aqui estão as regras para determinar o resultado do encontro:
+
+* Se o jogador estiver em um "Bosque Encantado", ele tem 90% de chance de encontrar uma criatura amigável e 10% de chance de encontrar uma criatura hostil.
+* Se o jogador estiver em uma "Caverna Escura", ele tem 60% de chance de encontrar uma criatura amigável e 40% de chance de encontrar uma criatura hostil.
+* Se o jogador estiver em uma "Torre Misteriosa", ele tem 30% de chance de encontrar uma criatura amigável e 70% de chance de encontrar uma criatura hostil.
+
+Sua tarefa é implementar um módulo em Elixir chamado `ElixGames.Encontro` que forneça a função `determina_encontro/2`, que aceita o local onde o jogador está e um número aleatório entre 1 e 100 (representando a probabilidade) como argumentos e retorna o resultado do encontro com a criatura com base nas regras acima.
+
+Para completar esta tarefa, você precisará usar estruturas condicionais, como `if`, `unless` e `cond`, para aplicar as regras corretamente e determinar se o jogador encontrará uma criatura amigável ou hostil com base no local e na probabilidade gerada aleatoriamente. Certifique-se de que a API (o nome do módulo, da função e suas assinaturas) seja respeitada, conforme especificado pela empresa "ElixGames".
+
+```elixir
+defmodule ElixGames.Encontro do
+  def determina_encontro(localizacao, probabilidade) do
+    # Implemente a lógica de determinação do resultado do encontro aqui
+  end
+end
+```
+
+```elixir
+
+```
+
+### Exercício 2
+
+Você recebeu uma lista de informações de clientes em formato de string, mas elas estão desorganizadas e precisam ser formatadas corretamente. Cada informação de cliente é separada por um ponto e vírgula (;) e contém os seguintes campos:
+
+1. Nome do cliente (entre aspas duplas).
+2. Idade do cliente (um número).
+3. Endereço de e-mail do cliente.
+4. Número de telefone do cliente.
+
+A seguir está um exemplo de como as informações dos clientes estão atualmente:
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+"Fulano Tal",30,fulano@email.com,+5511995236587;"Ciclano Outro",25,ciclano@email.com,5545996578452
+```
+
+> Dê uma olhada como **sigils** funcionam. Principalmente `~s` e `~r`, leia também sobre **expressões regulares**.
+
+**Tarefas:**
+
+<!-- livebook:{"break_markdown":true} -->
+
+1. Crie uma função chamada `parsear_clientes/1` que receba a string de informações de clientes e a divida em uma lista de informações de clientes formatadas. Use o sigil `~s` para fazer isso.
+
+```elixir
+def parsear_clientes(informacao) do
+  # A fazer
+end
+```
+
+```elixir
+
+```
+
+1. Crie outra função chamada `extrair_nomes/1` que receba a lista de informações de clientes e retorne uma lista com os nomes dos clientes.
+
+```elixir
+def extrair_nomes(clientes) do
+  # A fazer
+end
+```
+
+```elixir
+# Caso a entrada fosse o exemplo na descrição deve imprimir ["Fulano Tal", "Ciclano Outro"]
+```
+
+1. Crie uma terceira função chamada `filtrar_clientes_por_idade/2` que receba a lista de informações de clientes e uma idade mínima e retorne uma lista com as informações dos clientes que têm pelo menos a idade especificada.
+
+```elixir
+def filtrar_clientes_por_idade(clientes, idade_minima) do
+  # A fazer
+end
+```
+
+```elixir
+# Deveria imprimir [["Fulano Tal", 30, "fulano@email.com", "+5511995236587"]]
+```
+
+### Exercicio 3
+
+Você está trabalhando em uma empresa de e-commerce que vende produtos para pets. Você recebeu a tarefa de implementar uma função que calcula o valor total de uma compra, aplicando possíveis descontos de acordo com as regras de negócio. As regras são as seguintes:
+
+* Se a compra for acima de R$ 200,00, o cliente ganha 10% de desconto.
+* Se a compra for acima de R$ 500,00, o cliente ganha 15% de desconto.
+* Se a compra for acima de R$ 1000,00, o cliente ganha 20% de desconto.
+* Se o cliente for um membro do clube de fidelidade, ele ganha mais 5% de desconto em qualquer compra.
+* Se o cliente usar o cupom "UBL10", ele ganha mais 10% de desconto em qualquer compra.
+
+Você deve implementar uma função chamada `calcula_total` que recebe uma lista de produtos e um mapa com as informações do cliente (se ele é membro do clube, se ele usou o cupom, etc) e retorna o valor total da compra com os descontos aplicados. Você pode usar funções de alta ordem para criar funções auxiliares que representam as regras de desconto e aplicá-las na lista de produtos. Cada produto é representado por um mapa com os campos `:nome`, `:preco` e `:quantidade`. Por exemplo:
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+produtos = [
+  %{nome: "Ração para gatos", preco: 50.00, quantidade: 2},
+  %{nome: "Brinquedo para cachorro", preco: 30.00, quantidade: 1},
+  %{nome: "Aquário", preco: 200.00, quantidade: 1}
+]
+
+cliente = %{
+  membro_clube: true,
+  cupom: "UBL10"
+}
+
+calcula_total(produtos, cliente) # deve retornar 243.00
+```
+
+```elixir
+defmodule Ecommerce do
+  # A fazer
+end
+```
+
+```elixir
+
+```
