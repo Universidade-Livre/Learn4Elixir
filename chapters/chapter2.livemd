@@ -307,6 +307,88 @@ end
 
 <!-- livebook:{"break_markdown":true} -->
 
+Você está participando de um emocionante concurso de escultura de círculos, onde artistas de todo o mundo exibem suas obras-primas circulares. Cada participante contribui com uma lista de raios de círculos usados em suas esculturas. O júri está ansioso para premiar as melhores esculturas, e você quer dar um toque de tecnologia à sua apresentação.
+
+Você decide criar um programa em Elixir para ajudar a analisar e apresentar os dados dos raios dos círculos de forma a impressionar os juízes. Seu programa será responsável por calcular várias estatísticas importantes dos raios, o que pode destacar a singularidade de sua escultura.
+
+* Encontrar o raio mínimo e máximo para mostrar o quão variados são os tamanhos dos círculos em sua escultura.
+
+* Calcular o diâmetro correspondente aos raios mínimo e máximo para destacar a amplitude das dimensões dos círculos.
+
+* Calcular a área correspondente aos raios mínimo e máximo para ilustrar a diversidade de áreas cobertas pelos círculos.
+
+* Determinar a média dos raios para mostrar a proporção média dos tamanhos.
+
+* Saber quantos círculos diferentes você utilizou em sua escultura.
+
+* Apresentar a lista de raios em ordem crescente e decrescente para enfatizar o equilíbrio artístico.
+
+* Calcular a variação dos raios para demonstrar a diversidade na escolha de tamanhos.
+
+* Destacar a mediana dos raios para mostrar uma dimensão central dos círculos usados.
+
+```elixir
+circulos = [2, 4, 3, 6, 20, 17, 5, 11, 9, 13, 2, 20]
+```
+
+Neste exercício, a documentação oficial do módulo [Enum](https://hexdocs.pm/elixir/1.12/Enum.html) vai ser de grande ajuda. Sinta-se à vontade para explorar os recursos e funções oferecidos por este módulo para realizar as operações desejadas em sua análise de dados. Boa sorte em seu concurso de escultura de círculos!"
+
+```elixir
+defmodule CalculoEsculturas do
+  def raio_minimo() do
+    # A fazer
+  end
+
+  def raio_maximo() do
+    # A fazer
+  end
+
+  def diametro_minimo() do
+    # A fazer
+  end
+
+  def diametro_maximo() do
+    # A fazer
+  end
+
+  def area_minima() do
+    # A fazer
+  end
+
+  def area_maxima() do
+    # A fazer
+  end
+
+  def media_raios() do
+    # A fazer
+  end
+
+  def numero_de_circulos() do
+    # A fazer
+  end
+
+  def ordena_raios() do
+    # A fazer
+  end
+
+  def ordena_raios_descendente() do
+    # A fazer
+  end
+
+  def variacao_raios() do
+    # A fazer
+  end
+
+  def mediana_raios() do
+    # A fazer
+  end
+end
+```
+
+
+
+<!-- livebook:{"break_markdown":true} -->
+
 ### Exercício 2
 
 <!-- livebook:{"break_markdown":true} -->
