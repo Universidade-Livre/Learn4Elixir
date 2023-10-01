@@ -122,7 +122,7 @@ end
 
 Neste exemplo, o código verificará a condição x == 0 primeiro, que não é verdadeira, e, em seguida, verificará x > 0, que é verdadeira, portanto, imprimirá "x é maior que 0". Como a última cláusula com true está presente, ela não será executada neste caso.
 
-# Sigils
+## Sigils
 
 Elixir fornece uma sintaxe alternativa para representar e trabalhar com literais. Um sigil (símbolo especial) vai começar com um til ~ seguido por um caractere. O núcleo do Elixir fornece-nos alguns sigils, no entanto, é possível criar o nosso próprio quando precisamos estender a linguagem.
 
@@ -151,7 +151,7 @@ Uma lista de delimitadores inclui:
 
 Aqui estão alguns exemplos de como usar sigils no Livebook:
 
-### Sigil de String (~s):
+## Sigil de String (~s):
 
 Você pode usar o sigil ~s para criar strings. O texto deve ser colocado entre colchetes {}. Por exemplo:
 
@@ -174,7 +174,7 @@ IO.inspect(resultado)
 
 Isso irá corresponder e retornar uma lista com o número "123" da string "123 ABC".
 
-### Sigil de Caracter (~c):
+## Sigil de Caracter (~c):
 
 O sigil ~c permite criar caracteres. Você pode especificar um único caractere entre aspas simples '. Por exemplo:
 
@@ -195,7 +195,7 @@ IO.inspect(lista_palavras)
 
 Isso criará uma lista de átomos com os valores [ :apple, :banana, :cherry ].
 
-# Compreensões
+## Compreensões
 
 No Livebook, você pode usar compreensões para criar listas ou outras estruturas de dados de maneira concisa e expressiva. Compreensões são uma característica poderosa em Elixir e podem ajudar a simplificar a criação e transformação de coleções de dados. Aqui estão algumas formas de usar compreensões no Livebook:
 
@@ -220,7 +220,7 @@ quadrados = for x <- lista, do: x * x
 quadrados
 ```
 
-### Compreensões de Mapa:
+## Compreensões de Mapa:
 
 Você também pode usar compreensões para criar mapas. A estrutura básica de uma compreensão de mapa é semelhante à compreensão de lista:
 
@@ -236,7 +236,7 @@ triplica_valores = for {chave, valor} <- mapa, do: {chave, valor * 3}
 triplica_valores
 ```
 
-### Compreensões Aninhadas:
+## Compreensões Aninhadas:
 
 Você pode aninhar compreensões dentro de outras compreensões para trabalhar com coleções mais complexas. Por exemplo, você pode criar uma lista de listas usando uma compreensão aninhada.
 
@@ -248,7 +248,7 @@ elementos_pares = for linha <- matriz, valor <- linha, rem(valor, 2) == 0, do: v
 elementos_pares
 ```
 
-### Guard Clauses:
+## Guard Clauses:
 
 Você pode usar guard clauses nas compreensões para aplicar condições adicionais aos elementos.
 
@@ -266,7 +266,7 @@ No Livebook, você pode usar filtros para selecionar e exibir apenas as saídas 
 
 Aqui está como usar filtros no Livebook:
 
-### Adicione um Filtro em uma Célula:
+## Adicione um Filtro em uma Célula:
 
 Você pode adicionar um filtro a uma célula especificando o filtro desejado usando a função put_result/2. O primeiro argumento da função é o nome do filtro, e o segundo argumento é o resultado que você deseja associar a esse filtro. O resultado pode ser qualquer valor, como uma string, número ou lista.
 
@@ -275,7 +275,7 @@ IO.puts("Isso será exibido sem filtro")
 put_result(:filtro_personalizado, "Isso será exibido com um filtro")
 ```
 
-### Defina Filtros em Outras Células:
+## Defina Filtros em Outras Células:
 
 Depois de adicionar um filtro a uma célula, você pode definir esse filtro em células subsequentes usando a função set_filter/1. O argumento da função é o nome do filtro que você deseja aplicar.
 
@@ -293,7 +293,7 @@ clear_filter(:filtro_personalizado)
 ```
 Isso fará com que as saídas voltem a ser exibidas sem filtro.
 
-### Filtros Padrão:
+## Filtros Padrão:
 
 O Livebook também oferece alguns filtros padrão que você pode usar para controlar as saídas. Alguns exemplos incluem :error, :stderr, :stdout, que podem ser úteis para capturar mensagens de erro ou saída padrão.
 
