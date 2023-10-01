@@ -24,7 +24,7 @@ Você pode ter achado estranho a aplicação de String.upcase/2 acima recebe ape
 String.upcase("não grite, por favor!", :default)
 ```
 
-Mas eu posso escolher entre quatro valores: :default, :ascii, :greek,  :turkic. Vamos testar dois deles e observar a diferença.
+Mas eu posso escolher entre quatro valores: :default, :ascii, :greek, :turkic. Vamos testar dois deles e observar a diferença.
 
 ```elixir
 # observe o "ã"
@@ -100,7 +100,7 @@ Em 'Turma.aprovado?/1' usamos a convenção de terminar o nome da função que s
 
 <!-- livebook:{"break_markdown":true} -->
 
-Na linha 6 'def aprovado?(nota) when nota>=6 do', usamos uma guarda, que é introduzida com 'when' logo após a lista de parâmetros. Não temos tempo aqui de entrar em todos os detalhes de [guardas](https://hexdocs.pm/elixir/patterns-and-guards.html#list-of-allowed-functions-and-operators). Neste caso, estamos dizendo que se a nota for maior ou igual 6, 'true' será retornado. Caso contrário (observe o casamento de padrões em ação na linha 9 com o uso do '_'), 'false' será retornado.
+Na linha 6 'def aprovado?(nota) when nota>=6 do', usamos uma guarda, que é introduzida com 'when' logo após a lista de parâmetros. Não temos tempo aqui de entrar em todos os detalhes de [guardas](https://hexdocs.pm/elixir/patterns-and-guards.html#list-of-allowed-functions-and-operators). Neste caso, estamos dizendo que se a nota for maior ou igual 6, 'true' será retornado. Caso contrário (observe o casamento de padrões em ação na linha 9 com o uso do '\_'), 'false' será retornado.
 Ainda na linha 9, observe que em vez de:
 
 <!-- livebook:{"force_markdown":true} -->
@@ -307,25 +307,250 @@ end
 
 <!-- livebook:{"break_markdown":true} -->
 
+Você lembra do exercício em que você fez no primeiro livebook? Percebeu que nesse capítulo implementamos ela utilizando o módulo `Enum`?
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+defmodule Turma do
+  def media(lista_notas) do
+    Enum.sum(lista_notas) / Enum.count(lista_notas)
+  end
+
+  def aprovado?(nota) when nota >= 6 do
+    true
+  end
+
+  def aprovado?(_), do: false
+end
+```
+
+Elixir tem diversos módulos que possuem funções que podem nos auxiliar a simplificar o desenvolvimento de nosso código, como vimos acima no uso de `Enum` e no inicio desse livebook com `String`.
+
+- Leia essas documentações de forma rápida por cima e busque nelas informações quando for resolver esse exercício: [Enum](https://hexdocs.pm/elixir/1.12/Enum.html), [String](https://hexdocs.pm/elixir/1.12/String.html) e [Map](https://hexdocs.pm/elixir/1.12/Map.html).
+
+E então resolva esses problemas:
+
+<!-- livebook:{"break_markdown":true} -->
+
+1. Retorne o temanho da String "pneumoultramicroscopicossilicovulcanoconiótico".
+
+```elixir
+
+```
+
+1. Retorne um Lista que possui os mesmos items da lista [:a :b :c] porém com os itens na ordem contrária, ou seja [:c :b :a].
+
+```elixir
+
+```
+
+1. Retorne um novo mapa que é a união desses dois mapas:
+
+```Elixir
+primeiro_mapa = %{ :um  =>  1, :dois => 2 }
+segundo_mapa  = %{ :tres  =>  3, :quatro => 4 }
+```
+
+```elixir
+
+```
+
+1. Retorne uma lista de palavras da setença:
+
+```elixir
+# execute essa célula de código
+setenca = """
+Como de hábito, Policarpo Quaresma, mais conhecido por Major Quaresma, bateu em casa às quatro e quinze da tarde. Havia mais de vinte anos que isso acontecia. Saindo do Arsenal de Guerra, onde era subsecretário, bongava pelas confeitarias algumas frutas, comprava um queijo, às vezes, e sempre o pão da padaria francesa.
+"""
+```
+
+```elixir
+
+```
+
+1. Multiplique todos os itens da seguinte lista e retorne a soma de todos seus items sobrados.
+
+```elixir
+# execute essa célula de código
+lista_de_numeros = [4, 8, 12, 16, 20, 24, 28, 32, 36]
+```
+
+```elixir
+
+```
+
+### Exercício 2
+
+<!-- livebook:{"break_markdown":true} -->
+
+O departamento de Matemática da Universidade Técnica Federal do Paraná entrou em contato com você. Eles querem usar Elixir para trabalhar com Álgebra Linear e para isso precisam que você implemente um módulo em Elixir para que eles possam usar para fazer operações com Matrizes que eles precisam. Para eles é importante:
+
+- Soma de Matrizes
+- Subtração de Matrizes
+- Multiplicação de Matrizes
+- Multiplicação de Matriz por Escalar (chamado de Produto Escalar)
+- Determinante da Matriz (para Matrizes até 3x3)
+
+Para a soma, subtração e multiplicação de matrizes, as
+matrizes inseridas poderão ter quaisquer dimensões (verifique se a operação é factível antes de
+executá-la).
+
+Uma matriz é representada por Listas dentro de Listas em Elixir.
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+matriz = [[0,0,1], [0,1,0], [1,0,0]]
+```
+
+Você pode utilizar qualquer recurso ou técnica, incluindo implementar funções auxiliares, features que ainda não vimos até aqui ou qualquer outra coisa que julgar necessário. Porém, com o que viu até aqui deve ser o suficiente para que possa implementar essa solução.
+
+Abaixo, temos um "esqueleto" da implementação. Os professores esperam que essa "API" (o nome do módulo, das funções e suas assinaturas) sejam respeitadas, pois não vão investigar a implementação, mas esperam usar chamando-as com esses nomes e assinaturas.
+
+```elixir
+defmodule AlgebraLinear do
+  def soma_matrizes(matriz_a, matriz_b) do
+    # A fazer
+  end
+
+  def subtrai_matrizes(matriz_a, matriz_b) do
+    # A fazer
+  end
+
+  def multiplica_matrizes(matriz_a, matriz_b) do
+    # A fazer
+  end
+
+  def escalar(matriz, escalar) do
+    # A fazer
+  end
+
+  def determinante(matriz) do
+    # A fazer
+  end
+end
+```
+
+### Exercício 3
+
+Você é um desenvolvedor web que trabalha em uma empresa que oferece serviços de streaming de música. Você está usando Elixir para criar uma API que permite aos usuários pesquisar, ouvir e avaliar as músicas disponíveis na plataforma. Você recebeu uma tarefa de implementar uma função que recebe uma lista de músicas e retorna uma lista de recomendações baseadas nas preferências do usuário.
+
+Uma música é representada por um mapa com as seguintes chaves:
+
+- **:titulo** - uma string com o nome da música
+- **:artista** - uma string com o nome do artista
+- **:genero** - uma string com o gênero musical
+- **:duracao** - um inteiro com a duração da música em segundos
+- **:avaliacao** - um número de 0 a 5 com a avaliação média da música pelos usuários
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+musica = %{
+            titulo: "Starway to Heaven",
+            artista: "Led Zeppelin",
+            genero: "Rock",
+            duracao: 482,
+            avaliacao: 4.9
+          }
+```
+
+Uma preferência do usuário é representada por um mapa com as seguintes chaves:
+
+- **:genero** - uma string com o gênero musical preferido pelo usuário
+- **:duracao_min** - um inteiro com a duração mínima das músicas que o usuário gosta em segundos
+- **:duracao_max** - um inteiro com a duração máxima das músicas que o usuário gosta em segundos
+- **:avaliacao_min** - um número de 0 a 5 com a avaliação mínima das músicas que o usuário quer ouvir
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+preferencia = %{
+                 genero: "Rock",
+                 duracao_min: 200,
+                 duracao_max: 400,
+                 avaliacao_min: 4.5
+                }
+```
+
+A função de recomendação deve receber uma lista de músicas e uma preferência do usuário e retornar uma lista de músicas que atendem aos critérios da preferência, ordenadas por avaliação em ordem decrescente. Se houver mais de uma música com a mesma avaliação, a ordem deve ser alfabética pelo título.
+
+Você deve usar funções anônimas e as funções map, filter e reduce para implementar essa função. Você pode usar qualquer recurso ou técnica que julgar necessário, mas com o que viu até aqui deve ser o suficiente para que possa implementar essa solução.
+
+```elixir
+defmodule Recomendacao do
+  def recomenda(musicas, preferencia) do
+    # A fazer
+  end
+end
+```
+
+```elixir
+# Define uma lista de músicas
+musicas = [
+  %{titulo: "Hotel California", artista: "Eagles", genero: "Rock", duracao: 391, avaliacao: 4.7},
+  %{titulo: "Rolling in the Deep", artista: "Adele", genero: "Pop", duracao: 228, avaliacao: 4.5},
+  %{titulo: "Bohemian Rhapsody", artista: "Queen", genero: "Rock", duracao: 355, avaliacao: 4.9},
+  %{
+    titulo: "Billie Jean",
+    artista: "Michael Jackson",
+    genero: "Pop",
+    duracao: 292,
+    avaliacao: 4.4
+  },
+  %{titulo: "Yesterday", artista: "The Beatles", genero: "Rock", duracao: 138, avaliacao: 4.6},
+  %{titulo: "Shape of You", artista: "Ed Sheeran", genero: "Pop", duracao: 233, avaliacao: 4.1},
+  %{
+    titulo: "No Woman, No Cry",
+    artista: "Bob Marley",
+    genero: "Reggae",
+    duracao: 245,
+    avaliacao: 4.8
+  },
+  %{
+    titulo: "Redemption Song",
+    artista: "Bob Marley",
+    genero: "Reggae",
+    duracao: 179,
+    avaliacao: 4.7
+  }
+]
+```
+
+```elixir
+# Define uma preferência do usuário
+preferencia = %{genero: "Pop", duracao_min: 200, duracao_max: 250, avaliacao_min: 4.5}
+```
+
+```elixir
+# Chama a função de recomendação com a lista de músicas e a preferência do usuário
+Recomendacao.recomenda(musicas, preferencia)
+```
+
+### Exercicio 4
+
+<!-- livebook:{"force_markdown":true} -->
+
 Você está participando de um emocionante concurso de escultura de círculos, onde artistas de todo o mundo exibem suas obras-primas circulares. Cada participante contribui com uma lista de raios de círculos usados em suas esculturas. O júri está ansioso para premiar as melhores esculturas, e você quer dar um toque de tecnologia à sua apresentação.
 
 Você decide criar um programa em Elixir para ajudar a analisar e apresentar os dados dos raios dos círculos de forma a impressionar os juízes. Seu programa será responsável por calcular várias estatísticas importantes dos raios, o que pode destacar a singularidade de sua escultura.
 
-* Encontrar o raio mínimo e máximo para mostrar o quão variados são os tamanhos dos círculos em sua escultura.
+- Encontrar o raio mínimo e máximo para mostrar o quão variados são os tamanhos dos círculos em sua escultura.
 
-* Calcular o diâmetro correspondente aos raios mínimo e máximo para destacar a amplitude das dimensões dos círculos.
+- Calcular o diâmetro correspondente aos raios mínimo e máximo para destacar a amplitude das dimensões dos círculos.
 
-* Calcular a área correspondente aos raios mínimo e máximo para ilustrar a diversidade de áreas cobertas pelos círculos.
+- Calcular a área correspondente aos raios mínimo e máximo para ilustrar a diversidade de áreas cobertas pelos círculos.
 
-* Determinar a média dos raios para mostrar a proporção média dos tamanhos.
+- Determinar a média dos raios para mostrar a proporção média dos tamanhos.
 
-* Saber quantos círculos diferentes você utilizou em sua escultura.
+- Saber quantos círculos diferentes você utilizou em sua escultura.
 
-* Apresentar a lista de raios em ordem crescente e decrescente para enfatizar o equilíbrio artístico.
+- Apresentar a lista de raios em ordem crescente e decrescente para enfatizar o equilíbrio artístico.
 
-* Calcular a variação dos raios para demonstrar a diversidade na escolha de tamanhos.
+- Calcular a variação dos raios para demonstrar a diversidade na escolha de tamanhos.
 
-* Destacar a mediana dos raios para mostrar uma dimensão central dos círculos usados.
+- Destacar a mediana dos raios para mostrar uma dimensão central dos círculos usados.
 
 ```elixir
 circulos = [2, 4, 3, 6, 20, 17, 5, 11, 9, 13, 2, 20]
@@ -385,162 +610,4 @@ defmodule CalculoEsculturas do
 end
 ```
 
-
-
 <!-- livebook:{"break_markdown":true} -->
-
-### Exercício 2
-
-<!-- livebook:{"break_markdown":true} -->
-
-### Exercício 3
-
-<!-- livebook:{"break_markdown":true} -->
-
-### Exercício 4
-
-<!-- livebook:{"break_markdown":true} -->
-
-O departamento de Matemática da Universidade Técnica Federal do Paraná entrou em contato com você. Eles querem usar Elixir para trabalhar com Álgebra Linear e para isso precisam que você implemente um módulo em Elixir para que eles possam usar para fazer operações com Matrizes que eles precisam. Para eles é importante:
-
-* Soma de Matrizes
-* Subtração de Matrizes
-* Multiplicação de Matrizes
-* Multiplicação de Matriz por Escalar (chamado de Produto Escalar)
-* Determinante da Matriz (para Matrizes até 3x3)
-
-Para a soma, subtração e multiplicação de matrizes, as
-matrizes inseridas poderão ter quaisquer dimensões (verifique se a operação é factível antes de
-executá-la).
-
-Uma matriz é representada por Listas dentro de Listas em Elixir.
-
-<!-- livebook:{"force_markdown":true} -->
-
-```elixir
-matriz = [[0,0,1], [0,1,0], [1,0,0]]
-```
-
-Você pode utilizar qualquer recurso ou técnica, incluindo implementar funções auxiliares, features que ainda não vimos até aqui ou qualquer outra coisa que julgar necessário. Porém, com o que viu até aqui deve ser o suficiente para que possa implementar essa solução.
-
-Abaixo, temos um "esqueleto" da implementação. Os professores esperam que essa "API" (o nome do módulo, das funções e suas assinaturas) sejam respeitadas, pois não vão investigar a implementação, mas esperam usar chamando-as com esses nomes e assinaturas.
-
-```elixir
-defmodule AlgebraLinear do
-  def soma_matrizes(matriz_a, matriz_b) do
-    # A fazer
-  end
-
-  def subtrai_matrizes(matriz_a, matriz_b) do
-    # A fazer
-  end
-
-  def multiplica_matrizes(matriz_a, matriz_b) do
-    # A fazer
-  end
-
-  def escalar(matriz, escalar) do
-    # A fazer
-  end
-
-  def determinante(matriz) do
-    # A fazer
-  end
-end
-```
-
-### Exercício 5
-
-Você é um desenvolvedor web que trabalha em uma empresa que oferece serviços de streaming de música. Você está usando Elixir para criar uma API que permite aos usuários pesquisar, ouvir e avaliar as músicas disponíveis na plataforma. Você recebeu uma tarefa de implementar uma função que recebe uma lista de músicas e retorna uma lista de recomendações baseadas nas preferências do usuário.
-
-Uma música é representada por um mapa com as seguintes chaves:
-
-* **:titulo** - uma string com o nome da música
-* **:artista** - uma string com o nome do artista
-* **:genero** - uma string com o gênero musical
-* **:duracao** - um inteiro com a duração da música em segundos
-* **:avaliacao** - um número de 0 a 5 com a avaliação média da música pelos usuários
-
-<!-- livebook:{"force_markdown":true} -->
-
-```elixir
-musica = %{
-            titulo: "Starway to Heaven", 
-            artista: "Led Zeppelin", 
-            genero: "Rock", 
-            duracao: 482, 
-            avaliacao: 4.9
-          }
-```
-
-Uma preferência do usuário é representada por um mapa com as seguintes chaves:
-
-* **:genero** - uma string com o gênero musical preferido pelo usuário
-* **:duracao_min** - um inteiro com a duração mínima das músicas que o usuário gosta em segundos
-* **:duracao_max** - um inteiro com a duração máxima das músicas que o usuário gosta em segundos
-* **:avaliacao_min** - um número de 0 a 5 com a avaliação mínima das músicas que o usuário quer ouvir
-
-<!-- livebook:{"force_markdown":true} -->
-
-```elixir
-preferencia = %{
-                 genero: "Rock", 
-                 duracao_min: 200, 
-                 duracao_max: 400, 
-                 avaliacao_min: 4.5
-                }
-```
-
-A função de recomendação deve receber uma lista de músicas e uma preferência do usuário e retornar uma lista de músicas que atendem aos critérios da preferência, ordenadas por avaliação em ordem decrescente. Se houver mais de uma música com a mesma avaliação, a ordem deve ser alfabética pelo título.
-
-Você deve usar funções anônimas e as funções map, filter e reduce para implementar essa função. Você pode usar qualquer recurso ou técnica que julgar necessário, mas com o que viu até aqui deve ser o suficiente para que possa implementar essa solução.
-
-```elixir
-defmodule Recomendacao do
-  def recomenda(musicas, preferencia) do
-    # A fazer
-  end
-end
-```
-
-```elixir
-# Define uma lista de músicas
-musicas = [
-  %{titulo: "Hotel California", artista: "Eagles", genero: "Rock", duracao: 391, avaliacao: 4.7},
-  %{titulo: "Rolling in the Deep", artista: "Adele", genero: "Pop", duracao: 228, avaliacao: 4.5},
-  %{titulo: "Bohemian Rhapsody", artista: "Queen", genero: "Rock", duracao: 355, avaliacao: 4.9},
-  %{
-    titulo: "Billie Jean",
-    artista: "Michael Jackson",
-    genero: "Pop",
-    duracao: 292,
-    avaliacao: 4.4
-  },
-  %{titulo: "Yesterday", artista: "The Beatles", genero: "Rock", duracao: 138, avaliacao: 4.6},
-  %{titulo: "Shape of You", artista: "Ed Sheeran", genero: "Pop", duracao: 233, avaliacao: 4.1},
-  %{
-    titulo: "No Woman, No Cry",
-    artista: "Bob Marley",
-    genero: "Reggae",
-    duracao: 245,
-    avaliacao: 4.8
-  },
-  %{
-    titulo: "Redemption Song",
-    artista: "Bob Marley",
-    genero: "Reggae",
-    duracao: 179,
-    avaliacao: 4.7
-  }
-]
-```
-
-```elixir
-# Define uma preferência do usuário
-preferencia = %{genero: "Pop", duracao_min: 200, duracao_max: 250, avaliacao_min: 4.5}
-```
-
-```elixir
-# Chama a função de recomendação com a lista de músicas e a preferência do usuário
-Recomendacao.recomenda(musicas, preferencia)
-```

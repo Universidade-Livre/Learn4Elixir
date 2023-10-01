@@ -1,6 +1,6 @@
 # Learn4Elixir - Capítulo 3
 
-## Estruturas de Controle 
+## Estruturas de Controle
 
 Neste capitulo iremos nos aprofundar em Estruturas de Controle.
 
@@ -10,11 +10,11 @@ Neste capitulo iremos nos aprofundar em Estruturas de Controle.
 
 If e Unless são estruturas de controle que você pode usar no Livebook, uma ferramenta interativa e documentação para a linguagem de programação Elixir. Eles funcionam de maneira semelhante ao condicional if e unless em outras linguagens de programação. Aqui está como você pode usá-los:
 
-## If:
+## If
 
 A estrutura if é usada para executar um bloco de código se uma condição for avaliada como verdadeira (true). Se a condição for avaliada como falsa (false), o bloco de código não será executado.
 
-```elixir
+```
 if condition do
   # Código a ser executado se a condição for verdadeira
 end
@@ -24,16 +24,17 @@ Exemplo:
 
 ```elixir
 age = 25
+
 if age >= 18 do
   IO.puts("Você é maior de idade.")
 end
 ```
 
-## Unless:
+## Unless
 
 A estrutura unless é o oposto do if. Ela é usada para executar um bloco de código se a condição for avaliada como falsa (false). Se a condição for avaliada como verdadeira (true), o bloco de código não será executado.
 
-```elixir
+```
 unless condition do
   # Código a ser executado se a condição for falsa
 end
@@ -43,15 +44,15 @@ Exemplo:
 
 ```elixir
 raining = true
+
 unless raining do
   IO.puts("Não está chovendo.")
 end
-If e Unless com else:
 ```
 
 Você também pode usar else com if e unless para executar um bloco de código alternativo quando a condição não for atendida.
 
-```elixir
+```
 if condition do
   # Código a ser executado se a condição for verdadeira
 else
@@ -60,6 +61,8 @@ end
 ```
 
 Exemplo:
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 temperature = 28
@@ -76,7 +79,7 @@ A mesma lógica se aplica ao unless com else.
 
 No Livebook, você pode usar a macro cond para criar uma estrutura de controle condicional que permite avaliar múltiplas condições e executar código com base na primeira condição verdadeira encontrada. A sintaxe básica do cond é a seguinte:
 
-```elixir
+```
 cond do
   condition1 ->
     # Código a ser executado se condition1 for verdadeira
@@ -101,6 +104,8 @@ As condições são seguidas por uma seta (->) e, em seguida, o código a ser ex
 A última cláusula com true é opcional, mas é uma boa prática incluí-la para tratar casos em que nenhuma das condições anteriores é verdadeira.
 
 Aqui está um exemplo de uso do cond no Livebook:
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 x = 5
@@ -128,42 +133,47 @@ Elixir fornece uma sintaxe alternativa para representar e trabalhar com literais
 
 Uma lista de sigils disponíveis incluem:
 
-- ~C Gera uma lista de caracteres sem escape ou interpolação
-- ~c Gera uma lista de caracteres com escape e interpolação
-- ~R Gera uma expressão regular sem escape ou interpolação
-- ~r Gera uma expressão regular com escape e interpolação
-- ~S Gera strings sem escape ou interpolação
-- ~s Gera string com escape e interpolação
-- ~W Gera uma lista sem escape ou interpolação
-- ~w Gera uma lista com escape e interpolação
-- ~N Gera uma NaiveDateTime struct
+* ~C Gera uma lista de caracteres sem escape ou interpolação
+* ~c Gera uma lista de caracteres com escape e interpolação
+* ~R Gera uma expressão regular sem escape ou interpolação
+* ~r Gera uma expressão regular com escape e interpolação
+* ~S Gera strings sem escape ou interpolação
+* ~s Gera string com escape e interpolação
+* ~W Gera uma lista sem escape ou interpolação
+* ~w Gera uma lista com escape e interpolação
+* ~N Gera uma NaiveDateTime struct
 
 Uma lista de delimitadores inclui:
 
-- <...> Um par de brackets
-- {...} Um par de chaves
-- [...] Um par de colchetes
-- (...) Um par de parênteses
-- |...| Um par de pipes
-- /.../ Um par de barras
-- "..." Um par de aspas duplas
-- '...' Um par de aspas simples
+* <...> Um par de brackets
+* {...} Um par de chaves
+* [...] Um par de colchetes
+* (...) Um par de parênteses
+* |...| Um par de pipes
+* /.../ Um par de barras
+* "..." Um par de aspas duplas
+* '...' Um par de aspas simples
 
 Aqui estão alguns exemplos de como usar sigils no Livebook:
 
-## Sigil de String (~s):
+## Sigil de String (~s)
 
 Você pode usar o sigil ~s para criar strings. O texto deve ser colocado entre colchetes {}. Por exemplo:
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 minha_string = ~s{Isso é uma string criada com sigil}
 IO.puts(minha_string)
 ```
+
 Isso imprimirá "Isso é uma string criada com sigil" na saída.
 
-### Sigil de Regex (~r):
+### Sigil de Regex (~r)
 
 O sigil ~r permite criar expressões regulares. Você pode delimitar a expressão regular com barras /. Por exemplo:
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 regex = ~r/\\d+/  # Esta expressão regular corresponde a um ou mais dígitos.
@@ -174,19 +184,24 @@ IO.inspect(resultado)
 
 Isso irá corresponder e retornar uma lista com o número "123" da string "123 ABC".
 
-## Sigil de Caracter (~c):
+## Sigil de Caracter (~c)
 
 O sigil ~c permite criar caracteres. Você pode especificar um único caractere entre aspas simples '. Por exemplo:
 
-``` elixir
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
 meu_char = ~c'A'
 IO.puts(meu_char)
-Isso imprimirá "A" na saída.
 ```
+
+Isso imprimirá "A" na saída.
 
 Sigil de Listas (~w):
 
 O sigil ~w permite criar listas de palavras (atomos). Você pode delimitar as palavras com espaços. Por exemplo:
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 lista_palavras = ~w(apple banana cherry)
@@ -203,16 +218,18 @@ Compreensões de Lista:
 
 Você pode criar listas usando compreensões de lista. A estrutura básica de uma compreensão de lista é a seguinte:
 
-```elixir
+```
 for pattern <- enumerable, filter, do: expression
 ```
 
-- pattern é uma variável que representa cada elemento da coleção enumerable.
-- enumerable é uma coleção de dados, como uma lista, um mapa ou um conjunto.
-- filter (opcional) é uma condição que filtra os elementos da coleção.
-- expression é o valor que será incluído na lista resultante.
+* pattern é uma variável que representa cada elemento da coleção enumerable.
+* enumerable é uma coleção de dados, como uma lista, um mapa ou um conjunto.
+* filter (opcional) é uma condição que filtra os elementos da coleção.
+* expression é o valor que será incluído na lista resultante.
 
 Exemplo:
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 lista = [1, 2, 3, 4, 5]
@@ -220,9 +237,11 @@ quadrados = for x <- lista, do: x * x
 quadrados
 ```
 
-## Compreensões de Mapa:
+## Compreensões de Mapa
 
 Você também pode usar compreensões para criar mapas. A estrutura básica de uma compreensão de mapa é semelhante à compreensão de lista:
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 for {key, value} <- enumerable, filter, do: {key, expression}
@@ -230,17 +249,21 @@ for {key, value} <- enumerable, filter, do: {key, expression}
 
 Exemplo:
 
+<!-- livebook:{"force_markdown":true} -->
+
 ```elixir
 mapa = %{"a" => 1, "b" => 2, "c" => 3}
 triplica_valores = for {chave, valor} <- mapa, do: {chave, valor * 3}
 triplica_valores
 ```
 
-## Compreensões Aninhadas:
+## Compreensões Aninhadas
 
 Você pode aninhar compreensões dentro de outras compreensões para trabalhar com coleções mais complexas. Por exemplo, você pode criar uma lista de listas usando uma compreensão aninhada.
 
 Exemplo:
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -248,11 +271,13 @@ elementos_pares = for linha <- matriz, valor <- linha, rem(valor, 2) == 0, do: v
 elementos_pares
 ```
 
-## Guard Clauses:
+## Guard Clauses
 
 Você pode usar guard clauses nas compreensões para aplicar condições adicionais aos elementos.
 
 Exemplo:
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 lista = [1, 2, 3, 4, 5, 6]
@@ -266,38 +291,48 @@ No Livebook, você pode usar filtros para selecionar e exibir apenas as saídas 
 
 Aqui está como usar filtros no Livebook:
 
-## Adicione um Filtro em uma Célula:
+## Adicione um Filtro em uma Célula
 
 Você pode adicionar um filtro a uma célula especificando o filtro desejado usando a função put_result/2. O primeiro argumento da função é o nome do filtro, e o segundo argumento é o resultado que você deseja associar a esse filtro. O resultado pode ser qualquer valor, como uma string, número ou lista.
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 IO.puts("Isso será exibido sem filtro")
 put_result(:filtro_personalizado, "Isso será exibido com um filtro")
 ```
 
-## Defina Filtros em Outras Células:
+## Defina Filtros em Outras Células
 
 Depois de adicionar um filtro a uma célula, você pode definir esse filtro em células subsequentes usando a função set_filter/1. O argumento da função é o nome do filtro que você deseja aplicar.
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 set_filter(:filtro_personalizado)
 ```
+
 Agora, todas as saídas de células subsequentes serão filtradas de acordo com o filtro :filtro_personalizado. Isso significa que apenas as saídas associadas a esse filtro serão exibidas.
 
-### Remova ou Limpe um Filtro:
+### Remova ou Limpe um Filtro
 
 Para remover um filtro, você pode usar a função clear_filter/1 com o nome do filtro que deseja remover.
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 clear_filter(:filtro_personalizado)
 ```
+
 Isso fará com que as saídas voltem a ser exibidas sem filtro.
 
-## Filtros Padrão:
+## Filtros Padrão
 
 O Livebook também oferece alguns filtros padrão que você pode usar para controlar as saídas. Alguns exemplos incluem :error, :stderr, :stdout, que podem ser úteis para capturar mensagens de erro ou saída padrão.
 
 Aqui está um exemplo completo de como usar filtros no Livebook:
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 # Célula 1: Definindo um filtro personalizado
@@ -321,17 +356,21 @@ IO.puts("Esta saída não está filtrada
 
 Em uma célula do Livebook, você pode usar a função into/2 para criar uma associação a uma variável que receberá o resultado da expressão na célula. Isso é útil quando você deseja armazenar o resultado de uma computação em uma variável para uso posterior ou para exibir o valor em uma célula subsequente. A sintaxe básica do into/2 é a seguinte:
 
+<!-- livebook:{"force_markdown":true} -->
+
 ```elixir
 resultado = expressao |> into(variavel)
 ```
 
 Onde:
 
-- resultado é a variável que armazenará o resultado da expressão.
-- expressao é a expressão cujo resultado você deseja armazenar.
-- variavel é a variável na qual você deseja armazenar o resultado.
+* resultado é a variável que armazenará o resultado da expressão.
+* expressao é a expressão cujo resultado você deseja armazenar.
+* variavel é a variável na qual você deseja armazenar o resultado.
 
 Aqui está um exemplo de uso do into/2 no Livebook:
+
+<!-- livebook:{"force_markdown":true} -->
 
 ```elixir
 # Suponha que você queira calcular a soma de dois números.
@@ -352,8 +391,8 @@ Neste exemplo, a variável soma armazenará o resultado da soma de a e b. Quando
 ## Links
 
 Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
-- [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
-- Livros
-- Vídeos (eu e ElixirLab)
-- Cursos (Groxio, ElxPro, Rafa Camarda)
-- Comunidade Telegram
+
+* [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
+* [Livros e outros recursos de aprendizagem](https://elixir-lang.org/learning.html)
+* [Elixir Brasil - Comunidade no Telegram](https://t.me/elixirbr)
+* [Elixir em Foco - podcast em português](https://www.elixiremfoco.com/)
