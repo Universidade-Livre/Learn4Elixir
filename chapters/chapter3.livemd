@@ -254,43 +254,35 @@ O sigil ~r permite criar expressões regulares. Você pode delimitar a expressã
 ```elixir
 # Esta expressão regular corresponde a um ou mais dígitos.
 regex = ~r/\d+/
-texto = "123 ABC"
+texto = "123 ABC  45 CDE"
 Regex.scan(regex, texto)
 ```
 
-Isso irá corresponder e retornar uma lista com o número "123" da string "123 ABC".
+Isso irá  retornar uma lista de resultados. Cada resultado será uma lista contendo uma string que satisfaz à expressão regular, que espera caraceteres numéricos.
 
 ## Sigil de Caracter (~c)
 
 O sigil ~c permite criar caracteres. Você pode especificar um único caractere entre aspas simples '. Por exemplo:
 
-<!-- livebook:{"force_markdown":true} -->
-
 ```elixir
-meu_char = ~c'A'
-IO.puts(meu_char)
+~c'A'
 ```
 
-Isso imprimirá "A" na saída.
+Isso retornará "A".
 
-Sigil de Listas (~w):
+## Sigil de Listas (~w):
 
-O sigil ~w permite criar listas de palavras (atomos). Você pode delimitar as palavras com espaços. Por exemplo:
-
-<!-- livebook:{"force_markdown":true} -->
+O sigil ~w permite criar listas de palavra (strings) a partir de átomos, expressos sem os ":" iniciais. Você pode delimitar as palavras com espaços. Por exemplo:
 
 ```elixir
-lista_palavras = ~w(apple banana cherry)
-IO.inspect(lista_palavras)
+~w(apple banana cherry)
 ```
-
-Isso criará uma lista de átomos com os valores [ :apple, :banana, :cherry ].
 
 ## Compreensões
 
-No Livebook, você pode usar compreensões para criar listas ou outras estruturas de dados de maneira concisa e expressiva. Compreensões são uma característica poderosa em Elixir e podem ajudar a simplificar a criação e transformação de coleções de dados. Aqui estão algumas formas de usar compreensões no Livebook:
+No Elixir, você pode usar compreensões para criar listas ou outras estruturas de dados de maneira concisa e expressiva. Compreensões são uma característica poderosa em Elixir e podem ajudar a simplificar a criação e transformação de coleções de dados. Aqui estão algumas formas de usar compreensões:
 
-Compreensões de Lista:
+## Compreensões de Lista
 
 Você pode criar listas usando compreensões de lista. A estrutura básica de uma compreensão de lista é a seguinte:
 
@@ -298,39 +290,43 @@ Você pode criar listas usando compreensões de lista. A estrutura básica de um
 for pattern <- enumerable, filter, do: expression
 ```
 
-* pattern é uma variável que representa cada elemento da coleção enumerable.
-* enumerable é uma coleção de dados, como uma lista, um mapa ou um conjunto.
-* filter (opcional) é uma condição que filtra os elementos da coleção.
-* expression é o valor que será incluído na lista resultante.
+* 'pattern' é uma variável que representa cada elemento da coleção 'enumerable'.
+* 'enumerable' é uma coleção de dados, como uma lista, um mapa ou um conjunto.
+* 'filter' (opcional) é uma condição que filtra os elementos da coleção.
+* 'expression' é o valor que será incluído na lista resultante.
 
-Exemplo:
-
-<!-- livebook:{"force_markdown":true} -->
+Exemplos:
 
 ```elixir
 lista = [1, 2, 3, 4, 5]
-quadrados = for x <- lista, do: x * x
-quadrados
+for x <- lista, do: x * x
+```
+
+```elixir
+lista = [1, 2, 3, 4, 5]
+for x <- lista, x < 4, do: x * x
+```
+
+```elixir
+lista = [10, 2, 30, 4, 50]
+for x <- lista, x > 3, x < 40, do: "#{x + 3}"
 ```
 
 ## Compreensões de Mapa
 
 Você também pode usar compreensões para criar mapas. A estrutura básica de uma compreensão de mapa é semelhante à compreensão de lista:
 
-<!-- livebook:{"force_markdown":true} -->
-
-```elixir
+```
 for {key, value} <- enumerable, filter, do: {key, expression}
 ```
 
-Exemplo:
+<!-- livebook:{"break_markdown":true} -->
 
-<!-- livebook:{"force_markdown":true} -->
+Exemplo:
 
 ```elixir
 mapa = %{"a" => 1, "b" => 2, "c" => 3}
 triplica_valores = for {chave, valor} <- mapa, do: {chave, valor * 3}
-triplica_valores
 ```
 
 ## Compreensões Aninhadas
@@ -339,12 +335,9 @@ Você pode aninhar compreensões dentro de outras compreensões para trabalhar c
 
 Exemplo:
 
-<!-- livebook:{"force_markdown":true} -->
-
 ```elixir
 matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 elementos_pares = for linha <- matriz, valor <- linha, rem(valor, 2) == 0, do: valor
-elementos_pares
 ```
 
 ## Guard Clauses
@@ -353,114 +346,10 @@ Você pode usar guard clauses nas compreensões para aplicar condições adicion
 
 Exemplo:
 
-<!-- livebook:{"force_markdown":true} -->
-
 ```elixir
 lista = [1, 2, 3, 4, 5, 6]
 pares_maiores_que_tres = for x <- lista, rem(x, 2) == 0, x > 3, do: x
-pares_maiores_que_tres
 ```
-
-## Filtros
-
-No Livebook, você pode usar filtros para selecionar e exibir apenas as saídas ou resultados específicos de uma célula. Isso pode ser útil quando você deseja reduzir o ruído em seu notebook ou concentrar-se apenas em resultados relevantes. Os filtros são uma maneira conveniente de organizar e visualizar as saídas de suas células.
-
-Aqui está como usar filtros no Livebook:
-
-## Adicione um Filtro em uma Célula
-
-Você pode adicionar um filtro a uma célula especificando o filtro desejado usando a função put_result/2. O primeiro argumento da função é o nome do filtro, e o segundo argumento é o resultado que você deseja associar a esse filtro. O resultado pode ser qualquer valor, como uma string, número ou lista.
-
-<!-- livebook:{"force_markdown":true} -->
-
-```elixir
-IO.puts("Isso será exibido sem filtro")
-put_result(:filtro_personalizado, "Isso será exibido com um filtro")
-```
-
-## Defina Filtros em Outras Células
-
-Depois de adicionar um filtro a uma célula, você pode definir esse filtro em células subsequentes usando a função set_filter/1. O argumento da função é o nome do filtro que você deseja aplicar.
-
-<!-- livebook:{"force_markdown":true} -->
-
-```elixir
-set_filter(:filtro_personalizado)
-```
-
-Agora, todas as saídas de células subsequentes serão filtradas de acordo com o filtro :filtro_personalizado. Isso significa que apenas as saídas associadas a esse filtro serão exibidas.
-
-### Remova ou Limpe um Filtro
-
-Para remover um filtro, você pode usar a função clear_filter/1 com o nome do filtro que deseja remover.
-
-<!-- livebook:{"force_markdown":true} -->
-
-```elixir
-clear_filter(:filtro_personalizado)
-```
-
-Isso fará com que as saídas voltem a ser exibidas sem filtro.
-
-## Filtros Padrão
-
-O Livebook também oferece alguns filtros padrão que você pode usar para controlar as saídas. Alguns exemplos incluem :error, :stderr, :stdout, que podem ser úteis para capturar mensagens de erro ou saída padrão.
-
-Aqui está um exemplo completo de como usar filtros no Livebook:
-
-<!-- livebook:{"force_markdown":true} -->
-
-```elixir
-# Célula 1: Definindo um filtro personalizado
-IO.puts("Isso será exibido sem filtro")
-put_result(:filtro_personalizado, "Isso será exibido com um filtro")
-
-# Célula 2: Aplicando o filtro personalizado
-set_filter(:filtro_personalizado)
-
-# Célula 3: Exibindo uma saída filtrada
-IO.puts("Esta saída está filtrada pelo filtro_personalizado")
-
-# Célula 4: Removendo o filtro personalizado
-clear_filter(:filtro_personalizado)
-
-# Célula 5: Exibindo saída sem filtro novamente
-IO.puts("Esta saída não está filtrada
-```
-
-## Usando :Into
-
-Em uma célula do Livebook, você pode usar a função into/2 para criar uma associação a uma variável que receberá o resultado da expressão na célula. Isso é útil quando você deseja armazenar o resultado de uma computação em uma variável para uso posterior ou para exibir o valor em uma célula subsequente. A sintaxe básica do into/2 é a seguinte:
-
-<!-- livebook:{"force_markdown":true} -->
-
-```elixir
-resultado = expressao |> into(variavel)
-```
-
-Onde:
-
-* resultado é a variável que armazenará o resultado da expressão.
-* expressao é a expressão cujo resultado você deseja armazenar.
-* variavel é a variável na qual você deseja armazenar o resultado.
-
-Aqui está um exemplo de uso do into/2 no Livebook:
-
-<!-- livebook:{"force_markdown":true} -->
-
-```elixir
-# Suponha que você queira calcular a soma de dois números.
-a = 5
-b = 7
-
-# Use o into/2 para armazenar o resultado em uma variável chamada "soma".
-soma = a + b |> into(soma)
-
-# Agora, a variável "soma" contém o resultado.
-soma
-```
-
-Neste exemplo, a variável soma armazenará o resultado da soma de a e b. Quando você executar a célula, o valor da variável soma será calculado e exibido na célula subsequente.
 
 ## Exercício
 
