@@ -333,8 +333,8 @@ Após concluir a interação com o agente, você pode encerrá-lo para liberar o
 ## Links
 
 Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
-- [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
-- Livros
-- Vídeos (eu e ElixirLab)
-- Cursos (Groxio, ElxPro, Rafa Camarda)
-- Comunidade Telegram
+
+* [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
+* [Livros e outros recursos de aprendizagem](https://elixir-lang.org/learning.html)
+* [Elixir Brasil - Comunidade no Telegram](https://t.me/elixirbr)
+* [Elixir em Foco - podcast em português](https://www.elixiremfoco.com/)
