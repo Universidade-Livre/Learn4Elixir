@@ -128,9 +128,7 @@ Em Elixir, um átomo é uma espécie de palavra-chave constante que tem um nome 
 
 ## Valores Lógicos (Booleanos)
 
-Em Elixir, os valores lógicos são como interruptores que podem estar ligados (verdadeiros), desligados (falsos) ou representam a ausência de um valor (falsos). Elixir usa três átomos especiais para representar esses valores: `:true` para verdadeiro, `:false` para falso e `:nil` para valores não existentes.
-
-Porém esses átomos especiais são tão importantes e bem conhecidos que você não precisa colocar dois pontos antes deles como você faria com outros átomos. Em vez disso, você pode simplesmente usar `true` para representar verdadeiro, `false` para representar falso e `nil` para representar valores não definidos.
+Em Elixir, os valores lógicos são como interruptores que podem estar ligados (verdadeiros), desligados (falsos). Elixir usa dois átomos especiais para representar esses valores: `:true` para verdadeiro, `:false` para falso. Estes átomos especiais são tão importantes e bem conhecidos que você não precisa colocar dois pontos antes deles como você faria com outros átomos. Em vez disso, você pode simplesmente usar `true` para representar verdadeiro e `false` para representar falso.
 
 ```elixir
 is_atom(true)
@@ -148,7 +146,11 @@ Se você escrever `false` em Elixir, isso significa "falso" e representa um valo
 false
 ```
 
-Se você escrever `nil` em Elixir, isso significa a ausência de um valor e representa um valor lógico falso.
+Um átomo especial que está relacionado a 'true' e 'false' é 'nil'. Assim como os dois anteriores, você pode usar ':nil' ou 'nil'. Se você escrever `nil` em Elixir, isso significa a ausência de um valor e, em algumas situações, o 'nil' se comporta como o 'false'.
+
+```elixir
+nil
+```
 
 ```elixir
 nil
