@@ -10,11 +10,9 @@ Neste capitulo iremos nos aprofundar em Estruturas de Controle.
 
 If e Unless são estruturas de controle que você pode usar no Livebook, uma ferramenta interativa e documentação para a linguagem de programação Elixir. Eles funcionam de maneira semelhante ao condicional if e unless em outras linguagens de programação. Aqui está como você pode usá-los:
 
-## If:
+## If
 
 A estrutura if é usada para executar um bloco de código se uma condição for avaliada como verdadeira (true). Se a condição for avaliada como falsa (false), o bloco de código não será executado.
-
-<!-- livebook:{"force_markdown":true} -->
 
 ```
 if condition do
@@ -32,11 +30,9 @@ if age >= 18 do
 end
 ```
 
-## Unless:
+## Unless
 
 A estrutura unless é o oposto do if. Ela é usada para executar um bloco de código se a condição for avaliada como falsa (false). Se a condição for avaliada como verdadeira (true), o bloco de código não será executado.
-
-<!-- livebook:{"force_markdown":true} -->
 
 ```
 unless condition do
@@ -55,8 +51,6 @@ end
 ```
 
 Você também pode usar else com if e unless para executar um bloco de código alternativo quando a condição não for atendida.
-
-<!-- livebook:{"force_markdown":true} -->
 
 ```
 if condition do
@@ -84,8 +78,6 @@ A mesma lógica se aplica ao unless com else.
 ## Cond
 
 No Livebook, você pode usar a macro cond para criar uma estrutura de controle condicional que permite avaliar múltiplas condições e executar código com base na primeira condição verdadeira encontrada. A sintaxe básica do cond é a seguinte:
-
-<!-- livebook:{"force_markdown":true} -->
 
 ```
 cond do
@@ -164,7 +156,7 @@ Uma lista de delimitadores inclui:
 
 Aqui estão alguns exemplos de como usar sigils no Livebook:
 
-## Sigil de String (~s):
+## Sigil de String (~s)
 
 Você pode usar o sigil ~s para criar strings. O texto deve ser colocado entre colchetes {}. Por exemplo:
 
@@ -177,7 +169,7 @@ IO.puts(minha_string)
 
 Isso imprimirá "Isso é uma string criada com sigil" na saída.
 
-### Sigil de Regex (~r):
+### Sigil de Regex (~r)
 
 O sigil ~r permite criar expressões regulares. Você pode delimitar a expressão regular com barras /. Por exemplo:
 
@@ -192,7 +184,7 @@ IO.inspect(resultado)
 
 Isso irá corresponder e retornar uma lista com o número "123" da string "123 ABC".
 
-## Sigil de Caracter (~c):
+## Sigil de Caracter (~c)
 
 O sigil ~c permite criar caracteres. Você pode especificar um único caractere entre aspas simples '. Por exemplo:
 
@@ -226,8 +218,6 @@ Compreensões de Lista:
 
 Você pode criar listas usando compreensões de lista. A estrutura básica de uma compreensão de lista é a seguinte:
 
-<!-- livebook:{"force_markdown":true} -->
-
 ```
 for pattern <- enumerable, filter, do: expression
 ```
@@ -247,7 +237,7 @@ quadrados = for x <- lista, do: x * x
 quadrados
 ```
 
-## Compreensões de Mapa:
+## Compreensões de Mapa
 
 Você também pode usar compreensões para criar mapas. A estrutura básica de uma compreensão de mapa é semelhante à compreensão de lista:
 
@@ -267,7 +257,7 @@ triplica_valores = for {chave, valor} <- mapa, do: {chave, valor * 3}
 triplica_valores
 ```
 
-## Compreensões Aninhadas:
+## Compreensões Aninhadas
 
 Você pode aninhar compreensões dentro de outras compreensões para trabalhar com coleções mais complexas. Por exemplo, você pode criar uma lista de listas usando uma compreensão aninhada.
 
@@ -281,7 +271,7 @@ elementos_pares = for linha <- matriz, valor <- linha, rem(valor, 2) == 0, do: v
 elementos_pares
 ```
 
-## Guard Clauses:
+## Guard Clauses
 
 Você pode usar guard clauses nas compreensões para aplicar condições adicionais aos elementos.
 
@@ -301,7 +291,7 @@ No Livebook, você pode usar filtros para selecionar e exibir apenas as saídas 
 
 Aqui está como usar filtros no Livebook:
 
-## Adicione um Filtro em uma Célula:
+## Adicione um Filtro em uma Célula
 
 Você pode adicionar um filtro a uma célula especificando o filtro desejado usando a função put_result/2. O primeiro argumento da função é o nome do filtro, e o segundo argumento é o resultado que você deseja associar a esse filtro. O resultado pode ser qualquer valor, como uma string, número ou lista.
 
@@ -312,7 +302,7 @@ IO.puts("Isso será exibido sem filtro")
 put_result(:filtro_personalizado, "Isso será exibido com um filtro")
 ```
 
-## Defina Filtros em Outras Células:
+## Defina Filtros em Outras Células
 
 Depois de adicionar um filtro a uma célula, você pode definir esse filtro em células subsequentes usando a função set_filter/1. O argumento da função é o nome do filtro que você deseja aplicar.
 
@@ -324,7 +314,7 @@ set_filter(:filtro_personalizado)
 
 Agora, todas as saídas de células subsequentes serão filtradas de acordo com o filtro :filtro_personalizado. Isso significa que apenas as saídas associadas a esse filtro serão exibidas.
 
-### Remova ou Limpe um Filtro:
+### Remova ou Limpe um Filtro
 
 Para remover um filtro, você pode usar a função clear_filter/1 com o nome do filtro que deseja remover.
 
@@ -336,7 +326,7 @@ clear_filter(:filtro_personalizado)
 
 Isso fará com que as saídas voltem a ser exibidas sem filtro.
 
-## Filtros Padrão:
+## Filtros Padrão
 
 O Livebook também oferece alguns filtros padrão que você pode usar para controlar as saídas. Alguns exemplos incluem :error, :stderr, :stdout, que podem ser úteis para capturar mensagens de erro ou saída padrão.
 
@@ -401,7 +391,6 @@ Neste exemplo, a variável soma armazenará o resultado da soma de a e b. Quando
 ## Links
 
 Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
-
 
 * [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
 * [Livros e outros recursos de aprendizagem](https://elixir-lang.org/learning.html)
