@@ -22,7 +22,7 @@ end
 
 Exemplo:
 
-```elixir
+```
 age = 25
 if age >= 18 do
   IO.puts("Você é maior de idade.")
@@ -33,7 +33,7 @@ end
 
 A estrutura unless é o oposto do if. Ela é usada para executar um bloco de código se a condição for avaliada como falsa (false). Se a condição for avaliada como verdadeira (true), o bloco de código não será executado.
 
-```elixir
+```
 unless condition do
   # Código a ser executado se a condição for falsa
 end
@@ -41,7 +41,7 @@ end
 
 Exemplo:
 
-```elixir
+```
 raining = true
 unless raining do
   IO.puts("Não está chovendo.")
@@ -51,7 +51,7 @@ If e Unless com else:
 
 Você também pode usar else com if e unless para executar um bloco de código alternativo quando a condição não for atendida.
 
-```elixir
+```
 if condition do
   # Código a ser executado se a condição for verdadeira
 else
@@ -61,7 +61,7 @@ end
 
 Exemplo:
 
-```elixir
+```
 temperature = 28
 if temperature > 30 do
   IO.puts("Está quente lá fora.")
@@ -76,7 +76,7 @@ A mesma lógica se aplica ao unless com else.
 
 No Livebook, você pode usar a macro cond para criar uma estrutura de controle condicional que permite avaliar múltiplas condições e executar código com base na primeira condição verdadeira encontrada. A sintaxe básica do cond é a seguinte:
 
-```elixir
+```
 cond do
   condition1 ->
     # Código a ser executado se condition1 for verdadeira
@@ -102,7 +102,7 @@ A última cláusula com true é opcional, mas é uma boa prática incluí-la par
 
 Aqui está um exemplo de uso do cond no Livebook:
 
-```elixir
+```
 x = 5
 
 cond do
@@ -155,7 +155,7 @@ Aqui estão alguns exemplos de como usar sigils no Livebook:
 
 Você pode usar o sigil ~s para criar strings. O texto deve ser colocado entre colchetes {}. Por exemplo:
 
-```elixir
+```
 minha_string = ~s{Isso é uma string criada com sigil}
 IO.puts(minha_string)
 ```
@@ -165,7 +165,7 @@ Isso imprimirá "Isso é uma string criada com sigil" na saída.
 
 O sigil ~r permite criar expressões regulares. Você pode delimitar a expressão regular com barras /. Por exemplo:
 
-```elixir
+```
 regex = ~r/\\d+/  # Esta expressão regular corresponde a um ou mais dígitos.
 texto = "123 ABC"
 resultado = Regex.scan(regex, texto)
@@ -178,7 +178,7 @@ Isso irá corresponder e retornar uma lista com o número "123" da string "123 A
 
 O sigil ~c permite criar caracteres. Você pode especificar um único caractere entre aspas simples '. Por exemplo:
 
-``` elixir
+```
 meu_char = ~c'A'
 IO.puts(meu_char)
 Isso imprimirá "A" na saída.
@@ -188,7 +188,7 @@ Sigil de Listas (~w):
 
 O sigil ~w permite criar listas de palavras (atomos). Você pode delimitar as palavras com espaços. Por exemplo:
 
-```elixir
+```
 lista_palavras = ~w(apple banana cherry)
 IO.inspect(lista_palavras)
 ```
@@ -203,7 +203,7 @@ Compreensões de Lista:
 
 Você pode criar listas usando compreensões de lista. A estrutura básica de uma compreensão de lista é a seguinte:
 
-```elixir
+```
 for pattern <- enumerable, filter, do: expression
 ```
 
@@ -214,7 +214,7 @@ for pattern <- enumerable, filter, do: expression
 
 Exemplo:
 
-```elixir
+```
 lista = [1, 2, 3, 4, 5]
 quadrados = for x <- lista, do: x * x
 quadrados
@@ -224,13 +224,13 @@ quadrados
 
 Você também pode usar compreensões para criar mapas. A estrutura básica de uma compreensão de mapa é semelhante à compreensão de lista:
 
-```elixir
+```
 for {key, value} <- enumerable, filter, do: {key, expression}
 ```
 
 Exemplo:
 
-```elixir
+```
 mapa = %{"a" => 1, "b" => 2, "c" => 3}
 triplica_valores = for {chave, valor} <- mapa, do: {chave, valor * 3}
 triplica_valores
@@ -242,7 +242,7 @@ Você pode aninhar compreensões dentro de outras compreensões para trabalhar c
 
 Exemplo:
 
-```elixir
+```
 matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 elementos_pares = for linha <- matriz, valor <- linha, rem(valor, 2) == 0, do: valor
 elementos_pares
@@ -254,7 +254,7 @@ Você pode usar guard clauses nas compreensões para aplicar condições adicion
 
 Exemplo:
 
-```elixir
+```
 lista = [1, 2, 3, 4, 5, 6]
 pares_maiores_que_tres = for x <- lista, rem(x, 2) == 0, x > 3, do: x
 pares_maiores_que_tres
@@ -270,7 +270,7 @@ Aqui está como usar filtros no Livebook:
 
 Você pode adicionar um filtro a uma célula especificando o filtro desejado usando a função put_result/2. O primeiro argumento da função é o nome do filtro, e o segundo argumento é o resultado que você deseja associar a esse filtro. O resultado pode ser qualquer valor, como uma string, número ou lista.
 
-```elixir
+```
 IO.puts("Isso será exibido sem filtro")
 put_result(:filtro_personalizado, "Isso será exibido com um filtro")
 ```
@@ -279,7 +279,7 @@ put_result(:filtro_personalizado, "Isso será exibido com um filtro")
 
 Depois de adicionar um filtro a uma célula, você pode definir esse filtro em células subsequentes usando a função set_filter/1. O argumento da função é o nome do filtro que você deseja aplicar.
 
-```elixir
+```
 set_filter(:filtro_personalizado)
 ```
 Agora, todas as saídas de células subsequentes serão filtradas de acordo com o filtro :filtro_personalizado. Isso significa que apenas as saídas associadas a esse filtro serão exibidas.
@@ -288,7 +288,7 @@ Agora, todas as saídas de células subsequentes serão filtradas de acordo com 
 
 Para remover um filtro, você pode usar a função clear_filter/1 com o nome do filtro que deseja remover.
 
-```elixir
+```
 clear_filter(:filtro_personalizado)
 ```
 Isso fará com que as saídas voltem a ser exibidas sem filtro.
@@ -299,7 +299,7 @@ O Livebook também oferece alguns filtros padrão que você pode usar para contr
 
 Aqui está um exemplo completo de como usar filtros no Livebook:
 
-```elixir
+```
 # Célula 1: Definindo um filtro personalizado
 IO.puts("Isso será exibido sem filtro")
 put_result(:filtro_personalizado, "Isso será exibido com um filtro")
@@ -321,7 +321,7 @@ IO.puts("Esta saída não está filtrada
 
 Em uma célula do Livebook, você pode usar a função into/2 para criar uma associação a uma variável que receberá o resultado da expressão na célula. Isso é útil quando você deseja armazenar o resultado de uma computação em uma variável para uso posterior ou para exibir o valor em uma célula subsequente. A sintaxe básica do into/2 é a seguinte:
 
-```elixir
+```
 resultado = expressao |> into(variavel)
 ```
 
@@ -333,7 +333,7 @@ Onde:
 
 Aqui está um exemplo de uso do into/2 no Livebook:
 
-```elixir
+```
 # Suponha que você queira calcular a soma de dois números.
 a = 5
 b = 7
