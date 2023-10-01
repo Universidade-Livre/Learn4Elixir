@@ -187,14 +187,6 @@ Outra forma é fazer a chamada diretamente (também usando o ponto):
 (fn num -> num + 1 end).(2)
 ```
 
-## Exercício
-
-Escreva uma função anônima que retorna o argumento que for passado a ela (função identidade):
-
-```elixir
-fn 
-```
-
 ## Funções de ordem mais alta
 
 O uso realmente interessante de funções anônimas é em funções de ordem mais alta (_higher-order functions_). Funções de ordem mais alta recebem uma ou mais funções como argumento, ou retornam uma função.
@@ -310,3 +302,163 @@ end
 ```
 
 ## Exercícios
+
+### Exercício 1
+
+<!-- livebook:{"break_markdown":true} -->
+
+### Exercício 2
+
+<!-- livebook:{"break_markdown":true} -->
+
+### Exercício 3
+
+<!-- livebook:{"break_markdown":true} -->
+
+### Exercício 4
+
+<!-- livebook:{"break_markdown":true} -->
+
+O departamento de Matemática da Universidade Técnica Federal do Paraná entrou em contato com você. Eles querem usar Elixir para trabalhar com Álgebra Linear e para isso precisam que você implemente um módulo em Elixir para que eles possam usar para fazer operações com Matrizes que eles precisam. Para eles é importante:
+
+* Soma de Matrizes
+* Subtração de Matrizes
+* Multiplicação de Matrizes
+* Multiplicação de Matriz por Escalar (chamado de Produto Escalar)
+* Determinante da Matriz (para Matrizes até 3x3)
+
+Para a soma, subtração e multiplicação de matrizes, as
+matrizes inseridas poderão ter quaisquer dimensões (verifique se a operação é factível antes de
+executá-la).
+
+Uma matriz é representada por Listas dentro de Listas em Elixir.
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+matriz = [[0,0,1], [0,1,0], [1,0,0]]
+```
+
+Você pode utilizar qualquer recurso ou técnica, incluindo implementar funções auxiliares, features que ainda não vimos até aqui ou qualquer outra coisa que julgar necessário. Porém, com o que viu até aqui deve ser o suficiente para que possa implementar essa solução.
+
+Abaixo, temos um "esqueleto" da implementação. Os professores esperam que essa "API" (o nome do módulo, das funções e suas assinaturas) sejam respeitadas, pois não vão investigar a implementação, mas esperam usar chamando-as com esses nomes e assinaturas.
+
+```elixir
+defmodule AlgebraLinear do
+  def soma_matrizes(matriz_a, matriz_b) do
+    # A fazer
+  end
+
+  def subtrai_matrizes(matriz_a, matriz_b) do
+    # A fazer
+  end
+
+  def multiplica_matrizes(matriz_a, matriz_b) do
+    # A fazer
+  end
+
+  def escalar(matriz, escalar) do
+    # A fazer
+  end
+
+  def determinante(matriz) do
+    # A fazer
+  end
+end
+```
+
+### Exercício 5
+
+Você é um desenvolvedor web que trabalha em uma empresa que oferece serviços de streaming de música. Você está usando Elixir para criar uma API que permite aos usuários pesquisar, ouvir e avaliar as músicas disponíveis na plataforma. Você recebeu uma tarefa de implementar uma função que recebe uma lista de músicas e retorna uma lista de recomendações baseadas nas preferências do usuário.
+
+Uma música é representada por um mapa com as seguintes chaves:
+
+* **:titulo** - uma string com o nome da música
+* **:artista** - uma string com o nome do artista
+* **:genero** - uma string com o gênero musical
+* **:duracao** - um inteiro com a duração da música em segundos
+* **:avaliacao** - um número de 0 a 5 com a avaliação média da música pelos usuários
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+musica = %{
+            titulo: "Starway to Heaven", 
+            artista: "Led Zeppelin", 
+            genero: "Rock", 
+            duracao: 482, 
+            avaliacao: 4.9
+          }
+```
+
+Uma preferência do usuário é representada por um mapa com as seguintes chaves:
+
+* **:genero** - uma string com o gênero musical preferido pelo usuário
+* **:duracao_min** - um inteiro com a duração mínima das músicas que o usuário gosta em segundos
+* **:duracao_max** - um inteiro com a duração máxima das músicas que o usuário gosta em segundos
+* **:avaliacao_min** - um número de 0 a 5 com a avaliação mínima das músicas que o usuário quer ouvir
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+preferencia = %{
+                 genero: "Rock", 
+                 duracao_min: 200, 
+                 duracao_max: 400, 
+                 avaliacao_min: 4.5
+                }
+```
+
+A função de recomendação deve receber uma lista de músicas e uma preferência do usuário e retornar uma lista de músicas que atendem aos critérios da preferência, ordenadas por avaliação em ordem decrescente. Se houver mais de uma música com a mesma avaliação, a ordem deve ser alfabética pelo título.
+
+Você deve usar funções anônimas e as funções map, filter e reduce para implementar essa função. Você pode usar qualquer recurso ou técnica que julgar necessário, mas com o que viu até aqui deve ser o suficiente para que possa implementar essa solução.
+
+```elixir
+defmodule Recomendacao do
+  def recomenda(musicas, preferencia) do
+    # A fazer
+  end
+end
+```
+
+```elixir
+# Define uma lista de músicas
+musicas = [
+  %{titulo: "Hotel California", artista: "Eagles", genero: "Rock", duracao: 391, avaliacao: 4.7},
+  %{titulo: "Rolling in the Deep", artista: "Adele", genero: "Pop", duracao: 228, avaliacao: 4.5},
+  %{titulo: "Bohemian Rhapsody", artista: "Queen", genero: "Rock", duracao: 355, avaliacao: 4.9},
+  %{
+    titulo: "Billie Jean",
+    artista: "Michael Jackson",
+    genero: "Pop",
+    duracao: 292,
+    avaliacao: 4.4
+  },
+  %{titulo: "Yesterday", artista: "The Beatles", genero: "Rock", duracao: 138, avaliacao: 4.6},
+  %{titulo: "Shape of You", artista: "Ed Sheeran", genero: "Pop", duracao: 233, avaliacao: 4.1},
+  %{
+    titulo: "No Woman, No Cry",
+    artista: "Bob Marley",
+    genero: "Reggae",
+    duracao: 245,
+    avaliacao: 4.8
+  },
+  %{
+    titulo: "Redemption Song",
+    artista: "Bob Marley",
+    genero: "Reggae",
+    duracao: 179,
+    avaliacao: 4.7
+  }
+]
+```
+
+```elixir
+# Define uma preferência do usuário
+preferencia = %{genero: "Pop", duracao_min: 200, duracao_max: 250, avaliacao_min: 4.5}
+```
+
+```elixir
+# Chama a função de recomendação com a lista de músicas e a preferência do usuário
+Recomendacao.recomenda(musicas, preferencia)
+```
