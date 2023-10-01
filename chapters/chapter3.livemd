@@ -8,11 +8,11 @@ Neste capitulo iremos nos aprofundar em Estruturas de Controle.
 
 ## If e Unless
 
-If e Unless são estruturas de controle que você pode usar no Livebook, uma ferramenta interativa e documentação para a linguagem de programação Elixir. Eles funcionam de maneira semelhante ao condicional if e unless em outras linguagens de programação. Aqui está como você pode usá-los:
+'if' e 'unless' são estruturas de controle que você pode usar no Elixir. Eles funcionam de maneira semelhante ao condicional 'if' e 'unless' em outras linguagens de programação. Aqui está como você pode usá-los:
 
 ## If
 
-A estrutura if é usada para executar um bloco de código se uma condição for avaliada como verdadeira (true). Se a condição for avaliada como falsa (false), o bloco de código não será executado.
+A estrutura 'if' é usada para executar um bloco de código se uma condição for avaliada como verdadeira ou algum valor 'truthy'. Se a condição for avaliada como falsa ou algum valor 'falsy', o bloco de código não será executado.
 
 ```
 if condition do
@@ -26,13 +26,39 @@ Exemplo:
 age = 25
 
 if age >= 18 do
-  IO.puts("Você é maior de idade.")
+  "Você é maior de idade."
 end
 ```
 
+```elixir
+age = 25
+
+if age do
+  "Você é maior de idade."
+end
+```
+
+```elixir
+condicao = false
+
+if condicao do
+  "Você é maior de idade."
+end
+```
+
+```elixir
+condicao = nil
+
+if condicao do
+  "Você é maior de idade."
+end
+```
+
+Observe que, se a condição for 'false' ou 'nil', o comando retorna 'nil', na ausência de uma cláusula 'else' (que veremos depois).
+
 ## Unless
 
-A estrutura unless é o oposto do if. Ela é usada para executar um bloco de código se a condição for avaliada como falsa (false). Se a condição for avaliada como verdadeira (true), o bloco de código não será executado.
+A estrutura 'unless' é mais ou menos o oposto do if. Ela é usada para executar um bloco de código se a condição for avaliada como falsa ou 'falsy'. Se a condição for avaliada como verdadeira ou 'truthy', 'nil' será retornado.
 
 ```
 unless condition do
@@ -43,14 +69,38 @@ end
 Exemplo:
 
 ```elixir
-raining = true
+raining = false
 
 unless raining do
-  IO.puts("Não está chovendo.")
+  "Não está chovendo."
 end
 ```
 
-Você também pode usar else com if e unless para executar um bloco de código alternativo quando a condição não for atendida.
+```elixir
+raining = nil
+
+unless raining do
+  "Não está chovendo."
+end
+```
+
+```elixir
+raining = true
+
+unless raining do
+  "Não está chovendo."
+end
+```
+
+```elixir
+raining = :oi
+
+unless raining do
+  "Não está chovendo."
+end
+```
+
+Você também pode usar 'else' com 'if' e 'unless' para executar um bloco de código alternativo quando a condição não for atendida.
 
 ```
 if condition do
@@ -62,22 +112,51 @@ end
 
 Exemplo:
 
-<!-- livebook:{"force_markdown":true} -->
-
 ```elixir
 temperature = 28
+
 if temperature > 30 do
-  IO.puts("Está quente lá fora.")
+  "Está quente lá fora."
 else
-  IO.puts("Não está tão quente lá fora.")
+  "Não está tão quente lá fora."
 end
 ```
 
-A mesma lógica se aplica ao unless com else.
+```elixir
+temperature = 35
+
+if temperature > 30 do
+  "Está quente lá fora."
+else
+  "Não está tão quente lá fora."
+end
+```
+
+A mesma lógica se aplica ao 'unless' com 'else'.
+
+```elixir
+temperature = 28
+
+unless temperature > 30 do
+  "Está quente lá fora."
+else
+  "Não está tão quente lá fora."
+end
+```
+
+```elixir
+temperature = 35
+
+unless temperature > 30 do
+  "Está quente lá fora."
+else
+  "Não está tão quente lá fora."
+end
+```
 
 ## Cond
 
-No Livebook, você pode usar a macro cond para criar uma estrutura de controle condicional que permite avaliar múltiplas condições e executar código com base na primeira condição verdadeira encontrada. A sintaxe básica do cond é a seguinte:
+No Elixir, você pode usar a macro 'cond' para criar uma estrutura de controle condicional que permite avaliar múltiplas condições e executar código com base na primeira condição verdadeira encontrada. A sintaxe básica do cond é a seguinte:
 
 ```
 cond do
@@ -105,31 +184,33 @@ A última cláusula com true é opcional, mas é uma boa prática incluí-la par
 
 Aqui está um exemplo de uso do cond no Livebook:
 
-<!-- livebook:{"force_markdown":true} -->
-
 ```elixir
 x = 5
 
 cond do
-  x == 0 ->
-    IO.puts("x é igual a 0")
+  is_number(x) and x == 0 ->
+    "x é igual a 0"
 
-  x > 0 ->
-    IO.puts("x é maior que 0")
+  is_number(x) and x > 0 ->
+    "x é maior que 0"
 
-  x < 0 ->
-    IO.puts("x é menor que 0")
+  is_number(x) and x < 0 ->
+    "x é menor que 0"
 
   true ->
-    IO.puts("Nenhuma das condições anteriores foi atendida")
+    "Nenhuma das condições anteriores foi atendida"
 end
 ```
 
 Neste exemplo, o código verificará a condição x == 0 primeiro, que não é verdadeira, e, em seguida, verificará x > 0, que é verdadeira, portanto, imprimirá "x é maior que 0". Como a última cláusula com true está presente, ela não será executada neste caso.
 
+<!-- livebook:{"break_markdown":true} -->
+
+Mude o valor de 'x' no código acima para 0 e -1 e reavalie, para ver o que acontece. Depois, mude 'x' para o átomo ':a' e reavalie.
+
 ## Sigils
 
-Elixir fornece uma sintaxe alternativa para representar e trabalhar com literais. Um sigil (símbolo especial) vai começar com um til ~ seguido por um caractere. O núcleo do Elixir fornece-nos alguns sigils, no entanto, é possível criar o nosso próprio quando precisamos estender a linguagem.
+Elixir fornece uma sintaxe alternativa para representar e trabalhar com literais. Um sigil (símbolo especial) vai começar com um til ~ seguido por um caractere. O núcleo do Elixir fornece-nos alguns sigils, no entanto, é possível criar o nosso próprio sigil quando precisamos estender a linguagem.
 
 Uma lista de sigils disponíveis incluem:
 
@@ -160,26 +241,21 @@ Aqui estão alguns exemplos de como usar sigils no Livebook:
 
 Você pode usar o sigil ~s para criar strings. O texto deve ser colocado entre colchetes {}. Por exemplo:
 
-<!-- livebook:{"force_markdown":true} -->
-
 ```elixir
-minha_string = ~s{Isso é uma string criada com sigil}
-IO.puts(minha_string)
+~s{Isso é uma string criada com sigil}
 ```
 
-Isso imprimirá "Isso é uma string criada com sigil" na saída.
+Isso retornará "Isso é uma string criada com sigil" na saída.
 
-### Sigil de Regex (~r)
+## Sigil de Regex (~r)
 
 O sigil ~r permite criar expressões regulares. Você pode delimitar a expressão regular com barras /. Por exemplo:
 
-<!-- livebook:{"force_markdown":true} -->
-
 ```elixir
-regex = ~r/\\d+/  # Esta expressão regular corresponde a um ou mais dígitos.
+# Esta expressão regular corresponde a um ou mais dígitos.
+regex = ~r/\d+/
 texto = "123 ABC"
-resultado = Regex.scan(regex, texto)
-IO.inspect(resultado)
+Regex.scan(regex, texto)
 ```
 
 Isso irá corresponder e retornar uma lista com o número "123" da string "123 ABC".
