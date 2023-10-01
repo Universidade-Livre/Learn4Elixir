@@ -307,15 +307,80 @@ end
 
 <!-- livebook:{"break_markdown":true} -->
 
+Você lembra do exercício em que você fez no primeiro livebook? Percebeu que nesse capítulo implementamos ela utilizando o módulo `Enum`?
+
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
+defmodule Turma do
+  def media(lista_notas) do
+    Enum.sum(lista_notas) / Enum.count(lista_notas)
+  end
+
+  def aprovado?(nota) when nota >= 6 do
+    true
+  end
+
+  def aprovado?(_), do: false
+end
+```
+
+Elixir tem diversos módulos que possuem funções que podem nos auxiliar a simplificar o desenvolvimento de nosso código, como vimos acima no uso de `Enum` e no inicio desse livebook com `String`.
+
+* Leia essas documentações de forma rápida por cima e busque nelas informações quando for resolver esse exercício: [Enum](https://hexdocs.pm/elixir/1.12/Enum.html), [String](https://hexdocs.pm/elixir/1.12/String.html) e [Map](https://hexdocs.pm/elixir/1.12/Map.html).
+
+E então resolva esses problemas:
+
+<!-- livebook:{"break_markdown":true} -->
+
+1. Retorne o temanho da String "pneumoultramicroscopicossilicovulcanoconiótico".
+
+```elixir
+
+```
+
+1. Retorne um Lista que possui os mesmos items da lista [:a :b :c] porém com os itens na ordem contrária, ou seja [:c :b :a].
+
+```elixir
+
+```
+
+1. Retorne um novo mapa que é a união desses dois mapas:
+
+```Elixir
+primeiro_mapa = %{ :um  =>  1, :dois => 2 }
+segundo_mapa  = %{ :tres  =>  3, :quatro => 4 }
+```
+
+```elixir
+
+```
+
+1. Retorne uma lista de palavras da setença:
+
+```elixir
+# execute essa célula de código
+setenca = """
+Como de hábito, Policarpo Quaresma, mais conhecido por Major Quaresma, bateu em casa às quatro e quinze da tarde. Havia mais de vinte anos que isso acontecia. Saindo do Arsenal de Guerra, onde era subsecretário, bongava pelas confeitarias algumas frutas, comprava um queijo, às vezes, e sempre o pão da padaria francesa.
+"""
+```
+
+```elixir
+
+```
+
+1. Multiplique todos os itens da seguinte lista e retorne a soma de todos seus items sobrados.
+
+```elixir
+# execute essa célula de código
+lista_de_numeros = [4, 8, 12, 16, 20, 24, 28, 32, 36]
+```
+
+```elixir
+
+```
+
 ### Exercício 2
-
-<!-- livebook:{"break_markdown":true} -->
-
-### Exercício 3
-
-<!-- livebook:{"break_markdown":true} -->
-
-### Exercício 4
 
 <!-- livebook:{"break_markdown":true} -->
 
@@ -367,7 +432,7 @@ defmodule AlgebraLinear do
 end
 ```
 
-### Exercício 5
+### Exercício 3
 
 Você é um desenvolvedor web que trabalha em uma empresa que oferece serviços de streaming de música. Você está usando Elixir para criar uma API que permite aos usuários pesquisar, ouvir e avaliar as músicas disponíveis na plataforma. Você recebeu uma tarefa de implementar uma função que recebe uma lista de músicas e retorna uma lista de recomendações baseadas nas preferências do usuário.
 
