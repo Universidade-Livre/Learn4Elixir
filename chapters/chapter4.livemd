@@ -263,3 +263,29 @@ Escreva sua solução na célula abaixo. Se necessário, crie mais células.
 ```elixir
 "Coloque aqui sua solução"
 ```
+
+## Exercício: Calculando a idade
+
+É uma boa prática gravar o aniversário de alguém, e não a sua idade no banco de dados, pois com a data de nascimento temos dados mais precisos e flexíveis, facilitando o cálculo da idade em tempo real, sem a necessidade de atualizar a idade toda vez que um ano passa.
+
+Com essa informação em mente, imagine que você é um desenvolvedor de sistemas e precisa criar uma função em Elixir que receba uma data, e se for aniversário deverá returnar um texto com "Hoje você completa <X> anos, parabéns pelo aniversário!", caso não seja o aniversáio, a função deve retornar somente o seguinte texto: "<X> anos". Essa função aceita um formato {ano, mês, dia} e calcula a idade da pessão em relação a data atual.
+
+Por exemplo, se a data de nascimento fornecida for {2001, 5, 7}, e a função for chamada em 7 de maio de 2023, o resultado deve ser "22 anos", caso seja aniversário o resultado deve ser, Hoje você completa 22 anos, parabéns pelo aniversário!".
+
+Requisitos:
+
+A função deve aceitar a data de nascimento como argumento e retornar um texto com a idade dentro.
+
+Você deve levar em conta os anos bissextos ao calcular a diferença nos anos.
+
+Considere o caso em que a data de nascimento fornecida está no futuro em relação à data atual, e lide com isso de maneira apropriada.
+
+Este exercício permitirá que você pratique a manipulação de datas em Elixir, incluindo o cálculo de anos bissextos, a diferença entre datas e a formatação dos resultados.
+
+## Solução
+
+```elixir
+def calcular_idade(data_aniversario) do
+  # Escreva aqui a sua solução
+end
+```

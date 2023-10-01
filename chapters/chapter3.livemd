@@ -14,7 +14,9 @@ Neste capitulo iremos nos aprofundar em Estruturas de Controle.
 
 A estrutura 'if' é usada para executar um bloco de código se uma condição for avaliada como verdadeira ou algum valor 'truthy'. Se a condição for avaliada como falsa ou algum valor 'falsy', o bloco de código não será executado.
 
-```
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
 if condition do
   # Código a ser executado se a condição for verdadeira
 end
@@ -60,7 +62,9 @@ Observe que, se a condição for 'false' ou 'nil', o comando retorna 'nil', na a
 
 A estrutura 'unless' é mais ou menos o oposto do if. Ela é usada para executar um bloco de código se a condição for avaliada como falsa ou 'falsy'. Se a condição for avaliada como verdadeira ou 'truthy', 'nil' será retornado.
 
-```
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
 unless condition do
   # Código a ser executado se a condição for falsa
 end
@@ -102,7 +106,9 @@ end
 
 Você também pode usar 'else' com 'if' e 'unless' para executar um bloco de código alternativo quando a condição não for atendida.
 
-```
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
 if condition do
   # Código a ser executado se a condição for verdadeira
 else
@@ -158,7 +164,9 @@ end
 
 No Elixir, você pode usar a macro 'cond' para criar uma estrutura de controle condicional que permite avaliar múltiplas condições e executar código com base na primeira condição verdadeira encontrada. A sintaxe básica do cond é a seguinte:
 
-```
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
 cond do
   condition1 ->
     # Código a ser executado se condition1 for verdadeira
@@ -286,7 +294,9 @@ No Elixir, você pode usar compreensões para criar listas ou outras estruturas 
 
 Você pode criar listas usando compreensões de lista. A estrutura básica de uma compreensão de lista é a seguinte:
 
-```
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
 for pattern <- enumerable, filter, do: expression
 ```
 
@@ -316,7 +326,9 @@ for x <- lista, x > 3, x < 40, do: "#{x + 3}"
 
 Você também pode usar compreensões para criar mapas. A estrutura básica de uma compreensão de mapa é semelhante à compreensão de lista:
 
-```
+<!-- livebook:{"force_markdown":true} -->
+
+```elixir
 for {key, value} <- enumerable, filter, do: {key, expression}
 ```
 
@@ -373,10 +385,6 @@ defmodule ElixGames.Encontro do
     # Implemente a lógica de determinação do resultado do encontro aqui
   end
 end
-```
-
-```elixir
-
 ```
 
 ### Exercício 2
@@ -471,8 +479,4 @@ calcula_total(produtos, cliente) # deve retornar 243.00
 defmodule Ecommerce do
   # A fazer
 end
-```
-
-```elixir
-
 ```
