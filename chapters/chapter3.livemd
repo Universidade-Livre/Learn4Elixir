@@ -87,7 +87,7 @@ No Livebook, você pode usar a macro cond para criar uma estrutura de controle c
 
 <!-- livebook:{"force_markdown":true} -->
 
-```elixir
+```
 cond do
   condition1 ->
     # Código a ser executado se condition1 for verdadeira
