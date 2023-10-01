@@ -99,12 +99,13 @@ Observe que no caso acima incluímos um 'IO.puts' para poder ver o que o process
 
 ## Testando a "vida" de um processo
 
-Agora vamos criar um processo que dura um pouco mais de tempo e vamos pedir para que você avalie a segunda célula sem esperar o fim da avaliação da primeira. Avalie a segunda célula várias vezes. Assim, você verá que inicialmente o retorno será 'true' mas depois de 10 segundos o retorno será 'false'.
+Agora vamos criar um processo que dura um pouco mais de tempo e vamos pedir para que você avalie a segunda célula sem esperar o fim da avaliação da primeira. Avalie a segunda célula várias vezes. Assim, você verá que inicialmente o retorno será 'true' mas depois de 4 segundos o retorno será 'false'.
 
 ```elixir
 {:ok, minha_tarefa} =
   Task.start(fn ->
-    :timer.sleep(10000)
+    IO.puts("Começando a contar 4 segundos!")
+    :timer.sleep(4000)
     IO.puts("Hello, World!")
   end)
 ```
@@ -120,23 +121,28 @@ Observe também que "Hello, World!" aparecerá na célula que estiver ativa no m
 Os processos em Elixir podem se comunicar entre si por meio do envio e recebimento de mensagens. Você pode usar a função send/2 para enviar mensagens e receive/1 para receber mensagens. Aqui está um exemplo de envio e recebimento de mensagens entre dois processos:
 
 ```elixir
-pid =
+receptor =
   spawn(fn ->
-    send(self(), {:message, "Hello from another process!"})
+    receive do
+      {:mensagem, msg} ->
+        IO.puts("Mensagem Recebida: #{msg}")
+    end
   end)
 
-receive do
-  {:message, message} ->
-    IO.puts("Mensagem Recebida: #{message}")
-end
+emissor =
+  spawn(fn ->
+    send(receptor, {:mensagem, "Oi, de outro processo!"})
+  end)
 ```
+
+No exemplo acima, criamos um processo 'receptor' que fica esperando receber uma tupla contendo :mensagem e uma mensagem. Depois criamos um processo 'emissor' que envia uma mensagem para 'receptor'. Logo depois de enviar a mensagem, 'emissor' morre. Logo depois de receber a mensagem, 'receptor' escreve a (usando IO.puts) no dispositivo de saída (no caso, uma célula do Livebook). Depois disso, 'receptor' morre.
 
 ## Encerrar um Processo
 
-Você pode encerrar um processo usando a função Process.exit/2 ou deixando que ele termine naturalmente. Por exemplo, para encerrar um processo com uma mensagem de saída:
+Você pode encerrar um processo usando a função Process.exit/2 ou deixando que ele termine naturalmente. Por exemplo, para encerrar um processo.
 
 ```elixir
-Process.exit(pid, :shutdown)
+Process.exit(receptor, :shutdown)
 ```
 
 ## Agentes
@@ -145,7 +151,7 @@ Agentes são uma maneira de compartilhar e gerenciar estado em ambientes concorr
 
 ## Inicialize um Agente (Servidor)
 
-Comece inicializando um agente que conterá o estado que você deseja compartilhar. Você pode fazer isso em uma célula do Livebook:
+Comece inicializando um agente que conterá o estado que você deseja compartilhar. Você pode fazer isso em uma célula do Livebook. Este agenda ficará disponível nas próximas células.
 
 ```elixir
 # Inicialize um agente com um estado inicial
@@ -167,31 +173,34 @@ Agent.get(agent, fn state -> state end)
 ## Atualizar o estado do agente
 
 ```elixir
-Agent.update(agent, fn _state -> new_state end)
+Agent.update(agent, fn _state -> 10 end)
 ```
 
-## Interaja com o Agente
-
-Agora você pode usar as funções do cliente para interagir com o agente em células subsequentes do Livebook:
+Agora vamos ver como está o estado do agente.
 
 ```elixir
-# Use o cliente para ler o estado atual do agente
-current_state = get_state(agent)
-IO.puts("Estado Atual: #{current_state}")
-
-# Atualize o estado do agente usando o cliente
-new_state = current_state + 1
-update_state(agent, new_state)
-IO.puts("Estado Atualizado: #{new_state}")
+Agent.get(agent, fn state -> state end)
 ```
 
-## Encerre o Agente (Opcional)
+## Encerre o Agente
 
-Após concluir a interação com o agente, você pode encerrá-lo para liberar os recursos associados. Você pode fazer isso em uma célula separada:
+Inicialmente, verifique se o agente está vivo.
+
+```elixir
+Process.alive?(agent)
+```
+
+Após concluir a interação com o agente, você pode encerrá-lo para liberar os recursos associados. Você pode fazer isso da seguinte forma:
 
 ```elixir
 # Encerre o agente
 :ok = Agent.stop(agent)
+```
+
+Agora, verifique se o agente morreu mesmo.
+
+```elixir
+Process.alive?(agent)
 ```
 
 ## Exercícios
