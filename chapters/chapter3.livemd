@@ -22,7 +22,7 @@ end
 
 Exemplo:
 
-```
+```elixir
 age = 25
 if age >= 18 do
   IO.puts("Você é maior de idade.")
