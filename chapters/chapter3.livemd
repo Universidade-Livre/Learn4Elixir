@@ -228,7 +228,7 @@ Você pode criar listas usando compreensões de lista. A estrutura básica de um
 
 <!-- livebook:{"force_markdown":true} -->
 
-```elixir
+```
 for pattern <- enumerable, filter, do: expression
 ```
 
