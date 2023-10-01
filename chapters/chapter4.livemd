@@ -203,4 +203,45 @@ Agora, verifique se o agente morreu mesmo.
 Process.alive?(agent)
 ```
 
+## Criando um módulo que usa um agente
+
+```elixir
+defmodule MeuAgente do
+  def inicia do
+    {:ok, agent} = Agent.start(fn -> 0 end)
+    IO.puts("Agente criado com pid #{inspect(agent)} e estado 0")
+    agent
+  end
+
+  def le_estado(agent) do
+    IO.puts("Lendo o estado do agente")
+    estado = Agent.get(agent, fn state -> state end)
+    IO.puts("O estado do agente é #{estado}")
+  end
+
+  def incrementa_estado(agent) do
+    IO.puts("Incrementando o estado do agente")
+    Agent.update(agent, fn state -> state + 1 end)
+    IO.puts("O estado do agente foi incrementado.")
+  end
+
+  def encerra(agent) do
+    Agent.stop(agent)
+    IO.puts("Agente com pid #{inspect(agent)} foi encerrado.")
+  end
+end
+```
+
+Agora vamos usar o módulo acima. Observe que colocamos vários 'IO.puts' no código para poder ver o que acontece.
+
+```elixir
+meuagente = MeuAgente.inicia()
+MeuAgente.le_estado(meuagente)
+MeuAgente.incrementa_estado(meuagente)
+MeuAgente.le_estado(meuagente)
+MeuAgente.incrementa_estado(meuagente)
+MeuAgente.le_estado(meuagente)
+MeuAgente.encerra(meuagente)
+```
+
 ## Exercícios
