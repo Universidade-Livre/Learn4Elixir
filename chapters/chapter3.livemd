@@ -41,7 +41,7 @@ end
 
 Exemplo:
 
-```
+```elixir
 raining = true
 unless raining do
   IO.puts("Não está chovendo.")
