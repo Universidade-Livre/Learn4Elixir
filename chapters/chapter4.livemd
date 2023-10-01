@@ -244,7 +244,9 @@ MeuAgente.le_estado(meuagente)
 MeuAgente.encerra(meuagente)
 ```
 
-## Exercício: Criando um Agente de Contagem de Acessos
+## Exercícios
+
+## Exercício 1
 
 Vamos criar um sistema simples para rastrear o número de acessos a uma página da web usando Agentes em Elixir e registrar a data e hora de cada acesso.
 
@@ -256,7 +258,7 @@ Vamos criar um sistema simples para rastrear o número de acessos a uma página 
 
 4. Agora, crie uma interação no Livebook para demonstrar o uso do módulo `Acesso`. Inicie o agente, registre alguns acessos e, em seguida, obtenha a lista de acessos registrados.
 
-## Solução
+<!-- livebook:{"break_markdown":true} -->
 
 Escreva sua solução na célula abaixo. Se necessário, crie mais células.
 
@@ -264,7 +266,7 @@ Escreva sua solução na célula abaixo. Se necessário, crie mais células.
 "Coloque aqui sua solução"
 ```
 
-## Exercício: Calculando a idade
+## Exercício 2
 
 É uma boa prática gravar o aniversário de alguém, e não a sua idade no banco de dados, pois com a data de nascimento temos dados mais precisos e flexíveis, facilitando o cálculo da idade em tempo real, sem a necessidade de atualizar a idade toda vez que um ano passa.
 
@@ -281,8 +283,6 @@ Você deve levar em conta os anos bissextos ao calcular a diferença nos anos.
 Considere o caso em que a data de nascimento fornecida está no futuro em relação à data atual, e lide com isso de maneira apropriada.
 
 Este exercício permitirá que você pratique a manipulação de datas em Elixir, incluindo o cálculo de anos bissextos, a diferença entre datas e a formatação dos resultados.
-
-## Solução
 
 ```elixir
 def calcular_idade(data_aniversario) do
