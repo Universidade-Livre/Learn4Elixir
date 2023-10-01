@@ -146,7 +146,7 @@ Se você escrever `false` em Elixir, isso significa "falso" e representa um valo
 false
 ```
 
-Um átomo especial que está relacionado a 'true' e 'false' é 'nil'. Assim como os dois anteriores, você pode usar ':nil' ou 'nil'. Se você escrever `nil` em Elixir, isso significa a ausência de um valor e, em algumas situações, o 'nil' se comporta como o 'false'.
+Um átomo especial que está relacionado a 'true' e 'false' é 'nil'. Assim como os dois anteriores, você pode usar ':nil' ou 'nil'. Se você escrever `nil` em Elixir, isso significa a ausência de um valor e, em algumas situações, o 'nil' se comporta como o 'false'. Falaremos mais sobre isso quando abordarmos as operações com valores lógicos.
 
 ```elixir
 nil
@@ -316,7 +316,7 @@ Note que os operadores acima sempre esperam valores booleanos `true` e `false` c
 1 and false
 ```
 
-Caso queria utilizar operadores lógicos com valores não booleanos, como um átomo ou números, o Elixir fornece os operadores `&&`, `||` e `!`. Esses operadores aceitam valores de qualquer tipo, e apenas os átomos `false` e `nil` serão executados como valores falseáveis:
+Você pode usar valores não lógicos como segundo argumento de 'and' e 'or'. Mas, caso queria utilizar operadores lógicos com valores não booleanos, como um átomo ou números,  como primeiro argumento, o Elixir fornece os operadores `&&`, `||` e `!`. Esses operadores aceitam valores de qualquer tipo, e apenas os átomos `false` e `nil` serão executados como valores falseáveis ('falsy'). Os demais valores são considerados 'truthy'. Ou seja, para estes operadores (e alguns outros), eles se comportam como verdadeiro.
 
 ```elixir
 1 && true
@@ -334,9 +334,31 @@ Caso queria utilizar operadores lógicos com valores não booleanos, como um át
 !false
 ```
 
+```elixir
+!nil
+```
+
+```elixir
+14 || 15
+```
+
+```elixir
+14 && 29
+```
+
+```elixir
+14 && nil
+```
+
+```elixir
+14 && false
+```
+
 Em suma, utilize os operadores `and`, `or` e `not` quando suas expressões esperam valores exclusivamente booleanos, e os operadores `&&`, `||` e `!` quando valores de tipos diferentes podem ser esperados.
 
-**Concatenação de Strings**: Em Elixir, usamos o operador `<>` para concatenar (ou seja, juntar) duas strings.
+## Concatenação de Strings
+
+Em Elixir, usamos o operador `<>` para concatenar (ou seja, juntar) duas strings.
 
 ```elixir
 "UBL" <> " " <> "é legal!"
