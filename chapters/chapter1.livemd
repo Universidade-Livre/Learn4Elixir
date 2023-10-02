@@ -568,7 +568,7 @@ Uma observação importante, e que está relacionada com a forma com que listas 
 [2, 3, 4 | [6, 7, 8, 9]]
 ```
 
-Apenas tenha cuidado para não gerar listas impóprias! Depois do '|' deve vir uma lista.
+Apenas tenha cuidado para não gerar listas impróprias! Depois do '|' deve vir uma lista.
 
 ```elixir
 [1 | 2]
