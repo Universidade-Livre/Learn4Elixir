@@ -440,7 +440,7 @@ O exemplo acima é importante para deixar claro que o casamento de padrões não
 
 <!-- livebook:{"break_markdown":true} -->
 
-Os demais exemplos de casamento de padrões só fazem sentido se você conhecer as estrturas de dados compostas (as coleções).
+Os demais exemplos de casamento de padrões só fazem sentido se você conhecer as estruturas de dados compostas (as coleções).
 
 ## Listas
 
