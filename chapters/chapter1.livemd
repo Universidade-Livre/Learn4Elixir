@@ -1001,7 +1001,7 @@ end
 Podemos retornar uma nova estrutura copiando os valores da antiga e alterando o que é necessário utilizando o operador `|`
 
 ```elixir
-# Cria a variávvel contento os valores de uma instância da nossa estrutura
+# Cria a variável contendo os valores de uma instância da nossa estrutura
 mentor = %Pessoa{nome: "Dickson Melo", idade: 20, cidade: "Natal"}
 ```
 
