@@ -654,10 +654,6 @@ Veja que acima nós construímos uma tupla a partir dos resultados do casamento 
 
 Mapas são coleções de pares chave-valor, onde cada chave é única e associada a um valor específico. Em Elixir, os mapas são delimitados por chaves %{} e podem conter zero ou mais pares chave-valor. Aqui está uma representação básica de um mapa em Elixir:
 
-<!-- livebook:{"break_markdown":true} -->
-
-
-
 ```elixir
 %{:chave1 => "valor 1", :chave2 => "valor 2", :chave3 => "valor 3"}
 ```
