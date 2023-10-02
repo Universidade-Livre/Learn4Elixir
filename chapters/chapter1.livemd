@@ -388,7 +388,7 @@ Uma variável é um nome que representa um valor. Podemos por exemplo atribuir o
 curso = "Matemática"
 ```
 
-Observe que o retorno da expressão (toda expressão em Elixir retorna algo, se não ocporrer nenhum erro) é o valor que, após o casamento de padrões, está dos dois lados do operador '='.
+Observe que o retorno da expressão (toda expressão em Elixir retorna algo, se não ocorrer nenhum erro) é o valor que, após o casamento de padrões, está dos dois lados do operador '='.
 
 <!-- livebook:{"break_markdown":true} -->
 
