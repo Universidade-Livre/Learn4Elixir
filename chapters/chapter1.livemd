@@ -612,7 +612,7 @@ Uma tupla é uma coleção ordenada de elementos. Parece um pouco com uma lista,
 {:nome, "Maria", :idade, 10}
 ```
 
-Após ver os exemplos acima, vamos ver como fazer casamento de padrões com tuplas. Suponha que você tem uma vaiável 'pessoa', como abaixo:
+Após ver os exemplos acima, vamos ver como fazer casamento de padrões com tuplas. Suponha que você tem uma variável 'pessoa', como abaixo:
 
 ```elixir
 pessoa = {:nome, "Maria", :idade, 10}
