@@ -388,7 +388,7 @@ Uma variável é um nome que representa um valor. Podemos por exemplo atribuir o
 curso = "Matemática"
 ```
 
-Observe que o retorno da expressão (toda expressão em Elixir retorna algo, se não ocporrer nenhum erro) é o valor que, após o casamento de padrões, está dos dois lados do operador '='.
+Observe que o retorno da expressão (toda expressão em Elixir retorna algo, se não ocorrer nenhum erro) é o valor que, após o casamento de padrões, está dos dois lados do operador '='.
 
 <!-- livebook:{"break_markdown":true} -->
 
@@ -440,7 +440,7 @@ O exemplo acima é importante para deixar claro que o casamento de padrões não
 
 <!-- livebook:{"break_markdown":true} -->
 
-Os demais exemplos de casamento de padrões só fazem sentido se você conhecer as estrturas de dados compostas (as coleções).
+Os demais exemplos de casamento de padrões só fazem sentido se você conhecer as estruturas de dados compostas (as coleções).
 
 ## Listas
 
@@ -554,7 +554,7 @@ Veremos depois como utilizar '_' com tuplas.
 
 <!-- livebook:{"break_markdown":true} -->
 
-Uma observação importante, e que está relacionada com a forma com que listas são implemantadas, é que as listas devem crescer a partir da cabeça. Ou seja, se eu for colocar um novo elemento, devo colocá-lo como primeiro elemento (mais à esquerda). Para isso, eu posso usar o operador '|' como nos exemplos abaixo.
+Uma observação importante, e que está relacionada com a forma com que listas são implementadas, é que as listas devem crescer a partir da cabeça. Ou seja, se eu for colocar um novo elemento, devo colocá-lo como primeiro elemento (mais à esquerda). Para isso, eu posso usar o operador '|' como nos exemplos abaixo.
 
 ```elixir
 [1 | [3, 4]]
@@ -568,7 +568,7 @@ Uma observação importante, e que está relacionada com a forma com que listas 
 [2, 3, 4 | [6, 7, 8, 9]]
 ```
 
-Apenas tenha cuidado para não gerar listas impóprias! Depois do '|' deve vir uma lista.
+Apenas tenha cuidado para não gerar listas impróprias! Depois do '|' deve vir uma lista.
 
 ```elixir
 [1 | 2]
@@ -612,7 +612,7 @@ Uma tupla é uma coleção ordenada de elementos. Parece um pouco com uma lista,
 {:nome, "Maria", :idade, 10}
 ```
 
-Após ver os exemplos acima, vamos ver como fazer casamento de padrões com tuplas. Suponha que você tem uma vaiável 'pessoa', como abaixo:
+Após ver os exemplos acima, vamos ver como fazer casamento de padrões com tuplas. Suponha que você tem uma variável 'pessoa', como abaixo:
 
 ```elixir
 pessoa = {:nome, "Maria", :idade, 10}
@@ -653,10 +653,6 @@ Veja que acima nós construímos uma tupla a partir dos resultados do casamento 
 ## Mapas (Maps)
 
 Mapas são coleções de pares chave-valor, onde cada chave é única e associada a um valor específico. Em Elixir, os mapas são delimitados por chaves %{} e podem conter zero ou mais pares chave-valor. Aqui está uma representação básica de um mapa em Elixir:
-
-<!-- livebook:{"break_markdown":true} -->
-
-
 
 ```elixir
 %{:chave1 => "valor 1", :chave2 => "valor 2", :chave3 => "valor 3"}
@@ -716,7 +712,7 @@ idade
 cidade
 ```
 
-Quando tentamos acessar uma chave que não existe em nosso mapa usando `[]` será retornad `nil` caso o valor dessa chave não exista.
+Quando tentamos acessar uma chave que não existe em nosso mapa usando `[]` será retornado `nil` caso o valor dessa chave não exista.
 
 ```elixir
 valores = %{"uno" => 1, "dos" => 2, "tres" => 3}
@@ -1005,7 +1001,7 @@ end
 Podemos retornar uma nova estrutura copiando os valores da antiga e alterando o que é necessário utilizando o operador `|`
 
 ```elixir
-# Cria a variávvel contento os valores de uma instância da nossa estrutura
+# Cria a variável contendo os valores de uma instância da nossa estrutura
 mentor = %Pessoa{nome: "Dickson Melo", idade: 20, cidade: "Natal"}
 ```
 
