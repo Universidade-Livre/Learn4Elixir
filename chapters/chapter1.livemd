@@ -554,7 +554,7 @@ Veremos depois como utilizar '_' com tuplas.
 
 <!-- livebook:{"break_markdown":true} -->
 
-Uma observação importante, e que está relacionada com a forma com que listas são implemantadas, é que as listas devem crescer a partir da cabeça. Ou seja, se eu for colocar um novo elemento, devo colocá-lo como primeiro elemento (mais à esquerda). Para isso, eu posso usar o operador '|' como nos exemplos abaixo.
+Uma observação importante, e que está relacionada com a forma com que listas são implementadas, é que as listas devem crescer a partir da cabeça. Ou seja, se eu for colocar um novo elemento, devo colocá-lo como primeiro elemento (mais à esquerda). Para isso, eu posso usar o operador '|' como nos exemplos abaixo.
 
 ```elixir
 [1 | [3, 4]]
