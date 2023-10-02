@@ -712,7 +712,7 @@ idade
 cidade
 ```
 
-Quando tentamos acessar uma chave que não existe em nosso mapa usando `[]` será retornad `nil` caso o valor dessa chave não exista.
+Quando tentamos acessar uma chave que não existe em nosso mapa usando `[]` será retornado `nil` caso o valor dessa chave não exista.
 
 ```elixir
 valores = %{"uno" => 1, "dos" => 2, "tres" => 3}
