@@ -119,7 +119,7 @@ Os principais objetivos do projeto Learn4Elixir são:
 
 Começar a aprender com o Learn4Elixir é muito mamão com açúcar, é só:
 
-1. [Fazer um fork desse repositório](#)
+1. [Fazer um fork desse repositório](https://github.com/Universidade-Livre/Learn4Elixir/fork)
 2. Adicione `hacktoberfest` nos "topics" (tópicos) do seu fork. Caso contrário os PRs não vão contar.
 3. [Instale a linguagem Elixir e/ou o Livebook](#)
 4. Abra o `src/Chapter1.livemd` e começe a resolver os desafios.
