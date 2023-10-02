@@ -4,6 +4,9 @@
   <a href="https://discord.gg/eXUBTY6HAu">
       <img src="https://img.shields.io/discord/866378348368625704.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2" alt="Discord">
   </a>
+  <a href="https://github.com/Universidade-Livre/Learn4Elixir/fork">
+      <img alt="GitHub forks" src="https://img.shields.io/github/forks/Universidade-Livre/Learn4Elixir?logo=git&logoColor=D8BFD8&labelColor=9400D3&color=D8BFD8">
+  </a>
 </p>
 
 <p align="justify">
