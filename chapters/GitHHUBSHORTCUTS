@@ -1,0 +1,40 @@
+Navigation Shortcuts:
+
+g + c - Go to the Code tab.
+g + i - Go to the Issues tab.
+g + p - Go to the Pull Requests tab.
+g + d - Go to your Dashboard.
+g + u - Go to your user profile.
+g + o - Go to the repository picker.
+Repository Shortcuts:
+
+t - Activate the file finder.
+w - Switch branches.
+y - Open the branch selector.
+File and Code Editing Shortcuts:
+
+. - Open a file's menu.
+t - File finder.
+w - Switch branches/tags.
+s - Focus on the file search bar.
+l - Jump to line in a file.
+Pull Request Shortcuts:
+
+c - Comment on a pull request conversation.
+r - Review a pull request.
+a - Approve a pull request.
+m - Merge a pull request.
+Issue Shortcuts:
+
+c - Comment on an issue.
+l - Label an issue.
+a - Assign an issue.
+i - Close/Reopen an issue.
+Global Shortcuts:
+
+s - Search within the current repository.
+? - Show available keyboard shortcuts.
+Commit List Shortcuts:
+
+j - Move to the next item.
+k - Move to the previous item.
