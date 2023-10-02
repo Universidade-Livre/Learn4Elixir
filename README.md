@@ -1,5 +1,11 @@
 ![Learn4Elixir](./resources/img/header_learn_elixir.png)
 
+<p align="center">
+  <a href="https://discord.gg/eXUBTY6HAu">
+      <img src="https://img.shields.io/discord/866378348368625704.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2" alt="Discord">
+  </a>
+</p>
+
 <p align="justify">
   <i>
   Há muito tempo, o lendário alquimista José Valim supostamente descobriu o segredo para criar 
@@ -64,7 +70,6 @@ próprio tempo e a seu critério, e, em seguida, deve-se abrir um Pull Request (
 
 <p align="justify">
 Caso necessite de feedback sobre sua solução, não hesite em nos chamar pelo canal #hacktoberfest do Discord
-<!-- [![Discord](https://img.shields.io/discord/866378348368625704.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/eXUBTY6HAu) -->
 da Universidade Brasileira Livre. Estaremos sempre disponíveis para ajudá-lo a compreender algum conceito de Elixir 
 que não tenha ficado claro, para corrigir sua solução ou, simplesmente, para incentivá-lo a continuar resolvendo 
 os exercícios.
