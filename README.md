@@ -234,6 +234,10 @@ mix escript.install hex livebook
 ```sh
 echo 'export PATH=$PATH:/root/.mix/escripts' >> ~/.bashrc
 source ~/.bashrc # ou feche e abra um novo terminal
+
+# Ou aponte para o .zshrc caso utilize o zsh.
+echo 'export PATH=$PATH:/root/.mix/escripts' >> ~/.zshrc
+source ~/.zshrc # ou feche e abra um novo terminal
 ```
 10. Rodar o livebook em sua máquina e acessar o link que ele vai lhe dar no navegador.
 ```
