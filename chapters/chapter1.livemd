@@ -101,7 +101,7 @@ Avalie os exemplos abaixo para ver o que acontece!
 ```
 
 ```elixir
-1.0e-10
+5.0e-2
 ```
 
 ```elixir
@@ -109,6 +109,10 @@ Avalie os exemplos abaixo para ver o que acontece!
 ```
 
 > Em qual dos exemplos acima aconteceu um erro? Por quê?
+
+<!-- livebook:{"break_markdown":true} -->
+
+Acredito que pelo fato não existir um número a esquerda do ponto.
 
 ## Átomos
 
@@ -1028,35 +1032,35 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
 ```elixir
-is_number("")
+is_number(1)
 ```
 
 ```elixir
-is_integer("")
+is_integer(1)
 ```
 
 ```elixir
-is_float("")
+is_float(1.0)
 ```
 
 ```elixir
-is_binary("")
+is_binary("Binário")
 ```
 
 ```elixir
-is_atom("")
+is_atom(:atom)
 ```
 
 ```elixir
-is_boolean("")
+is_boolean(true)
 ```
 
 ```elixir
-is_map("")
+is_map(%{})
 ```
 
 ```elixir
-is_tuple("")
+is_tuple({})
 ```
 
 ### Exercicio 2
@@ -1079,12 +1083,13 @@ Defina variáveis para cada salário, depois, atributa o cálculo de média arit
 
 ```elixir
 ocamilodev = 71255.53
-ocam_l =
-#...
+ocam_l = 30236.23
+camilotk_ = 5256.12
+# ...
 ```
 
 ```elixir
-media =
+media = (ocamilodev + ocam_l + camilotk_) / 3
 ```
 
 ```elixir
@@ -1103,15 +1108,15 @@ Resolva a equação quadrática **x² - 2x + 1 = 0** calculando seu delta e sua(
 > Dica: A operação de raíz quadrada é feita com `:math.sqrt()`, `:math` é um módulo do Erlang que contêm diversas funções matemáticas que podem ser úteis na sua jornada.
 
 ```elixir
-:math.sqrt(4)
+2 ** 2
 ```
 
 ```elixir
-delta =
+delta = :math.sqrt(-2 ** 2 - 4 * 1 * 1)
 ```
 
 ```elixir
-x =
+x = (2 + delta) / 2 * 1
 ```
 
 ### Exercicio 4
@@ -1190,31 +1195,38 @@ Com esses dados use **casamento de padrões** (pattern matching) para:
 1. Extrair o primeiro comentário.
 
 ```elixir
-
+[head | tail] = resposta_completa
+head
 ```
 
 1. Salvar o nome do segundo comentário em uma variável `titulo`.
 
 ```elixir
-titulo =
+[head | second_tail] = tail
+%{"name" => name} = head
+titulo = name
 ```
 
 1. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
 
 ```elixir
-
+[_, _, _, _, quinto | _] = resposta_completa
+Map.put(quinto, "email", "contato@foobar.br")
 ```
 
 1. Extrair o **body** do terceiro comentário.
 
 ```elixir
-
+[_, _, terceiro | _] = resposta_completa
+%{"body" => body} = terceiro
+body
 ```
 
 1. Criar uma nova lista removendo o segundo item.
 
 ```elixir
-
+[head | [_ | tail]] = resposta_completa
+[head | tail]
 ```
 
 ### Exercicio 5
@@ -1240,13 +1252,28 @@ E com base nesses dados foi pedido que:
 1. Crie um modelo de estrutura (struct) que represente o modelo de um planeta baseado nesses dados fornecidos. Ele deve ter valores default e todos os campos são requeridos.
 
 ```elixir
-
+defmodule Planeta do
+  @enforce_keys [:name, :superficie, :volume, :massa, :temperatura, :distancia_do_sol]
+  defstruct name: "",
+            superficie: 0.0,
+            volume: 0.0,
+            massa: 0.0,
+            temperatura: 0.0,
+            distancia_do_sol: 0.0
+end
 ```
 
 1. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-mercurio =
+mercurio = %Planeta{
+  name: "Mercúrio",
+  superficie: 7.48 * 10 ** 7,
+  volume: 6.083 * 10 ** 10,
+  massa: 3.3011 * 10 ** 23,
+  temperatura: 166.85,
+  distancia_do_sol: 57_910_000
+}
 ```
 
 1. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
@@ -1300,7 +1327,7 @@ netuno =
 Salve esse mapa criado em uma variável `sistema_solar`.
 
 ```elixir
-sistema_solar =
+sistema_solar = %{estrela: "Sol", nome: "Sistema Solar", planetas: [mercurio]}
 ```
 
 ---
