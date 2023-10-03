@@ -42,7 +42,7 @@ expandindo assim suas habilidades e conhecimentos.
 
 <p align="justify">
 E melhor que isso, ganhando os brindes da Hacktoberfest enquanto aprende algo novo e fascinante 
-com o apoio da Comunidade pelo Discord.
+com o apoio da Comunidade pelo [Discord](https://discord.gg/eXUBTY6HAu).
 </p>
 
 Vão ser:
@@ -72,7 +72,7 @@ próprio tempo e a seu critério, e, em seguida, deve-se abrir um Pull Request (
 </p>
 
 <p align="justify">
-Caso necessite de feedback sobre sua solução, não hesite em nos chamar pelo canal #hacktoberfest do Discord
+Caso necessite de feedback sobre sua solução, não hesite em nos chamar pelo canal #hacktoberfest do [Discord](https://discord.gg/eXUBTY6HAu)
 da Universidade Brasileira Livre. Estaremos sempre disponíveis para ajudá-lo a compreender algum conceito de Elixir 
 que não tenha ficado claro, para corrigir sua solução ou, simplesmente, para incentivá-lo a continuar resolvendo 
 os exercícios.
@@ -112,7 +112,7 @@ você. Esses são os tópicos de cada parte:
 Os principais objetivos do projeto Learn4Elixir são:
 - Criar um tutorial completo e organizado para aprender a programar em Elixir, sem a necessidade de conhecimentos prévios em programação funcional para pessoas que venham de outras linguagens de programação;
 - Criar um conteúdo educacional que explique os principais tópicos da Linguagem Elixir de forma acessível;
-- Gerar o feedback e suporte via Discord durante o mês de Outubro de 2023 para que seja possível agregar valor e ajudar a impulsionar os participantes que desejam aprender Elixir;
+- Gerar o feedback e suporte via [Discord](https://discord.gg/eXUBTY6HAu) durante o mês de Outubro de 2023 para que seja possível agregar valor e ajudar a impulsionar os participantes que desejam aprender Elixir;
 - Contribuir com o crescimento e incentivar novos desenvolvedores a aprender sobre o paradigma funcional, em especial sobre uma linguagem de programação criada no Brasil que vem ganhando muito destaque e crescendo no mercado nacional e internacional.
 
 ## Vamos lá?
@@ -519,7 +519,7 @@ Além de ser extramamente habilidoso com arte, também está estudando para ser 
 Você pode nos ajudar de diversas formas:
 - **Nos dê feedback**: Se você está fazendo o Learn4Elixir para nós saber como está sendo sua experiência é muito importante. Você pode fazer isso através desse formulário.
 - **Divulgação**: Para nós é muito dificil ter alcance e chegar em mais pessoas. Compartilhar sobre o projeto com mais pessoas nos ajuda a atingir pessoas que podem ser impactadas por essa iniciativa. Compartilhe sobre esse projeto nas suas redes sociais, converse sobre com seus amigos, indique para pessoas que queiram aprender Elixir, deixe um star nesse repositório e nos ajude compartilhando nosssas postagens sobre.
-- **Ajude outros estudantes**: Entre no nosso Discord, esteja atento nas issues, quando outras pessoas tiverem dificuldade ou dúvidas, ajude! O aprendizado é sempre catalizado por pessoas com o mesmo objetivo, quando todos se ajudam chegam mais longe e isso torna a joranada melhor para quem ajuda e para quem é ajudado.
+- **Ajude outros estudantes**: Entre no nosso [Discord](https://discord.gg/eXUBTY6HAu), esteja atento nas issues, quando outras pessoas tiverem dificuldade ou dúvidas, ajude! O aprendizado é sempre catalizado por pessoas com o mesmo objetivo, quando todos se ajudam chegam mais longe e isso torna a joranada melhor para quem ajuda e para quem é ajudado.
 - **Faça um PR**: Encontrou um erro? Algo que pode ser melhorado? Faça um Pull Request que vamos avaliar, discutir e atualizar o material. Todos cometem erros e tudo pode ser melhorado, é com a ajuda da Comunidade que construímos coisas cada vez melhor.
 - **Revisão de PR**: Tem um PR que outra pessoa fez em aberto? Clone-o, teste, opine. Ajude a avaliar e revisar PRs. Toda discussão útil é bem-vinda e nos ajuda a melhorar.
 
