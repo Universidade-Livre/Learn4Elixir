@@ -41,8 +41,10 @@ expandindo assim suas habilidades e conhecimentos.
 </p>
 
 <p align="justify">
+  
 E melhor que isso, ganhando os brindes da Hacktoberfest enquanto aprende algo novo e fascinante 
 com o apoio da Comunidade pelo [Discord](https://discord.gg/eXUBTY6HAu).
+
 </p>
 
 Vão ser:
@@ -72,10 +74,12 @@ próprio tempo e a seu critério, e, em seguida, deve-se abrir um Pull Request (
 </p>
 
 <p align="justify">
+  
 Caso necessite de feedback sobre sua solução, não hesite em nos chamar pelo canal #hacktoberfest do [Discord](https://discord.gg/eXUBTY6HAu)
 da Universidade Brasileira Livre. Estaremos sempre disponíveis para ajudá-lo a compreender algum conceito de Elixir 
 que não tenha ficado claro, para corrigir sua solução ou, simplesmente, para incentivá-lo a continuar resolvendo 
 os exercícios.
+
 </p>
 
 <p align="justify">
