@@ -41,10 +41,8 @@ expandindo assim suas habilidades e conhecimentos.
 </p>
 
 <p align="justify">
-  
 E melhor que isso, ganhando os brindes da Hacktoberfest enquanto aprende algo novo e fascinante 
-com o apoio da Comunidade pelo [Discord](https://discord.gg/eXUBTY6HAu).
-
+com o apoio da Comunidade pelo <a href="https://discord.gg/eXUBTY6HAu">Discord</a>.
 </p>
 
 Vão ser:
@@ -66,46 +64,36 @@ disponíveis em _livebooks_ (um _livebook_ é um arquivo contendo texto e códig
 - [Capítulo 4](./chapters/chapter4.livemd)
 
 <p align="justify">
-  
-Para concluir este tutorial, é necessário que você realize um _fork_ deste repositório. Dentro do mesmo, 
-encontram-se quatro _livebooks_ que contêm o conteúdo educacional, incluindo textos, links para vídeos, exemplos de código 
+Para concluir este tutorial, é necessário que você realize um <i>fork</i> deste repositório. Dentro do mesmo, 
+encontram-se quatro <i>livebooks</i> que contêm o conteúdo educacional, incluindo textos, links para vídeos, exemplos de código 
 e exercícios. Mesmo que você não possua conhecimento prévio em programação funcional, é recomendado que tenha 
 familiaridade com alguma linguagem de programação antes de começar. Os exercícios podem ser resolvidos em seu 
 próprio tempo e a seu critério, e, em seguida, deve-se abrir um Pull Request (PR) para o seu fork deste projeto.
-
 </p>
 
 <p align="justify">
-  
-Caso necessite de feedback sobre sua solução, não hesite em nos chamar pelo canal #hacktoberfest do [Discord](https://discord.gg/eXUBTY6HAu)
+Caso necessite de feedback sobre sua solução, não hesite em nos chamar pelo canal #hacktoberfest do <a href="https://discord.gg/eXUBTY6HAu">Discord</a>
 da Universidade Brasileira Livre. Estaremos sempre disponíveis para ajudá-lo a compreender algum conceito de Elixir 
 que não tenha ficado claro, para corrigir sua solução ou, simplesmente, para incentivá-lo a continuar resolvendo 
 os exercícios.
-
 </p>
 
 <p align="justify">
-  
 Cada parte deste tutorial contém informações únicas e abrange diferentes tópicos sobre a linguagem Elixir. Embora 
 seja recomendável que você siga a ordem dos capítulos, não estamos aqui para julgar sua forma de estudar e aprender. 
 Caso sinta-se confortável em pular algum capítulo por já ter familiaridade com alguma parte do conteúdo ou se julgar 
 que é melhor fazer os capítulos em uma ordem diferente da padrão, tudo bem.
-
 </p>
 
 <p align="justify">
-  
 As partes deste tutorial estão organizadas para que não seja necessário ajuda externa além dos links e ferramentas 
 que estão contidos no conteúdo de cada parte. Normalmente, espera-se que você gaste algumas horas por capítulo, mas 
 é um investimento de tempo que podemos garantir que valerá a pena.
-
 </p>
 
 <p align="justify">
-  
 Após concluir todos os exercícios, você será capaz de ler, modificar e criar código em Elixir de forma independente, 
 entender como fazer código usando o paradigma funcional e aplicar esses conceitos na linguagem que você trabalha.
-
 </p>
 
 ### Programa do Curso
