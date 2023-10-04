@@ -135,6 +135,8 @@ Você já pode começar os desafios agora mesmo fazendo o seu fork. Logo mais vo
 
 ## Instalando Elixir e o Livebook
 
+Na confecção deste projeto, usamos a versão "v0.10.0" do Livebook, rodando em cima da versão "v1.15.2" do Elixir.
+
 <strong>🪟 Windows:</strong>
 <details>
 
