@@ -1085,7 +1085,7 @@ media =
 
 ```elixir
 # Checa se a resposta está correta
-if media == 35582.62666666666 do
+if floor(media) == 35582 do
   "Parabéns, você acertou!"
 else
   "Errooooou!"
