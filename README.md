@@ -52,12 +52,16 @@ Vão ser:
 - 4 Pull Requests para explodir a sua mente com conhecimento de algo novo.
 
 ## O que é o Learn4Elixir?
-
+<p align="justify">
 Learn4Elixir é um material de aprendizado hospedado no GitHub com o objetivo de ensinar as pessoas
 a dar os primeiros passos em Elixir e em Programação Funcional enquanto fazem 4 Pull Requests.
+</p>
 
+<p align="justify">
 Esse repositório está organizado com conteúdo e exercicios de código. Todos os conteúdos estão 
-disponíveis em _livebooks_ (um _livebook_ é um arquivo contendo texto e código executável em uma instalação de http://livebook.dev), e você pode acompanhar acessando os links:
+disponíveis em <i>livebooks</i> (um <i>livebook</i> é um arquivo contendo texto e código executável em uma instalação de http://livebook.dev), e você pode acompanhar acessando os links:
+</p>
+
 - [Capítulo 1](./chapters/chapter1.livemd)
 - [Capítulo 2](./chapters/chapter2.livemd)
 - [Capítulo 3](./chapters/chapter3.livemd)
