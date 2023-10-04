@@ -574,7 +574,7 @@ Apenas tenha cuidado para não gerar listas impróprias! Depois do '|' deve vir 
 [1 | 2]
 ```
 
-Embora seja uma possível, desaconselha-se a concatenação de listas usando o operador `++/2` quando a segunda lista for grande.
+Embora seja uma possível, desaconselha-se a concatenação de listas usando o operador `++/2` quando a primeira lista for grande.
 
 ```elixir
 [1, 3, 56] ++ [34, 560, 8]
