@@ -530,7 +530,7 @@ Porém, o exemplo abaixo resulta em erro.
 [cabeca | cauda] = []
 ```
 
-Isso acontece porque não existe nenhum valor para ser associado à variável `cabeca`, pois `cabeça`, nesse contexto, representa o primeiro elemento da lista.
+Isso acontece porque não existe nenhum valor para ser associado à variável `cabeca`, pois `cabeca`, nesse contexto, representa o primeiro elemento da lista.
 
 No casamento de padrões, você pode usar o operador '_', que alguns chamam de "coringa", para ignorar algo.
 
