@@ -113,6 +113,7 @@ você. Esses são os tópicos de cada parte:
 
 ## Objetivos
 
+
 Os principais objetivos do projeto Learn4Elixir são:
 - Criar um tutorial completo e organizado para aprender a programar em Elixir, sem a necessidade de conhecimentos prévios em programação funcional para pessoas que venham de outras linguagens de programação;
 - Criar um conteúdo educacional que explique os principais tópicos da Linguagem Elixir de forma acessível;
