@@ -1024,35 +1024,35 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
 ```elixir
-is_number("")
+is_number(5.0)
 ```
 
 ```elixir
-is_integer("")
+is_integer(8)
 ```
 
 ```elixir
-is_float("")
+is_float(9.2)
 ```
 
 ```elixir
-is_binary("")
+is_binary("true")
 ```
 
 ```elixir
-is_atom("")
+is_atom(true)
 ```
 
 ```elixir
-is_boolean("")
+is_boolean(true)
 ```
 
 ```elixir
-is_map("")
+is_map(%{:value => true})
 ```
 
 ```elixir
-is_tuple("")
+is_tuple({"true", true})
 ```
 
 ### Exercicio 2
@@ -1075,12 +1075,14 @@ Defina variáveis para cada salário, depois, atributa o cálculo de média arit
 
 ```elixir
 ocamilodev = 71255.53
-ocam_l =
-#...
+ocam_l = 30236.23
+camilotk_ = 5256.12
+# ...
 ```
 
 ```elixir
-media =
+salaries = [ocamilodev, ocam_l, camilotk_]
+media = Enum.reduce(salaries, fn salary, sum -> sum + salary end) / Enum.count(salaries)
 ```
 
 ```elixir
@@ -1103,11 +1105,11 @@ Resolva a equação quadrática **x² - 2x + 1 = 0** calculando seu delta e sua(
 ```
 
 ```elixir
-delta =
+delta = :math.sqrt(2 ** 2 - 4 * 1 * 1)
 ```
 
 ```elixir
-x =
+x = -(-2) / 2 * 1
 ```
 
 ### Exercicio 4
@@ -1186,31 +1188,37 @@ Com esses dados use **casamento de padrões** (pattern matching) para:
 1. Extrair o primeiro comentário.
 
 ```elixir
-
+[primeira_resposta, segunda_resposta, terceira_resposta | _] = resposta_completa
+primeira_resposta
 ```
 
 1. Salvar o nome do segundo comentário em uma variável `titulo`.
 
 ```elixir
-titulo =
+titulo = segunda_resposta["name"]
 ```
 
 1. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
 
 ```elixir
+resposta =
+  Enum.find(resposta_completa, fn resposta ->
+    resposta["id"] == 11 and resposta["productId"] == 3
+  end)
 
+nova_resposta = %{resposta | "email" => "contato@foobar.br"}
 ```
 
 1. Extrair o **body** do terceiro comentário.
 
 ```elixir
-
+terceira_resposta["body"]
 ```
 
 1. Criar uma nova lista removendo o segundo item.
 
 ```elixir
-
+List.delete_at(resposta_completa, 3)
 ```
 
 ### Exercicio 5
@@ -1236,55 +1244,120 @@ E com base nesses dados foi pedido que:
 1. Crie um modelo de estrutura (struct) que represente o modelo de um planeta baseado nesses dados fornecidos. Ele deve ter valores default e todos os campos são requeridos.
 
 ```elixir
-
+defmodule Planet do
+  defstruct [
+    :name,
+    :lenght_in_km2,
+    :volume_in_km3,
+    :mass_in_kg,
+    :average_celsius,
+    :distance_from_sun_in_km
+  ]
+end
 ```
 
 1. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-mercurio =
+mercurio = %Planet{
+  name: "Mercúrio",
+  lenght_in_km2: 7.48e7,
+  volume_in_km3: 6.083e10,
+  mass_in_kg: 3.3011e23,
+  average_celsius: 166.85e10,
+  distance_from_sun_in_km: 57_910_000
+}
 ```
 
 1. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-venus =
+venus = %Planet{
+  name: "Vênus",
+  lenght_in_km2: 4.60e8,
+  volume_in_km3: 92.843e10,
+  mass_in_kg: 4.8685e24,
+  average_celsius: 461,
+  distance_from_sun_in_km: 108_200_000
+}
 ```
 
 1. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-terra =
+terra = %Planet{
+  name: "Terra",
+  lenght_in_km2: 5.10e8,
+  volume_in_km3: 1.08321e12,
+  mass_in_kg: 5.9736e24,
+  average_celsius: 14,
+  distance_from_sun_in_km: 149_600_000
+}
 ```
 
 1. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-marte =
+marte = %Planet{
+  name: "Marte",
+  lenght_in_km2: 1.44e8,
+  volume_in_km3: 1.6318e11,
+  mass_in_kg: 6.4174e23,
+  average_celsius: -63,
+  distance_from_sun_in_km: 227_940_000
+}
 ```
 
 1. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-jupiter =
+jupiter = %Planet{
+  name: "Júpiter",
+  lenght_in_km2: 6.21796e10,
+  volume_in_km3: 1.43128e15,
+  mass_in_kg: 1.8986e27,
+  average_celsius: -108,
+  distance_from_sun_in_km: 778_330_000
+}
 ```
 
 1. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-saturno =
+saturno = %Planet{
+  name: "Saturno",
+  lenght_in_km2: 4.27e10,
+  volume_in_km3: 8.2713e14,
+  mass_in_kg: 5.6846e26,
+  average_celsius: -139,
+  distance_from_sun_in_km: 1_429_400_000
+}
 ```
 
 1. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-urano =
+urano = %Planet{
+  name: "Urano",
+  lenght_in_km2: 8.1156e9,
+  volume_in_km3: 6.833e13,
+  mass_in_kg: 8.6810e25,
+  average_celsius: -220,
+  distance_from_sun_in_km: 2_870_990_000
+}
 ```
 
 1. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-netuno =
+netuno = %Planet{
+  name: "Netuno",
+  lenght_in_km2: 7.6183e9,
+  volume_in_km3: 6.254e13,
+  mass_in_kg: 1.0243e26,
+  average_celsius: -223,
+  distance_from_sun_in_km: 4_504_000_000
+}
 ```
 
 1. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
@@ -1296,7 +1369,11 @@ netuno =
 Salve esse mapa criado em uma variável `sistema_solar`.
 
 ```elixir
-sistema_solar =
+sistema_solar = %{
+  :estrela => "Sol",
+  :nome => "Sistema Solar",
+  :planetas => [venus, mercurio, terra, marte, jupiter, saturno, urano, netuno]
+}
 ```
 
 ---
