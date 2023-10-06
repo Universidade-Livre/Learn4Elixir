@@ -345,16 +345,17 @@ E então resolva esses problemas:
 
 <!-- livebook:{"break_markdown":true} -->
 
-1. Retorne o temanho da String "pneumoultramicroscopicossilicovulcanoconiótico".
+1. Retorne o tamanho da String "pneumoultramicroscopicossilicovulcanoconiótico".
 
 ```elixir
-
+String.length("pneumoultramicroscopicossilicovulcanoconiótico")
 ```
 
 1. Retorne um Lista que possui os mesmos items da lista [:a :b :c] porém com os itens na ordem contrária, ou seja [:c :b :a].
 
 ```elixir
-
+lista = [:a, :b, :c]
+Enum.reverse(lista)
 ```
 
 1. Retorne um novo mapa que é a união desses dois mapas:
@@ -365,7 +366,9 @@ segundo_mapa  = %{ :tres  =>  3, :quatro => 4 }
 ```
 
 ```elixir
-
+primeiro_mapa = %{:um => 1, :dois => 2}
+segundo_mapa = %{:tres => 3, :quatro => 4}
+Map.merge(primeiro_mapa, segundo_mapa)
 ```
 
 1. Retorne uma lista de palavras da setença:
@@ -378,7 +381,7 @@ Como de hábito, Policarpo Quaresma, mais conhecido por Major Quaresma, bateu em
 ```
 
 ```elixir
-
+String.split(setenca)
 ```
 
 1. Multiplique todos os itens da seguinte lista e retorne a soma de todos seus items sobrados.
@@ -389,7 +392,7 @@ lista_de_numeros = [4, 8, 12, 16, 20, 24, 28, 32, 36]
 ```
 
 ```elixir
-
+Enum.reduce(lista_de_numeros, fn number, accumulator -> number * accumulator end)
 ```
 
 ### Exercício 2
@@ -563,43 +566,45 @@ Você decide criar um programa em Elixir para ajudar a analisar e apresentar os 
 * Destacar a mediana dos raios para mostrar uma dimensão central dos círculos usados.
 
 ```elixir
-circulos = [2, 4, 3, 6, 20, 17, 5, 11, 9, 13, 2, 20]
+circulos = [5, 4, 3, 6, 20, 17, 5, 11, 9, 13, 2, 20]
 ```
 
 Neste exercício, a documentação oficial do módulo [Enum](https://hexdocs.pm/elixir/1.12/Enum.html) vai ser de grande ajuda. Sinta-se à vontade para explorar os recursos e funções oferecidos por este módulo para realizar as operações desejadas em sua análise de dados. Boa sorte em seu concurso de escultura de círculos!"
 
 ```elixir
 defmodule CalculoEsculturas do
-  def raio_minimo() do
-    # A fazer
+  def raio_minimo(raios) do
+    Enum.min(raios)
   end
 
-  def raio_maximo() do
-    # A fazer
+  def raio_maximo(circulos) do
+    Enum.max(raios)
   end
 
-  def diametro_minimo() do
-    # A fazer
+  def diametro_minimo(raios) do
+    raio_minimo(raios) * 2
   end
 
-  def diametro_maximo() do
-    # A fazer
+  def diametro_maximo(raios) do
+    raio_maximo(raios) * 2
   end
 
-  def area_minima() do
-    # A fazer
+  def area_minima(raios) do
+    2 * raio_minimo(raios) ** 2
   end
 
-  def area_maxima() do
-    # A fazer
+  def area_maxima(raios) do
+    2 * raio_maximo(raios) ** 2
   end
 
-  def media_raios() do
-    # A fazer
+  def media_raios(raios) do
+    soma = Enum.reduce(raios, fn numero, acc -> numero + acc end)
+    media = soma / length(raios)
+    media
   end
 
-  def numero_de_circulos() do
-    # A fazer
+  def numero_de_circulos(raios) do
+    length(raios)
   end
 
   def ordena_raios() do
