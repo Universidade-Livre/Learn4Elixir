@@ -1024,35 +1024,35 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
 ```elixir
-is_number("")
+is_number(42)
 ```
 
 ```elixir
-is_integer("")
+is_integer(42)
 ```
 
 ```elixir
-is_float("")
+is_float(42.0)
 ```
 
 ```elixir
-is_binary("")
+is_binary("42")
 ```
 
 ```elixir
-is_atom("")
+is_atom(:atom)
 ```
 
 ```elixir
-is_boolean("")
+is_boolean(false)
 ```
 
 ```elixir
-is_map("")
+is_map(%{key: "value"})
 ```
 
 ```elixir
-is_tuple("")
+is_tuple({"this", "is", "a tuple"})
 ```
 
 ### Exercicio 2
