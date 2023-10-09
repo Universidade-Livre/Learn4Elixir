@@ -1075,12 +1075,13 @@ Defina variáveis para cada salário, depois, atribua o cálculo de média aritm
 
 ```elixir
 ocamilodev = 71255.53
-ocam_l =
-#...
+ocam_l = 30236.23
+camilotk_ = 5256.12
 ```
 
 ```elixir
-media =
+avg = fn x, y, z -> (x + y + z) / 3 end
+media = avg.(ocamilodev, ocam_l, camilotk_)
 ```
 
 ```elixir
