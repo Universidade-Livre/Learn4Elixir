@@ -1126,7 +1126,7 @@ Trabalhando com Elixir você desenvolveu um sistema de E-commerce. Recentemente 
 A resposta completa foi:
 
 ```elixir
-resposta_completa = [
+response = [
   %{
     "productId" => 1,
     "id" => 1,
@@ -1188,32 +1188,38 @@ Com esses dados use **casamento de padrões** (pattern matching) para:
 
 1. Extrair o primeiro comentário.
 
-```elixir
-
+``` elixir
+[first | _] = response
+first
 ```
 
-2. Salvar o nome do segundo comentário em uma variável `titulo`.
+1. Salvar o nome do segundo comentário em uma variável `title`.
 
 ```elixir
-titulo =
+[_, second | _] = response
+title = second["name"]
 ```
 
-3. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
+1. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
 
 ```elixir
+[_, _, _, _, fifth | _] = response
 
+%{fifth | "email" => "contato@foobar.br"}
 ```
 
-4. Extrair o **body** do terceiro comentário.
+1. Extrair o **body** do terceiro comentário.
 
 ```elixir
-
+[_, _, third | _] = response
+third["body"]
 ```
 
-5. Criar uma nova lista removendo o segundo item.
+1. Criar uma nova lista removendo o segundo item.
 
 ```elixir
-
+[first, second | others] = response
+[first | others]
 ```
 
 ### Exercicio 5
