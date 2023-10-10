@@ -975,7 +975,7 @@ Ambas chaves, com e sem valor padrão, podem ser misturadas na declaração de u
 
 ```elixir
 defmodule Animal do
-  defstruct [:nome, especie: "", localizacao: "", :idade]
+  defstruct [:nome, :idade, especie: "", localizacao: ""]
 end
 ```
 
@@ -995,7 +995,7 @@ end
 ```
 
 ```elixir
-%Jogador{}
+%Jogador{nome: "Gustavo", idade: 24, cidade: "Bento Gonçalves"}
 ```
 
 > Resolva esse erro passando os campos que são necessários na célula acima.
@@ -1028,35 +1028,35 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
 ```elixir
-is_number("")
+is_number(5)
 ```
 
 ```elixir
-is_integer("")
+is_integer(2)
 ```
 
 ```elixir
-is_float("")
+is_float(2.3)
 ```
 
 ```elixir
-is_binary("")
+is_binary("batatinha123")
 ```
 
 ```elixir
-is_atom("")
+is_atom(:abacaxi)
 ```
 
 ```elixir
-is_boolean("")
+is_boolean(false)
 ```
 
 ```elixir
-is_map("")
+is_map(%{nome: "Gustavo", idade: 25})
 ```
 
 ```elixir
-is_tuple("")
+is_tuple({:jogador, "Alan Patrick"})
 ```
 
 ### Exercicio 2
@@ -1079,12 +1079,12 @@ Defina variáveis para cada salário, depois, atributa o cálculo de média arit
 
 ```elixir
 ocamilodev = 71255.53
-ocam_l =
-#...
+ocam_l = 30236.23
+camilotk_ = 5256.12
 ```
 
 ```elixir
-media =
+media = (ocamilodev + ocam_l + camilotk_) / 3
 ```
 
 ```elixir
