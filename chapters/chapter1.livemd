@@ -847,7 +847,7 @@ idade
 curso = %{nome: "Ciência da Computação", duracao: 5, inicio: 2023}
 
 # Casando o mapa, mas ignorando nome
-%{nome: _, duracao: duracao, inicio: inicio} = curso
+%{duracao: duracao, inicio: inicio} = curso
 
 # soma os valores extraídos do mapa/registro
 inicio + duracao
@@ -888,6 +888,10 @@ Podemos construir um novo mapa com as chaves extraidas.
 
 ```elixir
 %{cidade: cidade}
+```
+
+```elixir
+cidade
 ```
 
 Podemos usar o operador `|` que vimos anteriormente em Listas para atualizar os valores em mapas.
@@ -971,7 +975,7 @@ Ambas chaves, com e sem valor padrão, podem ser misturadas na declaração de u
 
 ```elixir
 defmodule Animal do
-  defstruct [:nome, especie: "", localizacao: "", :idade]
+  defstruct [:nome, :idade, especie: "", localizacao: ""]
 end
 ```
 
@@ -991,7 +995,7 @@ end
 ```
 
 ```elixir
-%Jogador{}
+%Jogador{nome: "Vitor", idade: 23, cidade: "fortaleza"}
 ```
 
 > Resolva esse erro passando os campos que são necessários na célula acima.
@@ -1024,35 +1028,35 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
 ```elixir
-is_number("")
+is_number(1)
 ```
 
 ```elixir
-is_integer("")
+is_integer(1)
 ```
 
 ```elixir
-is_float("")
+is_float(1.0)
 ```
 
 ```elixir
-is_binary("")
+is_binary("hello world")
 ```
 
 ```elixir
-is_atom("")
+is_atom(:hello)
 ```
 
 ```elixir
-is_boolean("")
+is_boolean(true)
 ```
 
 ```elixir
-is_map("")
+is_map(%{})
 ```
 
 ```elixir
-is_tuple("")
+is_tuple({})
 ```
 
 ### Exercicio 2
@@ -1075,12 +1079,12 @@ Defina variáveis para cada salário, depois, atribua o cálculo de média aritm
 
 ```elixir
 ocamilodev = 71255.53
-ocam_l =
-#...
+ocam_l = 30236.23
+camilotk_ = 5256.12
 ```
 
 ```elixir
-media =
+media = (ocamilodev + ocam_l + camilotk_) / 3
 ```
 
 ```elixir
@@ -1103,11 +1107,20 @@ Resolva a equação quadrática **x² - 2x + 1 = 0** calculando seu delta e sua(
 ```
 
 ```elixir
-delta =
+a = 1
+b = -2
+c = 1
 ```
 
 ```elixir
-x =
+delta = :math.pow(b, 2) - 4 * a * c
+```
+
+```elixir
+x1 = (-b + :math.sqrt(delta)) / (2 * a)
+x2 = (-b - :math.sqrt(delta)) / (2 * a)
+
+{x1, x2}
 ```
 
 ### Exercicio 4
@@ -1186,31 +1199,47 @@ Com esses dados use **casamento de padrões** (pattern matching) para:
 1. Extrair o primeiro comentário.
 
 ```elixir
+[first, second | _] = resposta_completa
 
+first
 ```
 
-2. Salvar o nome do segundo comentário em uma variável `titulo`.
+1. Salvar o nome do segundo comentário em uma variável `titulo`.
 
 ```elixir
-titulo =
+[_, %{"name" => titulo} | _] = resposta_completa
+
+titulo
 ```
 
-3. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
+1. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
 
 ```elixir
-
+%{Enum.at(resposta_completa, 4) | "email" => "contato@foobar.br"}
 ```
 
-4. Extrair o **body** do terceiro comentário.
-
 ```elixir
-
+# Essa solução filtra com base no valor dos campos, em vez de pegar pelo index
+%{
+  Enum.find(resposta_completa, fn x -> x["id"] == 11 and x["productId"] == 3 end)
+  | "email" => "contato@foobar.br"
+}
 ```
 
-5. Criar uma nova lista removendo o segundo item.
+1. Extrair o **body** do terceiro comentário.
 
 ```elixir
+%{"body" => body} = Enum.at(resposta_completa, 2)
 
+body
+```
+
+1. Criar uma nova lista removendo o segundo item.
+
+```elixir
+resposta_filtrada = resposta_completa -- [Enum.at(resposta_completa, 1)]
+
+resposta_filtrada
 ```
 
 ### Exercicio 5
@@ -1236,58 +1265,76 @@ E com base nesses dados foi pedido que:
 1. Crie um modelo de estrutura (struct) que represente o modelo de um planeta baseado nesses dados fornecidos. Ele deve ter valores default e todos os campos são requeridos.
 
 ```elixir
-
+defmodule Planet do
+  @enforce_keys [:nome, :superficie, :volume, :massa, :temperatura, :distSol]
+  defstruct nome: "", superficie: 0.0, volume: 0.0, massa: 0.0, temperatura: 0.0, distSol: 0.0
+end
 ```
 
-2. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-mercurio =
+# Só vou fazer dois para evitar a repetição, mas bolei outra solução no final do exercício
+mercurio = %Planet{
+  nome: "Mercúrio",
+  superficie: 7.48 * :math.pow(10, 7),
+  volume: 6.083 * :math.pow(10, 10),
+  massa: 3.3011 * :math.pow(10, 23),
+  temperatura: 166.85,
+  distSol: 57_910_000
+}
 ```
 
-3. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-venus =
+venus = %Planet{
+  nome: "Vênus",
+  superficie: 459_999_999.99999994,
+  volume: 928_430_000_000.0,
+  massa: 4.8685e24,
+  temperatura: 461,
+  distSol: 108_200_000
+}
 ```
 
-4. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-terra =
+terra = nil
 ```
 
-5. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-marte =
+marte = nil
 ```
 
-6. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-jupiter =
+jupiter = nil
 ```
 
-7. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-saturno =
+saturno = nil
 ```
 
-8. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-urano =
+urano = nil
 ```
 
-9. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-netuno =
+netuno = nil
 ```
 
-10. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
+1. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
 
 * **:estrela**: String, valor "Sol"
 * **:nome**: String, valor "Sistema Solar"
@@ -1296,7 +1343,103 @@ netuno =
 Salve esse mapa criado em uma variável `sistema_solar`.
 
 ```elixir
-sistema_solar =
+sistema_solar_menor = %{
+  :estrela => "Sol",
+  :nome => "Sistema Solar",
+  :planetas => [mercurio, venus]
+}
+```
+
+```elixir
+# Lista gerada pelo Bard a partir da planilha
+planetas = [
+  [
+    "Mercúrio",
+    7.48 * :math.pow(10, 7),
+    6.083 * :math.pow(10, 10),
+    3.3011 * :math.pow(10, 23),
+    166.85,
+    57_910_000
+  ],
+  [
+    "Vênus",
+    4.60 * :math.pow(10, 8),
+    92.843 * :math.pow(10, 10),
+    4.8685 * :math.pow(10, 24),
+    461,
+    108_200_000
+  ],
+  [
+    "Terra",
+    5.10 * :math.pow(10, 8),
+    1.08321 * :math.pow(10, 12),
+    5.9736 * :math.pow(10, 24),
+    14,
+    149_600_000
+  ],
+  [
+    "Marte",
+    1.44 * :math.pow(10, 8),
+    1.6318 * :math.pow(10, 11),
+    6.4174 * :math.pow(10, 23),
+    -63,
+    227_940_000
+  ],
+  [
+    "Júpiter",
+    6.21796 * :math.pow(10, 10),
+    1.43128 * :math.pow(10, 15),
+    1.8986 * :math.pow(10, 27),
+    -108,
+    778_330_000
+  ],
+  [
+    "Saturno",
+    4.27 * :math.pow(10, 10),
+    8.2713 * :math.pow(10, 14),
+    5.6846 * :math.pow(10, 26),
+    -139,
+    1_429_400_000
+  ],
+  [
+    "Urano",
+    8.1156 * :math.pow(10, 9),
+    6.833 * :math.pow(10, 13),
+    8.6810 * :math.pow(10, 25),
+    -220,
+    2_870_990_000
+  ],
+  [
+    "Netuno",
+    7.6183 * :math.pow(10, 9),
+    6.254 * :math.pow(10, 13),
+    1.0243 * :math.pow(10, 26),
+    -223,
+    4_504_000_000
+  ]
+]
+```
+
+```elixir
+# Antecipei o uso de funções pra revitar a repetição de ter que criar todos os planetas um a um, mas a seguir tem um exemplo usando dois planetas da proposta sem funções
+
+sistema_solar_completo = %{
+  :estrela => "Sol",
+  :nome => "Sistema Solar",
+  :planetas =>
+    Enum.map(planetas, fn x ->
+      [nome, superficie, volume, massa, temperatura, distSol | _] = x
+
+      %Planet{
+        nome: nome,
+        superficie: superficie,
+        volume: volume,
+        massa: massa,
+        temperatura: temperatura,
+        distSol: distSol
+      }
+    end)
+}
 ```
 
 ---
