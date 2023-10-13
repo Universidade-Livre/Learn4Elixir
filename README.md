@@ -208,7 +208,7 @@ mix escript.install hex livebook
 
 9. Maravilha! Agora o livebook já está instalado. Para testar execute o comando abaixo.
 ```sh
-livebook serve
+livebook server
 ```
 
 Perfeito! Agora você já tem o Elixir, Erlang e Livebook instalados corretamente. Caso queira instalar o Livebook de outra forma no macOS, recomendamos instalar utilizando o [instalador oficial na página do Livebook](https://livebook.dev/#install), basta baixar e instalar normalmente. Caso deseje utilizar múltiplas versões do Elixir, recomendo acessar o guia de instalação com o asdf.
