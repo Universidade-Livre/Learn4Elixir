@@ -345,21 +345,21 @@ E então resolva esses problemas:
 
 <!-- livebook:{"break_markdown":true} -->
 
-1. Retorne o temanho da String "pneumoultramicroscopicossilicovulcanoconiótico".
+1. Retorne o tamanho da String "pneumoultramicroscopicossilicovulcanoconiótico".
 
 ```elixir
 
 ```
 
-1. Retorne um Lista que possui os mesmos items da lista [:a :b :c] porém com os itens na ordem contrária, ou seja [:c :b :a].
+2. Retorne uma Lista que possui os mesmos items da lista [:a, :b, :c] porém com os itens na ordem contrária, ou seja [:c, :b, :a].
 
 ```elixir
 
 ```
 
-1. Retorne um novo mapa que é a união desses dois mapas:
+3. Retorne um novo mapa que é a união desses dois mapas:
 
-```Elixir
+```elixir
 primeiro_mapa = %{ :um  =>  1, :dois => 2 }
 segundo_mapa  = %{ :tres  =>  3, :quatro => 4 }
 ```
@@ -368,11 +368,11 @@ segundo_mapa  = %{ :tres  =>  3, :quatro => 4 }
 
 ```
 
-1. Retorne uma lista de palavras da setença:
+4. Retorne uma lista de palavras da sentença:
 
 ```elixir
 # execute essa célula de código
-setenca = """
+sentenca = """
 Como de hábito, Policarpo Quaresma, mais conhecido por Major Quaresma, bateu em casa às quatro e quinze da tarde. Havia mais de vinte anos que isso acontecia. Saindo do Arsenal de Guerra, onde era subsecretário, bongava pelas confeitarias algumas frutas, comprava um queijo, às vezes, e sempre o pão da padaria francesa.
 """
 ```
@@ -381,7 +381,7 @@ Como de hábito, Policarpo Quaresma, mais conhecido por Major Quaresma, bateu em
 
 ```
 
-1. Multiplique todos os itens da seguinte lista e retorne a soma de todos seus items sobrados.
+5. Crie uma nova lista onde cada elemento corresponde a um elemento  da lista abaixo multiplicado por 2. Depois disso, some todos os elementos da nova lista.
 
 ```elixir
 # execute essa célula de código
