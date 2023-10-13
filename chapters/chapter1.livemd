@@ -20,7 +20,7 @@ Um dos casos mais conhecidos de empresa que usa Elixir em produção como uma de
 
 Outros exemplos de empresas que usam Elixir em produção podem ser encontrados [seção Cases da página da linguagem Elixir](https://elixir-lang.org/cases.html).
 
-*Agora vamos começar a aprender Elixir!*
+_Agora vamos começar a aprender Elixir!_
 
 ## O que é um valor?
 
@@ -54,13 +54,13 @@ Vamos começar nossa exploração pelos tipos de dados fundamentais na programa�
 
 ## Números Inteiros
 
-Abaixo você pode  ver e avaliar vários números inteiros. Números inteiros são usados para representar valores númericos que não precisam de casas decimais.
+Abaixo você pode ver e avaliar vários números inteiros. Números inteiros são usados para representar valores númericos que não precisam de casas decimais.
 
 ```elixir
 10
 ```
 
-Observe, no último exemplo, que você pode usar o "_" como separador.
+Observe, no último exemplo, que você pode usar o "\_" como separador.
 
 ```elixir
 654_677_888_788_899
@@ -182,7 +182,7 @@ Em Elixir você pode ter uma string com várias linhas!
 
 ## Verificando Tipos
 
-Existem diversas funções que nos permitem verificar o tipo de um valor ou expressão. O mais comum é quando queremos saber o tipo de um valor usar uma função **is_** (É? em inglês) seguida do tipo que queremos saber, como vimos antes **is_atom** checa se o valor é um átomo.
+Existem diversas funções que nos permitem verificar o tipo de um valor ou expressão. O mais comum é quando queremos saber o tipo de um valor usar uma função **is\_** (É? em inglês) seguida do tipo que queremos saber, como vimos antes **is_atom** checa se o valor é um átomo.
 
 ```elixir
 is_atom(:um_atomo)
@@ -316,7 +316,7 @@ Note que os operadores acima sempre esperam valores booleanos `true` e `false` c
 1 and false
 ```
 
-Você pode usar valores não lógicos como segundo argumento de 'and' e 'or'. Mas, caso queria utilizar operadores lógicos com valores não booleanos, como um átomo ou números,  como primeiro argumento, o Elixir fornece os operadores `&&`, `||` e `!`. Esses operadores aceitam valores de qualquer tipo, e apenas os átomos `false` e `nil` serão executados como valores falseáveis ('falsy'). Os demais valores são considerados 'truthy'. Ou seja, para estes operadores (e alguns outros), eles se comportam como verdadeiro.
+Você pode usar valores não lógicos como segundo argumento de 'and' e 'or'. Mas, caso queria utilizar operadores lógicos com valores não booleanos, como um átomo ou números, como primeiro argumento, o Elixir fornece os operadores `&&`, `||` e `!`. Esses operadores aceitam valores de qualquer tipo, e apenas os átomos `false` e `nil` serão executados como valores falseáveis ('falsy'). Os demais valores são considerados 'truthy'. Ou seja, para estes operadores (e alguns outros), eles se comportam como verdadeiro.
 
 ```elixir
 1 && true
@@ -414,7 +414,7 @@ Em elixir, todas as variáveis são imutáveis. Isso significa que você não po
 curso = "Ciência da Computação"
 ```
 
-Você não está mudando o valor "Matemática" para "Ciência da Computação", em vez disso criando um novo valor "Ciência da Computação" e fazendo a variável *curso* apontar para ele. O valor "Matemática" ainda existe na memória, mas não é mais acessível pela variável curso.
+Você não está mudando o valor "Matemática" para "Ciência da Computação", em vez disso criando um novo valor "Ciência da Computação" e fazendo a variável _curso_ apontar para ele. O valor "Matemática" ainda existe na memória, mas não é mais acessível pela variável curso.
 
 ## Casamento de Padrões (Pattern Matching)
 
@@ -532,7 +532,7 @@ Porém, o exemplo abaixo resulta em erro.
 
 Isso acontece porque não existe nenhum valor para ser associado à variável `cabeca`, pois `cabeca`, nesse contexto, representa o primeiro elemento da lista.
 
-No casamento de padrões, você pode usar o operador '_', que alguns chamam de "coringa", para ignorar algo.
+No casamento de padrões, você pode usar o operador '\_', que alguns chamam de "coringa", para ignorar algo.
 
 ```elixir
 [cabeca | _] = [646, 345, 345]
@@ -546,11 +546,11 @@ cabeca
 _
 ```
 
-Nada é atribuído a '_'.
+Nada é atribuído a '\_'.
 
 <!-- livebook:{"break_markdown":true} -->
 
-Veremos depois como utilizar '_' com tuplas.
+Veremos depois como utilizar '\_' com tuplas.
 
 <!-- livebook:{"break_markdown":true} -->
 
@@ -580,7 +580,7 @@ Embora seja uma possível, desaconselha-se a concatenação de listas usando o o
 [1, 3, 56] ++ [34, 560, 8]
 ```
 
-**NOTA**: Em Elixir, o nome de uma função ou operador tem dois componentes: o nome em si (neste caso ++) e sua aridade. Aridade é informação essencial quando se fala sobre código Elixir, pois esta indica o número de argumentos que uma função ou operador aceita (dois, neste nosso exemplo). Ou seja, uma função *soma*, que recebe dois argumentos seria representada como `soma/2`, e esta é uma função completamente distinta de `soma/3`, por exemplo. Nome e aridade são combinados com uma barra (/).
+**NOTA**: Em Elixir, o nome de uma função ou operador tem dois componentes: o nome em si (neste caso ++) e sua aridade. Aridade é informação essencial quando se fala sobre código Elixir, pois esta indica o número de argumentos que uma função ou operador aceita (dois, neste nosso exemplo). Ou seja, uma função _soma_, que recebe dois argumentos seria representada como `soma/2`, e esta é uma função completamente distinta de `soma/3`, por exemplo. Nome e aridade são combinados com uma barra (/).
 
 ```elixir
 # subtração de listas, operador '--/2'
@@ -1024,35 +1024,35 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
 ```elixir
-is_number("")
+is_number(1)
 ```
 
 ```elixir
-is_integer("")
+is_integer(-1)
 ```
 
 ```elixir
-is_float("")
+is_float(2.0)
 ```
 
 ```elixir
-is_binary("")
+is_binary("binary")
 ```
 
 ```elixir
-is_atom("")
+is_atom(:atom)
 ```
 
 ```elixir
-is_boolean("")
+is_boolean(false)
 ```
 
 ```elixir
-is_map("")
+is_map(%{key: "value"})
 ```
 
 ```elixir
-is_tuple("")
+is_tuple({:ok, "it's a tuple"})
 ```
 
 ### Exercicio 2
@@ -1063,11 +1063,11 @@ que calculasse a média aritmética de salários de cada região a partir do inp
 
 ---
 
-| Handle no Twitter | Salário    |
+| Handle no Twitter | Salário     |
 | ----------------- | ----------- |
 | @ocamilodev       | R$ 71255.53 |
 | @ocam_l           | R$ 30236.23 |
-| @camilotk_        | R$ 5256.12  |
+| @camilotk\_       | R$ 5256.12  |
 
 ---
 
@@ -1075,12 +1075,12 @@ Defina variáveis para cada salário, depois, atribua o cálculo de média aritm
 
 ```elixir
 ocamilodev = 71255.53
-ocam_l =
-#...
+ocam_l = 30236.23
+camilotk_ = 5256.12
 ```
 
 ```elixir
-media =
+media = (ocamilodev + ocam_l + camilotk_) / 3
 ```
 
 ```elixir
@@ -1103,22 +1103,34 @@ Resolva a equação quadrática **x² - 2x + 1 = 0** calculando seu delta e sua(
 ```
 
 ```elixir
-delta =
+a = 1
+b = -2
+c = 1
+x = nil
+
+delta = b ** 2 - 4 * a * c
 ```
 
 ```elixir
-x =
+if delta == 0 do
+  (-b + :math.sqrt(delta)) / (2 * a)
+else
+  {
+    (-b + :math.sqrt(delta)) / (2 * a),
+    (-b - :math.sqrt(delta)) / (2 * a)
+  }
+end
 ```
 
 ### Exercicio 4
 
 Trabalhando com Elixir você desenvolveu um sistema de E-commerce. Recentemente você decidiu extrair os comentários e o sistema respondeu te enviando uma lista de mapas com os comentários. Cada mapa possui as propriedades:
 
-* **productId**: Que é o valor de identificação do produto.
-* **id** Que é o identificador do comentário.
-* **name**: Que é o título do comentário.
-* **email**: Que é o email de quem fez o comentário.
-* **body**: Que contêm o comentário.
+- **productId**: Que é o valor de identificação do produto.
+- **id** Que é o identificador do comentário.
+- **name**: Que é o título do comentário.
+- **email**: Que é o email de quem fez o comentário.
+- **body**: Que contêm o comentário.
 
 A resposta completa foi:
 
@@ -1175,7 +1187,7 @@ resposta_completa = [
 ]
 ```
 
-> Lembre-se de executar a célula com o valor de  `resposta_completa` para poder usá-la.
+> Lembre-se de executar a célula com o valor de `resposta_completa` para poder usá-la.
 
 <!-- livebook:{"break_markdown":true} -->
 
@@ -1186,31 +1198,41 @@ Com esses dados use **casamento de padrões** (pattern matching) para:
 1. Extrair o primeiro comentário.
 
 ```elixir
-
+[first_comment | _tail] = resposta_completa
 ```
 
-2. Salvar o nome do segundo comentário em uma variável `titulo`.
+1. Salvar o nome do segundo comentário em uma variável `titulo`.
 
 ```elixir
-titulo =
+[_, second_comment | _tail] = resposta_completa
+titulo = second_comment["name"]
 ```
 
 3. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
 
 ```elixir
+func = fn
+  %{"id" => 11, "productId" => 3} = item -> item
+  _ -> nil
+end
 
+product = Enum.find(resposta_completa, func)
+
+if product, do: %{product | "email" => "contato@foobar.br"}
 ```
 
 4. Extrair o **body** do terceiro comentário.
 
 ```elixir
-
+[_, _, tirth_comment | tail] = resposta_completa
+tirth_comment
 ```
 
 5. Criar uma nova lista removendo o segundo item.
 
 ```elixir
-
+[first, _second | tail] = resposta_completa
+[first] ++ tail
 ```
 
 ### Exercicio 5
@@ -1220,14 +1242,14 @@ O Departamento de Astrofísica da NASA entrou em contato com você. Eles precisa
 Você recebeu uma ficha com as seguintes informações:
 | Nome | Superfície (km²) | Volume (km³) | Massa (kg) | Temperatura Média (ºC) | Distância do Sol (km) |
 |------|------|--------|-------|-------------------|--------------------------|
-| Mercúrio | 7,48×10^7 | 6,083×10^10   | 3,3011×10^23  | 166,85 | 57910000    |
-| Vênus    | 4,60×10^8 | 92,843×10^10  | 4,8685×10^24 | 461    | 108200000   |
-| Terra    | 5,10×10^8 | 1,08321×10^12 | 5,9736×10^24  | 14     | 149600000   |
-| Marte    | 1,44×10^8 | 1,6318×10^11    | 6,4174×10^23  | -63    | 227940000   |
-| Júpiter    | 6,21796×10^10 | 1,43128×10^15 | 1,8986×10^27 | -108 | 778330000  |
-| Saturno    | 4,27×10^10 | 8,2713×10^14 | 5,6846×10^26 | -139 | 1429400000 |
-| Urano    | 8,1156×10^9 | 6,833×10^13 | 8,6810×10^25 | -220 |  2870990000    |
-| Netuno   | 7,6183×10^9 | 6,254×10^13 | 1,0243×10^26 | -223 | 4504000000     |
+| Mercúrio | 7,48×10^7 | 6,083×10^10 | 3,3011×10^23 | 166,85 | 57910000 |
+| Vênus | 4,60×10^8 | 92,843×10^10 | 4,8685×10^24 | 461 | 108200000 |
+| Terra | 5,10×10^8 | 1,08321×10^12 | 5,9736×10^24 | 14 | 149600000 |
+| Marte | 1,44×10^8 | 1,6318×10^11 | 6,4174×10^23 | -63 | 227940000 |
+| Júpiter | 6,21796×10^10 | 1,43128×10^15 | 1,8986×10^27 | -108 | 778330000 |
+| Saturno | 4,27×10^10 | 8,2713×10^14 | 5,6846×10^26 | -139 | 1429400000 |
+| Urano | 8,1156×10^9 | 6,833×10^13 | 8,6810×10^25 | -220 | 2870990000 |
+| Netuno | 7,6183×10^9 | 6,254×10^13 | 1,0243×10^26 | -223 | 4504000000 |
 
 E com base nesses dados foi pedido que:
 
@@ -1236,74 +1258,142 @@ E com base nesses dados foi pedido que:
 1. Crie um modelo de estrutura (struct) que represente o modelo de um planeta baseado nesses dados fornecidos. Ele deve ter valores default e todos os campos são requeridos.
 
 ```elixir
-
+defmodule Planet do
+  @enforce_keys [:name, :surface, :volume, :mass, :temperature, :sun_distance]
+  defstruct name: "Earth",
+            surface: "5,10x10^8",
+            volume: "1,08321x10^12",
+            mass: "5,9736x10^24",
+            temperature: 14,
+            sun_distance: 149_600_000
+end
 ```
 
 2. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-mercurio =
+mercurio = %Planet{
+  name: "Mercúrio",
+  surface: "7,48x10^7",
+  volume: "6,083x10^10",
+  mass: "3,3011x10^23",
+  temperature: 166.85,
+  sun_distance: 57_910_000
+}
 ```
 
 3. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-venus =
+venus = %Planet{
+  name: "Venus",
+  surface: "4.60x10^8",
+  volume: "92.843x10^10",
+  mass: "4.8685x10^24",
+  temperature: 461,
+  sun_distance: 108_200_000
+}
 ```
 
 4. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-terra =
+terra = %Planet{
+  name: "Terra",
+  surface: "5,10x10^8",
+  volume: "1,08321x10^12",
+  mass: "5,9736x10^24",
+  temperature: 14,
+  sun_distance: 149_600_000
+}
 ```
 
 5. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-marte =
+marte = %Planet{
+  name: "Marte",
+  surface: "1.44x10^8",
+  volume: "1.6318x10^11",
+  mass: "6.4174x10^23",
+  temperature: -63,
+  sun_distance: 227_940_000
+}
 ```
 
 6. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-jupiter =
+jupiter = %Planet{
+  name: "Jupiter",
+  surface: "6.21796x10^10",
+  volume: "1.43128x10^15",
+  mass: "1.8986x10^27",
+  temperature: -108,
+  sun_distance: 778_330_000
+}
 ```
 
 7. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-saturno =
+saturno = %Planet{
+  name: "Saturno",
+  surface: "4.27x10^10",
+  volume: "8.2713x10^14",
+  mass: "5.6846x10^26",
+  temperature: -139,
+  sun_distance: 1_429_400_000
+}
 ```
 
 8. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-urano =
+urano = %Planet{
+  name: "Urano",
+  surface: "8.1156x10^9",
+  volume: "6.833x10^13",
+  mass: "8.6810x10^25",
+  temperature: -220,
+  sun_distance: 2_870_990_000
+}
 ```
 
 9. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-netuno =
+netuno = %Planet{
+  name: "Netuno",
+  surface: "7.6183x10^9",
+  volume: "6.254x10^13",
+  mass: "1.0243x10^26",
+  temperature: -223,
+  sun_distance: 4_504_000_000
+}
 ```
 
 10. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
 
-* **:estrela**: String, valor "Sol"
-* **:nome**: String, valor "Sistema Solar"
-* **:planetas**: Lista de %Planeta (struct/estrutura), uma lista contendo todos os planetas criados.
+- **:estrela**: String, valor "Sol"
+- **:nome**: String, valor "Sistema Solar"
+- **:planetas**: Lista de %Planeta (struct/estrutura), uma lista contendo todos os planetas criados.
 
 Salve esse mapa criado em uma variável `sistema_solar`.
 
 ```elixir
-sistema_solar =
+sistema_solar = %{
+  star: "Sol",
+  name: "Sistema Solar",
+  plants: [mercurio, venus, terra, marte, jupiter, saturno, urano, netuno]
+}
 ```
 
 ---
 
 Se você quiser saber mais, recomendamos abaixo alguns links que podem ser úteis:
 
-* [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
-* [Livros e outros recursos de aprendizagem](https://elixir-lang.org/learning.html)
-* [Elixir Brasil - Comunidade no Telegram](https://t.me/elixirbr)
-* [Elixir em Foco - podcast em português](https://www.elixiremfoco.com/)
+- [Elixir School](https://elixirschool.com/pt) - Site que contém várias "lições" em português.
+- [Livros e outros recursos de aprendizagem](https://elixir-lang.org/learning.html)
+- [Elixir Brasil - Comunidade no Telegram](https://t.me/elixirbr)
+- [Elixir em Foco - podcast em português](https://www.elixiremfoco.com/)
