@@ -1104,7 +1104,7 @@ Resolva a equação quadrática **x² - 2x + 1 = 0** calculando seu delta e sua(
 ```
 
 ```elixir
-delta = :math.sqrt(:math.pow(2, 2) * 4 * 1 * 1)
+delta = :math.sqrt(:math.pow(2, 2) - 4 * 1 * 1)
 ```
 
 ```elixir
