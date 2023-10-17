@@ -1103,11 +1103,16 @@ Resolva a equação quadrática **x² - 2x + 1 = 0** calculando seu delta e sua(
 ```
 
 ```elixir
-delta =
+a = 1
+b = -2
+c = 1
+
+delta = b * b - 4 * a * c
 ```
 
 ```elixir
-x =
+x1 = (-b + :math.sqrt(delta)) / (2 * a)
+x2 = (-b - :math.sqrt(delta)) / (2 * a)
 ```
 
 ### Exercicio 4
