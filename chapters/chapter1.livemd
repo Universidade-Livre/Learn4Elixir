@@ -991,7 +991,7 @@ end
 ```
 
 ```elixir
-%Jogador{}
+%Jogador{nome: "Theslla", idade: 26, cidade: "Black River"}
 ```
 
 > Resolva esse erro passando os campos que são necessários na célula acima.
@@ -1024,35 +1024,35 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
 ```elixir
-is_number("")
+is_number(26)
 ```
 
 ```elixir
-is_integer("")
+is_integer(10)
 ```
 
 ```elixir
-is_float("")
+is_float(3.69)
 ```
 
 ```elixir
-is_binary("")
+is_binary("matrix")
 ```
 
 ```elixir
-is_atom("")
+is_atom(:nome)
 ```
 
 ```elixir
-is_boolean("")
+is_boolean(!true)
 ```
 
 ```elixir
-is_map("")
+is_map(%{})
 ```
 
 ```elixir
-is_tuple("")
+is_tuple({})
 ```
 
 ### Exercicio 2
