@@ -1191,31 +1191,42 @@ Com esses dados use **casamento de padrões** (pattern matching) para:
 1. Extrair o primeiro comentário.
 
 ```elixir
-
+[primeiro_comentario | _ignore] = resposta_completa
+primeiro_comentario["body"]
 ```
 
 2. Salvar o nome do segundo comentário em uma variável `titulo`.
 
 ```elixir
-titulo =
+[ _, segundo_comentario | _] = resposta_completa
+titulo = segundo_comentario["name"]
 ```
 
 3. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
 
 ```elixir
+[comentario11] =
+  Enum.filter(resposta_completa, 
+    fn %{"id" => id, "productId" => productId} ->
+    id == 11 && productId == 3
+  end)
 
+novo_mapa = Map.replace(comentario11, "email", "contato@foobar.br")
+novo_mapa
 ```
 
 4. Extrair o **body** do terceiro comentário.
 
 ```elixir
-
+[ _, _, terceiro_comentario | _] = resposta_completa
+terceiro_comentario["body"]
 ```
 
 5. Criar uma nova lista removendo o segundo item.
 
 ```elixir
-
+[primeiro_comentario, _ | resto] = resposta_completa
+nova_lista = [primeiro_comentario | resto]
 ```
 
 ### Exercicio 5
