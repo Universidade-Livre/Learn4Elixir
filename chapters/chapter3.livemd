@@ -472,7 +472,7 @@ cliente = %{
   cupom: "UBL10"
 }
 
-calcula_total(produtos, cliente) # deve retornar 243.00
+calcula_total(produtos, cliente) # deve retornar 247.50
 ```
 
 ```elixir
