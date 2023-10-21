@@ -1,3 +1,5 @@
+<!-- livebook:{"persist_outputs":true} -->
+
 # Learn 4 Elixir - Capítulo 1
 
 ## Introdução
@@ -30,7 +32,19 @@ Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade d
 10
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+10
+```
+
 ```elixir
+"Maria"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 "Maria"
 ```
 
@@ -38,7 +52,19 @@ Um valor representa um dado do mundo. Por exemplo, 10 pode representar a idade d
 "professora"
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"professora"
+```
+
 ```elixir
+5050.55
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 5050.55
 ```
 
@@ -60,10 +86,22 @@ Abaixo você pode  ver e avaliar vários números inteiros. Números inteiros s�
 10
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+10
+```
+
 Observe, no último exemplo, que você pode usar o "_" como separador.
 
 ```elixir
 654_677_888_788_899
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+654677888788899
 ```
 
 Da mesma forma é possível representar números negativos utilizando sinal.
@@ -72,18 +110,42 @@ Da mesma forma é possível representar números negativos utilizando sinal.
 -5_323_456_546_346
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+-5323456546346
+```
+
 Além disso é possível representar números em outras bases como binário (prefixando com **0b**), octal (prefixando com **0o**) e hexadecimal (prefixando com **0x**).
 
 ```elixir
 0b101010
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+42
+```
+
 ```elixir
 0o52
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+42
+```
+
 ```elixir
 0x2A
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+42
 ```
 
 ## Números de Ponto Flutuante
@@ -96,16 +158,40 @@ Avalie os exemplos abaixo para ver o que acontece!
 1.618
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+1.618
+```
+
 ```elixir
-.14
+0.14
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+0.14
 ```
 
 ```elixir
 1.0e-10
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+1.0e-10
+```
+
 ```elixir
 1.234e3
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+1234.0
 ```
 
 > Em qual dos exemplos acima aconteceu um erro? Por quê?
@@ -118,11 +204,29 @@ Em Elixir, um átomo é uma espécie de palavra-chave constante que tem um nome 
 :atomo
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+:atomo
+```
+
 ```elixir
 :idade
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+:idade
+```
+
 ```elixir
+:peso
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 :peso
 ```
 
@@ -134,9 +238,21 @@ Em Elixir, os valores lógicos são como interruptores que podem estar ligados (
 is_atom(true)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 Se você escrever `true` em Elixir, isso significa "verdadeiro" e representa um valor lógico que está ligado ou verdadeiro.
 
 ```elixir
+true
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 true
 ```
 
@@ -146,13 +262,31 @@ Se você escrever `false` em Elixir, isso significa "falso" e representa um valo
 false
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+false
+```
+
 Um átomo especial que está relacionado a 'true' e 'false' é 'nil'. Assim como os dois anteriores, você pode usar ':nil' ou 'nil'. Se você escrever `nil` em Elixir, isso significa a ausência de um valor e, em algumas situações, o 'nil' se comporta como o 'false'. Falaremos mais sobre isso quando abordarmos as operações com valores lógicos.
 
 ```elixir
 nil
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+nil
+```
+
 ```elixir
+nil
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 nil
 ```
 
@@ -164,9 +298,21 @@ Uma **cadeia de caracteres**, que é chamada de **"string"**, é basicamente uma
 "Olá, Elixir!"
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"Olá, Elixir!"
+```
+
 As strings em Elixir são inteligentes e podem conter caracteres especiais, como acentos em letras ou até mesmo emojis. O Elixir usa a codificação UTF-8, o que significa que é possível representar uma ampla variedade de caracteres de diferentes idiomas e símbolos.
 
 ```elixir
+"José Valim é o criador de Elixir!! 🎉🎉🎉 Ele é brasileiro!!! 🇧🇷🇧🇷🇧🇷"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 "José Valim é o criador de Elixir!! 🎉🎉🎉 Ele é brasileiro!!! 🇧🇷🇧🇷🇧🇷"
 ```
 
@@ -180,6 +326,12 @@ Em Elixir você pode ter uma string com várias linhas!
 """
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"Olá, pessoas!\nEste é o Learn4Elixir da Universidade Brasileira Live.\nEm Elixir você pode ter uma string com várias linhas!\n"
+```
+
 ## Verificando Tipos
 
 Existem diversas funções que nos permitem verificar o tipo de um valor ou expressão. O mais comum é quando queremos saber o tipo de um valor usar uma função **is_** (É? em inglês) seguida do tipo que queremos saber, como vimos antes **is_atom** checa se o valor é um átomo.
@@ -188,62 +340,152 @@ Existem diversas funções que nos permitem verificar o tipo de um valor ou expr
 is_atom(:um_atomo)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 Existe uma função similar para cada tipo, como vamos ver.
 
 ```elixir
 is_integer(1233)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 ```elixir
 is_integer(false)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+false
 ```
 
 ```elixir
 is_float(1)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+false
+```
+
 ```elixir
 is_float(1.0)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
 is_number(1)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 ```elixir
 is_number(1.9)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
 is_atom(:peso)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 ```elixir
 is_atom(10)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+false
 ```
 
 ```elixir
 is_atom(true)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 ```elixir
 is_atom(45.4)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+false
 ```
 
 ```elixir
 is_boolean(true)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 ```elixir
 is_boolean(false)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
 is_boolean(0)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+false
+```
+
 ```elixir
 is_boolean(nil)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+false
 ```
 
 Porém, a função para verificar _strings_, diferente das outras se chama _is_binary_.
@@ -252,12 +494,30 @@ Porém, a função para verificar _strings_, diferente das outras se chama _is_b
 is_binary("UBL")
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 ```elixir
 is_binary(true)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+false
+```
+
 ```elixir
 is_binary("🎉🎉🎉")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ## Expressões
@@ -272,16 +532,40 @@ Pense em expressões como pequenos blocos de construção que nos permitem fazer
 2 + 3
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+5
+```
+
 ```elixir
 4 - 5
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+-1
 ```
 
 ```elixir
 4 * 80
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+320
+```
+
 ```elixir
 4 / 3
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+1.3333333333333333
 ```
 
 > Observe que, no exemplo acima, apesar de os operandos serem números inteiros, o resultado foi um número de ponto flutuante.
@@ -298,16 +582,34 @@ Além dos operadores matemáticos temos também outros operadores. Por exemplo, 
 true and false
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+false
+```
+
 `or`: Este operador retorna `true` se **qualquer um** dos operandos for verdadeiro. Caso contrário, retorna `false`. Por exemplo, `true or false` retornará `true`.
 
 ```elixir
 false or true
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 `not`: Este é um operador de negação. Ele inverte o valor do operando. Se o operando for `true`, ele retornará `false` e vice-versa. Por exemplo, `not true` retornará `false`.
 
 ```elixir
 not false
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 Note que os operadores acima sempre esperam valores booleanos `true` e `false` como seus primeiros parâmetros. Passar um valor não booleano como primeiro parâmetro para esses operadores resulta em uma exceção `BadBoolean`, como pode ser testado abaixo:
@@ -322,36 +624,90 @@ Você pode usar valores não lógicos como segundo argumento de 'and' e 'or'. Ma
 1 && true
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 ```elixir
 1 || true
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+1
 ```
 
 ```elixir
 !1
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+false
+```
+
 ```elixir
 !false
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
 !nil
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 ```elixir
 14 || 15
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+14
 ```
 
 ```elixir
 14 && 29
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+29
+```
+
 ```elixir
 14 && nil
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+nil
+```
+
 ```elixir
 14 && false
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+false
 ```
 
 Em suma, utilize os operadores `and`, `or` e `not` quando suas expressões esperam valores exclusivamente booleanos, e os operadores `&&`, `||` e `!` quando valores de tipos diferentes podem ser esperados.
@@ -364,8 +720,20 @@ Em Elixir, usamos o operador `<>` para concatenar (ou seja, juntar) duas strings
 "UBL" <> " " <> "é legal!"
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"UBL é legal!"
+```
+
 ```elixir
 "https://" <> "ulivre.dev"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"https://ulivre.dev"
 ```
 
 A interpolação de strings permite que você insira valores de variáveis ou expressões dentro de uma string. Em Elixir, usamos `#{}` para interpolação de strings.
@@ -374,8 +742,20 @@ A interpolação de strings permite que você insira valores de variáveis ou ex
 "Onde você estuda? Eu estudo na #{"UBL"}!"
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"Onde você estuda? Eu estudo na UBL!"
+```
+
 ```elixir
 "Eu tenho #{25} anos de idade."
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"Eu tenho 25 anos de idade."
 ```
 
 Observe que não apresentamos nenhuma operação com átomos, exceto quando estes são valores lógicos.
@@ -388,6 +768,12 @@ Uma variável é um nome que representa um valor. Podemos por exemplo atribuir o
 curso = "Matemática"
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"Matemática"
+```
+
 Observe que o retorno da expressão (toda expressão em Elixir retorna algo, se não ocorrer nenhum erro) é o valor que, após o casamento de padrões, está dos dois lados do operador '='.
 
 <!-- livebook:{"break_markdown":true} -->
@@ -398,20 +784,44 @@ Agora quando chamarmos o valor "curso" vamos obter seu valor.
 curso
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"Matemática"
+```
+
 Agora podemos usar esse nome para passar esse valor em qualquer operação com strings.
 
 ```elixir
 is_binary(curso)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 ```elixir
 "Estou estudando #{curso}"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"Estou estudando Matemática"
 ```
 
 Em elixir, todas as variáveis são imutáveis. Isso significa que você não pode alterar o valor que uma variável representa, mas é possível reatribuir a variável a um novo valor.
 
 ```elixir
 curso = "Ciência da Computação"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"Ciência da Computação"
 ```
 
 Você não está mudando o valor "Matemática" para "Ciência da Computação", em vez disso criando um novo valor "Ciência da Computação" e fazendo a variável *curso* apontar para ele. O valor "Matemática" ainda existe na memória, mas não é mais acessível pela variável curso.
@@ -424,16 +834,36 @@ Quando declaramos uma variável usamos o operador de casamento de padrões, cujo
 nome = "UBL"
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"UBL"
+```
+
 Apesar do símbolo do casamento de padrões ser '=', os lados esquerdo e direito de um casamento de padrões têm "poderes" diferentes. No exemplo acima, vimos como atribuir um valor à variável 'nome'. Só pudemos fazer isso porque 'nome' estava no lado esquerdo. Se estivesse no lado direito (ver o exemplo parecido seguinte), não funcionaria. Ou seja, o lado esquerdo "tem mais poder" do que o lado direito.
 
 ```elixir
 10 = idade
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+error: undefined variable "idade"
+  Documentos/Workspace/Learn4Elixir/Learn4Elixir/chapters/chapter1.livemd#cell:c24ayksrikpkx6elq3ki4cabbo6tieba:1
+
+```
+
 Porém, uma vez que uma variável já esteja atribuída, é possível usá-la do lado direito. Veja o exemplo abaixo.
 
 ```elixir
 "UBL" = nome
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"UBL"
 ```
 
 O exemplo acima é importante para deixar claro que o casamento de padrões não é uma simples atribuição de valor a variável.
@@ -451,10 +881,22 @@ Coleções são estruturas de dados que contém zero ou mais valores. O tipo de 
 []
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[]
+```
+
 No exemplo acima você vê uma lista vazia e também como escrever um comentário de linha em Elixir: tudo que vier depois do '#' é um comentário.
 
 ```elixir
 # lista contendo um elemento
+[1]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 [1]
 ```
 
@@ -463,8 +905,20 @@ No exemplo acima você vê uma lista vazia e também como escrever um comentári
 [3, 45]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[3, 45]
+```
+
 ```elixir
 # lista contendo 3 elementos
+[45, 78, 21]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 [45, 78, 21]
 ```
 
@@ -475,8 +929,20 @@ A partir dos exemplos acima, você já percebeu que as listas começam com '[', 
 [1, "Casa", :idade]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[1, "Casa", :idade]
+```
+
 ```elixir
 # lista contendo outra lista
+[1, [2, 45], 3]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 [1, [2, 45], 3]
 ```
 
@@ -486,28 +952,70 @@ Agora vamos ver exemplos de casamento de padrões com listas.
 [cabeca | cauda] = [1, 3, 2]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[1, 3, 2]
+```
+
 ```elixir
 cabeca
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+1
 ```
 
 ```elixir
 cauda
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[3, 2]
+```
+
 ```elixir
 [primeiro, segundo | resto] = [45, 67, 784, 3453]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[45, 67, 784, 3453]
 ```
 
 ```elixir
 primeiro
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+45
+```
+
 ```elixir
 segundo
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+67
+```
+
 ```elixir
 resto
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[784, 3453]
 ```
 
 O exemplo abaixo não dá erro pois no final de toda lista há uma lista vazia.
@@ -516,12 +1024,30 @@ O exemplo abaixo não dá erro pois no final de toda lista há uma lista vazia.
 [cabeca | cauda] = [78678]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[78678]
+```
+
 ```elixir
 cabeca
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+78678
+```
+
 ```elixir
 cauda
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[]
 ```
 
 Porém, o exemplo abaixo resulta em erro.
@@ -538,12 +1064,30 @@ No casamento de padrões, você pode usar o operador '_', que alguns chamam de "
 [cabeca | _] = [646, 345, 345]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[646, 345, 345]
+```
+
 ```elixir
 cabeca
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+646
+```
+
 ```elixir
-_
+
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+nil
 ```
 
 Nada é atribuído a '_'.
@@ -560,17 +1104,41 @@ Uma observação importante, e que está relacionada com a forma com que listas 
 [1 | [3, 4]]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[1, 3, 4]
+```
+
 ```elixir
 [1 | []]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[1]
 ```
 
 ```elixir
 [2, 3, 4 | [6, 7, 8, 9]]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[2, 3, 4, 6, 7, 8, 9]
+```
+
 Apenas tenha cuidado para não gerar listas impróprias! Depois do '|' deve vir uma lista.
 
 ```elixir
+[1 | 2]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 [1 | 2]
 ```
 
@@ -580,6 +1148,12 @@ Embora seja uma possível, desaconselha-se a concatenação de listas usando o o
 [1, 3, 56] ++ [34, 560, 8]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[1, 3, 56, 34, 560, 8]
+```
+
 **NOTA**: Em Elixir, o nome de uma função ou operador tem dois componentes: o nome em si (neste caso ++) e sua aridade. Aridade é informação essencial quando se fala sobre código Elixir, pois esta indica o número de argumentos que uma função ou operador aceita (dois, neste nosso exemplo). Ou seja, uma função *soma*, que recebe dois argumentos seria representada como `soma/2`, e esta é uma função completamente distinta de `soma/3`, por exemplo. Nome e aridade são combinados com uma barra (/).
 
 ```elixir
@@ -587,8 +1161,20 @@ Embora seja uma possível, desaconselha-se a concatenação de listas usando o o
 [1, 2, 3] -- [1, 3]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[2]
+```
+
 ```elixir
 [1, 2, 2, 3, 2, 3] -- [1, 2, 3, 2]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[2, 3]
 ```
 
 ## Tuplas
@@ -600,7 +1186,19 @@ Uma tupla é uma coleção ordenada de elementos. Parece um pouco com uma lista,
 {}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+{}
+```
+
 ```elixir
+{1}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 {1}
 ```
 
@@ -608,7 +1206,19 @@ Uma tupla é uma coleção ordenada de elementos. Parece um pouco com uma lista,
 {:nome, "João"}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+{:nome, "João"}
+```
+
 ```elixir
+{:nome, "Maria", :idade, 10}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 {:nome, "Maria", :idade, 10}
 ```
 
@@ -618,34 +1228,76 @@ Após ver os exemplos acima, vamos ver como fazer casamento de padrões com tupl
 pessoa = {:nome, "Maria", :idade, 10}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+{:nome, "Maria", :idade, 10}
+```
+
 E suponha que eu, sabendo a estrutura da tupla pessoa, queira apenas saber o nome da pessoa. Basta fazer:
 
 ```elixir
 {:nome, nome, _, _} = pessoa
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+{:nome, "Maria", :idade, 10}
+```
+
 ```elixir
-nome
+:nome
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+:nome
 ```
 
 O mesmo poderia ser feito para idade.
 
 ```elixir
-{_, _, :idade, idade} = pessoa
+{_, _, _, idade} = pessoa
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+{:nome, "Maria", :idade, 10}
 ```
 
 ```elixir
 idade
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+10
+```
+
 Ou para os dois ao mesmo tempo.
 
 ```elixir
-{:nome, nome, :idade, idade} = pessoa
+{_, nome, _, idade} = pessoa
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+{:nome, "Maria", :idade, 10}
 ```
 
 ```elixir
 {nome, idade}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+{"Maria", 10}
 ```
 
 Veja que acima nós construímos uma tupla a partir dos resultados do casamento de padrões.
@@ -658,9 +1310,21 @@ Mapas são coleções de pares chave-valor, onde cada chave é única e associad
 %{:chave1 => "valor 1", :chave2 => "valor 2", :chave3 => "valor 3"}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{chave1: "valor 1", chave2: "valor 2", chave3: "valor 3"}
+```
+
 As chaves e os valores em um mapa podem ser de qualquer tipo, incluindo átomos, números, strings e até mesmo outras estruturas de dados.
 
 ```elixir
+%{1 => "algo", 2 => :algo, 3 => [1, 2, 3]}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 %{1 => "algo", 2 => :algo, 3 => [1, 2, 3]}
 ```
 
@@ -671,13 +1335,31 @@ Em Elixir, você pode criar um mapa simplesmente usando a notação de chaves %{
 %{}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{}
+```
+
 ```elixir
 # Um mapa com pares chave-valor
 %{nome: "Alice", idade: 30, cidade: "São Paulo"}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{idade: 30, nome: "Alice", cidade: "São Paulo"}
+```
+
 ```elixir
 # Um mapa com tipos diferentes de valores
+%{nome: "Bob", pontos: 42, aprovado: true}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
 %{nome: "Bob", pontos: 42, aprovado: true}
 ```
 
@@ -686,6 +1368,20 @@ Lembre-se de que as chaves em um mapa são únicas. Se você tentar adicionar um
 ```elixir
 # Isso substituirá "Alice" por "Bob" na chave "nome"
 %{nome: "Alice", nome: "Bob"}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+warning: key :nome will be overridden in map
+  Documentos/Workspace/Learn4Elixir/Learn4Elixir/chapters/chapter1.livemd#cell:v6d3dsncvaposxznjtwjyinszzzwi4i3:2
+
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%{nome: "Bob"}
 ```
 
 Para acessar valores em um mapa, você usa a sintaxe de colchetes mapa[chave]. Aqui estão alguns exemplos:
@@ -700,16 +1396,40 @@ idade = dados[:idade]
 cidade = dados[:cidade]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"São Paulo"
+```
+
 ```elixir
 nome
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"Alice"
 ```
 
 ```elixir
 idade
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+30
+```
+
 ```elixir
 cidade
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"São Paulo"
 ```
 
 Quando tentamos acessar uma chave que não existe em nosso mapa usando `[]` será retornado `nil` caso o valor dessa chave não exista.
@@ -718,12 +1438,30 @@ Quando tentamos acessar uma chave que não existe em nosso mapa usando `[]` ser�
 valores = %{"uno" => 1, "dos" => 2, "tres" => 3}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{"dos" => 2, "tres" => 3, "uno" => 1}
+```
+
 ```elixir
 valores["uno"]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+1
+```
+
 ```elixir
 valores["quatro"]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+nil
 ```
 
 Porém, quando criamos um mapa em que **todas as chaves são átomos** podemos acessar nossos valores tanto usando `[]` passando o valor da chave, quanto usando o operador ponto `.` para acessar a chave que queremos, esse operador tem a vantagem de lançar um erro caso a chave não exista no mapa o que nos ajuda a encontrar erros e problemas mais cedo.
@@ -732,16 +1470,40 @@ Porém, quando criamos um mapa em que **todas as chaves são átomos** podemos a
 chaves_valores = %{:um => 1, :dois => 2, :tres => 3}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{um: 1, dois: 2, tres: 3}
+```
+
 ```elixir
 chaves_valores[:um]
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+1
 ```
 
 ```elixir
 chaves_valores[:quatro]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+nil
+```
+
 ```elixir
 chaves_valores.um
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+1
 ```
 
 ```elixir
@@ -755,16 +1517,34 @@ Caso queira evitar o erro se a chave não existir no mapa, você pode usar o ope
 Map.get(dados, :nome)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"Alice"
+```
+
 Porém, caso não exista a chave isso não vai nos lançar uma exceção.
 
 ```elixir
 Map.get(dados, :algo)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+nil
+```
+
 Também possui a versão Map.get/3 que recebe, como terceiro argumento, o valor que deve ser retornado caso a chave não exista.
 
 ```elixir
 Map.get(dados, :algo, "valor quando a chave não existe")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"valor quando a chave não existe"
 ```
 
 Mapas em Elixir são imutáveis, o que significa que não podem ser modificados após a criação. No entanto, você pode criar novos mapas com valores atualizados. O operador `|` é usado para criar um novo mapa que contém todas as associações do mapa original, juntamente com quaisquer associações adicionais ou atualizadas.
@@ -775,10 +1555,22 @@ mapa = Map.put(dados, :idade, 31)
 novos_mapa = Map.put(mapa, :profissao, "Engenheira")
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{idade: 31, nome: "Alice", cidade: "São Paulo", profissao: "Engenheira"}
+```
+
 Tenha em mente que, como os mapas são imutáveis, o mapa original permanece inalterado após cada atualização. É comum atribuir o novo mapa a uma nova variável, como fizemos acima.
 
 ```elixir
 mapa
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%{idade: 31, nome: "Alice", cidade: "São Paulo"}
 ```
 
 Para remover uma chave e seu valor associado de um mapa, você pode usar a função `Map.delete/2`.
@@ -787,8 +1579,20 @@ Para remover uma chave e seu valor associado de um mapa, você pode usar a funç
 mapa_atualizados = Map.delete(dados, :idade)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{nome: "Alice", cidade: "São Paulo"}
+```
+
 ```elixir
 mapa_atualizados
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%{nome: "Alice", cidade: "São Paulo"}
 ```
 
 Novamente, observe que a operação de exclusão não modifica o mapa original, mas cria um novo mapa sem a chave removida.
@@ -797,14 +1601,32 @@ Novamente, observe que a operação de exclusão não modifica o mapa original, 
 dados
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{idade: 30, nome: "Alice", cidade: "São Paulo"}
+```
+
 Para verificar se uma chave específica existe em um mapa, você pode usar a função `Map.has_key?/2`.
 
 ```elixir
 Map.has_key?(dados, :idade)
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+true
+```
+
 ```elixir
 Map.has_key?(dados, :non_existent_key)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+false
 ```
 
 Em Elixir, mapas são frequentemente usados como registros leves para representar dados estruturados. Em vez de definir tipos de registro estáticos, você pode criar mapas com chaves específicas para representar entidades de dados.
@@ -815,6 +1637,12 @@ usuario = %{nome: "Alice", idade: 30, cidade: "São Paulo"}
 
 # Representando um produto com mapa
 produto = %{nome: "Celular", preco: 799.99, estoque: 50}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%{nome: "Celular", preco: 799.99, estoque: 50}
 ```
 
 > Isso oferece flexibilidade, pois você pode adicionar ou remover campos conforme necessário, sem precisar modificar a estrutura do registro.
@@ -830,14 +1658,32 @@ usuario = %{nome: "Bob", idade: 25, cidade: "Porto Alegre"}
 %{nome: nome, idade: idade} = usuario
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{idade: 25, nome: "Bob", cidade: "Porto Alegre"}
+```
+
 Neste exemplo, estamos casando o mapa `usuario` com um padrão que consiste em duas chaves: `:nome` e `:idade`. Os valores associados a essas chaves são extraídos e atribuídos às variáveis `nome` e `idade`. O resultado é a impressão do nome e da idade do usuário.
 
 ```elixir
 nome
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"Bob"
+```
+
 ```elixir
 idade
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+25
 ```
 
 Às vezes, você pode querer casar um mapa, mas não está interessado em todos os valores. Nesse caso, você pode usar o caractere sublinhado `_` para ignorar valores que não são relevantes para sua operação.
@@ -853,6 +1699,12 @@ curso = %{nome: "Ciência da Computação", duracao: 5, inicio: 2023}
 inicio + duracao
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+2028
+```
+
 Você também pode casar partes específicas de um mapa sem a necessidade de casar todas as chaves. Isso é útil quando você deseja acessar um valor em um mapa complexo sem se preocupar com as outras chaves.
 
 ```elixir
@@ -864,6 +1716,12 @@ pedido = %{cliente: %{nome: "Alice", idade: 30}, produtos: [%{nome: "Celular", p
 
 # Interpola os valores extraídos
 "Nome do Cliente: #{nome}, Idade do Cliente: #{idade}"
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"Nome do Cliente: Alice, Idade do Cliente: 30"
 ```
 
 Neste exemplo, estamos casando apenas a parte do mapa que corresponde à informação do cliente. Isso nos permite acessar o nome e a idade do cliente, independentemente de outras informações no mapa.
@@ -880,6 +1738,12 @@ empresa = %{nome: "Minha Empresa", endereco: %{rua: "Rua Principal", cidade: "S�
 %{endereco: %{cidade: cidade}} = empresa
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{nome: "Minha Empresa", endereco: %{cidade: "São Paulo", rua: "Rua Principal"}}
+```
+
 Neste exemplo, estamos casando o mapa `empresa` e acessando a cidade dentro do mapa aninhado `endereco`. Isso nos permite obter a cidade da empresa de forma direta.
 
 <!-- livebook:{"break_markdown":true} -->
@@ -890,19 +1754,43 @@ Podemos construir um novo mapa com as chaves extraidas.
 %{cidade: cidade}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{cidade: "São Paulo"}
+```
+
 Podemos usar o operador `|` que vimos anteriormente em Listas para atualizar os valores em mapas.
 
 ```elixir
 evento = %{nome: "Learn4Elixir", mes_inicio: 10, mes_fim: 11, nota: 10}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%{nome: "Learn4Elixir", mes_inicio: 10, mes_fim: 11, nota: 10}
+```
+
 ```elixir
 novo_evento = %{evento | nota: 1000}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%{nome: "Learn4Elixir", mes_inicio: 10, mes_fim: 11, nota: 1000}
 ```
 
 ```elixir
 # atualizando vários valores
 novo_evento = %{evento | nome: "GambiConf", mes_inicio: 11}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%{nome: "GambiConf", mes_inicio: 11, mes_fim: 11, nota: 10}
 ```
 
 ## Estruturas (Structs)
@@ -915,16 +1803,34 @@ defmodule Usuario do
 end
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+{:module, Usuario, <<70, 79, 82, 49, 0, 0, 9, ...>>, %Usuario{nome: nil, idade: nil, cidade: nil}}
+```
+
 Neste exemplo, criamos uma struct chamada `Usuario` com três campos: `nome`, `idade` e `cidade`.
 
 ```elixir
 %Usuario{}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%Usuario{nome: nil, idade: nil, cidade: nil}
+```
+
 Para criar um valor do tipo estrutura com dados basta passá-los como chave e valor, passsando corretamente o nome e chaves válidas em sua definição. Caso uma seja omitida, ela irá receber o valor padrão.
 
 ```elixir
 %Usuario{nome: "Camilo", idade: 28}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%Usuario{nome: "Camilo", idade: 28, cidade: nil}
 ```
 
 Uma estrutura não irá aceitar qualquer chave que não tenha sido declarada em sua declaração.
@@ -945,10 +1851,22 @@ defmodule Pessoa do
 end
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+{:module, Pessoa, <<70, 79, 82, 49, 0, 0, 9, ...>>, %Pessoa{nome: "", idade: 0, cidade: ""}}
+```
+
 Agora quando criarmos um valor da estrutura com valores padrão vamos ter uma estrutura que já é criada com os valores iniciais.
 
 ```elixir
 %Pessoa{}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%Pessoa{nome: "", idade: 0, cidade: ""}
 ```
 
 Você pode acessar os valores de uma estrutura usando o operador "**.**"
@@ -957,28 +1875,59 @@ Você pode acessar os valores de uma estrutura usando o operador "**.**"
 %Pessoa{nome: "Ana Bastos", cidade: "São Paulo"}.nome
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+"Ana Bastos"
+```
+
 Da mesma forma quando salvamos uma estrutura em uma variável.
 
 ```elixir
 pessoa = %Pessoa{nome: "Ana Bastos", cidade: "São Paulo"}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%Pessoa{nome: "Ana Bastos", idade: 0, cidade: "São Paulo"}
+```
+
 ```elixir
 pessoa.cidade
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"São Paulo"
 ```
 
 Ambas chaves, com e sem valor padrão, podem ser misturadas na declaração de uma estrutura desde que as chaves sem valor padrão venham primeiro, caso contrário isso irá causar um erro.
 
 ```elixir
 defmodule Animal do
-  defstruct [:nome, especie: "", localizacao: "", :idade]
+  defstruct [:nome, :idade, especie: "", localizacao: ""]
 end
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+{:module, Animal, <<70, 79, 82, 49, 0, 0, 9, ...>>,
+ %Animal{nome: nil, idade: nil, especie: "", localizacao: ""}}
 ```
 
 > Mude a ordem para `[:nome, :idade, especie: "", localizacao: ""]` e execute novamente a célula.
 
 ```elixir
 %Animal{}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%Animal{nome: nil, idade: nil, especie: "", localizacao: ""}
 ```
 
 Também é possivel usar `@enforce_keys` para garantir que todas as chaves que são especificadas nessa propriedade sejam fornecidas ao criar um valor da estrutura. Se o campo estiver faltando isso vai causar um erro.
@@ -990,8 +1939,20 @@ defmodule Jogador do
 end
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+{:module, Jogador, <<70, 79, 82, 49, 0, 0, 11, ...>>, %Jogador{nome: "", idade: 0, cidade: ""}}
+```
+
 ```elixir
-%Jogador{}
+%Jogador{nome: "Matheus", idade: 23, cidade: "Ponta Grossa"}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%Jogador{nome: "Matheus", idade: 23, cidade: "Ponta Grossa"}
 ```
 
 > Resolva esse erro passando os campos que são necessários na célula acima.
@@ -1005,8 +1966,20 @@ Podemos retornar uma nova estrutura copiando os valores da antiga e alterando o 
 mentor = %Pessoa{nome: "Dickson Melo", idade: 20, cidade: "Natal"}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%Pessoa{nome: "Dickson Melo", idade: 20, cidade: "Natal"}
+```
+
 ```elixir
 mentor_atualizado = %{mentor | idade: mentor.idade + 1}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%Pessoa{nome: "Dickson Melo", idade: 21, cidade: "Natal"}
 ```
 
 ```elixir
@@ -1017,6 +1990,12 @@ outro_mentor = %Pessoa{nome: "Douglas Tofoli", cidade: "São Paulo"}
 outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+%Pessoa{nome: "Douglas", idade: 23, cidade: "São Paulo"}
+```
+
 ## Exercício
 
 ### Exercicio 1
@@ -1024,35 +2003,83 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
 ```elixir
-is_number("")
+is_number(42)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
-is_integer("")
+is_integer(42)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
-is_float("")
+is_float(3.14)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
-is_binary("")
+is_binary("Que nome estranho para string.")
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
-is_atom("")
+is_atom(:atomo)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
-is_boolean("")
+is_boolean(true)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
-is_map("")
+is_map(%{:nome => "Dua Lipa", :musica_favorita => "Cold Heart, digasse de passagem"})
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ```elixir
-is_tuple("")
+is_tuple({:î, :ĵ})
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+true
 ```
 
 ### Exercicio 2
@@ -1075,12 +2102,24 @@ Defina variáveis para cada salário, depois, atribua o cálculo de média aritm
 
 ```elixir
 ocamilodev = 71255.53
-ocam_l =
-#...
+ocam_l = 30236.23
+camilootk_ = 5256.12
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+5256.12
 ```
 
 ```elixir
-media =
+media = (ocamilodev + ocam_l + camilootk_) / 3
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+35582.62666666666
 ```
 
 ```elixir
@@ -1090,6 +2129,12 @@ if floor(media) == 35582 do
 else
   "Errooooou!"
 end
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"Parabéns, você acertou!"
 ```
 
 ### Exercicio 3
@@ -1102,12 +2147,33 @@ Resolva a equação quadrática **x² - 2x + 1 = 0** calculando seu delta e sua(
 :math.sqrt(4)
 ```
 
-```elixir
-delta =
+<!-- livebook:{"output":true} -->
+
+```
+2.0
 ```
 
 ```elixir
-x =
+b = -2
+a = 1
+c = 1
+delta = :math.pow(b, 2) - 4 * a * c
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+0.0
+```
+
+```elixir
+x = (-b + :math.sqrt(delta)) / (2 * a)
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+1.0
 ```
 
 ### Exercicio 4
@@ -1175,6 +2241,55 @@ resposta_completa = [
 ]
 ```
 
+<!-- livebook:{"output":true} -->
+
+```
+[
+  %{
+    "body" => "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium",
+    "email" => "Eliseo@gardner.biz",
+    "id" => 1,
+    "name" => "id labore ex et quam laborum",
+    "productId" => 1
+  },
+  %{
+    "body" => "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et",
+    "email" => "Jayne_Kuhic@sydney.com",
+    "id" => 2,
+    "name" => "quo vero reiciendis velit similique earum",
+    "productId" => 1
+  },
+  %{
+    "body" => "doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in",
+    "email" => "Presley.Mueller@myrl.com",
+    "id" => 6,
+    "name" => "et fugit eligendi deleniti quidem qui sint nihil autem",
+    "productId" => 2
+  },
+  %{
+    "body" => "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor",
+    "email" => "Dallas@ole.me",
+    "id" => 7,
+    "name" => "repellat consequatur praesentium vel minus molestias voluptatum",
+    "productId" => 2
+  },
+  %{
+    "body" => "ut dolorum nostrum id quia aut est\nfuga est inventore vel eligendi explicabo quis consectetur\naut occaecati repellat id natus quo est\nut blanditiis quia ut vel ut maiores ea",
+    "email" => "Veronica_Goodwin@timmothy.net",
+    "id" => 11,
+    "name" => "fugit labore quia mollitia quas deserunt nostrum sunt",
+    "productId" => 3
+  },
+  %{
+    "body" => "expedita maiores dignissimos facilis\nipsum est rem est fugit velit sequi\neum odio dolores dolor totam\noccaecati ratione eius rem velit",
+    "email" => "Oswald.Vandervort@leanne.org",
+    "id" => 12,
+    "name" => "modi ut eos dolores illum nam dolor",
+    "productId" => 3
+  }
+]
+```
+
 > Lembre-se de executar a célula com o valor de  `resposta_completa` para poder usá-la.
 
 <!-- livebook:{"break_markdown":true} -->
@@ -1186,31 +2301,110 @@ Com esses dados use **casamento de padrões** (pattern matching) para:
 1. Extrair o primeiro comentário.
 
 ```elixir
-
+[%{"body" => primeiro_comentario} | resto] = resposta_completa
+primeiro_comentario
 ```
 
-2. Salvar o nome do segundo comentário em uma variável `titulo`.
-
-```elixir
-titulo =
-```
-
-3. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
-
-```elixir
+<!-- livebook:{"output":true} -->
 
 ```
-
-4. Extrair o **body** do terceiro comentário.
-
-```elixir
-
+"laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
 ```
 
-5. Criar uma nova lista removendo o segundo item.
+1. Salvar o nome do segundo comentário em uma variável `titulo`.
 
 ```elixir
+[primeiro, %{"name" => titulo} | resto] = resposta_completa
+titulo
+```
 
+<!-- livebook:{"output":true} -->
+
+```
+"quo vero reiciendis velit similique earum"
+```
+
+1. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
+
+```elixir
+[primeiro, segundo, terceiro, quarto, quinto | sexto] = resposta_completa
+resposta = %{quinto | "email" => "contato@foobar.br"}
+resposta
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%{
+  "body" => "ut dolorum nostrum id quia aut est\nfuga est inventore vel eligendi explicabo quis consectetur\naut occaecati repellat id natus quo est\nut blanditiis quia ut vel ut maiores ea",
+  "email" => "contato@foobar.br",
+  "id" => 11,
+  "name" => "fugit labore quia mollitia quas deserunt nostrum sunt",
+  "productId" => 3
+}
+```
+
+1. Extrair o **body** do terceiro comentário.
+
+```elixir
+[primeiro, segundo, %{"body" => terceiro_body} | resto] = resposta_completa
+terceiro_body
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+"doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in"
+```
+
+1. Criar uma nova lista removendo o segundo item.
+
+```elixir
+[primeiro, segundo | resto] = resposta_completa
+sem_o_segundo = resposta_completa -- [segundo]
+sem_o_segundo
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+[
+  %{
+    "body" => "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium",
+    "email" => "Eliseo@gardner.biz",
+    "id" => 1,
+    "name" => "id labore ex et quam laborum",
+    "productId" => 1
+  },
+  %{
+    "body" => "doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in",
+    "email" => "Presley.Mueller@myrl.com",
+    "id" => 6,
+    "name" => "et fugit eligendi deleniti quidem qui sint nihil autem",
+    "productId" => 2
+  },
+  %{
+    "body" => "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor",
+    "email" => "Dallas@ole.me",
+    "id" => 7,
+    "name" => "repellat consequatur praesentium vel minus molestias voluptatum",
+    "productId" => 2
+  },
+  %{
+    "body" => "ut dolorum nostrum id quia aut est\nfuga est inventore vel eligendi explicabo quis consectetur\naut occaecati repellat id natus quo est\nut blanditiis quia ut vel ut maiores ea",
+    "email" => "Veronica_Goodwin@timmothy.net",
+    "id" => 11,
+    "name" => "fugit labore quia mollitia quas deserunt nostrum sunt",
+    "productId" => 3
+  },
+  %{
+    "body" => "expedita maiores dignissimos facilis\nipsum est rem est fugit velit sequi\neum odio dolores dolor totam\noccaecati ratione eius rem velit",
+    "email" => "Oswald.Vandervort@leanne.org",
+    "id" => 12,
+    "name" => "modi ut eos dolores illum nam dolor",
+    "productId" => 3
+  }
+]
 ```
 
 ### Exercicio 5
@@ -1236,58 +2430,228 @@ E com base nesses dados foi pedido que:
 1. Crie um modelo de estrutura (struct) que represente o modelo de um planeta baseado nesses dados fornecidos. Ele deve ter valores default e todos os campos são requeridos.
 
 ```elixir
-
+defmodule Planeta do
+  @enforce_keys [:nome, :superficie, :volume, :massa, :temp_media, :dist_sol]
+  defstruct nome: "", superficie: 0, volume: 0, massa: 0, temp_media: 0, dist_sol: 0
+end
 ```
 
-2. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
+<!-- livebook:{"output":true} -->
+
+```
+{:module, Planeta, <<70, 79, 82, 49, 0, 0, 12, ...>>,
+ %Planeta{nome: "", superficie: 0, volume: 0, massa: 0, temp_media: 0, dist_sol: 0}}
+```
+
+1. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-mercurio =
+mercurio = %Planeta{
+  nome: "Mercúrio",
+  superficie: 7.48e7,
+  volume: 6.083e10,
+  massa: 3.3011e23,
+  temp_media: 166.85,
+  dist_sol: 57_910_000
+}
 ```
 
-3. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
+<!-- livebook:{"output":true} -->
+
+```
+%Planeta{
+  nome: "Mercúrio",
+  superficie: 74800000.0,
+  volume: 60830000000.0,
+  massa: 3.3011e23,
+  temp_media: 166.85,
+  dist_sol: 57910000
+}
+```
+
+1. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-venus =
+venus = %Planeta{
+  nome: "Vênus",
+  superficie: 4.6e8,
+  volume: 92.843e10,
+  massa: 4.8685e24,
+  temp_media: 461,
+  dist_sol: 108_200_000
+}
 ```
 
-4. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
+<!-- livebook:{"output":true} -->
+
+```
+%Planeta{
+  nome: "Vênus",
+  superficie: 460000000.0,
+  volume: 928430000000.0,
+  massa: 4.8685e24,
+  temp_media: 461,
+  dist_sol: 108200000
+}
+```
+
+1. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-terra =
+terra = %Planeta{
+  nome: "Terra",
+  superficie: 5.10e8,
+  volume: 1.08321e12,
+  massa: 5.9736e24,
+  temp_media: 14,
+  dist_sol: 149_600_000
+}
 ```
 
-5. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
+<!-- livebook:{"output":true} -->
+
+```
+%Planeta{
+  nome: "Terra",
+  superficie: 510000000.0,
+  volume: 1083210000000.0,
+  massa: 5.9736e24,
+  temp_media: 14,
+  dist_sol: 149600000
+}
+```
+
+1. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-marte =
+marte = %Planeta{
+  nome: "Marte",
+  superficie: 1.44e8,
+  volume: 1.6318e11,
+  massa: 6.4174e23,
+  temp_media: -63,
+  dist_sol: 227_940_000
+}
 ```
 
-6. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
+<!-- livebook:{"output":true} -->
+
+```
+%Planeta{
+  nome: "Marte",
+  superficie: 144000000.0,
+  volume: 163180000000.0,
+  massa: 6.4174e23,
+  temp_media: -63,
+  dist_sol: 227940000
+}
+```
+
+1. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-jupiter =
+jupiter = %Planeta{
+  nome: "Júpiter",
+  superficie: 6.21796e10,
+  volume: 1.43128e15,
+  massa: 1.8986e27,
+  temp_media: -108,
+  dist_sol: 778_330_000
+}
 ```
 
-7. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
+<!-- livebook:{"output":true} -->
+
+```
+%Planeta{
+  nome: "Júpiter",
+  superficie: 62179600000.0,
+  volume: 1431280000000000.0,
+  massa: 1.8986e27,
+  temp_media: -108,
+  dist_sol: 778330000
+}
+```
+
+1. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-saturno =
+saturno = %Planeta{
+  nome: "Saturno",
+  superficie: 4.27e10,
+  volume: 8.2713e14,
+  massa: 5.6846e26,
+  temp_media: -139,
+  dist_sol: 1_429_400_000
+}
 ```
 
-8. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
+<!-- livebook:{"output":true} -->
+
+```
+%Planeta{
+  nome: "Saturno",
+  superficie: 42700000000.0,
+  volume: 827130000000000.0,
+  massa: 5.6846e26,
+  temp_media: -139,
+  dist_sol: 1429400000
+}
+```
+
+1. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-urano =
+urano = %Planeta{
+  nome: "Urano",
+  superficie: 8.1156e9,
+  volume: 6.833e13,
+  massa: 8.6810e25,
+  temp_media: -220,
+  dist_sol: 2_870_990_000
+}
 ```
 
-9. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
+<!-- livebook:{"output":true} -->
+
+```
+%Planeta{
+  nome: "Urano",
+  superficie: 8115600000.0,
+  volume: 68330000000000.0,
+  massa: 8.681e25,
+  temp_media: -220,
+  dist_sol: 2870990000
+}
+```
+
+1. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-netuno =
+netuno = %Planeta{
+  nome: "Netuno",
+  superficie: 7.6183e9,
+  volume: 6.254e13,
+  massa: 1.0243e26,
+  temp_media: -223,
+  dist_sol: 4_504_000_000
+}
 ```
 
-10. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
+<!-- livebook:{"output":true} -->
+
+```
+%Planeta{
+  nome: "Netuno",
+  superficie: 7618300000.0,
+  volume: 62540000000000.0,
+  massa: 1.0243e26,
+  temp_media: -223,
+  dist_sol: 4504000000
+}
+```
+
+1. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
 
 * **:estrela**: String, valor "Sol"
 * **:nome**: String, valor "Sistema Solar"
@@ -1296,7 +2660,86 @@ netuno =
 Salve esse mapa criado em uma variável `sistema_solar`.
 
 ```elixir
-sistema_solar =
+sistema_solar = %{
+  :estrela => "Sol",
+  :nome => "Sistema Solar",
+  :planetas => [mercurio, venus, terra, marte, jupiter, saturno, urano, netuno]
+}
+```
+
+<!-- livebook:{"output":true} -->
+
+```
+%{
+  nome: "Sistema Solar",
+  estrela: "Sol",
+  planetas: [
+    %Planeta{
+      nome: "Mercúrio",
+      superficie: 74800000.0,
+      volume: 60830000000.0,
+      massa: 3.3011e23,
+      temp_media: 166.85,
+      dist_sol: 57910000
+    },
+    %Planeta{
+      nome: "Vênus",
+      superficie: 460000000.0,
+      volume: 928430000000.0,
+      massa: 4.8685e24,
+      temp_media: 461,
+      dist_sol: 108200000
+    },
+    %Planeta{
+      nome: "Terra",
+      superficie: 510000000.0,
+      volume: 1083210000000.0,
+      massa: 5.9736e24,
+      temp_media: 14,
+      dist_sol: 149600000
+    },
+    %Planeta{
+      nome: "Marte",
+      superficie: 144000000.0,
+      volume: 163180000000.0,
+      massa: 6.4174e23,
+      temp_media: -63,
+      dist_sol: 227940000
+    },
+    %Planeta{
+      nome: "Júpiter",
+      superficie: 62179600000.0,
+      volume: 1431280000000000.0,
+      massa: 1.8986e27,
+      temp_media: -108,
+      dist_sol: 778330000
+    },
+    %Planeta{
+      nome: "Saturno",
+      superficie: 42700000000.0,
+      volume: 827130000000000.0,
+      massa: 5.6846e26,
+      temp_media: -139,
+      dist_sol: 1429400000
+    },
+    %Planeta{
+      nome: "Urano",
+      superficie: 8115600000.0,
+      volume: 68330000000000.0,
+      massa: 8.681e25,
+      temp_media: -220,
+      dist_sol: 2870990000
+    },
+    %Planeta{
+      nome: "Netuno",
+      superficie: 7618300000.0,
+      volume: 62540000000000.0,
+      massa: 1.0243e26,
+      temp_media: -223,
+      dist_sol: 4504000000
+    }
+  ]
+}
 ```
 
 ---
