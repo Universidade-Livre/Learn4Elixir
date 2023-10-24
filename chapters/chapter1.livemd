@@ -109,6 +109,7 @@ Avalie os exemplos abaixo para ver o que acontece!
 ```
 
 > Em qual dos exemplos acima aconteceu um erro? Por quê?
+> Segundo exemplo, pois não existe um número antes do "." no número flutuante
 
 ## Átomos
 
@@ -971,7 +972,7 @@ Ambas chaves, com e sem valor padrão, podem ser misturadas na declaração de u
 
 ```elixir
 defmodule Animal do
-  defstruct [:nome, especie: "", localizacao: "", :idade]
+  defstruct [:nome, :idade, especie: "", localizacao: ""]
 end
 ```
 
@@ -991,7 +992,7 @@ end
 ```
 
 ```elixir
-%Jogador{}
+%Jogador{nome: "Caio", idade: 25, cidade: "São Paulo"}
 ```
 
 > Resolva esse erro passando os campos que são necessários na célula acima.
@@ -1024,35 +1025,35 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
 ```elixir
-is_number("")
+is_number(100)
 ```
 
 ```elixir
-is_integer("")
+is_integer(5)
 ```
 
 ```elixir
-is_float("")
+is_float(10.50)
 ```
 
 ```elixir
-is_binary("")
+is_binary("Valim arrebenta")
 ```
 
 ```elixir
-is_atom("")
+is_atom(:atomo)
 ```
 
 ```elixir
-is_boolean("")
+is_boolean(false)
 ```
 
 ```elixir
-is_map("")
+is_map(%{campo1: "campo"})
 ```
 
 ```elixir
-is_tuple("")
+is_tuple({:campo1, 10})
 ```
 
 ### Exercicio 2
@@ -1075,12 +1076,12 @@ Defina variáveis para cada salário, depois, atribua o cálculo de média aritm
 
 ```elixir
 ocamilodev = 71255.53
-ocam_l =
-#...
+ocam_l = 30236.23
+camilotk = 5256.12
 ```
 
 ```elixir
-media =
+media = (ocamilodev + ocam_l + camilotk) / 3
 ```
 
 ```elixir
@@ -1099,15 +1100,15 @@ Resolva a equação quadrática **x² - 2x + 1 = 0** calculando seu delta e sua(
 > Dica: A operação de raíz quadrada é feita com `:math.sqrt()`, `:math` é um módulo do Erlang que contêm diversas funções matemáticas que podem ser úteis na sua jornada.
 
 ```elixir
-:math.sqrt(4)
+:math.sqrt(0)
 ```
 
 ```elixir
-delta =
+delta = 0
 ```
 
 ```elixir
-x =
+x = 1
 ```
 
 ### Exercicio 4
@@ -1186,31 +1187,49 @@ Com esses dados use **casamento de padrões** (pattern matching) para:
 1. Extrair o primeiro comentário.
 
 ```elixir
+[cabeca | _] = resposta_completa
 
+cabeca
 ```
 
-2. Salvar o nome do segundo comentário em uma variável `titulo`.
+1. Salvar o nome do segundo comentário em uma variável `titulo`.
 
 ```elixir
-titulo =
+[_, comentario | _] = resposta_completa
+
+titulo = comentario["name"]
+titulo
 ```
 
-3. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
+1. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
 
 ```elixir
-
+[_, _, _, _, comentario | _] = resposta_completa
+novo_mapa = Map.put(comentario, "email", "contato@foobar.br")
+novo_mapa
 ```
 
-4. Extrair o **body** do terceiro comentário.
+1. Extrair o **body** do terceiro comentário.
 
 ```elixir
-
+[_, _, comentario | _] = resposta_completa
+Map.get(comentario, "body")
 ```
 
-5. Criar uma nova lista removendo o segundo item.
+1. Criar uma nova lista removendo o segundo item.
 
 ```elixir
-
+resposta_completa --
+  [
+    %{
+      "productId" => 1,
+      "id" => 2,
+      "name" => "quo vero reiciendis velit similique earum",
+      "email" => "Jayne_Kuhic@sydney.com",
+      "body" =>
+        "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+    }
+  ]
 ```
 
 ### Exercicio 5
@@ -1236,58 +1255,122 @@ E com base nesses dados foi pedido que:
 1. Crie um modelo de estrutura (struct) que represente o modelo de um planeta baseado nesses dados fornecidos. Ele deve ter valores default e todos os campos são requeridos.
 
 ```elixir
-
+defmodule Planeta do
+  @enforce_keys [:nome, :superficie, :volume, :massa, :temperatura, :distancia_sol]
+  defstruct nome: "Terra",
+            superficie: 5.10 * 10 ** 8,
+            volume: 1.08321 * 10 ** 12,
+            massa: 5.9736 * 10 ** 24,
+            temperatura: 14,
+            distancia_sol: 149_600_000
+end
 ```
 
-2. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-mercurio =
+mercurio = %Planeta{
+  nome: "Mercúrio",
+  superficie: 7.48 * 10 ** 7,
+  volume: 6.083 * 10 ** 10,
+  massa: 3.3011 * 10 ** 23,
+  temperatura: 166.85,
+  distancia_sol: 57_910_000
+}
 ```
 
-3. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-venus =
+venus = %Planeta{
+  nome: "Vênus",
+  superficie: 4.60 * 10 ** 8,
+  volume: 92.843 * 10 ** 10,
+  massa: 4.8685 * 10 ** 24,
+  temperatura: 461,
+  distancia_sol: 108_200_000
+}
 ```
 
-4. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-terra =
+terra = %Planeta{
+  nome: "Terra",
+  superficie: 5.10 * 10 ** 8,
+  volume: 1.08321 * 10 ** 12,
+  massa: 5.9736 * 10 ** 24,
+  temperatura: 14,
+  distancia_sol: 149_600_000
+}
 ```
 
-5. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-marte =
+marte = %Planeta{
+  nome: "Marte",
+  superficie: 1.44 * 10 ** 8,
+  volume: 1.6318 * 10 ** 11,
+  massa: 6.4174 * 10 ** 23,
+  temperatura: -63,
+  distancia_sol: 227_940_000
+}
 ```
 
-6. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-jupiter =
+jupiter = %Planeta{
+  nome: "Jupiter",
+  superficie: 6.21796 * 10 ** 10,
+  volume: 1.43128 * 10 ** 15,
+  massa: 1.8986 * 10 ** 27,
+  temperatura: -108,
+  distancia_sol: 778_330_000
+}
 ```
 
-7. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-saturno =
+saturno = %Planeta{
+  nome: "Saturno",
+  superficie: 4.27 * 10 ** 10,
+  volume: 8.2713 * 10 ** 14,
+  massa: 5.6846 * 10 ** 26,
+  temperatura: -139,
+  distancia_sol: 1_429_400_000
+}
 ```
 
-8. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-urano =
+urano = %Planeta{
+  nome: "Urano",
+  superficie: 8.1156 * 10 ** 9,
+  volume: 6.833 * 10 ** 13,
+  massa: 8.6810 * 10 ** 25,
+  temperatura: -220,
+  distancia_sol: 2_870_990_000
+}
 ```
 
-9. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
-netuno =
+netuno = %Planeta{
+  nome: "Netuno",
+  superficie: 7.6183 * 10 ** 9,
+  volume: 6.254 * 10 ** 13,
+  massa: 1.0243 * 10 ** 26,
+  temperatura: -223,
+  distancia_sol: 4_504_000_000
+}
 ```
 
-10. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
+1. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
 
 * **:estrela**: String, valor "Sol"
 * **:nome**: String, valor "Sistema Solar"
@@ -1296,7 +1379,11 @@ netuno =
 Salve esse mapa criado em uma variável `sistema_solar`.
 
 ```elixir
-sistema_solar =
+sistema_solar = %{
+  estrela: "Sol",
+  nome: "Sistema Solar",
+  planetas: [mercurio, venus, terra, marte, jupiter, saturno, urano, netuno]
+}
 ```
 
 ---
