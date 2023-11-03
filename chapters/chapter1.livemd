@@ -54,7 +54,7 @@ Vamos começar nossa exploração pelos tipos de dados fundamentais na programa�
 
 ## Números Inteiros
 
-Abaixo você pode  ver e avaliar vários números inteiros. Números inteiros são usados para representar valores númericos que não precisam de casas decimais.
+Abaixo você pode  ver e avaliar vários números inteiros. Números inteiros são usados para representar valores numéricos que não precisam de casas decimais.
 
 ```elixir
 10
@@ -888,7 +888,7 @@ Neste exemplo, estamos casando o mapa `empresa` e acessando a cidade dentro do m
 
 <!-- livebook:{"break_markdown":true} -->
 
-Podemos construir um novo mapa com as chaves extraidas.
+Podemos construir um novo mapa com as chaves extraídas.
 
 ```elixir
 %{cidade: cidade}
@@ -925,7 +925,7 @@ Neste exemplo, criamos uma struct chamada `Usuario` com três campos: `nome`, `i
 %Usuario{}
 ```
 
-Para criar um valor do tipo estrutura com dados basta passá-los como chave e valor, passsando corretamente o nome e chaves válidas em sua definição. Caso uma seja omitida, ela irá receber o valor padrão.
+Para criar um valor do tipo estrutura com dados basta passá-los como chave e valor, passando corretamente o nome e chaves válidas em sua definição. Caso uma seja omitida, ela irá receber o valor padrão.
 
 ```elixir
 %Usuario{nome: "Camilo", idade: 28}
@@ -985,7 +985,7 @@ end
 %Animal{}
 ```
 
-Também é possivel usar `@enforce_keys` para garantir que todas as chaves que são especificadas nessa propriedade sejam fornecidas ao criar um valor da estrutura. Se o campo estiver faltando isso vai causar um erro.
+Também é possível usar `@enforce_keys` para garantir que todas as chaves que são especificadas nessa propriedade sejam fornecidas ao criar um valor da estrutura. Se o campo estiver faltando isso vai causar um erro.
 
 ```elixir
 defmodule Jogador do
@@ -1023,7 +1023,7 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 
 ## Exercício
 
-### Exercicio 1
+### Exercício 1
 
 Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
@@ -1059,7 +1059,7 @@ is_map("")
 is_tuple("")
 ```
 
-### Exercicio 2
+### Exercício 2
 
 Imagine que vários desenvolvedores de software que trabalham com front-end
 publicaram abertamente seus salários no Twitter. Você pensou em fazer um programa
@@ -1096,11 +1096,11 @@ else
 end
 ```
 
-### Exercicio 3
+### Exercício 3
 
 Resolva a equação quadrática **x² - 2x + 1 = 0** calculando seu delta e sua(s) raíz(es).
 
-> Dica: A operação de raíz quadrada é feita com `:math.sqrt()`, `:math` é um módulo do Erlang que contêm diversas funções matemáticas que podem ser úteis na sua jornada.
+> Dica: A operação de raiz quadrada é feita com `:math.sqrt()`, `:math` é um módulo do Erlang que contêm diversas funções matemáticas que podem ser úteis na sua jornada.
 
 ```elixir
 :math.sqrt(4)
@@ -1114,7 +1114,7 @@ delta =
 x =
 ```
 
-### Exercicio 4
+### Exercício 4
 
 Trabalhando com Elixir você desenvolveu um sistema de E-commerce. Recentemente você decidiu extrair os comentários e o sistema respondeu te enviando uma lista de mapas com os comentários. Cada mapa possui as propriedades:
 
@@ -1217,7 +1217,7 @@ titulo =
 
 ```
 
-### Exercicio 5
+### Exercício 5
 
 O Departamento de Astrofísica da NASA entrou em contato com você. Eles precisam organizar as informações dos planetas do Sistema Solar para que os sistemas em Elixir que estão rodando simulações utilizem para processar essas simulações.
 
@@ -1243,49 +1243,49 @@ E com base nesses dados foi pedido que:
 
 ```
 
-1. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variável `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 mercurio =
 ```
 
-1. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variável `venus` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 venus =
 ```
 
-1. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variável `terra` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 terra =
 ```
 
-1. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variável `marte` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 marte =
 ```
 
-1. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variável `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 jupiter =
 ```
 
-1. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variável `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 saturno =
 ```
 
-1. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variável `urano` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 urano =
 ```
 
-1. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variável `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 netuno =
