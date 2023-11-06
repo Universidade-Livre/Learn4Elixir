@@ -9,6 +9,8 @@
   </a>
 </p>
 
+> 🚨 **Aviso importante**: Este curso continua normalmente mesmo depois do Hacktoberfest 🚨
+
 <p align="justify">
   <i>
   Há muito tempo, o lendário alquimista José Valim supostamente descobriu o segredo para criar 
