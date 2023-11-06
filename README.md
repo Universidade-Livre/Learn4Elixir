@@ -514,12 +514,12 @@ aprendizado produtiva. Isso tudo junto foi executado por essa equipe maravilhosa
   <tr>
     <td align="center"><a href="https://github.com/OtavioSC"><img src="https://avatars.githubusercontent.com/u/54047040?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Otávio Carmo</b></sub></a><br /><a href="#mentoring-otavio" title="Mentoring">🧑‍🏫</a></td>
         <td align="center"><a href="https://github.com/zoedsoupe"><img src="https://avatars.githubusercontent.com/u/44469426?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zoey Pessanha</b></sub></a><br /><a href="#mentoring-zoedsoupe" title="Mentoring">🧑‍🏫</a></td>
-            <td align="center"><a href="https://github.com/cherryramatisdev"><img src="https://avatars.githubusercontent.com/u/86631177?v=4&s=100" width="100px;" alt=""/><br /><sub><b>Cherry Ramatis</b></sub></a><br /><a href="#mentoring-cherry" title="Hacktoberfest Mentor">📆</a></td>
-        <td align="center"><a href="https://github.com/lanjoni"><img src="https://avatars.githubusercontent.com/u/91899995?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guto Lanjoni</b></sub></a><br /><a href="#mentoring-guto" title="Hacktoberfest Mentor">📆</a></td>
+            <td align="center"><a href="https://github.com/cherryramatisdev"><img src="https://avatars.githubusercontent.com/u/86631177?v=4&s=100" width="100px;" alt=""/><br /><sub><b>Cherry Ramatis</b></sub></a><br /><a href="#mentoring-cherry" title="Was Hacktoberfest Mentor">📆</a></td>
+        <td align="center"><a href="https://github.com/lanjoni"><img src="https://avatars.githubusercontent.com/u/91899995?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guto Lanjoni</b></sub></a><br /><a href="#mentoring-guto" title="Was Hacktoberfest Mentor">📆</a></td>
   </tr>
 
   <tr>
-        <td align="center"><a href="https://github.com/Cyytrus"><img src="https://avatars.githubusercontent.com/u/83558749?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Paulo Castro</b></sub></a><br /><a href="#mentoring-paulo" title="Hacktoberfest Mentor">📆</a></td>
+        <td align="center"><a href="https://github.com/Cyytrus"><img src="https://avatars.githubusercontent.com/u/83558749?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Paulo Castro</b></sub></a><br /><a href="#mentoring-paulo" title="Was Hacktoberfest Mentor">📆</a></td>
   </tr>
 </table>
 
