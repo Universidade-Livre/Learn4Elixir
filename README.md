@@ -64,8 +64,8 @@ Esse repositório está organizado com conteúdo e exercicios de código. Todos 
 disponíveis em <i>livebooks</i> (um <i>livebook</i> é um arquivo contendo texto e código executável em uma instalação de http://livebook.dev), e você pode acompanhar acessando os links:
 </p>
 
-- [Capítulo 1](./chapters/chapter1.livemd) ◯ [Vídeo Explicação](https://www.youtube.com/live/xcYO5G0sthg?si=QsFp0j20KS8Br38n)
-- [Capítulo 2](./chapters/chapter2.livemd) ◯ [Vídeo Explicação](https://youtu.be/ObTPNEbdvkM?si=fyp-WsjlU-vI0P1f)
+- [Capítulo 1](./chapters/chapter1.livemd) ⚬ [Vídeo Explicação](https://www.youtube.com/live/xcYO5G0sthg?si=QsFp0j20KS8Br38n)
+- [Capítulo 2](./chapters/chapter2.livemd) ⚬ [Vídeo Explicação](https://youtu.be/ObTPNEbdvkM?si=fyp-WsjlU-vI0P1f)
 - [Capítulo 3](./chapters/chapter3.livemd)
 - [Capítulo 4](./chapters/chapter4.livemd)
 
