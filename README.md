@@ -135,7 +135,7 @@ Começar a aprender com o Learn4Elixir é muito mamão com açúcar, é só:
 7. Abra o `chapters/chapter1.livemd` e começe a resolver os desafios.
 8. Adicione as alterações feitas para serem enviadas para **o seu fork** com o comando `git add .`.
 9. Faça o commit enviando essas alterações `git commit -m "Completando o Ex. 1"`.
-10. Abra um PR **no seu fork** da sua ramificação criada (nesse caso `exercicio-1`) para a ramificação `main` e caso queira ajuda/revisão mencione @[digzom](https://github.com/digzom), @[douglastofoli](https://github.com/douglastofoli), @[eulixir](https://github.com/eulixir), @[OtavioSC](https://github.com/otaviosc) ou @[zoedsoupe](https://github.com/zoedsoupe) que vamos ajudá-lo com a revisão de suas soluções (essas menções já estão no Template de PR).
+10. Abra um PR **no seu fork** da sua ramificação criada (nesse caso `exercicio-1`) para a ramificação `main` e caso queira ajuda/revisão mencione @[anabastos](https://github.com/anabastos), @[digzom](https://github.com/digzom), @[douglastofoli](https://github.com/douglastofoli), @[eulixir](https://github.com/eulixir), @[OtavioSC](https://github.com/otaviosc) ou @[zoedsoupe](https://github.com/zoedsoupe) que vamos ajudá-lo com a revisão de suas soluções (essas menções já estão no Template de PR).
 11. Ao final, após esse processo faça a mescla (merge) do PR. Para continuar os próximos capítulos repita dos passos 5 até 10 para os capítulos de 2 a 4.
 
 > **Importante!** Você deve abrir o PR para o seu próprio fork desse repositório. Desta forma cada um pode receber os pontos para o evento e manter seus arquivos individualmente.
