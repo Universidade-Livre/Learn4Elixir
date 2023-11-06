@@ -538,6 +538,14 @@ Você pode nos ajudar de diversas formas:
 - **Faça um PR**: Encontrou um erro? Algo que pode ser melhorado? Faça um Pull Request que vamos avaliar, discutir e atualizar o material. Todos cometem erros e tudo pode ser melhorado, é com a ajuda da Comunidade que construímos coisas cada vez melhor.
 - **Revisão de PR**: Tem um PR que outra pessoa fez em aberto? Clone-o, teste, opine. Ajude a avaliar e revisar PRs. Toda discussão útil é bem-vinda e nos ajuda a melhorar.
 
+
+## Gravação das Lives
+Durante o Hacktoberfest 2023 foram realizadas lives temáticas com convidados no Canal da Twitch da Universidade Brasileira Livre com o objetivo de complementar e trazer mais conteúdo sobre tecnologia e programação com os mentores e patrocinadores do evento. Abaixo segue o link para as gravações:
+
+- **01/10/23 - *Lançamento do Learn4Elixir com Camilo Cunha*** - [Assista aqui](https://youtu.be/9DjlSB_RfPo?si=ia8WliFqIp3LIkR_).
+- **08/10/23 - *Elixir na Cumbuca com Pedro Castilho e Paulo Castro*** - [Assista aqui](https://youtu.be/JlWp0RjDtGM?si=mzYTprz2vuTbPXVd).
+- **15/10/23 - *Explorando Crystal com Guto Lanjoni*** - [Assista aqui](https://youtu.be/9DjlSB_RfPo?si=ia8WliFqIp3LIkR_).
+
 ## Patrocínio
 
 <table align="center">
