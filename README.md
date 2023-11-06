@@ -506,20 +506,20 @@ aprendizado produtiva. Isso tudo junto foi executado por essa equipe maravilhosa
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/anabastos"><img src="https://avatars.githubusercontent.com/u/10088900?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ana Bastos</b></sub></a><br /><a href="#mentoring-ana" title="Mentoring">🧑‍🏫</a></td>
-    <td align="center"><a href="https://github.com/cherryramatisdev"><img src="https://avatars.githubusercontent.com/u/86631177?v=4&s=100" width="100px;" alt=""/><br /><sub><b>Cherry Ramatis</b></sub></a><br /><a href="#mentoring-cherry" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://github.com/digzom"><img src="https://avatars.githubusercontent.com/u/62157839?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dickson Melo</b></sub></a><br /><a href="#mentoring-dickson" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://github.com/douglastofoli"><img src="https://avatars.githubusercontent.com/u/3953162?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Douglas Tofoli</b></sub></a><br /><a href="#mentoring-douglas" title="Mentoring">🧑‍🏫</a></td>
-  </tr>
-
-  <tr>
-    <td align="center"><a href="https://github.com/lanjoni"><img src="https://avatars.githubusercontent.com/u/91899995?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guto Lanjoni</b></sub></a><br /><a href="#mentoring-guto" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://github.com/eulixir"><img src="https://github.com/eulixir.png" width="100px;" alt=""/><br /><sub><b>João Pedro Alves</b></sub></a><br /><a href="#mentoring-joao" title="Mentoring">🧑‍🏫</a></td>
-    <td align="center"><a href="https://github.com/OtavioSC"><img src="https://avatars.githubusercontent.com/u/54047040?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Otávio Carmo</b></sub></a><br /><a href="#mentoring-otavio" title="Mentoring">🧑‍🏫</a></td>
-    <td align="center"><a href="https://github.com/Cyytrus"><img src="https://avatars.githubusercontent.com/u/83558749?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Paulo Castro</b></sub></a><br /><a href="#mentoring-paulo" title="Mentoring">🧑‍🏫</a></td>
   </tr>
 
   <tr>
-    <td align="center"><a href="https://github.com/zoedsoupe"><img src="https://avatars.githubusercontent.com/u/44469426?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zoey Pessanha</b></sub></a><br /><a href="#mentoring-zoedsoupe" title="Mentoring">🧑‍🏫</a></td>
+    <td align="center"><a href="https://github.com/OtavioSC"><img src="https://avatars.githubusercontent.com/u/54047040?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Otávio Carmo</b></sub></a><br /><a href="#mentoring-otavio" title="Mentoring">🧑‍🏫</a></td>
+        <td align="center"><a href="https://github.com/zoedsoupe"><img src="https://avatars.githubusercontent.com/u/44469426?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zoey Pessanha</b></sub></a><br /><a href="#mentoring-zoedsoupe" title="Mentoring">🧑‍🏫</a></td>
+            <td align="center"><a href="https://github.com/cherryramatisdev"><img src="https://avatars.githubusercontent.com/u/86631177?v=4&s=100" width="100px;" alt=""/><br /><sub><b>Cherry Ramatis</b></sub></a><br /><a href="#mentoring-cherry" title="Mentoring">🧑‍🏫</a></td>
+        <td align="center"><a href="https://github.com/lanjoni"><img src="https://avatars.githubusercontent.com/u/91899995?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guto Lanjoni</b></sub></a><br /><a href="#mentoring-guto" title="Mentoring">🧑‍🏫</a></td>
+  </tr>
+
+  <tr>
+        <td align="center"><a href="https://github.com/Cyytrus"><img src="https://avatars.githubusercontent.com/u/83558749?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Paulo Castro</b></sub></a><br /><a href="#mentoring-paulo" title="Mentoring">🧑‍🏫</a></td>
   </tr>
 </table>
 
