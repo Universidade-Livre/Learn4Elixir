@@ -9,7 +9,7 @@
   </a>
 </p>
 
-> 🚨 **Aviso importante**: Este curso continua normalmente mesmo depois do Hacktoberfest 🚨
+> 🚨 **Aviso importante**: Este repositório/conteúdo continua normalmente mesmo depois do Hacktoberfest 🚨
 
 <p align="justify">
   <i>
