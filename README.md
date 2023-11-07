@@ -545,6 +545,8 @@ Durante o Hacktoberfest 2023 foram realizadas lives temáticas com convidados no
 - **01/10/23 - *Lançamento do Learn4Elixir com Camilo Cunha*** - [Assista aqui](https://youtu.be/9DjlSB_RfPo?si=ia8WliFqIp3LIkR_).
 - **08/10/23 - *Elixir na Cumbuca com Pedro Castilho e Paulo Castro*** - [Assista aqui](https://youtu.be/JlWp0RjDtGM?si=mzYTprz2vuTbPXVd).
 - **15/10/23 - *Explorando Crystal com Guto Lanjoni*** - [Assista aqui](https://youtu.be/9DjlSB_RfPo?si=ia8WliFqIp3LIkR_).
+- **22/10/23 - *Nomadismo Digital com Lincoli Xavier*** - [Assista aqui](https://youtu.be/9DjlSB_RfPo?si=ia8WliFqIp3LIkR_).
+- **29/10/23 - *Phoenix com Douglas Tofoli*** - [Assista aqui](https://youtu.be/PRyCgo2T7PA?si=aYZCXpETD_92cik_).
 
 ## Patrocínio
 
