@@ -338,7 +338,7 @@ Exemplo:
 
 ```elixir
 mapa = %{"a" => 1, "b" => 2, "c" => 3}
-triplica_valores = for {chave, valor} <- mapa, do: {chave, valor * 3}
+triplica_valores = for {chave, valor} <- mapa, into: %{}, do: {chave, valor * 3}
 ```
 
 ## Compreensões Aninhadas
@@ -472,7 +472,7 @@ cliente = %{
   cupom: "UBL10"
 }
 
-calcula_total(produtos, cliente) # deve retornar 243.00
+calcula_total(produtos, cliente) # deve retornar 247.50
 ```
 
 ```elixir

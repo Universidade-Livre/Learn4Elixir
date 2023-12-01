@@ -9,6 +9,8 @@
   </a>
 </p>
 
+> 🚨 **Aviso importante**: Este repositório/conteúdo continua normalmente mesmo depois do Hacktoberfest 🚨
+
 <p align="justify">
   <i>
   Há muito tempo, o lendário alquimista José Valim supostamente descobriu o segredo para criar 
@@ -62,8 +64,8 @@ Esse repositório está organizado com conteúdo e exercicios de código. Todos 
 disponíveis em <i>livebooks</i> (um <i>livebook</i> é um arquivo contendo texto e código executável em uma instalação de http://livebook.dev), e você pode acompanhar acessando os links:
 </p>
 
-- [Capítulo 1](./chapters/chapter1.livemd)
-- [Capítulo 2](./chapters/chapter2.livemd)
+- [Capítulo 1](./chapters/chapter1.livemd) ⚬ [Vídeo Explicação](https://www.youtube.com/live/xcYO5G0sthg?si=QsFp0j20KS8Br38n)
+- [Capítulo 2](./chapters/chapter2.livemd) ⚬ [Vídeo Explicação](https://youtu.be/ObTPNEbdvkM?si=fyp-WsjlU-vI0P1f)
 - [Capítulo 3](./chapters/chapter3.livemd)
 - [Capítulo 4](./chapters/chapter4.livemd)
 
@@ -133,7 +135,7 @@ Começar a aprender com o Learn4Elixir é muito mamão com açúcar, é só:
 7. Abra o `chapters/chapter1.livemd` e começe a resolver os desafios.
 8. Adicione as alterações feitas para serem enviadas para **o seu fork** com o comando `git add .`.
 9. Faça o commit enviando essas alterações `git commit -m "Completando o Ex. 1"`.
-10. Abra um PR **no seu fork** da sua ramificação criada (nesse caso `exercicio-1`) para a ramificação `main` e caso queira ajuda/revisão mencione @[anabastos](https://github.com/anabastos), @[cherryramatisdev](https://github.com/cherryramatisdev), @[cyytrus](https://github.com/cyytrus), @[digzom](https://github.com/digzom), @[douglastofoli](https://github.com/douglastofoli), @[eulixir](https://github.com/eulixir), @[lanjoni](https://github.com/lanjoni), @[OtavioSC](https://github.com/otaviosc) ou @[zoedsoupe](https://github.com/zoedsoupe) que vamos ajudá-lo com a revisão de suas soluções (essas menções já estão no Template de PR).
+10. Abra um PR **no seu fork** da sua ramificação criada (nesse caso `exercicio-1`) para a ramificação `main` e caso queira ajuda/revisão mencione @[anabastos](https://github.com/anabastos), @[digzom](https://github.com/digzom), @[douglastofoli](https://github.com/douglastofoli), @[eulixir](https://github.com/eulixir), @[OtavioSC](https://github.com/otaviosc) ou @[zoedsoupe](https://github.com/zoedsoupe) que vamos ajudá-lo com a revisão de suas soluções (essas menções já estão no Template de PR).
 11. Ao final, após esse processo faça a mescla (merge) do PR. Para continuar os próximos capítulos repita dos passos 5 até 10 para os capítulos de 2 a 4.
 
 > **Importante!** Você deve abrir o PR para o seu próprio fork desse repositório. Desta forma cada um pode receber os pontos para o evento e manter seus arquivos individualmente.
@@ -504,20 +506,20 @@ aprendizado produtiva. Isso tudo junto foi executado por essa equipe maravilhosa
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/anabastos"><img src="https://avatars.githubusercontent.com/u/10088900?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ana Bastos</b></sub></a><br /><a href="#mentoring-ana" title="Mentoring">🧑‍🏫</a></td>
-    <td align="center"><a href="https://github.com/cherryramatisdev"><img src="https://avatars.githubusercontent.com/u/86631177?v=4&s=100" width="100px;" alt=""/><br /><sub><b>Cherry Ramatis</b></sub></a><br /><a href="#mentoring-cherry" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://github.com/digzom"><img src="https://avatars.githubusercontent.com/u/62157839?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dickson Melo</b></sub></a><br /><a href="#mentoring-dickson" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://github.com/douglastofoli"><img src="https://avatars.githubusercontent.com/u/3953162?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Douglas Tofoli</b></sub></a><br /><a href="#mentoring-douglas" title="Mentoring">🧑‍🏫</a></td>
-  </tr>
-
-  <tr>
-    <td align="center"><a href="https://github.com/lanjoni"><img src="https://avatars.githubusercontent.com/u/91899995?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guto Lanjoni</b></sub></a><br /><a href="#mentoring-guto" title="Mentoring">🧑‍🏫</a></td>
     <td align="center"><a href="https://github.com/eulixir"><img src="https://github.com/eulixir.png" width="100px;" alt=""/><br /><sub><b>João Pedro Alves</b></sub></a><br /><a href="#mentoring-joao" title="Mentoring">🧑‍🏫</a></td>
-    <td align="center"><a href="https://github.com/OtavioSC"><img src="https://avatars.githubusercontent.com/u/54047040?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Otávio Carmo</b></sub></a><br /><a href="#mentoring-otavio" title="Mentoring">🧑‍🏫</a></td>
-    <td align="center"><a href="https://github.com/Cyytrus"><img src="https://avatars.githubusercontent.com/u/83558749?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Paulo Castro</b></sub></a><br /><a href="#mentoring-paulo" title="Mentoring">🧑‍🏫</a></td>
   </tr>
 
   <tr>
-    <td align="center"><a href="https://github.com/zoedsoupe"><img src="https://avatars.githubusercontent.com/u/44469426?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zoey Pessanha</b></sub></a><br /><a href="#mentoring-zoedsoupe" title="Mentoring">🧑‍🏫</a></td>
+    <td align="center"><a href="https://github.com/OtavioSC"><img src="https://avatars.githubusercontent.com/u/54047040?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Otávio Carmo</b></sub></a><br /><a href="#mentoring-otavio" title="Mentoring">🧑‍🏫</a></td>
+        <td align="center"><a href="https://github.com/zoedsoupe"><img src="https://avatars.githubusercontent.com/u/44469426?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zoey Pessanha</b></sub></a><br /><a href="#mentoring-zoedsoupe" title="Mentoring">🧑‍🏫</a></td>
+            <td align="center"><a href="https://github.com/cherryramatisdev"><img src="https://avatars.githubusercontent.com/u/86631177?v=4&s=100" width="100px;" alt=""/><br /><sub><b>Cherry Ramatis</b></sub></a><br /><a href="#mentoring-cherry" title="Was Hacktoberfest Mentor">📆</a></td>
+        <td align="center"><a href="https://github.com/lanjoni"><img src="https://avatars.githubusercontent.com/u/91899995?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guto Lanjoni</b></sub></a><br /><a href="#mentoring-guto" title="Was Hacktoberfest Mentor">📆</a></td>
+  </tr>
+
+  <tr>
+        <td align="center"><a href="https://github.com/Cyytrus"><img src="https://avatars.githubusercontent.com/u/83558749?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Paulo Castro</b></sub></a><br /><a href="#mentoring-paulo" title="Was Hacktoberfest Mentor">📆</a></td>
   </tr>
 </table>
 
@@ -535,6 +537,16 @@ Você pode nos ajudar de diversas formas:
 - **Ajude outros estudantes**: Entre no nosso [Discord](https://discord.gg/eXUBTY6HAu), esteja atento nas issues, quando outras pessoas tiverem dificuldade ou dúvidas, ajude! O aprendizado é sempre catalizado por pessoas com o mesmo objetivo, quando todos se ajudam chegam mais longe e isso torna a joranada melhor para quem ajuda e para quem é ajudado.
 - **Faça um PR**: Encontrou um erro? Algo que pode ser melhorado? Faça um Pull Request que vamos avaliar, discutir e atualizar o material. Todos cometem erros e tudo pode ser melhorado, é com a ajuda da Comunidade que construímos coisas cada vez melhor.
 - **Revisão de PR**: Tem um PR que outra pessoa fez em aberto? Clone-o, teste, opine. Ajude a avaliar e revisar PRs. Toda discussão útil é bem-vinda e nos ajuda a melhorar.
+
+
+## Gravação das Lives
+Durante o Hacktoberfest 2023 foram realizadas lives temáticas com convidados no Canal da Twitch da Universidade Brasileira Livre com o objetivo de complementar e trazer mais conteúdo sobre tecnologia e programação com os mentores e patrocinadores do evento. Abaixo segue o link para as gravações:
+
+- **01/10/23 - *Lançamento do Learn4Elixir com Camilo Cunha*** - [Assista aqui](https://youtu.be/9DjlSB_RfPo?si=ia8WliFqIp3LIkR_).
+- **08/10/23 - *Elixir na Cumbuca com Pedro Castilho e Paulo Castro*** - [Assista aqui](https://youtu.be/JlWp0RjDtGM?si=mzYTprz2vuTbPXVd).
+- **15/10/23 - *Explorando Crystal com Guto Lanjoni*** - [Assista aqui](https://youtu.be/9DjlSB_RfPo?si=ia8WliFqIp3LIkR_).
+- **22/10/23 - *Nomadismo Digital com Lincoli Xavier*** - [Assista aqui](https://youtu.be/9DjlSB_RfPo?si=ia8WliFqIp3LIkR_).
+- **29/10/23 - *Como fazer APIs com Elixir + Phoenix com Douglas Tofoli*** - [Assista aqui](https://youtu.be/PRyCgo2T7PA?si=aYZCXpETD_92cik_).
 
 ## Patrocínio
 
