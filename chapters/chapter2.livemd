@@ -348,27 +348,28 @@ E então resolva esses problemas:
 1. Retorne o tamanho da String "pneumoultramicroscopicossilicovulcanoconiótico".
 
 ```elixir
-
+String.length("pneumoultramicroscopicossilicovulcanoconiótico")
 ```
 
-2. Retorne uma Lista que possui os mesmos items da lista [:a, :b, :c] porém com os itens na ordem contrária, ou seja [:c, :b, :a].
+1. Retorne uma Lista que possui os mesmos items da lista [:a, :b, :c] porém com os itens na ordem contrária, ou seja [:c, :b, :a].
 
 ```elixir
-
+lista = [:a, :b, :c]
+lista_invertida = Enum.reverse(lista)
 ```
 
-3. Retorne um novo mapa que é a união desses dois mapas:
+1. Retorne um novo mapa que é a união desses dois mapas:
 
 ```elixir
-primeiro_mapa = %{ :um  =>  1, :dois => 2 }
-segundo_mapa  = %{ :tres  =>  3, :quatro => 4 }
+primeiro_mapa = %{:um => 1, :dois => 2}
+segundo_mapa = %{:tres => 3, :quatro => 4}
 ```
 
 ```elixir
-
+mapa_unido = Map.merge(primeiro_mapa, segundo_mapa)
 ```
 
-4. Retorne uma lista de palavras da sentença:
+1. Retorne uma lista de palavras da sentença:
 
 ```elixir
 # execute essa célula de código
@@ -378,10 +379,14 @@ Como de hábito, Policarpo Quaresma, mais conhecido por Major Quaresma, bateu em
 ```
 
 ```elixir
-
+lista_palavras =
+  sentenca
+  |> String.split(~r/\s+/)
+  |> Enum.map(&String.trim/1)
+  |> Enum.reject(fn x -> x == "" end)
 ```
 
-5. Crie uma nova lista onde cada elemento corresponde a um elemento  da lista abaixo multiplicado por 2. Depois disso, some todos os elementos da nova lista.
+1. Crie uma nova lista onde cada elemento corresponde a um elemento  da lista abaixo multiplicado por 2. Depois disso, some todos os elementos da nova lista.
 
 ```elixir
 # execute essa célula de código
@@ -389,7 +394,9 @@ lista_de_numeros = [4, 8, 12, 16, 20, 24, 28, 32, 36]
 ```
 
 ```elixir
-
+lista_de_numeros
+|> Enum.map(fn x -> x * 2 end)
+|> Enum.sum()
 ```
 
 ### Exercício 2
@@ -423,23 +430,99 @@ Abaixo, temos um "esqueleto" da implementação. Os professores esperam que essa
 ```elixir
 defmodule AlgebraLinear do
   def soma_matrizes(matriz_a, matriz_b) do
-    # A fazer
+    combina_matrizes(matriz_a, matriz_b, fn x, y -> x + y end)
   end
 
   def subtrai_matrizes(matriz_a, matriz_b) do
-    # A fazer
+    combina_matrizes(matriz_a, matriz_b, fn x, y -> x - y end)
   end
 
   def multiplica_matrizes(matriz_a, matriz_b) do
-    # A fazer
+    case validar_matrizes_multiplicaveis?(matriz_a, matriz_b) do
+      {:ok, resultado} -> resultado
+      {:error, mensagem} -> mensagem
+    end
   end
 
   def escalar(matriz, escalar) do
-    # A fazer
+    line_sample = Enum.at(matriz, 0)
+    last_index = length(line_sample) - 1
+
+    for n <- 0..last_index do
+      line = Enum.at(matriz, n)
+      Enum.map(line, fn x -> x * escalar end)
+    end
   end
 
+  # Rule of Sarrus (isso aqui eu sei fazer funcional não, é loop e um abraço)
   def determinante(matriz) do
-    # A fazer
+    matriz_len = length(matriz)
+    last_i = matriz_len - 1
+    range = Enum.to_list(0..last_i) |> IO.inspect()
+
+    new_matriz =
+      for row <- matriz do
+        take_n = row |> Enum.take(last_i)
+        row ++ take_n
+      end
+      |> IO.inspect()
+
+    nums =
+      Enum.reduce(range, %{sum: 1, sub: 1}, fn i, acc ->
+        diagonals =
+          Enum.reduce(range, %{sum: 1, sub: 1}, fn j, acc ->
+            line = j
+            col_sum = j + i
+            col_sub = last_i + i - j
+            num_sum = new_matriz |> Enum.at(line) |> Enum.at(col_sum)
+            num_sub = new_matriz |> Enum.at(line) |> Enum.at(col_sub)
+            %{sum: acc.sum * num_sum, sub: acc.sub * num_sub}
+          end)
+
+        %{sum: acc.sum + diagonals.sum, sub: acc.sub + diagonals.sub}
+      end)
+
+    nums.sum - nums.sub
+  end
+
+  defp combina_matrizes(matriz_a, matriz_b, func) do
+    line_sample = Enum.at(matriz_a, 0)
+    last_index = length(line_sample) - 1
+
+    for n <- 0..last_index do
+      line_a = Enum.at(matriz_a, n)
+      line_b = Enum.at(matriz_b, n)
+      Enum.zip_with(line_a, line_b, func)
+    end
+  end
+
+  defp validar_matrizes_multiplicaveis?([_ | _] = matriz_a, [_, _ | _] = matriz_b)
+       when length(hd(matriz_a)) == length(matriz_b) do
+    matriz_resultado = multiplicar_matrizes_interna(matriz_a, matriz_b)
+    {:ok, matriz_resultado}
+  end
+
+  defp validar_matrizes_multiplicaveis?(_, _) do
+    {:error, "Número de linhas e colunas divergentes"}
+  end
+
+  defp multiplicar_matrizes_interna(matriz_a, matriz_b) do
+    transposta_b = transpose(matriz_b)
+
+    Enum.map(matriz_a, fn linha_a ->
+      Enum.map(transposta_b, fn coluna_b ->
+        Enum.zip(linha_a, coluna_b)
+        |> Enum.reduce(0, fn {elem_a, elem_b}, acc -> elem_a * elem_b + acc end)
+      end)
+    end)
+  end
+
+  defp transpose([[] | _]) do
+    []
+  end
+
+  defp transpose(matriz) do
+    [hd(matriz) | transpose(tl(matriz))]
   end
 end
 ```
@@ -493,7 +576,16 @@ Você deve usar funções anônimas e as funções map, filter e reduce para imp
 ```elixir
 defmodule Recomendacao do
   def recomenda(musicas, preferencia) do
-    # A fazer
+    Enum.filter(musicas, &match_musicas(&1, preferencia))
+  end
+
+  defp match_musicas(
+         %{genero: genero, duracao: duracao, avaliacao: avaliacao},
+         preferencia
+       ) do
+    genero == preferencia.genero &&
+      preferencia.duracao_min <= duracao <= preferencia.duracao_max &&
+      avaliacao >= preferencia.avaliacao_min
   end
 end
 ```
@@ -570,52 +662,60 @@ Neste exercício, a documentação oficial do módulo [Enum](https://hexdocs.pm/
 
 ```elixir
 defmodule CalculoEsculturas do
-  def raio_minimo() do
-    # A fazer
+  def raio_minimo(circulos) do
+    Enum.min(circulos)
   end
 
-  def raio_maximo() do
-    # A fazer
+  def raio_maximo(circulos) do
+    Enum.max(circulos)
   end
 
-  def diametro_minimo() do
-    # A fazer
+  def diametro_minimo(circulos) do
+    raio_minimo(circulos) * 2
   end
 
-  def diametro_maximo() do
-    # A fazer
+  def diametro_maximo(circulos) do
+    raio_maximo(circulos) * 2
   end
 
-  def area_minima() do
-    # A fazer
+  def area_minima(circulos) do
+    :math.pi() * :math.pow(raio_minimo(circulos), 2)
   end
 
-  def area_maxima() do
-    # A fazer
+  def area_maxima(circulos) do
+    :math.pi() * :math.pow(raio_maximo(circulos), 2)
   end
 
-  def media_raios() do
-    # A fazer
+  def media_raios(circulos) do
+    raios_sum = Enum.reduce(circulos, fn raio, acc -> acc + raio end)
+    raios_sum / numero_de_circulos(circulos)
   end
 
-  def numero_de_circulos() do
-    # A fazer
+  def numero_de_circulos(circulos) do
+    length(circulos)
   end
 
-  def ordena_raios() do
-    # A fazer
+  def ordena_raios(circulos) do
+    Enum.sort(circulos)
   end
 
-  def ordena_raios_descendente() do
-    # A fazer
+  def ordena_raios_descendente(circulos) do
+    Enum.sort(circulos, :desc)
   end
 
-  def variacao_raios() do
-    # A fazer
+  def variacao_raios(circulos) do
+    raio_maximo(circulos) - Enum.min(circulos)
   end
 
-  def mediana_raios() do
-    # A fazer
+  def calcular_mediana(circulos) do
+    circulos
+    |> Enum.sort()
+    |> mediana()
+  end
+
+  defp mediana(lista) do
+    meio = div(length(lista), 2)
+    Enum.at(lista, meio)
   end
 end
 ```
