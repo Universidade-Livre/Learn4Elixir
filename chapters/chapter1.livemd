@@ -1024,35 +1024,35 @@ outro_mentor_atualizado = %{outro_mentor | nome: "Douglas", idade: 23}
 Escreva um exemplo de dado em Elixir para cada tipo apresentado abaixo, colocando-o como parâmetro no lugar de `""` na respectiva função. O resultado de todas as funções deve ser `true`.
 
 ```elixir
-is_number("")
+is_number(10)
 ```
 
 ```elixir
-is_integer("")
+is_integer(2)
 ```
 
 ```elixir
-is_float("")
+is_float(15.2)
 ```
 
 ```elixir
-is_binary("")
+is_binary("0110")
 ```
 
 ```elixir
-is_atom("")
+is_atom(:ok)
 ```
 
 ```elixir
-is_boolean("")
+is_boolean(false)
 ```
 
 ```elixir
-is_map("")
+is_map(%{:lula => "Faz o L", "timao" => "Vai Corinthians!"})
 ```
 
 ```elixir
-is_tuple("")
+is_tuple({"popeye", 42, "Orange"})
 ```
 
 ### Exercicio 2
@@ -1075,12 +1075,13 @@ Defina variáveis para cada salário, depois, atribua o cálculo de média aritm
 
 ```elixir
 ocamilodev = 71255.53
-ocam_l =
-#...
+ocam_l = 30236.23
+camilotk_ = 5256.12
+# ...
 ```
 
 ```elixir
-media =
+media = (ocamilodev + ocam_l + camilotk_) / 3
 ```
 
 ```elixir
@@ -1189,25 +1190,25 @@ Com esses dados use **casamento de padrões** (pattern matching) para:
 
 ```
 
-2. Salvar o nome do segundo comentário em uma variável `titulo`.
+1. Salvar o nome do segundo comentário em uma variável `titulo`.
 
 ```elixir
 titulo =
 ```
 
-3. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
+1. Extrair o comentário de **id** `11` do produto de **productId** `3` e criar um novo mapa que contêm todos os valores desse item porém mudando o `email` para `contato@foobar.br`.
 
 ```elixir
 
 ```
 
-4. Extrair o **body** do terceiro comentário.
+1. Extrair o **body** do terceiro comentário.
 
 ```elixir
 
 ```
 
-5. Criar uma nova lista removendo o segundo item.
+1. Criar uma nova lista removendo o segundo item.
 
 ```elixir
 
@@ -1239,55 +1240,55 @@ E com base nesses dados foi pedido que:
 
 ```
 
-2. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `mercurio` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 mercurio =
 ```
 
-3. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `venus` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 venus =
 ```
 
-4. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `terra` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 terra =
 ```
 
-5. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `marte` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 marte =
 ```
 
-6. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `jupiter` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 jupiter =
 ```
 
-7. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `saturno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 saturno =
 ```
 
-8. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `urano` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 urano =
 ```
 
-9. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
+1. Crie uma variavel `netuno` com as informações deste planeta em uma instância da estrutura que você criou.
 
 ```elixir
 netuno =
 ```
 
-10. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
+1. Crie um mapa para representar o sistema solar, ela deve ter as chaves:
 
 * **:estrela**: String, valor "Sol"
 * **:nome**: String, valor "Sistema Solar"
